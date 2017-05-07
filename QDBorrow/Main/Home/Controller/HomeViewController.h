@@ -6,8 +6,8 @@
 //  Copyright © 2017年 zks. All rights reserved.
 //
 
-#import "QDCommonViewController.h"
+#import "QMUICommonTableViewController.h"
 
-@interface HomeViewController : QDCommonViewController
+@interface HomeViewController : QMUICommonTableViewController
 
 @end

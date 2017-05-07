@@ -95,6 +95,8 @@
 		2254BE881EBECBED0013890E /* QDCommonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2254BE871EBECBED0013890E /* QDCommonListViewController.m */; };
 		2254BE8B1EBECBFD0013890E /* QDCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2254BE8A1EBECBFD0013890E /* QDCommonTableViewController.m */; };
 		2254BE8E1EBECE740013890E /* QDHomeBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2254BE8D1EBECE740013890E /* QDHomeBannerModel.m */; };
+		2254BE911EBF53620013890E /* BorrowDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2254BE901EBF53620013890E /* BorrowDetailModel.m */; };
+		2254BE941EBF607B0013890E /* QDHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2254BE931EBF607B0013890E /* QDHomeModel.m */; };
 		22B9462C1EBD7B0300B8FA28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B9462B1EBD7B0300B8FA28 /* main.m */; };
 		22B946351EBD7B0300B8FA28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B946331EBD7B0300B8FA28 /* Main.storyboard */; };
 		22B946371EBD7B0300B8FA28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B946361EBD7B0300B8FA28 /* Assets.xcassets */; };
@@ -300,6 +302,10 @@
 		2254BE8A1EBECBFD0013890E /* QDCommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonTableViewController.m; sourceTree = "<group>"; };
 		2254BE8C1EBECE740013890E /* QDHomeBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeBannerModel.h; sourceTree = "<group>"; };
 		2254BE8D1EBECE740013890E /* QDHomeBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeBannerModel.m; sourceTree = "<group>"; };
+		2254BE8F1EBF53620013890E /* BorrowDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowDetailModel.h; sourceTree = "<group>"; };
+		2254BE901EBF53620013890E /* BorrowDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowDetailModel.m; sourceTree = "<group>"; };
+		2254BE921EBF607B0013890E /* QDHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeModel.h; sourceTree = "<group>"; };
+		2254BE931EBF607B0013890E /* QDHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeModel.m; sourceTree = "<group>"; };
 		22B946271EBD7B0300B8FA28 /* QDBorrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QDBorrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B9462B1EBD7B0300B8FA28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22B946341EBD7B0300B8FA28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -896,6 +902,10 @@
 			children = (
 				2254BE8C1EBECE740013890E /* QDHomeBannerModel.h */,
 				2254BE8D1EBECE740013890E /* QDHomeBannerModel.m */,
+				2254BE8F1EBF53620013890E /* BorrowDetailModel.h */,
+				2254BE901EBF53620013890E /* BorrowDetailModel.m */,
+				2254BE921EBF607B0013890E /* QDHomeModel.h */,
+				2254BE931EBF607B0013890E /* QDHomeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1218,6 +1228,7 @@
 				2254BE5E1EBE30650013890E /* NSObject+EasyCopy.m in Sources */,
 				2254BE541EBE30650013890E /* NSDecimalNumber+CalculatingByString.m in Sources */,
 				2254BE531EBE30650013890E /* NSNotificationCenter+MainThread.m in Sources */,
+				2254BE941EBF607B0013890E /* QDHomeModel.m in Sources */,
 				2254BE6B1EBE30650013890E /* NSString+Encrypt.m in Sources */,
 				2254BE4D1EBE30650013890E /* NSFileHandle+readLine.m in Sources */,
 				2254BE521EBE30650013890E /* NSInvocation+Block.m in Sources */,
@@ -1250,6 +1261,7 @@
 				2254BE401EBE30650013890E /* NSDate+InternetDateTime.m in Sources */,
 				2254BE741EBE30650013890E /* NSString+Size.m in Sources */,
 				2254BE7F1EBE30650013890E /* NSURLRequest+ParamsFromDictionary.m in Sources */,
+				2254BE911EBF53620013890E /* BorrowDetailModel.m in Sources */,
 				2254BE3B1EBE30650013890E /* NSData+SDDataCache.m in Sources */,
 				2254BE691EBE30650013890E /* NSString+DictionaryValue.m in Sources */,
 				2254BE851EBECBCE0013890E /* QDCommonGroupListViewController.m in Sources */,
@@ -1368,7 +1380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1409,7 +1421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
