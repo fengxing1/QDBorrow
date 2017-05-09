@@ -14,6 +14,8 @@
 #import "HomeViewController.h"
 #import "QDNavigationController.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 #define APP_ID @"QGSs41nGgfDofETOfRgAKdSj-gzGzoHsz"
 #define APP_KEY @"fmavP4Ny83CAmboSlDCWpQl3"
@@ -27,6 +29,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+#if DEBUG 
+    
+#else 
+    
+#endif
+    
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     
     // 启动 QMUI 的样式配置模板
@@ -124,6 +132,12 @@
         [launchScreenView removeFromSuperview];
     }];
 }
+
+- (void)initFabric {
+    //Fabric设置
+    [Fabric with:@[[Crashlytics class]]];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
