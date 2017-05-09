@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0056E3804A9679EFA3C0AE7E /* libPods-QDBorrow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6FF798A460AD29E0A4B7F3 /* libPods-QDBorrow.a */; };
 		04EEC54F0012B470A8815C21 /* libPods-QDBorrowTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2946F0F1399A3F3C4F97185 /* libPods-QDBorrowTests.a */; };
+		0946C20D1EC156C0001B6B7C /* QDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0946C20C1EC156C0001B6B7C /* QDWebViewController.m */; };
+		097318C01EC14E1000A5B7CB /* QDBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 097318BF1EC14E1000A5B7CB /* QDBannerTableViewCell.m */; };
 		2254BD741EBE24BE0013890E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2254BD731EBE24BE0013890E /* LaunchScreen.xib */; };
 		2254BD791EBE284D0013890E /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2254BD781EBE284D0013890E /* LoginService.m */; };
 		2254BD7E1EBE30370013890E /* UIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2254BD7D1EBE30370013890E /* UIWindow+Hierarchy.m */; };
@@ -131,6 +133,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0946C20B1EC156C0001B6B7C /* QDWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDWebViewController.h; sourceTree = "<group>"; };
+		0946C20C1EC156C0001B6B7C /* QDWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDWebViewController.m; sourceTree = "<group>"; };
+		097318BE1EC14E1000A5B7CB /* QDBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBannerTableViewCell.h; sourceTree = "<group>"; };
+		097318BF1EC14E1000A5B7CB /* QDBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBannerTableViewCell.m; sourceTree = "<group>"; };
 		21F36D2FF6D3DF475589BF52 /* Pods-QDBorrow-QDBorrowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow-QDBorrowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow-QDBorrowTests/Pods-QDBorrow-QDBorrowTests.release.xcconfig"; sourceTree = "<group>"; };
 		2254BD731EBE24BE0013890E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = Expand/LaunchScreen.xib; sourceTree = "<group>"; };
 		2254BD771EBE284D0013890E /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
@@ -372,6 +378,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		097318C11EC1539700A5B7CB /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				097318C21EC154D400A5B7CB /* Controller */,
+			);
+			name = Others;
+			path = Ohters;
+			sourceTree = "<group>";
+		};
+		097318C21EC154D400A5B7CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0946C20B1EC156C0001B6B7C /* QDWebViewController.h */,
+				0946C20C1EC156C0001B6B7C /* QDWebViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2254BD761EBE27FB0013890E /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -824,6 +848,7 @@
 		22B9465E1EBDBD1400B8FA28 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				097318C11EC1539700A5B7CB /* Others */,
 				22B946AB1EBDCDE300B8FA28 /* Login */,
 				22B9469B1EBDCA5B00B8FA28 /* Home */,
 			);
@@ -893,6 +918,8 @@
 		22B9469D1EBDCAA100B8FA28 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				097318BE1EC14E1000A5B7CB /* QDBannerTableViewCell.h */,
+				097318BF1EC14E1000A5B7CB /* QDBannerTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1034,6 +1061,7 @@
 		22B9461F1EBD7B0300B8FA28 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = QD;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = zks;
 				TargetAttributes = {
@@ -1231,6 +1259,7 @@
 				2254BE941EBF607B0013890E /* QDHomeModel.m in Sources */,
 				2254BE6B1EBE30650013890E /* NSString+Encrypt.m in Sources */,
 				2254BE4D1EBE30650013890E /* NSFileHandle+readLine.m in Sources */,
+				097318C01EC14E1000A5B7CB /* QDBannerTableViewCell.m in Sources */,
 				2254BE521EBE30650013890E /* NSInvocation+Block.m in Sources */,
 				2254BE351EBE30650013890E /* NSBundle+AppIcon.m in Sources */,
 				2254BE7C1EBE30650013890E /* NSURL+QueryDictionary.m in Sources */,
@@ -1283,6 +1312,7 @@
 				2254BE761EBE30650013890E /* NSString+UrlEncode.m in Sources */,
 				2254BE5B1EBE30650013890E /* NSObject+AssociatedObject.m in Sources */,
 				2254BE591EBE30650013890E /* NSObject+AddProperty.m in Sources */,
+				0946C20D1EC156C0001B6B7C /* QDWebViewController.m in Sources */,
 				2254BE5F1EBE30650013890E /* NSObject+GCD.m in Sources */,
 				22B946631EBDBDAE00B8FA28 /* AppDelegate.m in Sources */,
 				2254BE3A1EBE30650013890E /* NSData+Hash.m in Sources */,

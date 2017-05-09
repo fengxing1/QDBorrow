@@ -14,8 +14,12 @@
 #import "BorrowDetailModel.h"
 #import "QDHomeModel.h"
 #import "YYModel.h"
+#import "QDBannerTableViewCell.h"
+#import "QDWebViewController.h"
 
-@interface HomeViewController () <QMUITableViewDelegate,QMUITableViewDataSource>
+static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
+
+@interface HomeViewController () <QMUITableViewDelegate,QMUITableViewDataSource,CellOfBannerDelgate>
 
 @property(nonatomic, strong) QMUIButton *registButton;
 @property(nonatomic, strong) QMUIButton *loginButton;
@@ -127,6 +131,7 @@
 
 - (void)confirmUI {
     //初始化tableView
+    [self.tableView registerClass:[QDBannerTableViewCell class] forCellReuseIdentifier:kReusableIdentifierBannerCell];
     
 //    self.registButton = [[QMUIButton alloc] init];
 //    self.registButton.titleLabel.font = UIFontMake(15);
@@ -173,6 +178,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        QDBannerTableViewCell *bannerCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierBannerCell];
+//        bannerCell.bannerList = self.
+        bannerCell.delegate = self;
+        return bannerCell;
+    }
     static NSString *identifierNormal = @"cellNormal";
     QMUITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierNormal];
     if (!cell) {
@@ -239,5 +250,16 @@
 //    NSLog(@"user %@",user.username);
 //}
 
+- (void)cellOfBannerClick:(QDHomeBannerModel *)banner {
+    //轮播图片点击事件
+    NSString *redirectUrl = banner.value;
+    QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
+    webViewController.showsToolBar = NO;
+    webViewController.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.100f green:0.100f blue:0.100f alpha:0.800f];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.996f green:0.867f blue:0.522f alpha:1.00f];
+    [self.navigationController pushViewController:webViewController animated:YES];
+    
+}
 
 @end
