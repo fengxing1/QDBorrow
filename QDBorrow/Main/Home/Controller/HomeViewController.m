@@ -14,12 +14,14 @@
 #import "BorrowDetailModel.h"
 #import "QDHomeModel.h"
 #import "YYModel.h"
+#import "UIAlertView+Block.h"
 
 @interface HomeViewController () <QMUITableViewDelegate,QMUITableViewDataSource>
 
 @property(nonatomic, strong) QMUIButton *registButton;
 @property(nonatomic, strong) QMUIButton *loginButton;
 @property(nonatomic, strong) QMUIButton *statusButton;
+@property(nonatomic, strong) QDHomeModel *homeModel;
 
 
 @end
@@ -30,7 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self confirmUI];
-    [self confirmData];
+    [self configData];
+    
+//    [self confirmData];
     
 }
 
@@ -47,8 +51,51 @@
     return self;
 }
 
-- (void)confirmData {
-    //创建数据
+- (void)configData {
+    if (self.homeModel == nil) {
+        self.homeModel = [[QDHomeModel alloc] init];
+    }
+    if (self.homeModel.bannerArray == nil) {
+        self.homeModel.bannerArray = [[NSMutableArray alloc] init];
+    } else {
+        [self.homeModel.bannerArray removeAllObjects];
+    }
+    if (self.homeModel.borrowDetailArray == nil) {
+        self.homeModel.borrowDetailArray = [[NSMutableArray alloc] init];
+    } else {
+        [self.homeModel.borrowDetailArray removeAllObjects];
+    }
+    AVQuery *queryBanner = [AVQuery queryWithClassName:@"QDBanner"];
+    [queryBanner findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            for (AVObject *avBanner in objects) {
+                QDHomeBannerModel *bannerModel = [[QDHomeBannerModel alloc] initWithAVObject:avBanner];
+                [self.homeModel.bannerArray addObject:bannerModel];
+                
+            }
+            AVQuery *queryBorrow = [AVQuery queryWithClassName:@"QDBorrow"];
+            [queryBanner whereKey:@"bshowAtHome" equalTo:@(1)];
+            [queryBorrow findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                for (AVObject *avBorrow in objects) {
+                    BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithAVObject:avBorrow];
+                    [self.homeModel.borrowDetailArray addObject:detail];
+                }
+                [self.tableView reloadData];
+            }];
+        } else {
+            [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+                if (!buttonIndex) {
+                    [self configData];
+                }
+            } title:@"提示" message:@"网络出错" cancelButtonName:@"刷新" otherButtonTitles:@"取消", nil];
+            
+        }
+    }];
+    
+}
+
+//- (void)confirmData {
+//    //创建数据
 //    NSMutableArray *bannerArray = [[NSMutableArray alloc] init];
 //    QDHomeBannerModel *bannerModel = [[QDHomeBannerModel alloc] init];
 //    bannerModel.bannerId = 0;
@@ -83,12 +130,12 @@
 //        [banner saveInBackground];
 //    }
 //    
-    
-    
+//    
+//    
 //    [bannerArray addObject:[bannerModel yy_modelToJSONObject]];
 //    [bannerArray addObject:[bannerModel1 yy_modelToJSONObject]];
 //    [bannerArray addObject:[bannerModel2 yy_modelToJSONObject]];
-    
+//    
 //    for (int i = 0; i <= 10; i ++) {
 //        BorrowDetailModel *borrowModel = [[BorrowDetailModel alloc] init];
 //        borrowModel.companyId = i;
@@ -117,13 +164,12 @@
 //        [borrow setObject:[NSArray arrayWithObjects:@"18岁到55周岁，中国大陆身份证公民",@"全日制大专以上学历", nil] forKey:@"qualificationArray"];
 //        [borrow setObject:[NSArray arrayWithObjects:@"身份证拍照",@"刷脸识别",@"提供通讯录和联系人", nil] forKey:@"dataArray"];
 //        [borrow setObject:@1 forKey:@"bshowAtHome"];
+//        [borrow setObject:@"www.baidu.com" forKey:@"redirectUrl"];
 //        [borrow saveInBackground];
 //        
 //        
 //    }
-//    
-  
-}
+//}
 
 - (void)confirmUI {
     //初始化tableView
@@ -165,11 +211,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 1;
-    } else {
-        return 10;
+    if (self.homeModel) {
+        if (self == 0) {
+            if (self.homeModel.bannerArray && self.homeModel.bannerArray.count) {
+                return 1;
+            }
+            return 0;
+        } else {
+            if (self.homeModel.borrowDetailArray && self.homeModel.borrowDetailArray.count) {
+                return self.homeModel.borrowDetailArray.count;
+            }
+            return 0;
+        }
+        
     }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

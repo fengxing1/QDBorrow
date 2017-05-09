@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AVObject.h"
 
 @interface BorrowDetailModel : NSObject
 @property (nonatomic, assign) long companyId;
@@ -19,7 +20,9 @@
 @property (nonatomic, strong) NSArray *amortizationNumArray;
 @property (nonatomic, strong) NSString *fastestTime;
 @property (nonatomic, strong) NSArray *qualificationArray;
+@property (nonatomic, strong) NSString *redirectUrl;
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, assign) NSInteger bshowAtHome;
 
+- (instancetype)initWithAVObject:(AVObject *)detail;
 @end

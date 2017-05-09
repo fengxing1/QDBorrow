@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AVObject.h"
 
 @interface QDHomeBannerModel : NSObject
 @property (nonatomic, assign) long bannerId;
 @property (nonatomic, strong) NSString *imageUrl;
 @property (nonatomic, assign) NSInteger bannerType;
 @property (nonatomic, strong) NSString *value;
+
+- (instancetype)initWithAVObject:(AVObject *)bannerDict;
 
 @end
