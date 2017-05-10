@@ -113,6 +113,10 @@
 		0970F5221EC29FC200FC4794 /* QDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4B81EC29FC200FC4794 /* QDWebViewController.m */; };
 		0970F5231EC29FC200FC4794 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4BC1EC29FC200FC4794 /* AppDelegate.m */; };
 		0970F5241EC29FC200FC4794 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4C01EC29FC200FC4794 /* UIPlaceHolderTextView.m */; };
+		09B4BC3C1EC3454B0056B472 /* QBBusinessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B4BC3A1EC3454B0056B472 /* QBBusinessTableViewCell.m */; };
+		09B4BC3D1EC3454B0056B472 /* QBBusinessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B4BC3B1EC3454B0056B472 /* QBBusinessTableViewCell.xib */; };
+		09B4BC461EC34DC00056B472 /* QDCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B4BC451EC34DC00056B472 /* QDCompanyViewController.m */; };
+		09B4BC4D1EC351CC0056B472 /* QDCertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B4BC4C1EC351CC0056B472 /* QDCertViewController.m */; };
 		71E428A43581981D31F5B991 /* libPods-QDBorrow-QDBorrowTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ED9BC4328DE84BBDD978AC /* libPods-QDBorrow-QDBorrowTests.a */; };
 		85A27A48F031CE366FFE8841 /* libPods-QDBorrow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C41CD3E96693CA3CF7F150DF /* libPods-QDBorrow.a */; };
 /* End PBXBuildFile section */
@@ -348,6 +352,13 @@
 		0970F4BC1EC29FC200FC4794 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0970F4BF1EC29FC200FC4794 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
 		0970F4C01EC29FC200FC4794 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		09B4BC391EC3454B0056B472 /* QBBusinessTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBBusinessTableViewCell.h; sourceTree = "<group>"; };
+		09B4BC3A1EC3454B0056B472 /* QBBusinessTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBBusinessTableViewCell.m; sourceTree = "<group>"; };
+		09B4BC3B1EC3454B0056B472 /* QBBusinessTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QBBusinessTableViewCell.xib; sourceTree = "<group>"; };
+		09B4BC441EC34DC00056B472 /* QDCompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCompanyViewController.h; sourceTree = "<group>"; };
+		09B4BC451EC34DC00056B472 /* QDCompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCompanyViewController.m; sourceTree = "<group>"; };
+		09B4BC4B1EC351CC0056B472 /* QDCertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCertViewController.h; sourceTree = "<group>"; };
+		09B4BC4C1EC351CC0056B472 /* QDCertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCertViewController.m; sourceTree = "<group>"; };
 		12ED9BC4328DE84BBDD978AC /* libPods-QDBorrow-QDBorrowTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QDBorrow-QDBorrowTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		294A31DB3BB77A4A7610ADF7 /* Pods-QDBorrow-QDBorrowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow-QDBorrowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow-QDBorrowTests/Pods-QDBorrow-QDBorrowTests.release.xcconfig"; sourceTree = "<group>"; };
 		664175F67CDEFBD6F166809D /* Pods-QDBorrow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow/Pods-QDBorrow.debug.xcconfig"; sourceTree = "<group>"; };
@@ -864,6 +875,8 @@
 		0970F4A21EC29FC200FC4794 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				09B4BC471EC351680056B472 /* Cert */,
+				09B4BC3F1EC34D490056B472 /* Company */,
 				0970F4A31EC29FC200FC4794 /* Home */,
 				0970F4B11EC29FC200FC4794 /* Login */,
 				0970F4B51EC29FC200FC4794 /* Ohters */,
@@ -908,6 +921,9 @@
 			children = (
 				0970F4AF1EC29FC200FC4794 /* QDBannerTableViewCell.h */,
 				0970F4B01EC29FC200FC4794 /* QDBannerTableViewCell.m */,
+				09B4BC391EC3454B0056B472 /* QBBusinessTableViewCell.h */,
+				09B4BC3A1EC3454B0056B472 /* QBBusinessTableViewCell.m */,
+				09B4BC3B1EC3454B0056B472 /* QBBusinessTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -978,6 +994,56 @@
 				0970F4C01EC29FC200FC4794 /* UIPlaceHolderTextView.m */,
 			);
 			path = UIPlaceHolderTextView;
+			sourceTree = "<group>";
+		};
+		09B4BC3F1EC34D490056B472 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				09B4BC431EC34DA20056B472 /* Controller */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
+		09B4BC431EC34DA20056B472 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09B4BC441EC34DC00056B472 /* QDCompanyViewController.h */,
+				09B4BC451EC34DC00056B472 /* QDCompanyViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09B4BC471EC351680056B472 /* Cert */ = {
+			isa = PBXGroup;
+			children = (
+				09B4BC4A1EC351A40056B472 /* Model */,
+				09B4BC491EC351920056B472 /* View */,
+				09B4BC481EC351810056B472 /* Controller */,
+			);
+			path = Cert;
+			sourceTree = "<group>";
+		};
+		09B4BC481EC351810056B472 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09B4BC4B1EC351CC0056B472 /* QDCertViewController.h */,
+				09B4BC4C1EC351CC0056B472 /* QDCertViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09B4BC491EC351920056B472 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09B4BC4A1EC351A40056B472 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		442C1987B48A94241E6A0B9E /* Frameworks */ = {
@@ -1112,6 +1178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B4BC3D1EC3454B0056B472 /* QBBusinessTableViewCell.xib in Resources */,
 				0970F5121EC29FC200FC4794 /* LaunchScreen.xib in Resources */,
 				0970F3AB1EC29F2900FC4794 /* LaunchScreen.storyboard in Resources */,
 				0970F4D21EC29FC200FC4794 /* NSDateTimeAgo.bundle in Resources */,
@@ -1248,9 +1315,11 @@
 				0970F50F1EC29FC200FC4794 /* NSUserDefaults+SafeAccess.m in Sources */,
 				0970F4C31EC29FC200FC4794 /* NSBundle+AppIcon.m in Sources */,
 				0970F4CE1EC29FC200FC4794 /* NSDate+InternetDateTime.m in Sources */,
+				09B4BC3C1EC3454B0056B472 /* QBBusinessTableViewCell.m in Sources */,
 				0970F50A1EC29FC200FC4794 /* NSURL+QueryDictionary.m in Sources */,
 				0970F50C1EC29FC200FC4794 /* NSMutableURLRequest+Upload.m in Sources */,
 				0970F4DC1EC29FC200FC4794 /* NSFileManager+Paths.m in Sources */,
+				09B4BC461EC34DC00056B472 /* QDCompanyViewController.m in Sources */,
 				0970F4EF1EC29FC200FC4794 /* NSObject+MKBlockTimer.m in Sources */,
 				0970F4E81EC29FC200FC4794 /* NSObject+AppInfo.m in Sources */,
 				0970F5041EC29FC200FC4794 /* NSString+UrlEncode.m in Sources */,
@@ -1277,6 +1346,7 @@
 				0970F51D1EC29FC200FC4794 /* BorrowDetailModel.m in Sources */,
 				0970F4CD1EC29FC200FC4794 /* NSDate+Formatter.m in Sources */,
 				0970F5071EC29FC200FC4794 /* NSTimer+Addition.m in Sources */,
+				09B4BC4D1EC351CC0056B472 /* QDCertViewController.m in Sources */,
 				0970F5151EC29FC200FC4794 /* QDCommonTableViewController.m in Sources */,
 				0970F4C81EC29FC200FC4794 /* NSData+Hash.m in Sources */,
 				0970F4ED1EC29FC200FC4794 /* NSObject+GCD.m in Sources */,

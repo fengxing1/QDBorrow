@@ -17,8 +17,10 @@
 #import "UIAlertView+Block.h"
 #import "QDBannerTableViewCell.h"
 #import "QDWebViewController.h"
+#import "QBBusinessTableViewCell.h"
 
 static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
+static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 @interface HomeViewController () <QMUITableViewDelegate,QMUITableViewDataSource,CellOfBannerDelgate>
 
@@ -189,6 +191,7 @@ static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
     self.tableView.tableHeaderView = nil;
     self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0); 
     [self.tableView registerClass:[QDBannerTableViewCell class] forCellReuseIdentifier:kReusableIdentifierBannerCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"QBBusinessTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
     
 //    self.registButton = [[QMUIButton alloc] init];
 //    self.registButton.titleLabel.font = UIFontMake(15);
@@ -250,15 +253,14 @@ static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
         bannerCell.bannerList = self.homeModel.bannerArray;
         bannerCell.delegate = self;
         return bannerCell;
+    } else {
+        QBBusinessTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCompanyCell];
+        if (self.homeModel.borrowDetailArray.count >= indexPath.row) {
+            companyCell.borrowModel = self.homeModel.borrowDetailArray[indexPath.row];
+        }
+        return companyCell;
+        
     }
-    static NSString *identifierNormal = @"cellNormal";
-    QMUITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierNormal];
-    if (!cell) {
-        cell = [[QMUITableViewCell alloc] initForTableView:self.tableView withStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifierNormal];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    cell.textLabel.text = @"测试";
-    return  cell;
 }
 
 

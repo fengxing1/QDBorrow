@@ -16,6 +16,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "QDCompanyViewController.h"
 
 #define APP_ID @"QGSs41nGgfDofETOfRgAKdSj-gzGzoHsz"
 #define APP_KEY @"fmavP4Ny83CAmboSlDCWpQl3"
@@ -69,7 +70,7 @@
     homeViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon_tabbar_uikit") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_uikit_selected") tag:0];
     
     // 找贷款
-    HomeViewController *loanViewController = [[HomeViewController alloc] init];
+    QDCompanyViewController *loanViewController = [[QDCompanyViewController alloc] init];
     loanViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *loanNavController = [[QDNavigationController alloc] initWithRootViewController:loanViewController];
     loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:1];
