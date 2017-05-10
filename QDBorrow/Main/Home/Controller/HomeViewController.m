@@ -42,6 +42,13 @@ static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tabBarController.tabBar.hidden=NO;
+}
+
 - (instancetype)init {
     return [self initWithStyle:UITableViewStyleGrouped];
 }
@@ -49,7 +56,8 @@ static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
 - (instancetype)initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithStyle:style]) {
         if (style == UITableViewStyleGrouped) {
-            self.tableViewInitialContentInset = UIEdgeInsetsMake(NavigationContentTop - 35, 0, 0, 0);
+//            self.tableViewInitialContentInset = UIEdgeInsetsMake(NavigationContentTop - 35, 0, 0, 0);
+            self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44);
         }
     }
     return self;
@@ -176,7 +184,10 @@ static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
 //}
 
 - (void)confirmUI {
+    self.title = @"首页";
     //初始化tableView
+    self.tableView.tableHeaderView = nil;
+    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0); 
     [self.tableView registerClass:[QDBannerTableViewCell class] forCellReuseIdentifier:kReusableIdentifierBannerCell];
     
 //    self.registButton = [[QMUIButton alloc] init];
@@ -217,7 +228,7 @@ static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.homeModel) {
-        if (self == 0) {
+        if (section == 0) {
             if (self.homeModel.bannerArray && self.homeModel.bannerArray.count) {
                 return 1;
             }
@@ -236,7 +247,7 @@ static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         QDBannerTableViewCell *bannerCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierBannerCell];
-//        bannerCell.bannerList = self.
+        bannerCell.bannerList = self.homeModel.bannerArray;
         bannerCell.delegate = self;
         return bannerCell;
     }
@@ -250,9 +261,10 @@ static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
     return  cell;
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 180;
+        return 180 * SCREEN_WIDTH / 375;
     } else {
         return 106;
     }
@@ -314,7 +326,10 @@ static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
     webViewController.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.100f green:0.100f blue:0.100f alpha:0.800f];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.996f green:0.867f blue:0.522f alpha:1.00f];
+    self.tabBarController.tabBar.hidden = YES;
+    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
     
 }
 
