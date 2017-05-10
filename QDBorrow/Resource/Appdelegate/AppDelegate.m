@@ -14,8 +14,8 @@
 #import "HomeViewController.h"
 #import "QDNavigationController.h"
 #import <AVOSCloud/AVOSCloud.h>
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
+//#import <Fabric/Fabric.h>
+//#import <Crashlytics/Crashlytics.h>
 #import "QDCompanyViewController.h"
 
 #define APP_ID @"QGSs41nGgfDofETOfRgAKdSj-gzGzoHsz"
@@ -134,10 +134,10 @@
     }];
 }
 
-- (void)initFabric {
-    //Fabric设置
-    [Fabric with:@[[Crashlytics class]]];
-}
+//- (void)initFabric {
+//    //Fabric设置
+//    [Fabric with:@[[Crashlytics class]]];
+//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
