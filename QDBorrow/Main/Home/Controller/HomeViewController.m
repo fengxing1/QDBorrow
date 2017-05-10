@@ -268,7 +268,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     if (indexPath.section == 0) {
         return 180 * SCREEN_WIDTH / 375;
     } else {
-        return 106;
+        return 76;
     }
 }
 
