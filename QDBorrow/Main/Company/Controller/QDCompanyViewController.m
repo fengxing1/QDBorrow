@@ -9,7 +9,7 @@
 #import "QDCompanyViewController.h"
 #import "BorrowDetailModel.h"
 #import "AVQuery.h"
-#import "QBBusinessTableViewCell.h"
+#import "QDCompanyTableViewCell.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
@@ -23,19 +23,19 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self confirmUI];
+    [self configUI];
     [self configData];
 }
 
 - (instancetype)init {
-    return [self initWithStyle:UITableViewStylePlain];
+    return [self initWithStyle:UITableViewStyleGrouped];
 }
 
 
-- (void)confirmUI {
+- (void)configUI {
     self.title = @"找借贷";
-    self.tableView.tableHeaderView = nil;
-    [self.tableView registerNib:[UINib nibWithNibName:@"QBBusinessTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
+    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+    [self.tableView registerNib:[UINib nibWithNibName:@"QDCompanyTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
 }
 
 - (void)configData {
@@ -55,30 +55,32 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 #pragma mark tableview datasoure and delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.borrowArray) {
         return  self.borrowArray.count;
     }
     return 0;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QBBusinessTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCompanyCell];
-    if (self.borrowArray.count >= indexPath.row) {
-        companyCell.borrowModel = self.borrowArray[indexPath.row];
-    }
+    QDCompanyTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCompanyCell];
+    companyCell.borrowDtail = self.borrowArray[indexPath.row];
     return companyCell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return 180 * SCREEN_WIDTH / 375;
+    return 110;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return 0.01;
     } else {
-        return 106;
+        return 10;
     }
 }
 

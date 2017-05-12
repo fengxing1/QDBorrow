@@ -7,6 +7,15 @@
 //
 
 #import "QDRepaymentInfoTableViewCell.h"
+@interface QDRepaymentInfoTableViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *repayCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *repayMonthNamelabel;
+@property (weak, nonatomic) IBOutlet UILabel *rateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rateNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeNameLabel;
+
+@end
 
 @implementation QDRepaymentInfoTableViewCell
 
