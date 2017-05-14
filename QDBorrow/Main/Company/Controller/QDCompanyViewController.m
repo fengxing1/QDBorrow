@@ -10,6 +10,7 @@
 #import "BorrowDetailModel.h"
 #import "AVQuery.h"
 #import "QDCompanyTableViewCell.h"
+#import "QDCompanyDetailController.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
@@ -67,6 +68,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     QDCompanyTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCompanyCell];
+    companyCell.selectionStyle = UITableViewCellSelectionStyleNone;
     companyCell.borrowDtail = self.borrowArray[indexPath.row];
     return companyCell;
 }
@@ -86,6 +88,10 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    BorrowDetailModel *borrowModel = self.borrowArray[indexPath.section];
+    QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
+    companyDetailViewController.borrowModel = borrowModel;
+    [self.navigationController pushViewController:companyDetailViewController animated:YES];
     
 }
 

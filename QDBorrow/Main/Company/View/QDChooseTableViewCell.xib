@@ -55,6 +55,11 @@
                     <constraint firstItem="g98-XS-Mb1" firstAttribute="leading" secondItem="tWf-Lk-uZO" secondAttribute="trailing" constant="5" id="zGp-gD-aSb"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="chooseDetailLabel" destination="g98-XS-Mb1" id="aJw-bN-1uT"/>
+                <outlet property="chooseIconImageView" destination="P9Q-Xg-vLA" id="XsH-gg-Fh6"/>
+                <outlet property="chooseTitleLabel" destination="tWf-Lk-uZO" id="9FK-tg-pQr"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

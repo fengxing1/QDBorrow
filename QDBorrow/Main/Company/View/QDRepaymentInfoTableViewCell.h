@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QDInstallmentModel.h"
 
 @interface QDRepaymentInfoTableViewCell : UITableViewCell
+@property (nonatomic, strong) QDInstallmentModel *installmentModel;
 
 @end

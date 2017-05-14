@@ -24,5 +24,8 @@
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, assign) NSInteger bshowAtHome;
 
+//添加月利率
+@property (nonatomic, assign) CGFloat monthyRate;
+
 - (instancetype)initWithAVObject:(AVObject *)detail;
 @end

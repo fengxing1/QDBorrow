@@ -18,6 +18,7 @@
 #import "QDBannerTableViewCell.h"
 #import "QDWebViewController.h"
 #import "QBBusinessTableViewCell.h"
+#import "QDCompanyDetailController.h"
 
 static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
@@ -250,11 +251,13 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         QDBannerTableViewCell *bannerCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierBannerCell];
+        bannerCell.selectionStyle = UITableViewCellSelectionStyleNone;
         bannerCell.bannerList = self.homeModel.bannerArray;
         bannerCell.delegate = self;
         return bannerCell;
     } else {
         QBBusinessTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCompanyCell];
+        companyCell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (self.homeModel.borrowDetailArray.count >= indexPath.row) {
             companyCell.borrowModel = self.homeModel.borrowDetailArray[indexPath.row];
         }
@@ -289,6 +292,12 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        BorrowDetailModel *borrowModel = self.homeModel.borrowDetailArray[indexPath.section];
+        QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
+        companyDetailViewController.borrowModel = borrowModel;
+        [self.navigationController pushViewController:companyDetailViewController animated:YES];
+    }
     
 }
 

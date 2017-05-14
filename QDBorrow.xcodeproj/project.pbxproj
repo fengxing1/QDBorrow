@@ -117,6 +117,19 @@
 		09B4BC3D1EC3454B0056B472 /* QBBusinessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B4BC3B1EC3454B0056B472 /* QBBusinessTableViewCell.xib */; };
 		09B4BC461EC34DC00056B472 /* QDCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B4BC451EC34DC00056B472 /* QDCompanyViewController.m */; };
 		09B4BC4D1EC351CC0056B472 /* QDCertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B4BC4C1EC351CC0056B472 /* QDCertViewController.m */; };
+		223285631EC7E9BC004AF053 /* QDMultiLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 223285621EC7E9BC004AF053 /* QDMultiLabelCell.m */; };
+		223285661EC7F62E004AF053 /* QDCompanyDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223285651EC7F62E004AF053 /* QDCompanyDetailController.m */; };
+		226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */; };
+		226CB2121EC71C8900C15625 /* LZAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1FE1EC71C8800C15625 /* LZAddressPickerView.m */; };
+		226CB2131EC71C8900C15625 /* LZAreaPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB2001EC71C8800C15625 /* LZAreaPickerView.m */; };
+		226CB2141EC71C8900C15625 /* LZDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB2021EC71C8800C15625 /* LZDatePicker.m */; };
+		226CB2151EC71C8900C15625 /* LZMultiPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB2041EC71C8800C15625 /* LZMultiPickerView.m */; };
+		226CB2161EC71C8900C15625 /* LZSiglePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB2061EC71C8800C15625 /* LZSiglePickerView.m */; };
+		226CB2171EC71C8900C15625 /* LZCenterAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB2091EC71C8800C15625 /* LZCenterAddressPickerView.m */; };
+		226CB2181EC71C8900C15625 /* LZPickViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB20C1EC71C8800C15625 /* LZPickViewManager.m */; };
+		226CB2191EC71C8900C15625 /* LZToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB20E1EC71C8800C15625 /* LZToolbar.m */; };
+		226CB21A1EC71C8900C15625 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 226CB2101EC71C8800C15625 /* city.json */; };
+		226CB21B1EC71C8900C15625 /* Province.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226CB2111EC71C8800C15625 /* Province.plist */; };
 		229BAA771EC367EB00021EEA /* QDCompanyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BAA751EC367EB00021EEA /* QDCompanyTableViewCell.m */; };
 		229BAA781EC367EB00021EEA /* QDCompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229BAA761EC367EB00021EEA /* QDCompanyTableViewCell.xib */; };
 		229BAA7C1EC36D5B00021EEA /* QDChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BAA7A1EC36D5B00021EEA /* QDChooseTableViewCell.m */; };
@@ -366,6 +379,31 @@
 		09B4BC4B1EC351CC0056B472 /* QDCertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCertViewController.h; sourceTree = "<group>"; };
 		09B4BC4C1EC351CC0056B472 /* QDCertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCertViewController.m; sourceTree = "<group>"; };
 		12ED9BC4328DE84BBDD978AC /* libPods-QDBorrow-QDBorrowTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QDBorrow-QDBorrowTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		223285611EC7E9BC004AF053 /* QDMultiLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMultiLabelCell.h; sourceTree = "<group>"; };
+		223285621EC7E9BC004AF053 /* QDMultiLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMultiLabelCell.m; sourceTree = "<group>"; };
+		223285641EC7F62E004AF053 /* QDCompanyDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCompanyDetailController.h; sourceTree = "<group>"; };
+		223285651EC7F62E004AF053 /* QDCompanyDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCompanyDetailController.m; sourceTree = "<group>"; };
+		226CB1F71EC6F3EB00C15625 /* QDInstallmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDInstallmentModel.h; sourceTree = "<group>"; };
+		226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDInstallmentModel.m; sourceTree = "<group>"; };
+		226CB1FD1EC71C8800C15625 /* LZAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAddressPickerView.h; sourceTree = "<group>"; };
+		226CB1FE1EC71C8800C15625 /* LZAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAddressPickerView.m; sourceTree = "<group>"; };
+		226CB1FF1EC71C8800C15625 /* LZAreaPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAreaPickerView.h; sourceTree = "<group>"; };
+		226CB2001EC71C8800C15625 /* LZAreaPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAreaPickerView.m; sourceTree = "<group>"; };
+		226CB2011EC71C8800C15625 /* LZDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZDatePicker.h; sourceTree = "<group>"; };
+		226CB2021EC71C8800C15625 /* LZDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZDatePicker.m; sourceTree = "<group>"; };
+		226CB2031EC71C8800C15625 /* LZMultiPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZMultiPickerView.h; sourceTree = "<group>"; };
+		226CB2041EC71C8800C15625 /* LZMultiPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZMultiPickerView.m; sourceTree = "<group>"; };
+		226CB2051EC71C8800C15625 /* LZSiglePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZSiglePickerView.h; sourceTree = "<group>"; };
+		226CB2061EC71C8800C15625 /* LZSiglePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZSiglePickerView.m; sourceTree = "<group>"; };
+		226CB2081EC71C8800C15625 /* LZCenterAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCenterAddressPickerView.h; sourceTree = "<group>"; };
+		226CB2091EC71C8800C15625 /* LZCenterAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCenterAddressPickerView.m; sourceTree = "<group>"; };
+		226CB20A1EC71C8800C15625 /* LZPickerViewDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPickerViewDefine.h; sourceTree = "<group>"; };
+		226CB20B1EC71C8800C15625 /* LZPickViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPickViewManager.h; sourceTree = "<group>"; };
+		226CB20C1EC71C8800C15625 /* LZPickViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPickViewManager.m; sourceTree = "<group>"; };
+		226CB20D1EC71C8800C15625 /* LZToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZToolbar.h; sourceTree = "<group>"; };
+		226CB20E1EC71C8800C15625 /* LZToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZToolbar.m; sourceTree = "<group>"; };
+		226CB2101EC71C8800C15625 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
+		226CB2111EC71C8800C15625 /* Province.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Province.plist; sourceTree = "<group>"; };
 		229BAA741EC367EB00021EEA /* QDCompanyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCompanyTableViewCell.h; sourceTree = "<group>"; };
 		229BAA751EC367EB00021EEA /* QDCompanyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCompanyTableViewCell.m; sourceTree = "<group>"; };
 		229BAA761EC367EB00021EEA /* QDCompanyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDCompanyTableViewCell.xib; sourceTree = "<group>"; };
@@ -476,6 +514,7 @@
 		0970F3CE1EC29FC100FC4794 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				226CB1FA1EC71C1E00C15625 /* Controls(自定义控件) */,
 				0970F3CF1EC29FC100FC4794 /* Category */,
 				0970F48A1EC29FC200FC4794 /* LaunchScreen.xib */,
 				0970F48B1EC29FC200FC4794 /* Macros */,
@@ -1014,6 +1053,7 @@
 		09B4BC3F1EC34D490056B472 /* Company */ = {
 			isa = PBXGroup;
 			children = (
+				226CB1F61EC6F32200C15625 /* Model */,
 				229BAA731EC3673200021EEA /* View */,
 				09B4BC431EC34DA20056B472 /* Controller */,
 			);
@@ -1025,6 +1065,8 @@
 			children = (
 				09B4BC441EC34DC00056B472 /* QDCompanyViewController.h */,
 				09B4BC451EC34DC00056B472 /* QDCompanyViewController.m */,
+				223285641EC7F62E004AF053 /* QDCompanyDetailController.h */,
+				223285651EC7F62E004AF053 /* QDCompanyDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1062,6 +1104,74 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		226CB1F61EC6F32200C15625 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				226CB1F71EC6F3EB00C15625 /* QDInstallmentModel.h */,
+				226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		226CB1FA1EC71C1E00C15625 /* Controls(自定义控件) */ = {
+			isa = PBXGroup;
+			children = (
+				226CB1FB1EC71C8800C15625 /* LZPickerView */,
+			);
+			name = "Controls(自定义控件)";
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		226CB1FB1EC71C8800C15625 /* LZPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				226CB1FC1EC71C8800C15625 /* BottomPicker */,
+				226CB2071EC71C8800C15625 /* CenterPickerView */,
+				226CB20A1EC71C8800C15625 /* LZPickerViewDefine.h */,
+				226CB20B1EC71C8800C15625 /* LZPickViewManager.h */,
+				226CB20C1EC71C8800C15625 /* LZPickViewManager.m */,
+				226CB20D1EC71C8800C15625 /* LZToolbar.h */,
+				226CB20E1EC71C8800C15625 /* LZToolbar.m */,
+				226CB20F1EC71C8800C15625 /* Resources */,
+			);
+			path = LZPickerView;
+			sourceTree = "<group>";
+		};
+		226CB1FC1EC71C8800C15625 /* BottomPicker */ = {
+			isa = PBXGroup;
+			children = (
+				226CB1FD1EC71C8800C15625 /* LZAddressPickerView.h */,
+				226CB1FE1EC71C8800C15625 /* LZAddressPickerView.m */,
+				226CB1FF1EC71C8800C15625 /* LZAreaPickerView.h */,
+				226CB2001EC71C8800C15625 /* LZAreaPickerView.m */,
+				226CB2011EC71C8800C15625 /* LZDatePicker.h */,
+				226CB2021EC71C8800C15625 /* LZDatePicker.m */,
+				226CB2031EC71C8800C15625 /* LZMultiPickerView.h */,
+				226CB2041EC71C8800C15625 /* LZMultiPickerView.m */,
+				226CB2051EC71C8800C15625 /* LZSiglePickerView.h */,
+				226CB2061EC71C8800C15625 /* LZSiglePickerView.m */,
+			);
+			path = BottomPicker;
+			sourceTree = "<group>";
+		};
+		226CB2071EC71C8800C15625 /* CenterPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				226CB2081EC71C8800C15625 /* LZCenterAddressPickerView.h */,
+				226CB2091EC71C8800C15625 /* LZCenterAddressPickerView.m */,
+			);
+			path = CenterPickerView;
+			sourceTree = "<group>";
+		};
+		226CB20F1EC71C8800C15625 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				226CB2101EC71C8800C15625 /* city.json */,
+				226CB2111EC71C8800C15625 /* Province.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		229BAA731EC3673200021EEA /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1074,6 +1184,8 @@
 				229BAA7E1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.h */,
 				229BAA7F1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m */,
 				229BAA801EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib */,
+				223285611EC7E9BC004AF053 /* QDMultiLabelCell.h */,
+				223285621EC7E9BC004AF053 /* QDMultiLabelCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1216,8 +1328,10 @@
 				229BAA7D1EC36D5B00021EEA /* QDChooseTableViewCell.xib in Resources */,
 				229BAA781EC367EB00021EEA /* QDCompanyTableViewCell.xib in Resources */,
 				229BAA821EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib in Resources */,
+				226CB21A1EC71C8900C15625 /* city.json in Resources */,
 				0970F4D21EC29FC200FC4794 /* NSDateTimeAgo.bundle in Resources */,
 				0970F3A81EC29F2900FC4794 /* Assets.xcassets in Resources */,
+				226CB21B1EC71C8900C15625 /* Province.plist in Resources */,
 				0970F3A61EC29F2900FC4794 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1345,11 +1459,13 @@
 				0970F50B1EC29FC200FC4794 /* NSURLConnection+SelfSigned.m in Sources */,
 				0970F4E11EC29FC200FC4794 /* NSNotificationCenter+MainThread.m in Sources */,
 				0970F5001EC29FC200FC4794 /* NSString+Ruby.m in Sources */,
+				226CB2131EC71C8900C15625 /* LZAreaPickerView.m in Sources */,
 				0970F4C11EC29FC200FC4794 /* NSArray+Block.m in Sources */,
 				0970F5231EC29FC200FC4794 /* AppDelegate.m in Sources */,
 				0970F50F1EC29FC200FC4794 /* NSUserDefaults+SafeAccess.m in Sources */,
 				0970F4C31EC29FC200FC4794 /* NSBundle+AppIcon.m in Sources */,
 				0970F4CE1EC29FC200FC4794 /* NSDate+InternetDateTime.m in Sources */,
+				226CB2191EC71C8900C15625 /* LZToolbar.m in Sources */,
 				09B4BC3C1EC3454B0056B472 /* QBBusinessTableViewCell.m in Sources */,
 				0970F50A1EC29FC200FC4794 /* NSURL+QueryDictionary.m in Sources */,
 				0970F50C1EC29FC200FC4794 /* NSMutableURLRequest+Upload.m in Sources */,
@@ -1395,13 +1511,16 @@
 				0970F4EC1EC29FC200FC4794 /* NSObject+EasyCopy.m in Sources */,
 				0970F4F91EC29FC200FC4794 /* NSString+Encrypt.m in Sources */,
 				0970F5111EC29FC200FC4794 /* UIWindow+Hierarchy.m in Sources */,
+				226CB2171EC71C8900C15625 /* LZCenterAddressPickerView.m in Sources */,
 				0970F5011EC29FC200FC4794 /* NSString+Score.m in Sources */,
 				0970F4CF1EC29FC200FC4794 /* NSDate+Reporting.m in Sources */,
 				0970F50D1EC29FC200FC4794 /* NSURLRequest+ParamsFromDictionary.m in Sources */,
 				0970F4F21EC29FC200FC4794 /* NSRunLoop+PerformBlock.m in Sources */,
 				0970F51C1EC29FC200FC4794 /* HomeViewController.m in Sources */,
+				226CB2161EC71C8900C15625 /* LZSiglePickerView.m in Sources */,
 				0970F5061EC29FC200FC4794 /* NSString+XML.m in Sources */,
 				0970F4CA1EC29FC200FC4794 /* NSData+zlib.m in Sources */,
+				223285631EC7E9BC004AF053 /* QDMultiLabelCell.m in Sources */,
 				0970F4D71EC29FC200FC4794 /* NSDictionary+SafeAccess.m in Sources */,
 				0970F39D1EC29F2900FC4794 /* main.m in Sources */,
 				0970F4F81EC29FC200FC4794 /* NSString+Emoji.m in Sources */,
@@ -1411,6 +1530,8 @@
 				0970F4EA1EC29FC200FC4794 /* NSObject+AutoCoding.m in Sources */,
 				0970F4EE1EC29FC200FC4794 /* NSObject+KVOBlocks.m in Sources */,
 				0970F4FE1EC29FC200FC4794 /* NSString+RegexCategory.m in Sources */,
+				226CB2151EC71C8900C15625 /* LZMultiPickerView.m in Sources */,
+				223285661EC7F62E004AF053 /* QDCompanyDetailController.m in Sources */,
 				0970F4E91EC29FC200FC4794 /* NSObject+AssociatedObject.m in Sources */,
 				0970F5101EC29FC200FC4794 /* UIAlertView+Block.m in Sources */,
 				0970F4CB1EC29FC200FC4794 /* NSDate+CupertinoYankee.m in Sources */,
@@ -1423,6 +1544,7 @@
 				229BAA7C1EC36D5B00021EEA /* QDChooseTableViewCell.m in Sources */,
 				0970F51A1EC29FC200FC4794 /* QDUIHelper.m in Sources */,
 				0970F4E41EC29FC200FC4794 /* NSNumber+CGFloat.m in Sources */,
+				226CB2121EC71C8900C15625 /* LZAddressPickerView.m in Sources */,
 				229BAA771EC367EB00021EEA /* QDCompanyTableViewCell.m in Sources */,
 				0970F4D61EC29FC200FC4794 /* NSDictionary+Merge.m in Sources */,
 				0970F5221EC29FC200FC4794 /* QDWebViewController.m in Sources */,
@@ -1430,9 +1552,12 @@
 				0970F4DD1EC29FC200FC4794 /* NSHTTPCookieStorage+FreezeDry.m in Sources */,
 				0970F51B1EC29FC200FC4794 /* QMUIConfigurationTemplate.m in Sources */,
 				0970F4F41EC29FC200FC4794 /* NSMutableString+Ruby.m in Sources */,
+				226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */,
+				226CB2141EC71C8900C15625 /* LZDatePicker.m in Sources */,
 				0970F5171EC29FC200FC4794 /* QDCommonViewController.m in Sources */,
 				0970F4C41EC29FC200FC4794 /* NSData+APNSToken.m in Sources */,
 				0970F5051EC29FC200FC4794 /* NSString+UUID.m in Sources */,
+				226CB2181EC71C8900C15625 /* LZPickViewManager.m in Sources */,
 				0970F4D31EC29FC200FC4794 /* NSDateFormatter+Make.m in Sources */,
 				0970F4C61EC29FC200FC4794 /* NSData+Encrypt.m in Sources */,
 				0970F50E1EC29FC200FC4794 /* NSUserDefaults+iCloudSync.m in Sources */,
