@@ -332,6 +332,9 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (void)cellOfBannerClick:(QDHomeBannerModel *)banner {
     //轮播图片点击事件
     NSString *redirectUrl = banner.value;
+    if (!([redirectUrl containsString:@"http"] || [redirectUrl containsString:@"https"])) {
+        redirectUrl = [@"http://" stringByAppendingString:redirectUrl];
+    }
     QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
     webViewController.showsToolBar = NO;
     webViewController.navigationController.navigationBar.translucent = NO;

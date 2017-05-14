@@ -211,7 +211,7 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
 - (void)bottomBtnClick {
     NSString *redirectUrl = self.borrowModel.redirectUrl;
     if (!([redirectUrl containsString:@"http"] || [redirectUrl containsString:@"https"])) {
-        redirectUrl = [@"http" stringByAppendingString:redirectUrl];
+        redirectUrl = [@"http://" stringByAppendingString:redirectUrl];
     }
     QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
     [self.navigationController pushViewController:webViewController animated:YES];
