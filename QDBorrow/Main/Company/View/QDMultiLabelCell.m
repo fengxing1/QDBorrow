@@ -31,7 +31,7 @@
 - (UILabel *)createLabel:(NSString *)desc {
     UILabel *label = [[UILabel alloc] init];
     label.textColor = TableViewCellDetailLabelColor;
-    label.font = [UIFont systemFontOfSize:10];
+    label.font = [UIFont systemFontOfSize:12];
     label.text = desc;
     label.frame = CGRectMake(15, 10,SCREEN_WIDTH - 30 , 12);
     return label;
