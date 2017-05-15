@@ -2,8 +2,8 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 
 target 'QDBorrow' do
-#    pod 'Fabric'
-#   pod 'Crashlytics'
+    pod 'Fabric'
+   pod 'Crashlytics'
     pod 'SDWebImage', '~> 3.7.5'
     pod 'YYModel'
     pod 'Masonry','~>0.6.1'

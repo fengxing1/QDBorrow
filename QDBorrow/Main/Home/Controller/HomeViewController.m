@@ -102,7 +102,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
                 if (!buttonIndex) {
                     [self configData];
                 }
-            } title:@"提示" message:@"网络出错" cancelButtonName:@"刷新" otherButtonTitles:@"取消", nil];
+            } title:@"提示" message:@"网络出错，请确认网络" cancelButtonName:@"重新刷新" otherButtonTitles:@"取消", nil];
             
         }
     }];
@@ -110,6 +110,18 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 }
 
 //- (void)confirmData {
+//    for (int i = 0; i <= 10; i ++) {
+//        AVObject *borrow = [AVObject objectWithClassName:@"QDCerdit"];
+//        [borrow setObject:[NSNumber numberWithInteger:i+1] forKey:@"cerditId"];
+//        [borrow setObject:[NSString stringWithFormat:@"https://imgsa.baidu.com/baike/w%3D268/sign=a588ca9d06f41bd5da53eff269db81a0/024f78f0f736afc3a1a712d3bb19ebc4b64512d8.jpg"] forKey:@"cerditIcon"];
+//        [borrow setObject:@"招商银行1" forKey:@"cerditName"];
+//        [borrow setObject:@"购物加油5%，成功办卡享100元刷卡金" forKey:@"cerditDesc"];
+//        [borrow setObject:@"http://www.baidu.com" forKey:@"redirectUrl"];
+//        [borrow saveInBackground];
+//
+//    }
+//    
+//}
 //    //创建数据
 //    NSMutableArray *bannerArray = [[NSMutableArray alloc] init];
 //    QDHomeBannerModel *bannerModel = [[QDHomeBannerModel alloc] init];

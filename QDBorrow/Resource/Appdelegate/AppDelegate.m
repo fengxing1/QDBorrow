@@ -14,9 +14,10 @@
 #import "HomeViewController.h"
 #import "QDNavigationController.h"
 #import <AVOSCloud/AVOSCloud.h>
-//#import <Fabric/Fabric.h>
-//#import <Crashlytics/Crashlytics.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 #import "QDCompanyViewController.h"
+#import "QDCertViewController.h"
 
 #define APP_ID @"QGSs41nGgfDofETOfRgAKdSj-gzGzoHsz"
 #define APP_KEY @"fmavP4Ny83CAmboSlDCWpQl3"
@@ -76,9 +77,9 @@
     loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:1];
     
     // 信用卡
-    HomeViewController *certViewController = [[HomeViewController alloc] init];
-    certViewController.hidesBottomBarWhenPushed = NO;
-    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:certViewController];
+    QDCertViewController *cerditController = [[QDCertViewController alloc] init];
+    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:cerditController];
+    cerditController.hidesBottomBarWhenPushed = NO;
     certNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"信用卡" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
     
     //我的
@@ -134,10 +135,10 @@
     }];
 }
 
-//- (void)initFabric {
-//    //Fabric设置
-//    [Fabric with:@[[Crashlytics class]]];
-//}
+- (void)initFabric {
+    //Fabric设置
+    [Fabric with:@[[Crashlytics class]]];
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

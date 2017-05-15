@@ -117,6 +117,7 @@
 		09B4BC3D1EC3454B0056B472 /* QBBusinessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B4BC3B1EC3454B0056B472 /* QBBusinessTableViewCell.xib */; };
 		09B4BC461EC34DC00056B472 /* QDCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B4BC451EC34DC00056B472 /* QDCompanyViewController.m */; };
 		09B4BC4D1EC351CC0056B472 /* QDCertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B4BC4C1EC351CC0056B472 /* QDCertViewController.m */; };
+		2210D9FC1EC9E3F500366846 /* QDCerditModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210D9FB1EC9E3F500366846 /* QDCerditModel.m */; };
 		223285631EC7E9BC004AF053 /* QDMultiLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 223285621EC7E9BC004AF053 /* QDMultiLabelCell.m */; };
 		223285661EC7F62E004AF053 /* QDCompanyDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223285651EC7F62E004AF053 /* QDCompanyDetailController.m */; };
 		226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */; };
@@ -379,6 +380,8 @@
 		09B4BC4B1EC351CC0056B472 /* QDCertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCertViewController.h; sourceTree = "<group>"; };
 		09B4BC4C1EC351CC0056B472 /* QDCertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCertViewController.m; sourceTree = "<group>"; };
 		12ED9BC4328DE84BBDD978AC /* libPods-QDBorrow-QDBorrowTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QDBorrow-QDBorrowTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2210D9FA1EC9E3F500366846 /* QDCerditModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QDCerditModel.h; path = QDBorrow/Main/Company/Controller/QDCerditModel.h; sourceTree = SOURCE_ROOT; };
+		2210D9FB1EC9E3F500366846 /* QDCerditModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QDCerditModel.m; path = QDBorrow/Main/Company/Controller/QDCerditModel.m; sourceTree = SOURCE_ROOT; };
 		223285611EC7E9BC004AF053 /* QDMultiLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMultiLabelCell.h; sourceTree = "<group>"; };
 		223285621EC7E9BC004AF053 /* QDMultiLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMultiLabelCell.m; sourceTree = "<group>"; };
 		223285641EC7F62E004AF053 /* QDCompanyDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCompanyDetailController.h; sourceTree = "<group>"; };
@@ -929,6 +932,7 @@
 		0970F4A21EC29FC200FC4794 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2210D9FE1EC9F82300366846 /* My */,
 				09B4BC471EC351680056B472 /* Cert */,
 				09B4BC3F1EC34D490056B472 /* Company */,
 				0970F4A31EC29FC200FC4794 /* Home */,
@@ -1100,8 +1104,33 @@
 		09B4BC4A1EC351A40056B472 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2210D9FA1EC9E3F500366846 /* QDCerditModel.h */,
+				2210D9FB1EC9E3F500366846 /* QDCerditModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2210D9FE1EC9F82300366846 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				2210DA001EC9F84D00366846 /* View */,
+				2210D9FF1EC9F83A00366846 /* Controller */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		2210D9FF1EC9F83A00366846 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2210DA001EC9F84D00366846 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		226CB1F61EC6F32200C15625 /* Model */ = {
@@ -1502,6 +1531,7 @@
 				0970F5151EC29FC200FC4794 /* QDCommonTableViewController.m in Sources */,
 				0970F4C81EC29FC200FC4794 /* NSData+Hash.m in Sources */,
 				0970F4ED1EC29FC200FC4794 /* NSObject+GCD.m in Sources */,
+				2210D9FC1EC9E3F500366846 /* QDCerditModel.m in Sources */,
 				0970F4E61EC29FC200FC4794 /* NSNumber+Round.m in Sources */,
 				0970F51E1EC29FC200FC4794 /* QDHomeBannerModel.m in Sources */,
 				0970F5161EC29FC200FC4794 /* QDCommonUI.m in Sources */,
