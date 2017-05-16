@@ -102,7 +102,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
                 if (!buttonIndex) {
                     [self configData];
                 }
-            } title:@"提示" message:@"网络出错，请确认网络" cancelButtonName:@"重新刷新" otherButtonTitles:@"取消", nil];
+            } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"重新刷新" otherButtonTitles:@"取消", nil];
             
         }
     }];

@@ -14,6 +14,7 @@
 #import "UIImageView+WebCache.h"
 #import "QDWebViewController.h"
 #import "QDCommonUI.h"
+#import "QDCerditCell.h"
 
 static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
 
@@ -37,6 +38,8 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
 }
 
 
+
+
 - (void)configData {
     self.cerditList = [[NSMutableArray alloc] init];
     AVQuery *query = [AVQuery queryWithClassName:@"QDCerdit"];
@@ -52,7 +55,7 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
                 if (!buttonIndex) {
                     [self configData];
                 }
-            } title:@"提示" message:@"网络出错" cancelButtonName:@"刷新" otherButtonTitles:@"取消", nil];
+            } title:@"提示" message:@"好像没有网络，刷新一下" cancelButtonName:@"刷新" otherButtonTitles:@"取消", nil];
             
             
         }
@@ -63,44 +66,18 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
 - (void)configUI {
     self.title = @"信用卡";
 //    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
-//    [self.tableView registerClass:[QMUITableViewCell class] forCellReuseIdentifier:kReusableIdentifierCerditCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"QDCerditCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCerditCell];
 }
 
 
 #pragma mark - <QMUITableViewDataSource,QMUITableViewDelegate>
 
-
-- (UITableViewCell *)qmui_tableView:(UITableView *)tableView cellWithIdentifier:(NSString *)identifier {
-    QMUITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[QMUITableViewCell alloc] initForTableView:self.tableView withStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    return cell;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QMUITableViewCell *cell = [self qmui_tableView:tableView cellWithIdentifier:@"cell"];
-    
-    // reset
-    cell.imageEdgeInsets = UIEdgeInsetsZero;
-    cell.textLabelEdgeInsets = UIEdgeInsetsZero;
-    cell.detailTextLabelEdgeInsets = UIEdgeInsetsZero;
-    cell.accessoryEdgeInsets = UIEdgeInsetsZero;
-    cell.imageView.contentMode = UIViewContentModeScaleToFill;
-    cell.imageView.image = [UIImage qmui_imageWithShape:QMUIImageShapeOval size:CGSizeMake(40, 40) lineWidth:2 tintColor:[QDCommonUI randomThemeColor] ];
+    QDCerditCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCerditCell];
     QDCerditModel *cerditModel = self.cerditList[indexPath.row];
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:cerditModel.cerditIcon] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        cell.imageView.frame = CGRectMake(15,20, 40, 40);
-    }];
-    cell.textLabel.text = cerditModel.cerditName;
-    cell.textLabel.font = [UIFont systemFontOfSize:14];
-    cell.detailTextLabel.text = cerditModel.cerditDesc;
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
-    cell.preservesSuperviewLayoutMargins = NO;
-    cell.separatorInset = UIEdgeInsetsZero;
-    cell.layoutMargins = UIEdgeInsetsZero;
-    [cell updateCellAppearanceWithIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.cerditModel = cerditModel;
     return cell;
 }
 
@@ -110,18 +87,6 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
     }
     return 0;
 }
-
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    QMUITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCerditCell];
-//    
-//    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:cerditModel.cerditIcon] placeholderImage:nil];
-//    cell.textLabel.text = cerditModel.cerditName;
-//    cell.detailTextLabel.text = cerditModel.cerditDesc;
-//    cell.selectionStyle = UITableViewCellAccessoryNone;
-//    return cell;
-//    
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80;
