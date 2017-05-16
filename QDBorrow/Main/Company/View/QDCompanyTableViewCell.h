@@ -11,5 +11,6 @@
 
 @interface QDCompanyTableViewCell : UITableViewCell
 @property (nonatomic, strong) BorrowDetailModel *borrowDtail;
+@property (nonatomic, assign) Boolean bShowInDetail;
 
 @end

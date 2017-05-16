@@ -67,6 +67,7 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
     self.title = @"信用卡";
 //    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     [self.tableView registerNib:[UINib nibWithNibName:@"QDCerditCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCerditCell];
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 

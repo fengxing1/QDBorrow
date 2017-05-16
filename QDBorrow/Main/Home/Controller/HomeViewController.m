@@ -202,7 +202,8 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     self.title = @"首页";
     //初始化tableView
     self.tableView.tableHeaderView = nil;
-    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0); 
+    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.tableView registerClass:[QDBannerTableViewCell class] forCellReuseIdentifier:kReusableIdentifierBannerCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"QBBusinessTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
     

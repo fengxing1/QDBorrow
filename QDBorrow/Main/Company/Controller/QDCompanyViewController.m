@@ -36,6 +36,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (void)configUI {
     self.title = @"找借贷";
     self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.tableView registerNib:[UINib nibWithNibName:@"QDCompanyTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
 }
 

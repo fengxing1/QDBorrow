@@ -33,6 +33,8 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 
 - (void)configUI {
     self.title = @"个人中心";
+    
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 
