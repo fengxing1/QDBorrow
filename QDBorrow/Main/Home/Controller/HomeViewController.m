@@ -102,7 +102,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
                 if (!buttonIndex) {
                     [self configData];
                 }
-            } title:@"提示" message:@"网络出错，请确认网络" cancelButtonName:@"重新刷新" otherButtonTitles:@"取消", nil];
+            } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"重新刷新" otherButtonTitles:@"取消", nil];
             
         }
     }];
@@ -202,7 +202,8 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     self.title = @"首页";
     //初始化tableView
     self.tableView.tableHeaderView = nil;
-    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0); 
+    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.tableView registerClass:[QDBannerTableViewCell class] forCellReuseIdentifier:kReusableIdentifierBannerCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"QBBusinessTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
     

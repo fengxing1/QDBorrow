@@ -52,6 +52,7 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
 - (void)configUI {
     self.title = @"找借贷";
     self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.tableView registerNib:[UINib nibWithNibName:@"QDCompanyTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"QDChooseTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierChooseCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"QDRepaymentInfoTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierRepaymentCell];
@@ -114,6 +115,7 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
             QDCompanyTableViewCell *companyCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCompanyCell];
             companyCell.borrowDtail = self.borrowModel;
             companyCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            companyCell.bShowInDetail = YES;
             return companyCell;
         }
         else if (indexPath.row == 1) {
