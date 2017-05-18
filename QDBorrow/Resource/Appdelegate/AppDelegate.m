@@ -37,6 +37,7 @@
 #else 
     
 #endif
+    [self initFabric];
     
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     
