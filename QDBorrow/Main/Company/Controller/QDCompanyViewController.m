@@ -11,6 +11,7 @@
 #import "AVQuery.h"
 #import "QDCompanyTableViewCell.h"
 #import "QDCompanyDetailController.h"
+#import "MBProgressHUD+MP.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
@@ -43,8 +44,10 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (void)configData {
     if (!self.borrowArray) {
         self.borrowArray = [[NSMutableArray alloc] init];
+         [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
         AVQuery *queryBorrow = [AVQuery queryWithClassName:@"QDBorrow"];
         [queryBorrow findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            [MBProgressHUD hideHUDForView:self.view];
             for (AVObject *avBorrow in objects) {
                 BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithAVObject:avBorrow];
                 [self.borrowArray addObject:detail];

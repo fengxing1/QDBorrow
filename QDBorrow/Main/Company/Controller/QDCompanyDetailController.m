@@ -66,6 +66,10 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
     self.tableView.tableFooterView = footerView;
 }
 
+- (void)addBorrowDat {
+    
+}
+
 
 - (void)configData {
     self.amountModel = [[QDAmountOfCount alloc] init];

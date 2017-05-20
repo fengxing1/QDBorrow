@@ -15,6 +15,7 @@
 #import "QDWebViewController.h"
 #import "QDCommonUI.h"
 #import "QDCerditCell.h"
+#import "MBProgressHUD+MP.h"
 
 static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
 
@@ -42,8 +43,10 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
 
 - (void)configData {
     self.cerditList = [[NSMutableArray alloc] init];
+    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     AVQuery *query = [AVQuery queryWithClassName:@"QDCerdit"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view];
         if (!error) {
             for (AVObject *avCerditDetail in objects) {
                 QDCerditModel *cerditModel = [[QDCerditModel alloc] initWithAVObject:avCerditDetail];

@@ -19,6 +19,7 @@
 #import "QDWebViewController.h"
 #import "QBBusinessTableViewCell.h"
 #import "QDCompanyDetailController.h"
+#import "MBProgressHUD+MP.h"
 
 static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
@@ -40,6 +41,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     [super viewDidLoad];
     [self confirmUI];
     [self configData];
+//    [self addBorrorData];
     
 //    [self confirmData];
     
@@ -80,6 +82,8 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     } else {
         [self.homeModel.borrowDetailArray removeAllObjects];
     }
+    
+    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     AVQuery *queryBanner = [AVQuery queryWithClassName:@"QDBanner"];
     [queryBanner findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
@@ -91,6 +95,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
             AVQuery *queryBorrow = [AVQuery queryWithClassName:@"QDBorrow"];
             [queryBanner whereKey:@"bshowAtHome" equalTo:@(1)];
             [queryBorrow findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                [MBProgressHUD hideHUDForView:self.view];
                 for (AVObject *avBorrow in objects) {
                     BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithAVObject:avBorrow];
                     [self.homeModel.borrowDetailArray addObject:detail];
@@ -98,6 +103,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
                 [self.tableView reloadData];
             }];
         } else {
+            [MBProgressHUD hideHUDForView:self.view];
             [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
                 if (!buttonIndex) {
                     [self configData];
@@ -107,6 +113,26 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
         }
     }];
     
+}
+
+- (void)addBorrorData {
+    AVObject *borrow = [AVObject objectWithClassName:@"QDBorrow"];
+    borrow[@"companyId"] = @(2);
+    borrow[@"imageIcon"] = @"http://oq97ntj1q.bkt.clouddn.com/xinerfu.png";
+    borrow[@"companyName"] = @"钱站";
+    borrow[@"companyDetail"] = @"2000-100000随借秒放款";
+    borrow[@"maxMoney"] = @29000;
+    borrow[@"minMoney"] = @1000;
+    borrow[@"amortizationNumArray"] = [NSArray arrayWithObjects:@"1",@"3",@"5",@"6",@"7",@"8",@"12",@"15",nil];
+    borrow[@"fastestTime"] = @"24小时内";
+    borrow[@"qualificationArray"] = [NSArray arrayWithObjects:@"18岁到55周岁，中国大陆身份证公民", nil];
+    borrow[@"dataArray"] = [NSArray arrayWithObjects:@"身份证号码既可",nil];
+    borrow[@"bshowAtHome"] = @1;
+    borrow[@"redirectUrl"] = @"http://app-h5.iqianzhan.com/sources/outsideRegister.html?";
+    borrow[@"monthyRate"] = @0.6;
+    borrow[@"showButton"] = @0;
+
+    [borrow saveInBackground];
 }
 
 //- (void)confirmData {
