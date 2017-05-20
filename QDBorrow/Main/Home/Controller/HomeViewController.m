@@ -306,7 +306,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        BorrowDetailModel *borrowModel = self.homeModel.borrowDetailArray[indexPath.section];
+        BorrowDetailModel *borrowModel = self.homeModel.borrowDetailArray[indexPath.row];
         QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
         companyDetailViewController.borrowModel = borrowModel;
         [self.navigationController pushViewController:companyDetailViewController animated:YES];
@@ -343,6 +343,9 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 //}
 
 - (void)cellOfBannerClick:(QDHomeBannerModel *)banner {
+    if (!banner.showDetail) {
+        return;
+    }
     //轮播图片点击事件
     NSString *redirectUrl = banner.value;
     if (!([redirectUrl containsString:@"http"] || [redirectUrl containsString:@"https"])) {

@@ -16,6 +16,7 @@
         self.imageUrl = [bannerDict objectForKey:@"imageUrl"];
         self.bannerType = (NSInteger)[bannerDict objectForKey:@"bannerType"];
         self.value = [bannerDict objectForKey:@"value"];
+        self.showDetail = [[bannerDict objectForKey:@"showDetail"] integerValue];
     }
     return self;
 }

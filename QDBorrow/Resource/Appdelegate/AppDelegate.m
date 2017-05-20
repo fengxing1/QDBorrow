@@ -19,6 +19,7 @@
 #import "QDCompanyViewController.h"
 #import "QDCertViewController.h"
 #import "QDMyViewController.h"
+#import "BaiduMobStat.h"
 
 #define APP_ID @"QGSs41nGgfDofETOfRgAKdSj-gzGzoHsz"
 #define APP_KEY @"fmavP4Ny83CAmboSlDCWpQl3"
@@ -38,6 +39,7 @@
     
 #endif
     [self initFabric];
+    [self startBaiduMobileStat];
     
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     
@@ -62,6 +64,15 @@
 
     return YES;
 }
+
+// 启动百度移动统计
+- (void)startBaiduMobileStat{
+    BaiduMobStat* statTracker = [BaiduMobStat defaultStat];
+    statTracker.shortAppVersion  = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    statTracker.enableDebugOn = YES;
+    [statTracker startWithAppId:@"302621a2c7"];
+}
+
 
 - (void)createTabBarController {
     QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];

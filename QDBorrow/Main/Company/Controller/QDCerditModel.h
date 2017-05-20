@@ -15,6 +15,8 @@
 @property (nonatomic, copy) NSString *cerditName;
 @property (nonatomic, copy) NSString *cerditDesc;
 @property (nonatomic, copy) NSString *redirectUrl;
+//是否显示在详情页
+@property (nonatomic, assign) NSInteger showDetail;
 
 - (instancetype)initWithAVObject:(AVObject *)detail;
 

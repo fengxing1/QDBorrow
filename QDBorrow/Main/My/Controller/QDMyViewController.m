@@ -7,6 +7,7 @@
 //
 
 #import "QDMyViewController.h"
+#import "QDAboutViewController.h"
 
 static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 
@@ -63,7 +64,8 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //进入关于我们
-    
+    QDAboutViewController *viewController = [[QDAboutViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 

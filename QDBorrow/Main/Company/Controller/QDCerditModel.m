@@ -17,6 +17,7 @@
         self.cerditName = [detail valueForKey:@"cerditName"];
         self.cerditDesc = [detail valueForKey:@"cerditDesc"];
         self.redirectUrl = [detail valueForKey:@"redirectUrl"];
+        self.showDetail = [[detail valueForKey:@"showDetail"] integerValue];
     }
     return self;
 }

@@ -121,6 +121,18 @@
 		2210DA041ECB425B00366846 /* QDCerditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210DA021ECB425B00366846 /* QDCerditCell.m */; };
 		2210DA051ECB425B00366846 /* QDCerditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2210DA031ECB425B00366846 /* QDCerditCell.xib */; };
 		2210DA081ECB489100366846 /* QDMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210DA071ECB489100366846 /* QDMyViewController.m */; };
+		2210DA0E1ECF334B00366846 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA0D1ECF334B00366846 /* libBaiduMobStat.a */; };
+		2210DA101ECF34FE00366846 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA0F1ECF34FE00366846 /* JavaScriptCore.framework */; };
+		2210DA121ECF350C00366846 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA111ECF350C00366846 /* Security.framework */; };
+		2210DA141ECF351300366846 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA131ECF351300366846 /* CoreLocation.framework */; };
+		2210DA161ECF352000366846 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA151ECF352000366846 /* SystemConfiguration.framework */; };
+		2210DA181ECF352800366846 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA171ECF352800366846 /* CoreTelephony.framework */; };
+		2210DA1A1ECF353500366846 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA191ECF353500366846 /* CoreGraphics.framework */; };
+		2210DA1C1ECF353C00366846 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA1B1ECF353C00366846 /* UIKit.framework */; };
+		2210DA1E1ECF354300366846 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA1D1ECF354300366846 /* Foundation.framework */; };
+		2210DA201ECF354F00366846 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA1F1ECF354F00366846 /* libz.1.2.5.tbd */; };
+		2210DA221ECF355800366846 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA211ECF355800366846 /* libstdc++.tbd */; };
+		2210DA271ECF436400366846 /* QDAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210DA261ECF436400366846 /* QDAboutViewController.m */; };
 		223285631EC7E9BC004AF053 /* QDMultiLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 223285621EC7E9BC004AF053 /* QDMultiLabelCell.m */; };
 		223285661EC7F62E004AF053 /* QDCompanyDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223285651EC7F62E004AF053 /* QDCompanyDetailController.m */; };
 		226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */; };
@@ -390,6 +402,20 @@
 		2210DA031ECB425B00366846 /* QDCerditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QDCerditCell.xib; path = QDBorrow/Main/My/View/QDCerditCell.xib; sourceTree = SOURCE_ROOT; };
 		2210DA061ECB489100366846 /* QDMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMyViewController.h; sourceTree = "<group>"; };
 		2210DA071ECB489100366846 /* QDMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMyViewController.m; sourceTree = "<group>"; };
+		2210DA0C1ECF334B00366846 /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
+		2210DA0D1ECF334B00366846 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
+		2210DA0F1ECF34FE00366846 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		2210DA111ECF350C00366846 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2210DA131ECF351300366846 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2210DA151ECF352000366846 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2210DA171ECF352800366846 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		2210DA191ECF353500366846 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2210DA1B1ECF353C00366846 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2210DA1D1ECF354300366846 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2210DA1F1ECF354F00366846 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		2210DA211ECF355800366846 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		2210DA251ECF436400366846 /* QDAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QDAboutViewController.h; path = ../../Company/Controller/QDAboutViewController.h; sourceTree = "<group>"; };
+		2210DA261ECF436400366846 /* QDAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QDAboutViewController.m; path = ../../Company/Controller/QDAboutViewController.m; sourceTree = "<group>"; };
 		223285611EC7E9BC004AF053 /* QDMultiLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMultiLabelCell.h; sourceTree = "<group>"; };
 		223285621EC7E9BC004AF053 /* QDMultiLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMultiLabelCell.m; sourceTree = "<group>"; };
 		223285641EC7F62E004AF053 /* QDCompanyDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCompanyDetailController.h; sourceTree = "<group>"; };
@@ -436,6 +462,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2210DA221ECF355800366846 /* libstdc++.tbd in Frameworks */,
+				2210DA201ECF354F00366846 /* libz.1.2.5.tbd in Frameworks */,
+				2210DA1E1ECF354300366846 /* Foundation.framework in Frameworks */,
+				2210DA1C1ECF353C00366846 /* UIKit.framework in Frameworks */,
+				2210DA1A1ECF353500366846 /* CoreGraphics.framework in Frameworks */,
+				2210DA181ECF352800366846 /* CoreTelephony.framework in Frameworks */,
+				2210DA161ECF352000366846 /* SystemConfiguration.framework in Frameworks */,
+				2210DA141ECF351300366846 /* CoreLocation.framework in Frameworks */,
+				2210DA121ECF350C00366846 /* Security.framework in Frameworks */,
+				2210DA101ECF34FE00366846 /* JavaScriptCore.framework in Frameworks */,
+				2210DA0E1ECF334B00366846 /* libBaiduMobStat.a in Frameworks */,
 				85A27A48F031CE366FFE8841 /* libPods-QDBorrow.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +562,7 @@
 		0970F3CE1EC29FC100FC4794 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				2210DA0A1ECF248700366846 /* SDKFile */,
 				226CB1FA1EC71C1E00C15625 /* Controls(自定义控件) */,
 				0970F3CF1EC29FC100FC4794 /* Category */,
 				0970F48A1EC29FC200FC4794 /* LaunchScreen.xib */,
@@ -1133,6 +1171,8 @@
 		2210D9FF1EC9F83A00366846 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2210DA251ECF436400366846 /* QDAboutViewController.h */,
+				2210DA261ECF436400366846 /* QDAboutViewController.m */,
 				2210DA061ECB489100366846 /* QDMyViewController.h */,
 				2210DA071ECB489100366846 /* QDMyViewController.m */,
 			);
@@ -1144,6 +1184,23 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2210DA0A1ECF248700366846 /* SDKFile */ = {
+			isa = PBXGroup;
+			children = (
+				2210DA0B1ECF334B00366846 /* Baidu */,
+			);
+			path = SDKFile;
+			sourceTree = "<group>";
+		};
+		2210DA0B1ECF334B00366846 /* Baidu */ = {
+			isa = PBXGroup;
+			children = (
+				2210DA0C1ECF334B00366846 /* BaiduMobStat.h */,
+				2210DA0D1ECF334B00366846 /* libBaiduMobStat.a */,
+			);
+			path = Baidu;
 			sourceTree = "<group>";
 		};
 		226CB1F61EC6F32200C15625 /* Model */ = {
@@ -1235,6 +1292,16 @@
 		442C1987B48A94241E6A0B9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2210DA211ECF355800366846 /* libstdc++.tbd */,
+				2210DA1F1ECF354F00366846 /* libz.1.2.5.tbd */,
+				2210DA1D1ECF354300366846 /* Foundation.framework */,
+				2210DA1B1ECF353C00366846 /* UIKit.framework */,
+				2210DA191ECF353500366846 /* CoreGraphics.framework */,
+				2210DA171ECF352800366846 /* CoreTelephony.framework */,
+				2210DA151ECF352000366846 /* SystemConfiguration.framework */,
+				2210DA131ECF351300366846 /* CoreLocation.framework */,
+				2210DA111ECF350C00366846 /* Security.framework */,
+				2210DA0F1ECF34FE00366846 /* JavaScriptCore.framework */,
 				C41CD3E96693CA3CF7F150DF /* libPods-QDBorrow.a */,
 				12ED9BC4328DE84BBDD978AC /* libPods-QDBorrow-QDBorrowTests.a */,
 			);
@@ -1581,6 +1648,7 @@
 				0970F5061EC29FC200FC4794 /* NSString+XML.m in Sources */,
 				0970F4CA1EC29FC200FC4794 /* NSData+zlib.m in Sources */,
 				223285631EC7E9BC004AF053 /* QDMultiLabelCell.m in Sources */,
+				2210DA271ECF436400366846 /* QDAboutViewController.m in Sources */,
 				0970F4D71EC29FC200FC4794 /* NSDictionary+SafeAccess.m in Sources */,
 				0970F39D1EC29F2900FC4794 /* main.m in Sources */,
 				0970F4F81EC29FC200FC4794 /* NSString+Emoji.m in Sources */,
@@ -1780,6 +1848,11 @@
 				DEVELOPMENT_TEAM = 66Y2FQ45H4;
 				INFOPLIST_FILE = QDBorrow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/QDBorrow/Expand/SDKFile/Baidu",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.BaoBaoDai.BBDai.QDBorrow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1796,6 +1869,11 @@
 				DEVELOPMENT_TEAM = 66Y2FQ45H4;
 				INFOPLIST_FILE = QDBorrow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/QDBorrow/Expand/SDKFile/Baidu",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.BaoBaoDai.BBDai.QDBorrow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

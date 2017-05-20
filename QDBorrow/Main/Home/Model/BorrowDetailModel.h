@@ -23,6 +23,8 @@
 @property (nonatomic, strong) NSString *redirectUrl;
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, assign) NSInteger bshowAtHome;
+//是否显示底部button按钮
+@property (nonatomic, assign) NSInteger showButton;
 
 //添加月利率
 @property (nonatomic, assign) CGFloat monthyRate;

@@ -96,6 +96,9 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     QDCerditModel *cerditModel = self.cerditList[indexPath.row];
+    if (!cerditModel.showDetail) {
+        return;
+    }
     NSString *redirectUrl = cerditModel.redirectUrl;
     if (!([redirectUrl containsString:@"http"] || [redirectUrl containsString:@"https"])) {
         redirectUrl = [@"http://" stringByAppendingString:redirectUrl];

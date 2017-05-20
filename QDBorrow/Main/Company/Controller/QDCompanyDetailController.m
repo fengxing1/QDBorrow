@@ -57,7 +57,9 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"QDChooseTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierChooseCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"QDRepaymentInfoTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierRepaymentCell];
     [self.tableView registerClass:[QDMultiLabelCell class] forCellReuseIdentifier:kReusableIdentifierDescribeCell];
-    [self createBottomButton];
+    if (self.borrowModel.showButton) {
+        [self createBottomButton];
+    }
     UIView *footerView = [[UIView alloc] init];
     footerView.backgroundColor = [UIColor clearColor];
     footerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);

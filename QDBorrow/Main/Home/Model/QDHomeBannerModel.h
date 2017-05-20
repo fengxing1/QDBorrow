@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSString *imageUrl;
 @property (nonatomic, assign) NSInteger bannerType;
 @property (nonatomic, strong) NSString *value;
+//是否能跳转到详情页
+@property (nonatomic, assign) NSInteger showDetail;
 
 - (instancetype)initWithAVObject:(AVObject *)bannerDict;
 

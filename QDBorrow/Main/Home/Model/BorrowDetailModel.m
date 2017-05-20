@@ -27,6 +27,7 @@
         self.bshowAtHome = [[detail valueForKey:@"bshowAtHome"] integerValue];
         
         self.monthyRate = [[detail valueForKey:@"monthyRate"] floatValue];
+        self.showButton = [[detail valueForKey:@"showButton"] integerValue];
     }
     return self;
 }
