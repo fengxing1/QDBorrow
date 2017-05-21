@@ -73,7 +73,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     QDCompanyTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCompanyCell];
     companyCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    companyCell.borrowDtail = self.borrowArray[indexPath.row];
+    companyCell.borrowDtail = self.borrowArray[indexPath.section];
     return companyCell;
 }
 
