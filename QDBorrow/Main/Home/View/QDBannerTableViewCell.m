@@ -35,7 +35,7 @@
     _bannerList = bannerList;
     NSMutableArray *imageUrlArr = [[NSMutableArray alloc] init];
     if (_bannerList.count) {
-        self.sdCycleView.frame = CGRectMake(0, 0, SCREEN_WIDTH, (180 * SCREEN_WIDTH / 375));
+        self.sdCycleView.frame = CGRectMake(0, 0, SCREEN_WIDTH, (200 * SCREEN_WIDTH / 375));
         for (QDHomeBannerModel *banner in _bannerList)  {
             if (banner.imageUrl) {
                 [imageUrlArr addObject:banner.imageUrl];

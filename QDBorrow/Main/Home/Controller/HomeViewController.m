@@ -648,7 +648,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 180 * SCREEN_WIDTH / 375;
+        return 200 * SCREEN_WIDTH / 375;
     } else {
         return 76;
     }
