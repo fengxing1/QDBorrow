@@ -405,7 +405,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     
     {
         AVObject *borrow = [AVObject objectWithClassName:@"QDCerdit"];
-        //        [borrow setObject:@1 forKey:@"cerditId"];
+        //        [borrow setObject:@1 forKey:@"cerditId"];
         [borrow setObject:[NSString stringWithFormat:@"http://oq97ntj1q.bkt.clouddn.com/guangda.jpg"] forKey:@"cerditIcon"];
         [borrow setObject:@"光大银行" forKey:@"cerditName"];
         [borrow setObject:@"首刷送10万积分，丰富卡种任你选金" forKey:@"cerditDesc"];
