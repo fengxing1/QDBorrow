@@ -110,7 +110,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
         } else {
             [MBProgressHUD hideHUDForView:self.view];
             [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
-                if (!buttonIndex) {
+                if (buttonIndex) {
                     [self configData];
                 }
             } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"取消" otherButtonTitles:@"重新刷新", nil];
