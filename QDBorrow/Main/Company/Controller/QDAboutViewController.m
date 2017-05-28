@@ -29,7 +29,7 @@
     self.scrollView = [[UIScrollView alloc] init];
     [self.view addSubview:self.scrollView];
     
-    self.logoImageView = [[UIImageView alloc] initWithImage:UIImageMake(@"about_logo")];
+    self.logoImageView = [[UIImageView alloc] initWithImage:UIImageMake(@"about")];
     [self.scrollView addSubview:self.logoImageView];
     
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];

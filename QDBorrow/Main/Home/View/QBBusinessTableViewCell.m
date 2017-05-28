@@ -41,7 +41,12 @@
     [self.businessIconImageView sd_setImageWithURL:[NSURL URLWithString:borrowModel.imageIcon] placeholderImage:nil];
     self.businessNameLabel.text = borrowModel.companyName;
     self.businessDetailLabel.text = borrowModel.companyDetail;
-    self.peopleCountLabel.text = [NSString stringWithFormat:@"%ld人已放款",borrowModel.peopleNum];
+    if (borrowModel.showButton) {
+        self.peopleCountLabel.text = [NSString stringWithFormat:@"%ld人已放款",borrowModel.peopleNum];
+    } else {
+        self.peopleCountLabel.text = [NSString stringWithFormat:@"%ld人已浏览",borrowModel.peopleNum];
+    }
+    
 }
 
 

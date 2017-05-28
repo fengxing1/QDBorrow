@@ -20,6 +20,7 @@
 #import "QBBusinessTableViewCell.h"
 #import "QDCompanyDetailController.h"
 #import "MBProgressHUD+MP.h"
+#import "MJRefreshNormalHeader.h"
 
 static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
@@ -62,7 +63,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (instancetype)initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithStyle:style]) {
         if (style == UITableViewStyleGrouped) {
-            self.tableViewInitialContentInset = UIEdgeInsetsMake(-40, 0, 20, 0);
+            self.tableViewInitialContentInset = UIEdgeInsetsMake(-40, 0, 25, 0);
 //            self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 200);
         }
     }
@@ -87,18 +88,20 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     AVQuery *queryBanner = [AVQuery queryWithClassName:@"QDBanner"];
     [queryBanner findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [self.tableView.mj_header endRefreshing];
         if (!error) {
+            [self.homeModel.bannerArray removeAllObjects];
+            [self.homeModel.borrowDetailArray removeAllObjects];
             for (AVObject *avBanner in objects) {
                 QDHomeBannerModel *bannerModel = [[QDHomeBannerModel alloc] initWithAVObject:avBanner];
                 [self.homeModel.bannerArray addObject:bannerModel];
                 
             }
-            AVQuery *queryBorrow = [AVQuery queryWithClassName:@"QDBorrow"];
-            [queryBanner whereKey:@"bshowAtHome" equalTo:@(1)];
-            [queryBanner orderByAscending:@"createdAt"];
-            [queryBorrow findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            
+            NSString *cql = [NSString stringWithFormat:@"select * from %@", @"QDBorrow where bshowAtHome = 1 order by companyId"];
+            [AVQuery doCloudQueryInBackgroundWithCQL:cql callback:^(AVCloudQueryResult * _Nullable result, NSError * _Nullable error) {
                 [MBProgressHUD hideHUDForView:self.view];
-                for (AVObject *avBorrow in objects) {
+                for (AVObject *avBorrow in result.results) {
                     BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithAVObject:avBorrow];
                     [self.homeModel.borrowDetailArray addObject:detail];
                 }
@@ -110,7 +113,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
                 if (!buttonIndex) {
                     [self configData];
                 }
-            } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"重新刷新" otherButtonTitles:@"取消", nil];
+            } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"取消" otherButtonTitles:@"重新刷新", nil];
             
         }
     }];
@@ -568,11 +571,11 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     self.title = @"首页";
     //初始化tableView
     self.tableView.tableHeaderView = nil;
-    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+//    self.tableView.contentInset = UIEdgeInsetsMake(-40, 0, 0, 0);
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.tableView registerClass:[QDBannerTableViewCell class] forCellReuseIdentifier:kReusableIdentifierBannerCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"QBBusinessTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
-    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(configData)];
 //    self.registButton = [[QMUIButton alloc] init];
 //    self.registButton.titleLabel.font = UIFontMake(15);
 //    self.registButton.adjustsTitleTintColorAutomatically = YES;

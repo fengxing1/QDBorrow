@@ -36,10 +36,10 @@
 #if DEBUG 
     
 #else 
-    
-#endif
     [self initFabric];
     [self startBaiduMobileStat];
+    
+#endif
     
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     
@@ -90,19 +90,19 @@
     loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:1];
     
     // 信用卡
-    QDCertViewController *cerditController = [[QDCertViewController alloc] init];
-    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:cerditController];
-    cerditController.hidesBottomBarWhenPushed = NO;
-    certNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"信用卡" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
+//    QDCertViewController *cerditController = [[QDCertViewController alloc] init];
+//    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:cerditController];
+//    cerditController.hidesBottomBarWhenPushed = NO;
+//    certNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"信用卡" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
     
     //我的
     QDMyViewController *myViewController = [[QDMyViewController alloc] init];
     myViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *myNavController = [[QDNavigationController alloc] initWithRootViewController:myViewController];
-    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:4];
+    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:4];
     
     // window root controller
-    tabBarViewController.viewControllers = @[homeViewNavController, loanNavController, certNavController,myNavController];
+    tabBarViewController.viewControllers = @[homeViewNavController, loanNavController,myNavController];
     self.window.rootViewController = tabBarViewController;
     [self.window makeKeyAndVisible];
 }

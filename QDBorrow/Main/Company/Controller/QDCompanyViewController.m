@@ -12,6 +12,7 @@
 #import "QDCompanyTableViewCell.h"
 #import "QDCompanyDetailController.h"
 #import "MBProgressHUD+MP.h"
+#import "MJRefreshNormalHeader.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
@@ -39,22 +40,24 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.tableView registerNib:[UINib nibWithNibName:@"QDCompanyTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(configData)];
 }
 
 - (void)configData {
     if (!self.borrowArray) {
         self.borrowArray = [[NSMutableArray alloc] init];
-         [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-        AVQuery *queryBorrow = [AVQuery queryWithClassName:@"QDBorrow"];
-        [queryBorrow findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            [MBProgressHUD hideHUDForView:self.view];
-            for (AVObject *avBorrow in objects) {
-                BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithAVObject:avBorrow];
-                [self.borrowArray addObject:detail];
-            }
-            [self.tableView reloadData];
-        }];
     }
+    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
+    NSString *cql = [NSString stringWithFormat:@"select * from %@", @"QDBorrow order by companyId"];
+    [AVQuery doCloudQueryInBackgroundWithCQL:cql callback:^(AVCloudQueryResult * _Nullable result, NSError * _Nullable error) {
+        [self.tableView.mj_header endRefreshing];
+        [MBProgressHUD hideHUDForView:self.view];
+        for (AVObject *avBorrow in result.results) {
+            BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithAVObject:avBorrow];
+            [self.borrowArray addObject:detail];
+        }
+        [self.tableView reloadData];
+    }];
 }
 
 

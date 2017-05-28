@@ -40,7 +40,12 @@
     _borrowDtail = borrowDtail;
     [self.companyIconImageView sd_setImageWithURL:[NSURL URLWithString:borrowDtail.imageIcon] placeholderImage:nil];
     self.companyNameLabel.text = borrowDtail.companyName;
-    self.penpleCountLabel.text = [NSString stringWithFormat:@"%ld人已放款",borrowDtail.peopleNum];
+    if (borrowDtail.showButton) {
+        self.penpleCountLabel.text = [NSString stringWithFormat:@"%ld人已放款",borrowDtail.peopleNum];
+    } else {
+        self.penpleCountLabel.text = [NSString stringWithFormat:@"%ld人已浏览",borrowDtail.peopleNum];
+    }
+    
     self.companyDetailLabel.text = borrowDtail.companyDetail;
 }
 
