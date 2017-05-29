@@ -29,5 +29,8 @@
 //添加月利率
 @property (nonatomic, assign) CGFloat monthyRate;
 
+//产品介绍
+@property (nonatomic, strong) NSString *companyIntroduce;
+
 - (instancetype)initWithAVObject:(AVObject *)detail;
 @end

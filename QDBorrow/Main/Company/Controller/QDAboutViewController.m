@@ -19,6 +19,8 @@
 @property(nonatomic, strong) QMUIButton *documentButton;
 @property(nonatomic, strong) QMUIButton *gitHubButton;
 @property(nonatomic, strong) UILabel *copyrightLabel;
+
+@property (nonatomic, strong) UILabel *qqLabel;
 @end
 
 @implementation QDAboutViewController
@@ -38,16 +40,17 @@
     [self.versionLabel sizeToFit];
     [self.scrollView addSubview:self.versionLabel];
     
-//    self.websiteButton = [self generateCellButtonWithTitle:@"访问官网"];
-//    self.websiteButton.qmui_borderPosition = QMUIBorderViewPositionTop;
+    self.websiteButton = [self generateCellButtonWithTitle:@"蚂蚁贷官方客服群：645445217"];
+    self.websiteButton.enabled = NO;
+    self.websiteButton.qmui_borderPosition = QMUIBorderViewPositionTop;
 //    [self.websiteButton addTarget:self action:@selector(handleWebsiteButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.scrollView addSubview:self.websiteButton];
-//    
+    [self.scrollView addSubview:self.websiteButton];
+    
 //    self.documentButton = [self generateCellButtonWithTitle:@"功能列表"];
 //    self.documentButton.qmui_borderPosition = QMUIBorderViewPositionTop;
 //    [self.documentButton addTarget:self action:@selector(handleDocumentButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
 //    [self.scrollView addSubview:self.documentButton];
-//    
+//
 //    self.gitHubButton = [self generateCellButtonWithTitle:@"GitHub"];
 //    self.gitHubButton.qmui_borderPosition = QMUIBorderViewPositionTop | QMUIBorderViewPositionBottom;
 //    [self.gitHubButton addTarget:self action:@selector(handleGitHubButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
@@ -61,7 +64,7 @@
 
 - (void)setNavigationItemsIsInEditMode:(BOOL)isInEditMode animated:(BOOL)animated {
     [super setNavigationItemsIsInEditMode:isInEditMode animated:animated];
-    self.title = @"关于";
+    self.title = @"关于我们";
 }
 
 - (QMUIButton *)generateCellButtonWithTitle:(NSString *)title {

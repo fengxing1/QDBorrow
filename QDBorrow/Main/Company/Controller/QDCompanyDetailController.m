@@ -15,11 +15,13 @@
 #import "QDUIHelper.h"
 #import "QDWebViewController.h"
 #import "LZPickViewManager.h"
+#import "QDProductIntroduceCell.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 static NSString *const kReusableIdentifierChooseCell = @"chooseCell";
 static NSString *const kReusableIdentifierRepaymentCell = @"repaymentCell";
 static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
+static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 @interface QDCompanyDetailController ()
 @property (nonatomic, strong) QDAmountOfCount *amountModel;
 @property (nonatomic, strong) QDInstallmentModel *installModel;
@@ -57,6 +59,7 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"QDChooseTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierChooseCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"QDRepaymentInfoTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierRepaymentCell];
     [self.tableView registerClass:[QDMultiLabelCell class] forCellReuseIdentifier:kReusableIdentifierDescribeCell];
+    [self.tableView registerClass:[QDProductIntroduceCell class] forCellReuseIdentifier:kReusableIdentifierIntroduceCell];
     if (self.borrowModel.showButton) {
         [self createBottomButton];
     }
@@ -104,7 +107,7 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
 
 #pragma mark tableview datasoure and delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -155,6 +158,11 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
         multiLabelCell.multiStrArray = self.borrowModel.dataArray;
         multiLabelCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return multiLabelCell;
+    } else if (indexPath.section == 3) {
+        QDProductIntroduceCell *introductCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierIntroduceCell];
+        introductCell.productIntroduce = self.borrowModel.companyIntroduce;
+        introductCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return introductCell;
     }
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     return  cell;
@@ -176,6 +184,9 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
     } else if (indexPath.section == 2) {
         CGFloat height = [QDMultiLabelCell heightOfCell:self.borrowModel.dataArray];
         return height;
+    } else if (indexPath.section == 3) {
+        CGFloat height = [QDProductIntroduceCell heightOfCellWithIntroduce:self.borrowModel.companyIntroduce];
+        return height;
     }
     return  0.01;
 }
@@ -194,6 +205,9 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
         return titleView;
     } else if (section == 2) {
         UIView *titleView = [self createHeaderView:@"所需材料"];
+        return titleView;
+    } else if (section == 3) {
+        UIView *titleView = [self createHeaderView:@"产品介绍"];
         return titleView;
     }
     return nil;
