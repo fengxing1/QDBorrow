@@ -154,6 +154,14 @@
 		229BAA7D1EC36D5B00021EEA /* QDChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229BAA7B1EC36D5B00021EEA /* QDChooseTableViewCell.xib */; };
 		229BAA811EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BAA7F1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m */; };
 		229BAA821EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229BAA801EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib */; };
+		22DC7A281EDEF2E7009DB868 /* QDMyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A261EDEF2E7009DB868 /* QDMyListCell.m */; };
+		22DC7A291EDEF2E7009DB868 /* QDMyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DC7A271EDEF2E7009DB868 /* QDMyListCell.xib */; };
+		22DC7A2D1EDEFE2E009DB868 /* QDMyAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A2B1EDEFE2E009DB868 /* QDMyAccountCell.m */; };
+		22DC7A2E1EDEFE2E009DB868 /* QDMyAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DC7A2C1EDEFE2E009DB868 /* QDMyAccountCell.xib */; };
+		22DC7A371EDF09DE009DB868 /* QDLoginOrRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A351EDF09DE009DB868 /* QDLoginOrRegisterViewController.m */; };
+		22DC7A381EDF09DE009DB868 /* QDLoginOrRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DC7A361EDF09DE009DB868 /* QDLoginOrRegisterViewController.xib */; };
+		22DC7A3C1EDF154D009DB868 /* QDRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A3A1EDF154D009DB868 /* QDRegisterViewController.m */; };
+		22DC7A3D1EDF154D009DB868 /* QDRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DC7A3B1EDF154D009DB868 /* QDRegisterViewController.xib */; };
 		71E428A43581981D31F5B991 /* libPods-QDBorrow-QDBorrowTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ED9BC4328DE84BBDD978AC /* libPods-QDBorrow-QDBorrowTests.a */; };
 		85A27A48F031CE366FFE8841 /* libPods-QDBorrow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C41CD3E96693CA3CF7F150DF /* libPods-QDBorrow.a */; };
 /* End PBXBuildFile section */
@@ -456,6 +464,18 @@
 		229BAA7E1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRepaymentInfoTableViewCell.h; sourceTree = "<group>"; };
 		229BAA7F1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRepaymentInfoTableViewCell.m; sourceTree = "<group>"; };
 		229BAA801EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDRepaymentInfoTableViewCell.xib; sourceTree = "<group>"; };
+		22DC7A251EDEF2E7009DB868 /* QDMyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMyListCell.h; sourceTree = "<group>"; };
+		22DC7A261EDEF2E7009DB868 /* QDMyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMyListCell.m; sourceTree = "<group>"; };
+		22DC7A271EDEF2E7009DB868 /* QDMyListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDMyListCell.xib; sourceTree = "<group>"; };
+		22DC7A2A1EDEFE2E009DB868 /* QDMyAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMyAccountCell.h; sourceTree = "<group>"; };
+		22DC7A2B1EDEFE2E009DB868 /* QDMyAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMyAccountCell.m; sourceTree = "<group>"; };
+		22DC7A2C1EDEFE2E009DB868 /* QDMyAccountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDMyAccountCell.xib; sourceTree = "<group>"; };
+		22DC7A341EDF09DE009DB868 /* QDLoginOrRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDLoginOrRegisterViewController.h; sourceTree = "<group>"; };
+		22DC7A351EDF09DE009DB868 /* QDLoginOrRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDLoginOrRegisterViewController.m; sourceTree = "<group>"; };
+		22DC7A361EDF09DE009DB868 /* QDLoginOrRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDLoginOrRegisterViewController.xib; sourceTree = "<group>"; };
+		22DC7A391EDF154D009DB868 /* QDRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRegisterViewController.h; sourceTree = "<group>"; };
+		22DC7A3A1EDF154D009DB868 /* QDRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRegisterViewController.m; sourceTree = "<group>"; };
+		22DC7A3B1EDF154D009DB868 /* QDRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDRegisterViewController.xib; sourceTree = "<group>"; };
 		294A31DB3BB77A4A7610ADF7 /* Pods-QDBorrow-QDBorrowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow-QDBorrowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow-QDBorrowTests/Pods-QDBorrow-QDBorrowTests.release.xcconfig"; sourceTree = "<group>"; };
 		664175F67CDEFBD6F166809D /* Pods-QDBorrow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow/Pods-QDBorrow.debug.xcconfig"; sourceTree = "<group>"; };
 		C15D5079A502467EB828EDFF /* Pods-QDBorrow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow/Pods-QDBorrow.release.xcconfig"; sourceTree = "<group>"; };
@@ -822,6 +842,12 @@
 				2210DA261ECF436400366846 /* QDAboutViewController.m */,
 				2210DA061ECB489100366846 /* QDMyViewController.h */,
 				2210DA071ECB489100366846 /* QDMyViewController.m */,
+				22DC7A341EDF09DE009DB868 /* QDLoginOrRegisterViewController.h */,
+				22DC7A351EDF09DE009DB868 /* QDLoginOrRegisterViewController.m */,
+				22DC7A361EDF09DE009DB868 /* QDLoginOrRegisterViewController.xib */,
+				22DC7A391EDF154D009DB868 /* QDRegisterViewController.h */,
+				22DC7A3A1EDF154D009DB868 /* QDRegisterViewController.m */,
+				22DC7A3B1EDF154D009DB868 /* QDRegisterViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -829,6 +855,12 @@
 		2210DA001EC9F84D00366846 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22DC7A251EDEF2E7009DB868 /* QDMyListCell.h */,
+				22DC7A261EDEF2E7009DB868 /* QDMyListCell.m */,
+				22DC7A271EDEF2E7009DB868 /* QDMyListCell.xib */,
+				22DC7A2A1EDEFE2E009DB868 /* QDMyAccountCell.h */,
+				22DC7A2B1EDEFE2E009DB868 /* QDMyAccountCell.m */,
+				22DC7A2C1EDEFE2E009DB868 /* QDMyAccountCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1459,11 +1491,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DC7A291EDEF2E7009DB868 /* QDMyListCell.xib in Resources */,
 				09B4BC3D1EC3454B0056B472 /* QBBusinessTableViewCell.xib in Resources */,
 				0970F5121EC29FC200FC4794 /* LaunchScreen.xib in Resources */,
 				0970F3AB1EC29F2900FC4794 /* LaunchScreen.storyboard in Resources */,
 				229BAA7D1EC36D5B00021EEA /* QDChooseTableViewCell.xib in Resources */,
 				229BAA781EC367EB00021EEA /* QDCompanyTableViewCell.xib in Resources */,
+				22DC7A3D1EDF154D009DB868 /* QDRegisterViewController.xib in Resources */,
+				22DC7A2E1EDEFE2E009DB868 /* QDMyAccountCell.xib in Resources */,
 				229BAA821EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib in Resources */,
 				226CB21A1EC71C8900C15625 /* city.json in Resources */,
 				0970F3A81EC29F2900FC4794 /* Assets.xcassets in Resources */,
@@ -1471,6 +1506,7 @@
 				2210DAF81ED087AB00366846 /* NSDateTimeAgo.bundle in Resources */,
 				226CB21B1EC71C8900C15625 /* Province.plist in Resources */,
 				0970F3A61EC29F2900FC4794 /* Main.storyboard in Resources */,
+				22DC7A381EDF09DE009DB868 /* QDLoginOrRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1605,6 +1641,7 @@
 				226CB2131EC71C8900C15625 /* LZAreaPickerView.m in Sources */,
 				2210DB011ED087AB00366846 /* NSFileHandle+readLine.m in Sources */,
 				2210DAFE1ED087AB00366846 /* NSDictionary+URL.m in Sources */,
+				22DC7A3C1EDF154D009DB868 /* QDRegisterViewController.m in Sources */,
 				0970F5231EC29FC200FC4794 /* AppDelegate.m in Sources */,
 				226CB2191EC71C8900C15625 /* LZToolbar.m in Sources */,
 				2210DB2E1ED087AB00366846 /* NSTimer+Blocks.m in Sources */,
@@ -1679,6 +1716,7 @@
 				2210DB201ED087AB00366846 /* NSString+Hash.m in Sources */,
 				2210DB241ED087AB00366846 /* NSString+RegexCategory.m in Sources */,
 				223285661EC7F62E004AF053 /* QDCompanyDetailController.m in Sources */,
+				22DC7A371EDF09DE009DB868 /* QDLoginOrRegisterViewController.m in Sources */,
 				2210DB041ED087AB00366846 /* NSIndexPath+Offset.m in Sources */,
 				2210DB1F1ED087AB00366846 /* NSString+Encrypt.m in Sources */,
 				229BAA7C1EC36D5B00021EEA /* QDChooseTableViewCell.m in Sources */,
@@ -1695,6 +1733,7 @@
 				229BAA771EC367EB00021EEA /* QDCompanyTableViewCell.m in Sources */,
 				2210DB1A1ED087AB00366846 /* NSMutableString+Ruby.m in Sources */,
 				0970F5221EC29FC200FC4794 /* QDWebViewController.m in Sources */,
+				22DC7A281EDEF2E7009DB868 /* QDMyListCell.m in Sources */,
 				0970F51B1EC29FC200FC4794 /* QMUIConfigurationTemplate.m in Sources */,
 				2210DB1B1ED087AB00366846 /* NSString+Base64.m in Sources */,
 				226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */,
@@ -1716,6 +1755,7 @@
 				226CB2181EC71C8900C15625 /* LZPickViewManager.m in Sources */,
 				2210DB291ED087AB00366846 /* NSString+Trims.m in Sources */,
 				2210DB341ED087AB00366846 /* NSUserDefaults+iCloudSync.m in Sources */,
+				22DC7A2D1EDEFE2E009DB868 /* QDMyAccountCell.m in Sources */,
 				0970F5181EC29FC200FC4794 /* QDNavigationController.m in Sources */,
 				2210DB091ED087AB00366846 /* NSDecimalNumber+Extensions.m in Sources */,
 				0970F5211EC29FC200FC4794 /* LoginService.m in Sources */,
@@ -1875,14 +1915,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = YL6NLU4FDN;
 				INFOPLIST_FILE = QDBorrow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/QDBorrow/Expand/SDKFile/Baidu",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BaoBaoDai.QDBorrow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mayidai.qdborrow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1896,14 +1938,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = YL6NLU4FDN;
 				INFOPLIST_FILE = QDBorrow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/QDBorrow/Expand/SDKFile/Baidu",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BaoBaoDai.QDBorrow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mayidai.qdborrow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

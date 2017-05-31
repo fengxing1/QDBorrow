@@ -71,7 +71,7 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    [super didReceiveMemryWarning];
     // Dispose of any resources that can be recreated.
 }
 

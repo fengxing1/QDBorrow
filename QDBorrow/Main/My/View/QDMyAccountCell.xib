@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="QDMyAccountCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sjdk_my_topbg" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-ql-5gU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_pic_defaultheadportrait" translatesAutoresizingMaskIntoConstraints="NO" id="hD2-lx-lXB">
+                        <rect key="frame" x="18" y="15" width="88" height="88"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="88" id="5y9-Gi-lhS"/>
+                            <constraint firstAttribute="width" constant="88" id="OAD-uk-f6j"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13040797063" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmx-E7-dkj">
+                        <rect key="frame" x="132" y="49" width="187" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="pKH-ql-5gU" secondAttribute="trailing" id="23D-FU-dpb"/>
+                    <constraint firstItem="pKH-ql-5gU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aWi-3u-wl7"/>
+                    <constraint firstAttribute="bottom" secondItem="pKH-ql-5gU" secondAttribute="bottom" constant="-0.5" id="gKf-Iy-VFD"/>
+                    <constraint firstItem="hD2-lx-lXB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="mCv-X3-oQ0"/>
+                    <constraint firstItem="hD2-lx-lXB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="nQp-eI-KWJ"/>
+                    <constraint firstItem="pKH-ql-5gU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nrR-6d-hNe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="66.5" y="66"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="my_pic_defaultheadportrait" width="88" height="88"/>
+        <image name="sjdk_my_topbg" width="320" height="100"/>
+    </resources>
+</document>
