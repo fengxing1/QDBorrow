@@ -148,6 +148,10 @@
     loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:1];
     
     // 信用卡
+    UIViewController *sobotViewController = [self sobotViewController];
+//    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:sobotViewController];
+    sobotViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"客服中心" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
+    
 //    QDCertViewController *cerditController = [[QDCertViewController alloc] init];
 //    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:cerditController];
 //    cerditController.hidesBottomBarWhenPushed = NO;
@@ -160,7 +164,7 @@
     myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:4];
     
     // window root controller
-    tabBarViewController.viewControllers = @[homeViewNavController, loanNavController,myNavController];
+    tabBarViewController.viewControllers = @[homeViewNavController, loanNavController,sobotViewController,myNavController];
     self.window.rootViewController = tabBarViewController;
     [self.window makeKeyAndVisible];
 }
@@ -191,7 +195,8 @@
     [ZCSobot setShowDebug:NO];
     
     [[ZCLibClient getZCLibClient] setLibInitInfo:initInfo];
-    ZCUIChatController *chatController = [[ZCUIChatController alloc] initWithInitInfo:initInfo];
+    ZCUIChatController *chatController = [[ZCUIChatController alloc] initWithInitInfo:uiInfo width:SCREEN_WIDTH height:SCREEN_HEIGHT];
+    chatController.backButton.hidden = YES;
     return chatController;
 }
 

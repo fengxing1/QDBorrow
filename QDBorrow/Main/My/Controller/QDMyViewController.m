@@ -70,11 +70,6 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 /*
 #pragma mark - Navigation
 
