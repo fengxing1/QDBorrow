@@ -40,6 +40,10 @@
 
 - (void)fetchData {
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
+    AVQuery *queryBanner = [AVQuery queryWithClassName:@"QDBanner"];
+    [queryBanner findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+    
+    }
     
 //    [self loadURL:[NSURL URLWithString:@"http://114.215.210.61:10080/bbs/portal.php?mobile=2"]];
     
