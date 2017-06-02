@@ -23,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, -40, SCREEN_WIDTH, SCREEN_HEIGHT + 40)];
+    [self.view addSubview:self.webView];
     self.title = @"论坛";
     [self fetchData];
 }
