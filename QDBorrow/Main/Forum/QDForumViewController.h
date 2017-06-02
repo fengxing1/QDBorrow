@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXWebViewController.h"
+#import "QDCommonViewController.h"
 
-@interface QDForumViewController : AXWebViewController
+@interface QDForumViewController : QDCommonViewController
 
 @end

@@ -9,8 +9,10 @@
 #import "QDForumViewController.h"
 #import "QMUIKit.h"
 #import "UIColor+QMUI.h"
+#import "MBProgressHUD+MP.h"
 
 @interface QDForumViewController ()
+@property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) NSString *urlStr;
 
 @end
@@ -20,10 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.webView.scrollView.bounces = NO;
-    self.webView.co
-//    [self setStatusBarBackgroundColor:[UIColor qum]];
-//    [self fetchData];
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, -40, SCREEN_WIDTH, SCREEN_HEIGHT + 40)];
+    self.title = @"论坛";
+    [self fetchData];
 }
 
 //设置状态栏颜色
@@ -37,8 +38,9 @@
 
 
 - (void)fetchData {
+    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     
-    [self loadURL:[NSURL URLWithString:@"http://114.215.210.61:10080/bbs/portal.php?mobile=2"]];
+//    [self loadURL:[NSURL URLWithString:@"http://114.215.210.61:10080/bbs/portal.php?mobile=2"]];
     
 }
 
