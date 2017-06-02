@@ -20,6 +20,7 @@
 #import "QDCertViewController.h"
 #import "QDMyViewController.h"
 #import "BaiduMobStat.h"
+#import "QDForumViewController.h"
 
 #import <SobotKit/SobotKit.h>
 #import <UserNotifications/UserNotifications.h>
@@ -152,11 +153,17 @@
 //    UIViewController *sobotViewController = [self sobotViewController];
 //    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:sobotViewController];
     
-    
-    QDCertViewController *cerditController = [[QDCertViewController alloc] init];
-    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:cerditController];
-    cerditController.hidesBottomBarWhenPushed = NO;
+    QDForumViewController *forumViewController = [[QDForumViewController alloc] initWithAddress:@"http://114.215.210.61:10080/bbs/portal.php?mobile=2"];
+    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:forumViewController];
+    forumViewController.hidesBottomBarWhenPushed = NO;
+//    certNavController.navigationBarHidden = YES;
     certNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"信用卡" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
+    
+//    
+//    QDCertViewController *cerditController = [[QDCertViewController alloc] init];
+//    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:cerditController];
+//    cerditController.hidesBottomBarWhenPushed = NO;
+//    certNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"信用卡" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
     
     //我的
     QDMyViewController *myViewController = [[QDMyViewController alloc] init];

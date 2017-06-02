@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0964C9C01EE0F30E0017F6D6 /* QDForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0964C9BF1EE0F30E0017F6D6 /* QDForumViewController.m */; };
+		0964C9C61EE126FA0017F6D6 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0964C9C51EE126FA0017F6D6 /* UIColor+Hex.m */; };
 		0970F39D1EC29F2900FC4794 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F39C1EC29F2900FC4794 /* main.m */; };
 		0970F3A61EC29F2900FC4794 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0970F3A41EC29F2900FC4794 /* Main.storyboard */; };
 		0970F3A81EC29F2900FC4794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0970F3A71EC29F2900FC4794 /* Assets.xcassets */; };
@@ -184,6 +186,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0964C9BE1EE0F30E0017F6D6 /* QDForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDForumViewController.h; sourceTree = "<group>"; };
+		0964C9BF1EE0F30E0017F6D6 /* QDForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDForumViewController.m; sourceTree = "<group>"; };
+		0964C9C41EE126FA0017F6D6 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		0964C9C51EE126FA0017F6D6 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		0970F3981EC29F2900FC4794 /* QDBorrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QDBorrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0970F39C1EC29F2900FC4794 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0970F3A51EC29F2900FC4794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -521,6 +527,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0964C9BD1EE0F29A0017F6D6 /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+				0964C9BE1EE0F30E0017F6D6 /* QDForumViewController.h */,
+				0964C9BF1EE0F30E0017F6D6 /* QDForumViewController.m */,
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
+		0964C9C31EE10ADE0017F6D6 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				0964C9C41EE126FA0017F6D6 /* UIColor+Hex.h */,
+				0964C9C51EE126FA0017F6D6 /* UIColor+Hex.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		0970F38F1EC29F2900FC4794 = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +669,7 @@
 		0970F4A21EC29FC200FC4794 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0964C9BD1EE0F29A0017F6D6 /* Forum */,
 				2210D9FE1EC9F82300366846 /* My */,
 				09B4BC471EC351680056B472 /* Cert */,
 				09B4BC3F1EC34D490056B472 /* Company */,
@@ -894,6 +919,7 @@
 		2210DA291ED0872600366846 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				0964C9C31EE10ADE0017F6D6 /* UIColor */,
 				2210DA2D1ED087AB00366846 /* NSArray */,
 				2210DA321ED087AB00366846 /* NSBundle */,
 				2210DA351ED087AB00366846 /* NSData */,
@@ -1658,6 +1684,7 @@
 				2210DAE91ED087AB00366846 /* NSBundle+AppIcon.m in Sources */,
 				2210DAFF1ED087AB00366846 /* NSDictionary+XML.m in Sources */,
 				2210DB301ED087AB00366846 /* NSURL+QueryDictionary.m in Sources */,
+				0964C9C61EE126FA0017F6D6 /* UIColor+Hex.m in Sources */,
 				09B4BC461EC34DC00056B472 /* QDCompanyViewController.m in Sources */,
 				2210DB161ED087AB00366846 /* NSObject+Reflection.m in Sources */,
 				2210DAE81ED087AB00366846 /* NSArray+SafeAccess.m in Sources */,
@@ -1723,6 +1750,7 @@
 				2210DB321ED087AB00366846 /* NSMutableURLRequest+Upload.m in Sources */,
 				2210DB261ED087AB00366846 /* NSString+Ruby.m in Sources */,
 				2210DB1E1ED087AB00366846 /* NSString+Emoji.m in Sources */,
+				0964C9C01EE0F30E0017F6D6 /* QDForumViewController.m in Sources */,
 				2210DAF31ED087AB00366846 /* NSDate+Formatter.m in Sources */,
 				2210DB081ED087AB00366846 /* NSDecimalNumber+CalculatingByString.m in Sources */,
 				2210DAF11ED087AB00366846 /* NSDate+CupertinoYankee.m in Sources */,
