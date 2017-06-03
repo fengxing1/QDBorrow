@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef NS_ENUM(NSInteger,CellType) {
+    CellTypeHistory,
+    CellTypeMessage,
+    CellTypeHelp,
+    CellTypeService,
+    CellTypeForm
+};
 
 @interface QDMyListCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *listTitleLabel;
-
+@property (nonatomic, assign) CellType cellType;
 @end
