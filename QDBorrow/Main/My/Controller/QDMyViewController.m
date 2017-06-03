@@ -9,11 +9,13 @@
 #import "QDMyViewController.h"
 #import "QDAboutViewController.h"
 #import "QDMyListCell.h"
+#import "AVUser.h"
 
 static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 
 
 @interface QDMyViewController ()
+@property (nonatomic, strong) AVUser *user;
 
 @end
 
@@ -32,11 +34,12 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 
 - (void)configData {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"refreshData" object:nil];
+    self.user = [AVUser currentUser];
+    
 }
 
 - (void)configUI {
     self.title = @"个人中心";
-    
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.tableView registerNib:[UINib nibWithNibName:@"QDMyListCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCerditCell];
 }
@@ -60,7 +63,11 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    if (self.user) {
+        return 5;
+    } else {
+        return 3;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
