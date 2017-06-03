@@ -35,10 +35,18 @@
     self.phoneLabel.delegate = self;
     self.passwordLabel.delegate = self;
     self.longinBtn.enabled = NO;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard)];
+    [self.view addGestureRecognizer:tap];
     
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    if (textField.tag == 101) {
+        NSInteger strLength = textField.text.length - range.length + string.length;
+        
+        return (strLength <= 11);
+    }
     
     if (self.phoneLabel.text.length == 0 || self.passwordLabel.text.length == 0) {
         self.longinBtn.hidden = YES;
@@ -58,13 +66,17 @@
 }
 
 - (IBAction)loginClick:(id)sender {
-    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+    [self hiddenKeyBoard];
     if (self.phoneLabel.text.length == 0) {
         [MBProgressHUD showMessage:@"手机号不能为空" ToView:self.view RemainTime:2.0];
         return;
     }
     if (self.passwordLabel.text.length == 0) {
         [MBProgressHUD showMessage:@"密码不能为空" ToView:self.view RemainTime:2.0];
+        return;
+    }
+    if (self.phoneLabel.text.length != 11) {
+        [MBProgressHUD showMessage:@"手机号格式不正确" ToView:self.view RemainTime:2.0];
         return;
     }
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
@@ -79,6 +91,10 @@
         }
     }];
     
+}
+
+- (void)hiddenKeyBoard {
+      [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {

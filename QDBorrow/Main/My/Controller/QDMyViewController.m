@@ -8,8 +8,10 @@
 
 #import "QDMyViewController.h"
 #import "QDAboutViewController.h"
+#import "QDMyListCell.h"
 
 static NSString *const kReusableIdentifierCerditCell  = @"myCell";
+
 
 @interface QDMyViewController ()
 
@@ -36,21 +38,25 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
     self.title = @"个人中心";
     
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    [self.tableView registerNib:[UINib nibWithNibName:@"QDMyListCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCerditCell];
 }
 
 
 #pragma mark - <QMUITableViewDataSource,QMUITableViewDelegate>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QMUITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCerditCell];
-    if (!cell) {
-        cell = [[QMUITableViewCell alloc] initForTableView:self.tableView withStyle:UITableViewCellStyleSubtitle reuseIdentifier:kReusableIdentifierCerditCell];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    cell.textLabel.text = @"关于我们";
-
-    return cell;
+    QDMyListCell *listCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCerditCell];
+    
+    return listCell;
+//    QMUITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCerditCell];
+//    if (!cell) {
+//        cell = [[QMUITableViewCell alloc] initForTableView:self.tableView withStyle:UITableViewCellStyleSubtitle reuseIdentifier:kReusableIdentifierCerditCell];
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    }
+//    cell.textLabel.text = @"关于我们";
+//
+//    return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
