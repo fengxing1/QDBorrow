@@ -10,8 +10,10 @@
 #import "QDAboutViewController.h"
 #import "QDMyListCell.h"
 #import "AVUser.h"
+#import "QDMyAccountCell.h"
 
-static NSString *const kReusableIdentifierCerditCell  = @"myCell";
+static NSString *const kReusableIdentifierMyListCell  = @"myCell";
+static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 
 @interface QDMyViewController ()
@@ -29,7 +31,7 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 }
 
 - (instancetype)init {
-    return [self initWithStyle:UITableViewStylePlain];
+    return [self initWithStyle:UITableViewStyleGrouped];
 }
 
 - (void)configData {
@@ -40,17 +42,50 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 
 - (void)configUI {
     self.title = @"个人中心";
-    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    [self.tableView registerNib:[UINib nibWithNibName:@"QDMyListCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCerditCell];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+//    self.tableViewInitialContentInset = UIEdgeInsetsMake(-40, 0, 0, 0);
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
+    headerView.backgroundColor = [UIColor clearColor];
+    self.tableView.tableHeaderView = headerView;
+    [self.tableView registerNib:[UINib nibWithNibName:@"QDMyListCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierMyListCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"QDMyAccountCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierAccountCell];
 }
 
 
 #pragma mark - <QMUITableViewDataSource,QMUITableViewDelegate>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QDMyListCell *listCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCerditCell];
+    if (indexPath.section == 0) {
+        QDMyAccountCell *accountCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierAccountCell];
+        accountCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return accountCell;
+    } else {
+        QDMyListCell *listCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierMyListCell];
+        listCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        if (self.user) {
+            if (indexPath.row == 0) {
+                listCell.cellType = CellTypeMessage;
+            } else if(indexPath.row == 1){
+                listCell.cellType = CellTypeHelp;
+            } else if (indexPath.row == 2) {
+                listCell.cellType = CellTypeService;
+            } else {
+                listCell.cellType = CellTypeForm;
+            }
+        } else {
+            if (indexPath.row == 0) {
+                listCell.cellType = CellTypeHelp;
+            } else if(indexPath.row == 1){
+                listCell.cellType = CellTypeService;
+            } else if (indexPath.row == 2) {
+                listCell.cellType = CellTypeForm;
+            }
+        }
+        return listCell;
+        
+    }
     
-    return listCell;
 //    QMUITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCerditCell];
 //    if (!cell) {
 //        cell = [[QMUITableViewCell alloc] initForTableView:self.tableView withStyle:UITableViewCellStyleSubtitle reuseIdentifier:kReusableIdentifierCerditCell];
@@ -62,16 +97,31 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 //    return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 20.0;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.user) {
-        return 5;
+    if (section == 0) {
+        return 1;
     } else {
-        return 3;
+        if (self.user) {
+            return 4;
+        } else {
+            return 3;
+        }
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
+    if (indexPath.section == 0) {
+        return 120;
+    }
+    return 50;
 }
 
 

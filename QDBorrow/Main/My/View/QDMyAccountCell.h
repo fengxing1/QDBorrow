@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface QDMyAccountCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end

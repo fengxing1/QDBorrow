@@ -14,6 +14,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 
+@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *password;
+
 @end
 
 @implementation QDRegisterViewController
@@ -56,9 +60,11 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (textField.tag == 101) {
-        self.phoneStr = textField.text;
+        self.phone = textField.text;
+    } else if (textField.tag == 102){
+        self.email = textField.text;
     } else {
-        self.passwordStr = textField.text;
+        self.password = textField.text;
     }
 }
 

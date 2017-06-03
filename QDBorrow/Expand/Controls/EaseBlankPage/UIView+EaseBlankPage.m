@@ -7,6 +7,7 @@
 //
 
 #import "UIView+EaseBlankPage.h"
+#import <objc/runtime.h>
 
 static char BlankPageViewKey;
 

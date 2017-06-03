@@ -7,12 +7,22 @@
 //
 
 #import "QDMyAccountCell.h"
+#import "AVUser.h"
 
 @implementation QDMyAccountCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+- (void)layoutSubviews {
+    AVUser *user = [AVUser currentUser];
+    if (user) {
+        self.nameLabel.text = user.username;
+    } else {
+        self.nameLabel.text = @"未登录";
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

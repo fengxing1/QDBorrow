@@ -77,8 +77,8 @@
     //- QMUICMI.navBarDisabledAlpha = 0.2f;                                             // NavBarDisabledAlpha
     //- QMUICMI.navBarButtonFont = UIFontMake(17);                                      // NavBarButtonFont
     //- QMUICMI.navBarButtonFontBold = UIFontBoldMake(17);                              // NavBarButtonFontBold
-    QMUICMI.navBarBackgroundImage = [UIImage qmui_imageWithColor:UIColorMake(30, 97, 230)];
-//    QMUICMI.navBarBackgroundImage = [UIImageMake(@"navigationbar_background") resizableImageWithCapInsets:UIEdgeInsetsMake(0, 2, 0, 2)];                                            // NavBarBackgroundImage
+//    QMUICMI.navBarBackgroundImage = [UIImage qmui_imageWithColor:UIColorMake(30, 97, 230)];
+    QMUICMI.navBarBackgroundImage = [UIImageMake(@"navigationbar_background") resizableImageWithCapInsets:UIEdgeInsetsMake(0, 2, 0, 2)];                                            // NavBarBackgroundImage
     QMUICMI.navBarShadowImage = [UIImage new];                                                // NavBarShadowImage
     //- QMUICMI.navBarBarTintColor = nil;                                               // NavBarBarTintColor
     QMUICMI.navBarTintColor = UIColorWhite;                                         // NavBarTintColor

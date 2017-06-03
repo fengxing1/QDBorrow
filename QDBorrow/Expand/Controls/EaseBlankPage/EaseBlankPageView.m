@@ -7,6 +7,7 @@
 //
 
 #import "EaseBlankPageView.h"
+#import "Masonry.h"
 
 @implementation EaseBlankPageView
 
@@ -44,7 +45,7 @@
     //    布局
     [_monkeyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.centerY.equalTo(self.top).with.offset(100);
+        make.centerY.equalTo(self.mas_top).with.offset(100);
     }];
     [_tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.centerX.equalTo(self);
