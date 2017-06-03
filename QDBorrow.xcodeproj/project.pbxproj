@@ -156,6 +156,13 @@
 		229BAA7D1EC36D5B00021EEA /* QDChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229BAA7B1EC36D5B00021EEA /* QDChooseTableViewCell.xib */; };
 		229BAA811EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BAA7F1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m */; };
 		229BAA821EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229BAA801EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib */; };
+		22A373871EE23BE70090548C /* blankpage_button_reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A3737E1EE23BE70090548C /* blankpage_button_reload@2x.png */; };
+		22A373881EE23BE70090548C /* blankpage_image_loadFail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A3737F1EE23BE70090548C /* blankpage_image_loadFail@2x.png */; };
+		22A373891EE23BE70090548C /* blankpage_image_loadFail@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A373801EE23BE70090548C /* blankpage_image_loadFail@3x.png */; };
+		22A3738A1EE23BE70090548C /* blankpage_image_Sleep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A373811EE23BE70090548C /* blankpage_image_Sleep@2x.png */; };
+		22A3738B1EE23BE70090548C /* blankpage_image_Sleep@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A373821EE23BE70090548C /* blankpage_image_Sleep@3x.png */; };
+		22A3738C1EE23BE70090548C /* EaseBlankPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373841EE23BE70090548C /* EaseBlankPageView.m */; };
+		22A3738D1EE23BE70090548C /* UIView+EaseBlankPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373861EE23BE70090548C /* UIView+EaseBlankPage.m */; };
 		22DC7A281EDEF2E7009DB868 /* QDMyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A261EDEF2E7009DB868 /* QDMyListCell.m */; };
 		22DC7A291EDEF2E7009DB868 /* QDMyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DC7A271EDEF2E7009DB868 /* QDMyListCell.xib */; };
 		22DC7A2D1EDEFE2E009DB868 /* QDMyAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A2B1EDEFE2E009DB868 /* QDMyAccountCell.m */; };
@@ -470,6 +477,15 @@
 		229BAA7E1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRepaymentInfoTableViewCell.h; sourceTree = "<group>"; };
 		229BAA7F1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRepaymentInfoTableViewCell.m; sourceTree = "<group>"; };
 		229BAA801EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDRepaymentInfoTableViewCell.xib; sourceTree = "<group>"; };
+		22A3737E1EE23BE70090548C /* blankpage_button_reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankpage_button_reload@2x.png"; sourceTree = "<group>"; };
+		22A3737F1EE23BE70090548C /* blankpage_image_loadFail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankpage_image_loadFail@2x.png"; sourceTree = "<group>"; };
+		22A373801EE23BE70090548C /* blankpage_image_loadFail@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankpage_image_loadFail@3x.png"; sourceTree = "<group>"; };
+		22A373811EE23BE70090548C /* blankpage_image_Sleep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankpage_image_Sleep@2x.png"; sourceTree = "<group>"; };
+		22A373821EE23BE70090548C /* blankpage_image_Sleep@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankpage_image_Sleep@3x.png"; sourceTree = "<group>"; };
+		22A373831EE23BE70090548C /* EaseBlankPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseBlankPageView.h; sourceTree = "<group>"; };
+		22A373841EE23BE70090548C /* EaseBlankPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseBlankPageView.m; sourceTree = "<group>"; };
+		22A373851EE23BE70090548C /* UIView+EaseBlankPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EaseBlankPage.h"; sourceTree = "<group>"; };
+		22A373861EE23BE70090548C /* UIView+EaseBlankPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EaseBlankPage.m"; sourceTree = "<group>"; };
 		22DC7A251EDEF2E7009DB868 /* QDMyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMyListCell.h; sourceTree = "<group>"; };
 		22DC7A261EDEF2E7009DB868 /* QDMyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMyListCell.m; sourceTree = "<group>"; };
 		22DC7A271EDEF2E7009DB868 /* QDMyListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDMyListCell.xib; sourceTree = "<group>"; };
@@ -1297,6 +1313,7 @@
 		226CB1FA1EC71C1E00C15625 /* Controls(自定义控件) */ = {
 			isa = PBXGroup;
 			children = (
+				22A3737D1EE23BE70090548C /* EaseBlankPage */,
 				226CB1FB1EC71C8800C15625 /* LZPickerView */,
 			);
 			name = "Controls(自定义控件)";
@@ -1371,6 +1388,22 @@
 				2214CB461EDBE0CD00C20C08 /* QDProductIntroduceCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		22A3737D1EE23BE70090548C /* EaseBlankPage */ = {
+			isa = PBXGroup;
+			children = (
+				22A3737E1EE23BE70090548C /* blankpage_button_reload@2x.png */,
+				22A3737F1EE23BE70090548C /* blankpage_image_loadFail@2x.png */,
+				22A373801EE23BE70090548C /* blankpage_image_loadFail@3x.png */,
+				22A373811EE23BE70090548C /* blankpage_image_Sleep@2x.png */,
+				22A373821EE23BE70090548C /* blankpage_image_Sleep@3x.png */,
+				22A373831EE23BE70090548C /* EaseBlankPageView.h */,
+				22A373841EE23BE70090548C /* EaseBlankPageView.m */,
+				22A373851EE23BE70090548C /* UIView+EaseBlankPage.h */,
+				22A373861EE23BE70090548C /* UIView+EaseBlankPage.m */,
+			);
+			path = EaseBlankPage;
 			sourceTree = "<group>";
 		};
 		442C1987B48A94241E6A0B9E /* Frameworks */ = {
@@ -1518,17 +1551,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DC7A291EDEF2E7009DB868 /* QDMyListCell.xib in Resources */,
+				22A3738B1EE23BE70090548C /* blankpage_image_Sleep@3x.png in Resources */,
+				22A373871EE23BE70090548C /* blankpage_button_reload@2x.png in Resources */,
 				09B4BC3D1EC3454B0056B472 /* QBBusinessTableViewCell.xib in Resources */,
 				0970F5121EC29FC200FC4794 /* LaunchScreen.xib in Resources */,
 				0970F3AB1EC29F2900FC4794 /* LaunchScreen.storyboard in Resources */,
 				229BAA7D1EC36D5B00021EEA /* QDChooseTableViewCell.xib in Resources */,
 				229BAA781EC367EB00021EEA /* QDCompanyTableViewCell.xib in Resources */,
 				22DC7A3D1EDF154D009DB868 /* QDRegisterViewController.xib in Resources */,
+				22A3738A1EE23BE70090548C /* blankpage_image_Sleep@2x.png in Resources */,
 				22DC7A2E1EDEFE2E009DB868 /* QDMyAccountCell.xib in Resources */,
 				229BAA821EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib in Resources */,
 				226CB21A1EC71C8900C15625 /* city.json in Resources */,
 				0970F3A81EC29F2900FC4794 /* Assets.xcassets in Resources */,
+				22A373881EE23BE70090548C /* blankpage_image_loadFail@2x.png in Resources */,
 				2210DA051ECB425B00366846 /* QDCerditCell.xib in Resources */,
+				22A373891EE23BE70090548C /* blankpage_image_loadFail@3x.png in Resources */,
 				2210DAF81ED087AB00366846 /* NSDateTimeAgo.bundle in Resources */,
 				226CB21B1EC71C8900C15625 /* Province.plist in Resources */,
 				0970F3A61EC29F2900FC4794 /* Main.storyboard in Resources */,
@@ -1709,6 +1747,7 @@
 				2210DAF51ED087AB00366846 /* NSDate+Reporting.m in Sources */,
 				2210DB001ED087AB00366846 /* NSException+Trace.m in Sources */,
 				09B4BC4D1EC351CC0056B472 /* QDCertViewController.m in Sources */,
+				22A3738D1EE23BE70090548C /* UIView+EaseBlankPage.m in Sources */,
 				2210DB2B1ED087AB00366846 /* NSString+UUID.m in Sources */,
 				2210DA041ECB425B00366846 /* QDCerditCell.m in Sources */,
 				0970F5151EC29FC200FC4794 /* QDCommonTableViewController.m in Sources */,
@@ -1722,6 +1761,7 @@
 				2210DB0F1ED087AB00366846 /* NSObject+AssociatedObject.m in Sources */,
 				2210DB2D1ED087AB00366846 /* NSTimer+Addition.m in Sources */,
 				2210DAFB1ED087AB00366846 /* NSDictionary+JSONString.m in Sources */,
+				22A3738C1EE23BE70090548C /* EaseBlankPageView.m in Sources */,
 				2210DAF61ED087AB00366846 /* NSDate+TimeAgo.m in Sources */,
 				2210DAFD1ED087AB00366846 /* NSDictionary+SafeAccess.m in Sources */,
 				0970F51C1EC29FC200FC4794 /* HomeViewController.m in Sources */,

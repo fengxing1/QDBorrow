@@ -10,7 +10,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 
 @interface LoginService : NSObject
-
++ (id)sharedInstance;
 - (void)registUser:(NSString *)userName password:(NSString *)pwd email:(NSString *)email block:(AVBooleanResultBlock)block;
 - (void)loginUser:(NSString *)userName andPassword:(NSString *)pwd block:(AVUserResultBlock)block;
 

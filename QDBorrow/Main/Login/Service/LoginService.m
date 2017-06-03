@@ -13,6 +13,16 @@
 
 @implementation LoginService
 
++ (id)sharedInstance
+{
+    static LoginService *sharedAccountManagerInstance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        sharedAccountManagerInstance = [[self alloc] init];
+    });
+    return sharedAccountManagerInstance;
+}
+
 //通过用户名和密码注册
 - (void)registUser:(NSString *)userName password:(NSString *)pwd email:(NSString *)email block:(AVBooleanResultBlock)block{
     AVUser *user = [AVUser user];
