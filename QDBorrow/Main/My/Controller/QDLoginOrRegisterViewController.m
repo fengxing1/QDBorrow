@@ -72,8 +72,8 @@
         [MBProgressHUD hideHUD];
         if (!error) {
             //登陆成功
-            
-            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshData" object:nil];
+            [self.navigationController popViewControllerAnimated:YES];
         } else {
             [MBProgressHUD showMessage:error.localizedDescription ToView:self.view RemainTime:2.0];
         }

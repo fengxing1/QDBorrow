@@ -29,7 +29,7 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
 }
 
 - (void)configData {
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"refreshData" object:nil];
 }
 
 - (void)configUI {
@@ -68,6 +68,11 @@ static NSString *const kReusableIdentifierCerditCell  = @"myCell";
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+
+- (void)refreshData {
+    [self.tableView reloadData];
+    
+}
 
 
 /*
