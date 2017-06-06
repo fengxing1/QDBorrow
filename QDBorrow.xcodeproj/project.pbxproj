@@ -163,6 +163,12 @@
 		22A3738B1EE23BE70090548C /* blankpage_image_Sleep@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A373821EE23BE70090548C /* blankpage_image_Sleep@3x.png */; };
 		22A3738C1EE23BE70090548C /* EaseBlankPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373841EE23BE70090548C /* EaseBlankPageView.m */; };
 		22A3738D1EE23BE70090548C /* UIView+EaseBlankPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373861EE23BE70090548C /* UIView+EaseBlankPage.m */; };
+		22A373A41EE3EE7B0090548C /* NSString+Validate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373A31EE3EE7B0090548C /* NSString+Validate.m */; };
+		22A373A71EE3F7210090548C /* QDMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373A61EE3F7210090548C /* QDMessageViewController.m */; };
+		22A373AC1EE408DC0090548C /* QDHelpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373AB1EE408DC0090548C /* QDHelpModel.m */; };
+		22A373AE1EE40ACA0090548C /* helpJson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22A373AD1EE40ACA0090548C /* helpJson.txt */; };
+		22A373B21EE40BD20090548C /* QDHelpViewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373B11EE40BD20090548C /* QDHelpViewListViewController.m */; };
+		22A373B51EE4203B0090548C /* QDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373B41EE4203B0090548C /* QDSettingViewController.m */; };
 		22DC7A281EDEF2E7009DB868 /* QDMyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A261EDEF2E7009DB868 /* QDMyListCell.m */; };
 		22DC7A291EDEF2E7009DB868 /* QDMyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DC7A271EDEF2E7009DB868 /* QDMyListCell.xib */; };
 		22DC7A2D1EDEFE2E009DB868 /* QDMyAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A2B1EDEFE2E009DB868 /* QDMyAccountCell.m */; };
@@ -486,6 +492,17 @@
 		22A373841EE23BE70090548C /* EaseBlankPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseBlankPageView.m; sourceTree = "<group>"; };
 		22A373851EE23BE70090548C /* UIView+EaseBlankPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EaseBlankPage.h"; sourceTree = "<group>"; };
 		22A373861EE23BE70090548C /* UIView+EaseBlankPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EaseBlankPage.m"; sourceTree = "<group>"; };
+		22A373A21EE3EE7B0090548C /* NSString+Validate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validate.h"; sourceTree = "<group>"; };
+		22A373A31EE3EE7B0090548C /* NSString+Validate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validate.m"; sourceTree = "<group>"; };
+		22A373A51EE3F7210090548C /* QDMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMessageViewController.h; sourceTree = "<group>"; };
+		22A373A61EE3F7210090548C /* QDMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMessageViewController.m; sourceTree = "<group>"; };
+		22A373AA1EE408DC0090548C /* QDHelpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHelpModel.h; sourceTree = "<group>"; };
+		22A373AB1EE408DC0090548C /* QDHelpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHelpModel.m; sourceTree = "<group>"; };
+		22A373AD1EE40ACA0090548C /* helpJson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helpJson.txt; sourceTree = "<group>"; };
+		22A373B01EE40BD20090548C /* QDHelpViewListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHelpViewListViewController.h; sourceTree = "<group>"; };
+		22A373B11EE40BD20090548C /* QDHelpViewListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHelpViewListViewController.m; sourceTree = "<group>"; };
+		22A373B31EE4203B0090548C /* QDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDSettingViewController.h; sourceTree = "<group>"; };
+		22A373B41EE4203B0090548C /* QDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDSettingViewController.m; sourceTree = "<group>"; };
 		22DC7A251EDEF2E7009DB868 /* QDMyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMyListCell.h; sourceTree = "<group>"; };
 		22DC7A261EDEF2E7009DB868 /* QDMyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMyListCell.m; sourceTree = "<group>"; };
 		22DC7A271EDEF2E7009DB868 /* QDMyListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDMyListCell.xib; sourceTree = "<group>"; };
@@ -870,6 +887,7 @@
 		2210D9FE1EC9F82300366846 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				22A373A91EE4088C0090548C /* Model */,
 				2210DA001EC9F84D00366846 /* View */,
 				2210D9FF1EC9F83A00366846 /* Controller */,
 			);
@@ -889,6 +907,12 @@
 				22DC7A391EDF154D009DB868 /* QDRegisterViewController.h */,
 				22DC7A3A1EDF154D009DB868 /* QDRegisterViewController.m */,
 				22DC7A3B1EDF154D009DB868 /* QDRegisterViewController.xib */,
+				22A373A51EE3F7210090548C /* QDMessageViewController.h */,
+				22A373A61EE3F7210090548C /* QDMessageViewController.m */,
+				22A373B01EE40BD20090548C /* QDHelpViewListViewController.h */,
+				22A373B11EE40BD20090548C /* QDHelpViewListViewController.m */,
+				22A373B31EE4203B0090548C /* QDSettingViewController.h */,
+				22A373B41EE4203B0090548C /* QDSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1226,6 +1250,8 @@
 				2210DAC71ED087AB00366846 /* NSString+UUID.m */,
 				2210DAC81ED087AB00366846 /* NSString+XML.h */,
 				2210DAC91ED087AB00366846 /* NSString+XML.m */,
+				22A373A21EE3EE7B0090548C /* NSString+Validate.h */,
+				22A373A31EE3EE7B0090548C /* NSString+Validate.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -1406,6 +1432,16 @@
 			path = EaseBlankPage;
 			sourceTree = "<group>";
 		};
+		22A373A91EE4088C0090548C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22A373AD1EE40ACA0090548C /* helpJson.txt */,
+				22A373AA1EE408DC0090548C /* QDHelpModel.h */,
+				22A373AB1EE408DC0090548C /* QDHelpModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		442C1987B48A94241E6A0B9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1555,6 +1591,7 @@
 				22A373871EE23BE70090548C /* blankpage_button_reload@2x.png in Resources */,
 				09B4BC3D1EC3454B0056B472 /* QBBusinessTableViewCell.xib in Resources */,
 				0970F5121EC29FC200FC4794 /* LaunchScreen.xib in Resources */,
+				22A373AE1EE40ACA0090548C /* helpJson.txt in Resources */,
 				0970F3AB1EC29F2900FC4794 /* LaunchScreen.storyboard in Resources */,
 				229BAA7D1EC36D5B00021EEA /* QDChooseTableViewCell.xib in Resources */,
 				229BAA781EC367EB00021EEA /* QDCompanyTableViewCell.xib in Resources */,
@@ -1736,8 +1773,10 @@
 				0970F5191EC29FC200FC4794 /* QDTabBarViewController.m in Sources */,
 				2210DB0C1ED087AB00366846 /* NSNumber+Round.m in Sources */,
 				2210DAEC1ED087AB00366846 /* NSData+Encrypt.m in Sources */,
+				22A373A41EE3EE7B0090548C /* NSString+Validate.m in Sources */,
 				0970F51D1EC29FC200FC4794 /* BorrowDetailModel.m in Sources */,
 				2210DB071ED087AB00366846 /* NSNotificationCenter+MainThread.m in Sources */,
+				22A373B51EE4203B0090548C /* QDSettingViewController.m in Sources */,
 				2210DB141ED087AB00366846 /* NSObject+KVOBlocks.m in Sources */,
 				2210DB111ED087AB00366846 /* NSObject+Blocks.m in Sources */,
 				2210DB051ED087AB00366846 /* NSInvocation+Bb.m in Sources */,
@@ -1757,6 +1796,7 @@
 				2210DB061ED087AB00366846 /* NSInvocation+Block.m in Sources */,
 				2210DB2C1ED087AB00366846 /* NSString+XML.m in Sources */,
 				0970F5161EC29FC200FC4794 /* QDCommonUI.m in Sources */,
+				22A373A71EE3F7210090548C /* QDMessageViewController.m in Sources */,
 				226CB2171EC71C8900C15625 /* LZCenterAddressPickerView.m in Sources */,
 				2210DB0F1ED087AB00366846 /* NSObject+AssociatedObject.m in Sources */,
 				2210DB2D1ED087AB00366846 /* NSTimer+Addition.m in Sources */,
@@ -1786,6 +1826,7 @@
 				22DC7A371EDF09DE009DB868 /* QDLoginOrRegisterViewController.m in Sources */,
 				2210DB041ED087AB00366846 /* NSIndexPath+Offset.m in Sources */,
 				2210DB1F1ED087AB00366846 /* NSString+Encrypt.m in Sources */,
+				22A373B21EE40BD20090548C /* QDHelpViewListViewController.m in Sources */,
 				229BAA7C1EC36D5B00021EEA /* QDChooseTableViewCell.m in Sources */,
 				2210DB321ED087AB00366846 /* NSMutableURLRequest+Upload.m in Sources */,
 				2210DB261ED087AB00366846 /* NSString+Ruby.m in Sources */,
@@ -1830,6 +1871,7 @@
 				2210DB361ED087AB00366846 /* UIAlertView+Block.m in Sources */,
 				2210DAF21ED087AB00366846 /* NSDate+Extension.m in Sources */,
 				2210DB021ED087AB00366846 /* NSFileManager+Paths.m in Sources */,
+				22A373AC1EE408DC0090548C /* QDHelpModel.m in Sources */,
 				2214CB481EDBE0CD00C20C08 /* QDProductIntroduceCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

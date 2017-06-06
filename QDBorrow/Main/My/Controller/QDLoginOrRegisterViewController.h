@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QMUICommonViewController.h"
 
-@interface QDLoginOrRegisterViewController : UIViewController
+@interface QDLoginOrRegisterViewController : QMUICommonViewController
 
 @end

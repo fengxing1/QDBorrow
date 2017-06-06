@@ -149,15 +149,15 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
         }
     }
     else if (indexPath.section == 1){
-        QDMultiLabelCell *multiLabelCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierDescribeCell];
-        multiLabelCell.multiStrArray = self.borrowModel.qualificationArray;
-        multiLabelCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return multiLabelCell;
+        QDProductIntroduceCell *introductCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierIntroduceCell];
+        introductCell.productIntroduce = self.borrowModel.qualification;
+        introductCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return introductCell;
     } else if (indexPath.section == 2){
-        QDMultiLabelCell *multiLabelCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierDescribeCell];
-        multiLabelCell.multiStrArray = self.borrowModel.dataArray;
-        multiLabelCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return multiLabelCell;
+        QDProductIntroduceCell *introductCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierIntroduceCell];
+        introductCell.productIntroduce = self.borrowModel.needdata;
+        introductCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return introductCell;
     } else if (indexPath.section == 3) {
         QDProductIntroduceCell *introductCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierIntroduceCell];
         introductCell.productIntroduce = self.borrowModel.companyIntroduce;
@@ -179,10 +179,12 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
             return 70;
         }
     } else if (indexPath.section == 1){
-        CGFloat height = [QDMultiLabelCell heightOfCell:self.borrowModel.qualificationArray];
+        CGFloat height = [QDProductIntroduceCell heightOfCellWithIntroduce:self.borrowModel.qualification];
+        return height;
         return height;
     } else if (indexPath.section == 2) {
-        CGFloat height = [QDMultiLabelCell heightOfCell:self.borrowModel.dataArray];
+        CGFloat height = [QDProductIntroduceCell heightOfCellWithIntroduce:self.borrowModel.needdata];
+        return height;
         return height;
     } else if (indexPath.section == 3) {
         CGFloat height = [QDProductIntroduceCell heightOfCellWithIntroduce:self.borrowModel.companyIntroduce];

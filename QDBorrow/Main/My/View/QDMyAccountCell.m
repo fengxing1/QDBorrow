@@ -8,12 +8,14 @@
 
 #import "QDMyAccountCell.h"
 #import "AVUser.h"
+#import "QMUIKit.h"
 
 @implementation QDMyAccountCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.nameLabel.textColor = [UIColor whiteColor];
 }
 
 - (void)layoutSubviews {

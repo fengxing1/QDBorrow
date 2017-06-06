@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +14,7 @@
                 <outlet property="emailTextField" destination="WfO-47-Ejo" id="Dj9-Dr-JgG"/>
                 <outlet property="passwordTextField" destination="uZu-OF-SO9" id="y8a-xP-tqS"/>
                 <outlet property="phoneTextField" destination="XDG-p6-KHM" id="zgP-jk-W6h"/>
-                <outlet property="registerBtn" destination="vn3-FW-V9Z" id="sGA-Ae-0bX"/>
+                <outlet property="registerBackView" destination="c8X-xk-doh" id="00Y-r0-Lw9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8X-xk-doh">
-                    <rect key="frame" x="0.0" y="30" width="375" height="150"/>
+                    <rect key="frame" x="0.0" y="84" width="375" height="150"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="lFd-uO-cGz">
                             <rect key="frame" x="15" y="18" width="16" height="16"/>
@@ -95,26 +95,12 @@
                         <constraint firstItem="gfD-Xb-SyO" firstAttribute="leading" secondItem="c8X-xk-doh" secondAttribute="leading" constant="15" id="zjy-dA-D4B"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vn3-FW-V9Z">
-                    <rect key="frame" x="16" y="229" width="343" height="45"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="l6S-NW-qOo"/>
-                    </constraints>
-                    <state key="normal" title="注册"/>
-                    <connections>
-                        <action selector="registerClick:" destination="-1" eventType="touchUpInside" id="LzC-JT-9vn"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="c8X-xk-doh" secondAttribute="trailing" id="8Ze-B3-d54"/>
-                <constraint firstItem="vn3-FW-V9Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="EYt-gO-hQJ"/>
-                <constraint firstItem="vn3-FW-V9Z" firstAttribute="top" secondItem="c8X-xk-doh" secondAttribute="bottom" constant="49" id="GGN-Dn-2As"/>
                 <constraint firstItem="c8X-xk-doh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tau-se-jjr"/>
-                <constraint firstAttribute="trailing" secondItem="vn3-FW-V9Z" secondAttribute="trailing" constant="16" id="jYb-if-9go"/>
-                <constraint firstItem="c8X-xk-doh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="mrG-0Z-8hZ"/>
+                <constraint firstItem="c8X-xk-doh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="mrG-0Z-8hZ"/>
             </constraints>
         </view>
     </objects>

@@ -169,7 +169,7 @@
     QDMyViewController *myViewController = [[QDMyViewController alloc] init];
     myViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *myNavController = [[QDNavigationController alloc] initWithRootViewController:myViewController];
-    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:4];
+    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:4];
     
     // window root controller
     tabBarViewController.viewControllers = @[homeViewNavController, loanNavController,certNavController,myNavController];

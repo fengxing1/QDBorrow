@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QDLoginOrRegisterViewController">
             <connections>
-                <outlet property="longinBtn" destination="bTO-sy-eez" id="FY7-ao-obb"/>
+                <outlet property="loginBackView" destination="rdl-Ex-pHQ" id="ALL-7q-bcI"/>
                 <outlet property="passwordLabel" destination="JMB-HN-bup" id="4Xz-Lo-c4R"/>
                 <outlet property="phoneLabel" destination="2Db-y4-1zF" id="Inc-fB-OX4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdl-Ex-pHQ">
-                    <rect key="frame" x="0.0" y="10" width="375" height="100"/>
+                    <rect key="frame" x="0.0" y="84" width="375" height="100"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="PbO-0R-mGk">
                             <rect key="frame" x="15" y="18" width="16" height="16"/>
@@ -73,26 +73,12 @@
                         <constraint firstItem="2Db-y4-1zF" firstAttribute="leading" secondItem="PbO-0R-mGk" secondAttribute="trailing" constant="15" id="y9e-tW-Hna"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTO-sy-eez">
-                    <rect key="frame" x="16" y="159" width="343" height="45"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="kdk-ab-Qtu"/>
-                    </constraints>
-                    <state key="normal" title="登陆"/>
-                    <connections>
-                        <action selector="loginClick:" destination="-1" eventType="touchUpInside" id="X7m-Ft-l0k"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="bTO-sy-eez" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="8nz-Ac-YuR"/>
                 <constraint firstAttribute="trailing" secondItem="rdl-Ex-pHQ" secondAttribute="trailing" id="Ats-HT-9bk"/>
-                <constraint firstItem="bTO-sy-eez" firstAttribute="top" secondItem="rdl-Ex-pHQ" secondAttribute="bottom" constant="49" id="Qf8-Ru-bfo"/>
                 <constraint firstItem="rdl-Ex-pHQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZPc-52-QIG"/>
-                <constraint firstAttribute="trailing" secondItem="bTO-sy-eez" secondAttribute="trailing" constant="16" id="aEK-QO-0xI"/>
-                <constraint firstItem="rdl-Ex-pHQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="fAH-Cd-iTp"/>
+                <constraint firstItem="rdl-Ex-pHQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="fAH-Cd-iTp"/>
             </constraints>
             <point key="canvasLocation" x="68.5" y="65.5"/>
         </view>

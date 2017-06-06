@@ -92,7 +92,7 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
 
 - (void)setZCLibInitInfoParam:(ZCLibInitInfo *)initInfo{
     // 获取AppKey
-    initInfo.appKey = @"1ff3e4ff91314f5ca308e19570ba24bb";
+    initInfo.appKey = @"976587bdd707439f8ae1b604103dc7ac";
     initInfo.skillSetId = @"";
     initInfo.skillSetName = @"";
     initInfo.receptionistId = @"";

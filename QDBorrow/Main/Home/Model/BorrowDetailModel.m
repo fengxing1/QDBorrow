@@ -21,9 +21,9 @@
         self.minMoney = [[detail objectForKey:@"minMoney"] longValue];
         self.amortizationNumArray = [detail objectForKey:@"amortizationNumArray"];
         self.fastestTime = [detail objectForKey:@"fastestTime"];
-        self.qualificationArray = [detail objectForKey:@"qualificationArray"];
+        self.qualification = [detail objectForKey:@"qualification"];
         self.redirectUrl = [detail objectForKey:@"redirectUrl"];
-        self.dataArray = [detail objectForKey:@"dataArray"];
+        self.needdata = [detail objectForKey:@"needdata"];
         self.bshowAtHome = [[detail objectForKey:@"bshowAtHome"] integerValue];
         
         self.monthyRate = [[detail objectForKey:@"monthyRate"] floatValue];

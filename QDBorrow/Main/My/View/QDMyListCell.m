@@ -7,12 +7,14 @@
 //
 
 #import "QDMyListCell.h"
+#import "QMUIKit.h"
 
 @implementation QDMyListCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.listTitleLabel.textColor = TableViewCellTitleLabelColor;
 }
 
 - (void)setCellType:(CellType)cellType {

@@ -19,10 +19,15 @@
 @property (nonatomic, assign) long minMoney;
 @property (nonatomic, strong) NSArray *amortizationNumArray;
 @property (nonatomic, strong) NSString *fastestTime;
-@property (nonatomic, strong) NSArray *qualificationArray;
 @property (nonatomic, strong) NSString *redirectUrl;
-@property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, assign) NSInteger bshowAtHome;
+
+//申请资格
+@property (nonatomic, copy) NSString *qualification;
+//所需材料
+@property (nonatomic, copy) NSString *needdata;
+
+
 //是否显示底部button按钮
 @property (nonatomic, assign) NSInteger showButton;
 
