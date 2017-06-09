@@ -22,6 +22,7 @@
 @implementation QDSettingViewController
 
 - (void)initDataSource {
+    self.title = @"设置";
     [super initDataSource];
     NSMutableArray *array = [NSMutableArray arrayWithObjects:@"关于我们",@"商务合作",@"官方客服群", @"官方邮箱",nil];
     self.dataSource = array;

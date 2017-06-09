@@ -60,9 +60,8 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"QDRepaymentInfoTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierRepaymentCell];
     [self.tableView registerClass:[QDMultiLabelCell class] forCellReuseIdentifier:kReusableIdentifierDescribeCell];
     [self.tableView registerClass:[QDProductIntroduceCell class] forCellReuseIdentifier:kReusableIdentifierIntroduceCell];
-    if (self.borrowModel.showButton) {
-        [self createBottomButton];
-    }
+    [self createBottomButton];
+   
     UIView *footerView = [[UIView alloc] init];
     footerView.backgroundColor = [UIColor clearColor];
     footerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
@@ -99,10 +98,14 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     [self.normalButton setTitleColor:UIColorWhite forState:UIControlStateNormal];
     self.normalButton.backgroundColor = UIColorBlue;
     self.normalButton.highlightedBackgroundColor = UIColorMake(0, 168, 225);// 高亮时的背景色
-    [self.normalButton setTitle:@"申请贷款" forState:UIControlStateNormal];
     self.normalButton.frame = CGRectMake(0, SCREEN_HEIGHT - 44, SCREEN_WIDTH, 44);
     [self.view addSubview:self.normalButton];
     [self.normalButton addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    if (self.borrowModel.showButton) {
+        [self.normalButton setTitle:@"申请贷款" forState:UIControlStateNormal];
+    } else {
+        [self.normalButton setTitle:@"评估贷款资格" forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark tableview datasoure and delegate
@@ -233,6 +236,20 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 
 - (void)bottomBtnClick {
+    if (self.borrowModel.showButton) {
+        [self toProductDetail];
+    } else {
+        [self toEstimateQualification];
+    }
+}
+
+//评估页面
+- (void)toEstimateQualification {
+    
+}
+
+//产品页面
+- (void)toProductDetail {
     NSString *redirectUrl = self.borrowModel.redirectUrl;
     if (!([redirectUrl containsString:@"http"] || [redirectUrl containsString:@"https"])) {
         redirectUrl = [@"http://" stringByAppendingString:redirectUrl];

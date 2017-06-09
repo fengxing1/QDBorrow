@@ -35,14 +35,14 @@
     if (view == nil) view = (UIView*)[UIApplication sharedApplication].delegate.window;
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.mode=MBProgressHUDModeText;
+//    hud.mode=MBProgressHUDModeText;
     hud.labelText=message;
     hud.labelFont=[UIFont systemFontOfSize:15];
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
     //代表需要蒙版效果
     
-    hud.dimBackground = YES;
+//    hud.dimBackground = YES;
     return hud;
 }
 
@@ -61,7 +61,7 @@
     hud.labelText=text;
     hud.labelFont=[UIFont systemFontOfSize:15];
     // 代表需要蒙版效果
-    hud.dimBackground = YES;
+//    hud.dimBackground = YES;
     return hud;
 }
 

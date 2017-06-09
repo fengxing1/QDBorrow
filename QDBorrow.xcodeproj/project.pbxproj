@@ -150,6 +150,7 @@
 		226CB2191EC71C8900C15625 /* LZToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB20E1EC71C8800C15625 /* LZToolbar.m */; };
 		226CB21A1EC71C8900C15625 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 226CB2101EC71C8800C15625 /* city.json */; };
 		226CB21B1EC71C8900C15625 /* Province.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226CB2111EC71C8800C15625 /* Province.plist */; };
+		22751FF01EEA1CB1006DEB47 /* QDEstimate QualificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22751FEF1EEA1CB1006DEB47 /* QDEstimate QualificationViewController.m */; };
 		229BAA771EC367EB00021EEA /* QDCompanyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BAA751EC367EB00021EEA /* QDCompanyTableViewCell.m */; };
 		229BAA781EC367EB00021EEA /* QDCompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229BAA761EC367EB00021EEA /* QDCompanyTableViewCell.xib */; };
 		229BAA7C1EC36D5B00021EEA /* QDChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BAA7A1EC36D5B00021EEA /* QDChooseTableViewCell.m */; };
@@ -474,6 +475,8 @@
 		226CB20E1EC71C8800C15625 /* LZToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZToolbar.m; sourceTree = "<group>"; };
 		226CB2101EC71C8800C15625 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		226CB2111EC71C8800C15625 /* Province.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Province.plist; sourceTree = "<group>"; };
+		22751FEE1EEA1CB1006DEB47 /* QDEstimate QualificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QDEstimate QualificationViewController.h"; sourceTree = "<group>"; };
+		22751FEF1EEA1CB1006DEB47 /* QDEstimate QualificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QDEstimate QualificationViewController.m"; sourceTree = "<group>"; };
 		229BAA741EC367EB00021EEA /* QDCompanyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCompanyTableViewCell.h; sourceTree = "<group>"; };
 		229BAA751EC367EB00021EEA /* QDCompanyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCompanyTableViewCell.m; sourceTree = "<group>"; };
 		229BAA761EC367EB00021EEA /* QDCompanyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDCompanyTableViewCell.xib; sourceTree = "<group>"; };
@@ -842,6 +845,8 @@
 				09B4BC451EC34DC00056B472 /* QDCompanyViewController.m */,
 				223285641EC7F62E004AF053 /* QDCompanyDetailController.h */,
 				223285651EC7F62E004AF053 /* QDCompanyDetailController.m */,
+				22751FEE1EEA1CB1006DEB47 /* QDEstimate QualificationViewController.h */,
+				22751FEF1EEA1CB1006DEB47 /* QDEstimate QualificationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1790,6 +1795,7 @@
 				2210DB2B1ED087AB00366846 /* NSString+UUID.m in Sources */,
 				2210DA041ECB425B00366846 /* QDCerditCell.m in Sources */,
 				0970F5151EC29FC200FC4794 /* QDCommonTableViewController.m in Sources */,
+				22751FF01EEA1CB1006DEB47 /* QDEstimate QualificationViewController.m in Sources */,
 				2210DAEF1ED087AB00366846 /* NSData+SDDataCache.m in Sources */,
 				2210D9FC1EC9E3F500366846 /* QDCerditModel.m in Sources */,
 				0970F51E1EC29FC200FC4794 /* QDHomeBannerModel.m in Sources */,

@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"帮助中心";
 }
 
 - (void)initDataSource {
