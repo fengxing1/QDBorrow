@@ -16,6 +16,7 @@
 #import "QDWebViewController.h"
 #import "LZPickViewManager.h"
 #import "QDProductIntroduceCell.h"
+#import "QDPersionViewController.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 static NSString *const kReusableIdentifierChooseCell = @"chooseCell";
@@ -64,14 +65,9 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
    
     UIView *footerView = [[UIView alloc] init];
     footerView.backgroundColor = [UIColor clearColor];
-    footerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
+    footerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
     self.tableView.tableFooterView = footerView;
 }
-
-- (void)addBorrowDat {
-    
-}
-
 
 - (void)configData {
     self.amountModel = [[QDAmountOfCount alloc] init];
@@ -92,13 +88,13 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 - (void)createBottomButton {
     
-    self.normalButton = [[QMUIButton alloc] initWithFrame:CGRectMakeWithSize(CGSizeMake(200, 40))];
+    self.normalButton = [[QMUIButton alloc] initWithFrame:CGRectMakeWithSize(CGSizeMake(200, 50))];
     self.normalButton.adjustsButtonWhenHighlighted = YES;
     self.normalButton.titleLabel.font = UIFontBoldMake(14);
     [self.normalButton setTitleColor:UIColorWhite forState:UIControlStateNormal];
     self.normalButton.backgroundColor = UIColorBlue;
     self.normalButton.highlightedBackgroundColor = UIColorMake(0, 168, 225);// 高亮时的背景色
-    self.normalButton.frame = CGRectMake(0, SCREEN_HEIGHT - 44, SCREEN_WIDTH, 44);
+    self.normalButton.frame = CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50);
     [self.view addSubview:self.normalButton];
     [self.normalButton addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
     if (self.borrowModel.showButton) {
@@ -245,7 +241,9 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 //评估页面
 - (void)toEstimateQualification {
-    
+    QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
+    persionVC.persionInfoType = PersionInfoTypePersional;
+    [self.navigationController pushViewController:persionVC animated:YES];
 }
 
 //产品页面

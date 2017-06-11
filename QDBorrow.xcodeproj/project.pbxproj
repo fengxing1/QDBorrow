@@ -139,6 +139,10 @@
 		2214CB481EDBE0CD00C20C08 /* QDProductIntroduceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2214CB461EDBE0CD00C20C08 /* QDProductIntroduceCell.m */; };
 		223285631EC7E9BC004AF053 /* QDMultiLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 223285621EC7E9BC004AF053 /* QDMultiLabelCell.m */; };
 		223285661EC7F62E004AF053 /* QDCompanyDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223285651EC7F62E004AF053 /* QDCompanyDetailController.m */; };
+		22394E7B1EEC2F330093AD29 /* QDAssetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22394E7A1EEC2F330093AD29 /* QDAssetsModel.m */; };
+		22394E7F1EEC31B70093AD29 /* QDPersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22394E7E1EEC31B70093AD29 /* QDPersionViewController.m */; };
+		22394E821EEC31E90093AD29 /* QDAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22394E811EEC31E90093AD29 /* QDAssetsViewController.m */; };
+		22394E891EED7E390093AD29 /* zichan.json in Resources */ = {isa = PBXBuildFile; fileRef = 22394E881EED7E390093AD29 /* zichan.json */; };
 		226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */; };
 		226CB2121EC71C8900C15625 /* LZAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1FE1EC71C8800C15625 /* LZAddressPickerView.m */; };
 		226CB2131EC71C8900C15625 /* LZAreaPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB2001EC71C8800C15625 /* LZAreaPickerView.m */; };
@@ -170,6 +174,8 @@
 		22A373AE1EE40ACA0090548C /* helpJson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22A373AD1EE40ACA0090548C /* helpJson.txt */; };
 		22A373B21EE40BD20090548C /* QDHelpViewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373B11EE40BD20090548C /* QDHelpViewListViewController.m */; };
 		22A373B51EE4203B0090548C /* QDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373B41EE4203B0090548C /* QDSettingViewController.m */; };
+		22DB03231EED870700AF2A60 /* QDAssetsChoicesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB03211EED870700AF2A60 /* QDAssetsChoicesTableViewCell.m */; };
+		22DB03241EED870700AF2A60 /* QDAssetsChoicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DB03221EED870700AF2A60 /* QDAssetsChoicesTableViewCell.xib */; };
 		22DC7A281EDEF2E7009DB868 /* QDMyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A261EDEF2E7009DB868 /* QDMyListCell.m */; };
 		22DC7A291EDEF2E7009DB868 /* QDMyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DC7A271EDEF2E7009DB868 /* QDMyListCell.xib */; };
 		22DC7A2D1EDEFE2E009DB868 /* QDMyAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A2B1EDEFE2E009DB868 /* QDMyAccountCell.m */; };
@@ -454,6 +460,13 @@
 		223285621EC7E9BC004AF053 /* QDMultiLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMultiLabelCell.m; sourceTree = "<group>"; };
 		223285641EC7F62E004AF053 /* QDCompanyDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCompanyDetailController.h; sourceTree = "<group>"; };
 		223285651EC7F62E004AF053 /* QDCompanyDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCompanyDetailController.m; sourceTree = "<group>"; };
+		22394E791EEC2F330093AD29 /* QDAssetsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDAssetsModel.h; sourceTree = "<group>"; };
+		22394E7A1EEC2F330093AD29 /* QDAssetsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDAssetsModel.m; sourceTree = "<group>"; };
+		22394E7D1EEC31B70093AD29 /* QDPersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDPersionViewController.h; sourceTree = "<group>"; };
+		22394E7E1EEC31B70093AD29 /* QDPersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPersionViewController.m; sourceTree = "<group>"; };
+		22394E801EEC31E90093AD29 /* QDAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDAssetsViewController.h; sourceTree = "<group>"; };
+		22394E811EEC31E90093AD29 /* QDAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDAssetsViewController.m; sourceTree = "<group>"; };
+		22394E881EED7E390093AD29 /* zichan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zichan.json; sourceTree = "<group>"; };
 		226CB1F71EC6F3EB00C15625 /* QDInstallmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDInstallmentModel.h; sourceTree = "<group>"; };
 		226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDInstallmentModel.m; sourceTree = "<group>"; };
 		226CB1FD1EC71C8800C15625 /* LZAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAddressPickerView.h; sourceTree = "<group>"; };
@@ -506,6 +519,9 @@
 		22A373B11EE40BD20090548C /* QDHelpViewListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHelpViewListViewController.m; sourceTree = "<group>"; };
 		22A373B31EE4203B0090548C /* QDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDSettingViewController.h; sourceTree = "<group>"; };
 		22A373B41EE4203B0090548C /* QDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDSettingViewController.m; sourceTree = "<group>"; };
+		22DB03201EED870700AF2A60 /* QDAssetsChoicesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDAssetsChoicesTableViewCell.h; sourceTree = "<group>"; };
+		22DB03211EED870700AF2A60 /* QDAssetsChoicesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDAssetsChoicesTableViewCell.m; sourceTree = "<group>"; };
+		22DB03221EED870700AF2A60 /* QDAssetsChoicesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDAssetsChoicesTableViewCell.xib; sourceTree = "<group>"; };
 		22DC7A251EDEF2E7009DB868 /* QDMyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMyListCell.h; sourceTree = "<group>"; };
 		22DC7A261EDEF2E7009DB868 /* QDMyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMyListCell.m; sourceTree = "<group>"; };
 		22DC7A271EDEF2E7009DB868 /* QDMyListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDMyListCell.xib; sourceTree = "<group>"; };
@@ -731,6 +747,10 @@
 			children = (
 				0970F4A51EC29FC200FC4794 /* HomeViewController.h */,
 				0970F4A61EC29FC200FC4794 /* HomeViewController.m */,
+				22394E7D1EEC31B70093AD29 /* QDPersionViewController.h */,
+				22394E7E1EEC31B70093AD29 /* QDPersionViewController.m */,
+				22394E801EEC31E90093AD29 /* QDAssetsViewController.h */,
+				22394E811EEC31E90093AD29 /* QDAssetsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -738,12 +758,15 @@
 		0970F4A71EC29FC200FC4794 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22394E881EED7E390093AD29 /* zichan.json */,
 				0970F4A81EC29FC200FC4794 /* BorrowDetailModel.h */,
 				0970F4A91EC29FC200FC4794 /* BorrowDetailModel.m */,
 				0970F4AA1EC29FC200FC4794 /* QDHomeBannerModel.h */,
 				0970F4AB1EC29FC200FC4794 /* QDHomeBannerModel.m */,
 				0970F4AC1EC29FC200FC4794 /* QDHomeModel.h */,
 				0970F4AD1EC29FC200FC4794 /* QDHomeModel.m */,
+				22394E791EEC2F330093AD29 /* QDAssetsModel.h */,
+				22394E7A1EEC2F330093AD29 /* QDAssetsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -756,6 +779,9 @@
 				09B4BC391EC3454B0056B472 /* QBBusinessTableViewCell.h */,
 				09B4BC3A1EC3454B0056B472 /* QBBusinessTableViewCell.m */,
 				09B4BC3B1EC3454B0056B472 /* QBBusinessTableViewCell.xib */,
+				22DB03201EED870700AF2A60 /* QDAssetsChoicesTableViewCell.h */,
+				22DB03211EED870700AF2A60 /* QDAssetsChoicesTableViewCell.m */,
+				22DB03221EED870700AF2A60 /* QDAssetsChoicesTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1595,6 +1621,7 @@
 				22A3738B1EE23BE70090548C /* blankpage_image_Sleep@3x.png in Resources */,
 				22A373871EE23BE70090548C /* blankpage_button_reload@2x.png in Resources */,
 				09B4BC3D1EC3454B0056B472 /* QBBusinessTableViewCell.xib in Resources */,
+				22394E891EED7E390093AD29 /* zichan.json in Resources */,
 				0970F5121EC29FC200FC4794 /* LaunchScreen.xib in Resources */,
 				22A373AE1EE40ACA0090548C /* helpJson.txt in Resources */,
 				0970F3AB1EC29F2900FC4794 /* LaunchScreen.storyboard in Resources */,
@@ -1610,6 +1637,7 @@
 				2210DA051ECB425B00366846 /* QDCerditCell.xib in Resources */,
 				22A373891EE23BE70090548C /* blankpage_image_loadFail@3x.png in Resources */,
 				2210DAF81ED087AB00366846 /* NSDateTimeAgo.bundle in Resources */,
+				22DB03241EED870700AF2A60 /* QDAssetsChoicesTableViewCell.xib in Resources */,
 				226CB21B1EC71C8900C15625 /* Province.plist in Resources */,
 				0970F3A61EC29F2900FC4794 /* Main.storyboard in Resources */,
 				22DC7A381EDF09DE009DB868 /* QDLoginOrRegisterViewController.xib in Resources */,
@@ -1745,6 +1773,7 @@
 			files = (
 				0970F5131EC29FC200FC4794 /* QDCommonGroupListViewController.m in Sources */,
 				226CB2131EC71C8900C15625 /* LZAreaPickerView.m in Sources */,
+				22DB03231EED870700AF2A60 /* QDAssetsChoicesTableViewCell.m in Sources */,
 				2210DB011ED087AB00366846 /* NSFileHandle+readLine.m in Sources */,
 				2210DAFE1ED087AB00366846 /* NSDictionary+URL.m in Sources */,
 				22DC7A3C1EDF154D009DB868 /* QDRegisterViewController.m in Sources */,
@@ -1761,6 +1790,7 @@
 				2210DB0D1ED087AB00366846 /* NSObject+AddProperty.m in Sources */,
 				2210DB371ED087AB00366846 /* UIWindow+Hierarchy.m in Sources */,
 				2210DB121ED087AB00366846 /* NSObject+EasyCopy.m in Sources */,
+				22394E821EEC31E90093AD29 /* QDAssetsViewController.m in Sources */,
 				2210DAE91ED087AB00366846 /* NSBundle+AppIcon.m in Sources */,
 				2210DAFF1ED087AB00366846 /* NSDictionary+XML.m in Sources */,
 				2210DB301ED087AB00366846 /* NSURL+QueryDictionary.m in Sources */,
@@ -1841,6 +1871,7 @@
 				2210DAF31ED087AB00366846 /* NSDate+Formatter.m in Sources */,
 				2210DB081ED087AB00366846 /* NSDecimalNumber+CalculatingByString.m in Sources */,
 				2210DAF11ED087AB00366846 /* NSDate+CupertinoYankee.m in Sources */,
+				22394E7F1EEC31B70093AD29 /* QDPersionViewController.m in Sources */,
 				0970F51A1EC29FC200FC4794 /* QDUIHelper.m in Sources */,
 				226CB2121EC71C8900C15625 /* LZAddressPickerView.m in Sources */,
 				2210DB0B1ED087AB00366846 /* NSNumber+RomanNumerals.m in Sources */,
@@ -1879,6 +1910,7 @@
 				2210DB021ED087AB00366846 /* NSFileManager+Paths.m in Sources */,
 				22A373AC1EE408DC0090548C /* QDHelpModel.m in Sources */,
 				2214CB481EDBE0CD00C20C08 /* QDProductIntroduceCell.m in Sources */,
+				22394E7B1EEC2F330093AD29 /* QDAssetsModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
