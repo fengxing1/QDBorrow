@@ -100,7 +100,7 @@
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
     // 代表需要蒙版效果
-    hud.dimBackground = YES;
+//    hud.dimBackground = YES;
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
     // X秒之后再消失
@@ -125,7 +125,7 @@
     hud.removeFromSuperViewOnHide = YES;
     
     // 代表需要蒙版效果
-    hud.dimBackground = YES;
+//    hud.dimBackground = YES;
     
     // 3秒之后再消失
     [hud hide:YES afterDelay:1];

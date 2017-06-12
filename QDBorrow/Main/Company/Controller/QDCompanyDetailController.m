@@ -18,6 +18,8 @@
 #import "QDProductIntroduceCell.h"
 #import "QDPersionViewController.h"
 #import "UIAlertView+Block.h"
+#import "AVUser.h"
+#import "QDLoginOrRegisterViewController.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 static NSString *const kReusableIdentifierChooseCell = @"chooseCell";
@@ -242,12 +244,21 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 //评估页面
 - (void)toEstimateQualification {
-    [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
-        <#code#>
-    } title:@"提示" message:@"" cancelButtonName:<#(NSString *)#> otherButtonTitles:<#(NSString *), ...#>, nil]
-    QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
-    persionVC.persionInfoType = PersionInfoTypePersional;
-    [self.navigationController pushViewController:persionVC animated:YES];
+    //先进行登录校验
+    if ([AVUser currentUser]) {
+        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+            QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
+            persionVC.persionInfoType = PersionInfoTypePersional;
+            __weak typeof(self) weakSelf = self;
+            [weakSelf.navigationController pushViewController:persionVC animated:YES];
+        } title:@"提示" message:@"为了准确为你评估贷款资格和额度，请准确如实填写相应资料！" cancelButtonName:@"确定" otherButtonTitles:nil];
+    } else {
+        QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
+        [self.navigationController pushViewController:loginVC animated:YES];
+        
+    }
+    
+    
 }
 
 //产品页面

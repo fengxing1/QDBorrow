@@ -67,10 +67,14 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     [normalButton setTitleColor:UIColorWhite forState:UIControlStateNormal];
     normalButton.backgroundColor = UIColorBlue;
     normalButton.highlightedBackgroundColor = UIColorMake(0, 168, 225);// 高亮时的背景色
-    normalButton.frame = CGRectMake(0, SCREEN_HEIGHT - 44, SCREEN_WIDTH, 44);
+    normalButton.frame = CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50);
     [self.view addSubview:normalButton];
-    [normalButton setTitle:@"下一步" forState:UIControlStateNormal];
     [normalButton addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    if (self.persionInfoType == PersionInfoTypePersional) {
+        [normalButton setTitle:@"下一步" forState:UIControlStateNormal];
+    } else {
+        
+    }
 }
 
 

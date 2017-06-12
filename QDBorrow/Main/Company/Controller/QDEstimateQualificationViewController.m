@@ -1,31 +1,22 @@
 //
-//  QDEstimate QualificationViewController.m
+//  QDEstimateQualificationViewController.m
 //  QDBorrow
 //
-//  Created by 朱恪帅 on 2017/6/9.
+//  Created by 朱恪帅 on 2017/6/12.
 //  Copyright © 2017年 jinrong. All rights reserved.
 //
 
-#import "QDEstimate QualificationViewController.h"
+#import "QDEstimateQualificationViewController.h"
 
-@interface QDEstimate_QualificationViewController ()
+@interface QDEstimateQualificationViewController ()
 
 @end
 
-@implementation QDEstimate_QualificationViewController
+@implementation QDEstimateQualificationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.title = @"评估资格";
-}
-
-- (void)initDataSource {
-    
-}
-
-- (void)didSelectCellWithTitle:(NSString *)title {
-    
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
