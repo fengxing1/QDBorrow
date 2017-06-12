@@ -17,6 +17,7 @@
 #import "LZPickViewManager.h"
 #import "QDProductIntroduceCell.h"
 #import "QDPersionViewController.h"
+#import "UIAlertView+Block.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 static NSString *const kReusableIdentifierChooseCell = @"chooseCell";
@@ -232,7 +233,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 
 - (void)bottomBtnClick {
-    if (self.borrowModel.showButton) {
+    if (self.borrowModel.showButton && self.borrowModel.redirectUrl) {
         [self toProductDetail];
     } else {
         [self toEstimateQualification];
@@ -241,6 +242,9 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 //评估页面
 - (void)toEstimateQualification {
+    [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+        <#code#>
+    } title:@"提示" message:@"" cancelButtonName:<#(NSString *)#> otherButtonTitles:<#(NSString *), ...#>, nil]
     QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
     persionVC.persionInfoType = PersionInfoTypePersional;
     [self.navigationController pushViewController:persionVC animated:YES];
