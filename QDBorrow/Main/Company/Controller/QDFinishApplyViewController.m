@@ -1,33 +1,27 @@
 //
-//  QDEstimateQualificationViewController.m
+//  QDFinishApplyViewController.m
 //  QDBorrow
 //
-//  Created by 朱恪帅 on 2017/6/12.
+//  Created by larou on 2017/6/13.
 //  Copyright © 2017年 jinrong. All rights reserved.
 //
 
-#import "QDEstimateQualificationViewController.h"
+#import "QDFinishApplyViewController.h"
 #import "QMUIKit.h"
-#import "QDPersionViewController.h"
-#import "QDCompanyDetailController.m"
+#import "QDCompanyDetailController.h"
 
-@interface QDEstimateQualificationViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property(nonatomic, strong) QMUIButton *normalButton;
+@interface QDFinishApplyViewController ()
+@property (nonatomic, strong) QMUIButton *normalButton;
+@property (weak, nonatomic) IBOutlet UILabel *applyTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *applyDescLabel;
 
 @end
 
-@implementation QDEstimateQualificationViewController
+@implementation QDFinishApplyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"验资申请成功";
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 }
 
 - (void)configUI {
@@ -41,6 +35,7 @@
     [self.view addSubview:self.normalButton];
     [self.normalButton addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.normalButton setTitle:@"关闭" forState:UIControlStateNormal];
+    self.applyTitleLabel.textColor = TableViewCellDetailLabelColor;
 }
 
 - (void)bottomBtnClick {
@@ -50,8 +45,6 @@
             return;
         }
     }
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -31,7 +31,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 @property (nonatomic, strong) QDInstallmentModel *installModel;
 @property(nonatomic, strong) QMUIButton *normalButton;
 
-@property (nonnull, strong)NSMutableArray *moneyCountArray;
+@property (nonatomic, strong)NSMutableArray *moneyCountArray;
 
 @end
 

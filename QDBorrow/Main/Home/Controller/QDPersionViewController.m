@@ -13,7 +13,12 @@
 #import "QDAssetsChoicesTableViewCell.h"
 #import "QDApplyAssetsModel.h"
 #import "MBProgressHUD+MP.h"
-#import "QDEstimateQualificationViewController.h"
+#import "AVObject.h"
+#import "YYModel.h"
+#import "AVUser.h"
+#import "MBProgressHUD+MP.h"
+#import "QDFinishApplyViewController.h"
+//#import "QDEstimateQualificationViewController.h"
 
 static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 @interface QDPersionViewController ()
@@ -179,13 +184,24 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
         if ([self validateMessage]) {
             QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
             persionVC.persionInfoType = PersionInfoTypeAssets;
+            persionVC.persionInfo = self.persionInfo;
             [self.navigationController pushViewController:persionVC animated:YES];
         }
     } else {
         if ([self validateMessage]) {
-            //填写个人资料
-            QDEstimateQualificationViewController * assetsVC = [[QDEstimateQualificationViewController alloc] init];
-            [self.navigationController pushViewController:assetsVC animated:YES];
+            //完成注册
+            AVObject *borrow = [AVObject objectWithClassName:@"QDApplyOrder"];
+            AVUser *user = [AVUser currentUser];
+            [borrow setObject:user.username forKey:@"userId"];
+            [borrow setObject:[self.recordInfo yy_modelToJSONString] forKey:@"applyInfo"];
+            [MBProgressHUD showInfo:@"加载中..." ToView:self.view];
+            [borrow saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    QDFinishApplyViewController *applyVC = [[QDFinishApplyViewController alloc] init];
+                    [self.navigationController pushViewController:applyVC animated:YES];
+                }
+                [MBProgressHUD hideHUDForView:self.view];
+            }];
         }
     }
 }

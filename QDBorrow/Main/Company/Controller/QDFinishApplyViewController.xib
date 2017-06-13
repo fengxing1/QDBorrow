@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QDFinishApplyViewController">
+            <connections>
+                <outlet property="applyDescLabel" destination="HtU-ft-rZT" id="rft-UQ-VfK"/>
+                <outlet property="applyTitleLabel" destination="Dwx-3h-Xx3" id="egM-SK-JGI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已经收到您的贷款资质评审申请" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwx-3h-Xx3">
+                    <rect key="frame" x="16" y="183" width="343" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="2bh-pa-g9d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_grid_toast" translatesAutoresizingMaskIntoConstraints="NO" id="JF5-LX-TXs">
+                    <rect key="frame" x="139" y="72" width="97" height="94"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="BAj-YG-8q7"/>
+                        <constraint firstAttribute="height" constant="94" id="EN8-NT-I4c"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请保持电话畅通，资质结果将以电话和邮件形式通知到你" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtU-ft-rZT">
+                    <rect key="frame" x="12" y="213" width="350" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="hJn-u0-tP4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Dwx-3h-Xx3" secondAttribute="trailing" constant="16" id="AzE-GU-ttL"/>
+                <constraint firstItem="JF5-LX-TXs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Eu7-3X-sic"/>
+                <constraint firstItem="JF5-LX-TXs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="72" id="Lyv-yg-msr"/>
+                <constraint firstItem="Dwx-3h-Xx3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="RiU-Tb-T4y"/>
+                <constraint firstItem="HtU-ft-rZT" firstAttribute="top" secondItem="Dwx-3h-Xx3" secondAttribute="bottom" constant="8" id="T5x-Uz-eln"/>
+                <constraint firstItem="Dwx-3h-Xx3" firstAttribute="top" secondItem="JF5-LX-TXs" secondAttribute="bottom" constant="17" id="Y2a-l8-pEg"/>
+                <constraint firstItem="HtU-ft-rZT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="fgb-bG-Tjg"/>
+                <constraint firstAttribute="trailing" secondItem="HtU-ft-rZT" secondAttribute="trailing" constant="13" id="v9G-VI-b3d"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_grid_toast" width="72" height="72"/>
+    </resources>
+</document>
