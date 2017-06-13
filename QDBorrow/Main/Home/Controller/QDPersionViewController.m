@@ -185,6 +185,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
             QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
             persionVC.persionInfoType = PersionInfoTypeAssets;
             persionVC.persionInfo = self.persionInfo;
+            persionVC.recordInfo = self.recordInfo;
             [self.navigationController pushViewController:persionVC animated:YES];
         }
     } else {
