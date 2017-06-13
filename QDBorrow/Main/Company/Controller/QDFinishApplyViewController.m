@@ -22,9 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self configUI];
 }
 
 - (void)configUI {
+    self.title = @"申请成功";
     self.normalButton = [[QMUIButton alloc] initWithFrame:CGRectMakeWithSize(CGSizeMake(200, 50))];
     self.normalButton.adjustsButtonWhenHighlighted = YES;
     self.normalButton.titleLabel.font = UIFontBoldMake(14);
@@ -34,7 +36,7 @@
     self.normalButton.frame = CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50);
     [self.view addSubview:self.normalButton];
     [self.normalButton addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.normalButton setTitle:@"关闭" forState:UIControlStateNormal];
+    [self.normalButton setTitle:@"完成" forState:UIControlStateNormal];
     self.applyTitleLabel.textColor = TableViewCellDetailLabelColor;
 }
 
