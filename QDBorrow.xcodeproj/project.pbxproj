@@ -141,7 +141,6 @@
 		223285661EC7F62E004AF053 /* QDCompanyDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223285651EC7F62E004AF053 /* QDCompanyDetailController.m */; };
 		22394E7B1EEC2F330093AD29 /* QDAssetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22394E7A1EEC2F330093AD29 /* QDAssetsModel.m */; };
 		22394E7F1EEC31B70093AD29 /* QDPersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22394E7E1EEC31B70093AD29 /* QDPersionViewController.m */; };
-		22394E821EEC31E90093AD29 /* QDAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22394E811EEC31E90093AD29 /* QDAssetsViewController.m */; };
 		22394E891EED7E390093AD29 /* zichan.json in Resources */ = {isa = PBXBuildFile; fileRef = 22394E881EED7E390093AD29 /* zichan.json */; };
 		2263A6831EEEE0790016D1F0 /* QDApplyAssetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2263A6821EEEE0790016D1F0 /* QDApplyAssetsModel.m */; };
 		2263A6871EEEE43F0016D1F0 /* QDEstimateQualificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2263A6851EEEE43F0016D1F0 /* QDEstimateQualificationViewController.m */; };
@@ -466,8 +465,6 @@
 		22394E7A1EEC2F330093AD29 /* QDAssetsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDAssetsModel.m; sourceTree = "<group>"; };
 		22394E7D1EEC31B70093AD29 /* QDPersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDPersionViewController.h; sourceTree = "<group>"; };
 		22394E7E1EEC31B70093AD29 /* QDPersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPersionViewController.m; sourceTree = "<group>"; };
-		22394E801EEC31E90093AD29 /* QDAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDAssetsViewController.h; sourceTree = "<group>"; };
-		22394E811EEC31E90093AD29 /* QDAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDAssetsViewController.m; sourceTree = "<group>"; };
 		22394E881EED7E390093AD29 /* zichan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zichan.json; sourceTree = "<group>"; };
 		2263A6811EEEE0790016D1F0 /* QDApplyAssetsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDApplyAssetsModel.h; sourceTree = "<group>"; };
 		2263A6821EEEE0790016D1F0 /* QDApplyAssetsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDApplyAssetsModel.m; sourceTree = "<group>"; };
@@ -754,8 +751,6 @@
 				0970F4A61EC29FC200FC4794 /* HomeViewController.m */,
 				22394E7D1EEC31B70093AD29 /* QDPersionViewController.h */,
 				22394E7E1EEC31B70093AD29 /* QDPersionViewController.m */,
-				22394E801EEC31E90093AD29 /* QDAssetsViewController.h */,
-				22394E811EEC31E90093AD29 /* QDAssetsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1799,7 +1794,6 @@
 				2210DB0D1ED087AB00366846 /* NSObject+AddProperty.m in Sources */,
 				2210DB371ED087AB00366846 /* UIWindow+Hierarchy.m in Sources */,
 				2210DB121ED087AB00366846 /* NSObject+EasyCopy.m in Sources */,
-				22394E821EEC31E90093AD29 /* QDAssetsViewController.m in Sources */,
 				2210DAE91ED087AB00366846 /* NSBundle+AppIcon.m in Sources */,
 				2210DAFF1ED087AB00366846 /* NSDictionary+XML.m in Sources */,
 				2210DB301ED087AB00366846 /* NSURL+QueryDictionary.m in Sources */,

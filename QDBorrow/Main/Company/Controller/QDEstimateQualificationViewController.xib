@@ -1,12 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QDEstimateQualificationViewController">
             <connections>
+                <outlet property="detailLabel" destination="uf6-lx-wQd" id="sD1-hf-7uG"/>
+                <outlet property="titleLabel" destination="wZI-L9-n5J" id="EBD-Ey-TN2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +20,48 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_grid_toast" translatesAutoresizingMaskIntoConstraints="NO" id="WS4-qy-CCQ">
+                    <rect key="frame" x="139" y="93" width="97" height="94"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="0fJ-fF-ZYO"/>
+                        <constraint firstAttribute="height" constant="94" id="zQj-Eg-wYb"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已经收到您的贷款资质评审申请" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZI-L9-n5J">
+                    <rect key="frame" x="16" y="207" width="343" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="Gpo-pC-grY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请保持电话畅通，资质结果将以电话和邮件形式通知到你" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf6-lx-wQd">
+                    <rect key="frame" x="12" y="244" width="350" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="4uc-ET-P5G"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WS4-qy-CCQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="9Ih-KR-8ae"/>
+                <constraint firstAttribute="trailing" secondItem="wZI-L9-n5J" secondAttribute="trailing" constant="16" id="CWO-Qu-jHl"/>
+                <constraint firstItem="wZI-L9-n5J" firstAttribute="top" secondItem="WS4-qy-CCQ" secondAttribute="bottom" constant="20" id="Jwv-oJ-gIE"/>
+                <constraint firstAttribute="trailing" secondItem="uf6-lx-wQd" secondAttribute="trailing" constant="13" id="Q9R-dj-23n"/>
+                <constraint firstItem="uf6-lx-wQd" firstAttribute="top" secondItem="wZI-L9-n5J" secondAttribute="bottom" constant="15" id="iZw-W0-pok"/>
+                <constraint firstItem="uf6-lx-wQd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="jJi-A5-plC"/>
+                <constraint firstItem="wZI-L9-n5J" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="oS4-Rn-q7a"/>
+                <constraint firstItem="WS4-qy-CCQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xM3-Qs-GF7"/>
+            </constraints>
+            <point key="canvasLocation" x="-224.5" y="21.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_grid_toast" width="72" height="72"/>
+    </resources>
 </document>

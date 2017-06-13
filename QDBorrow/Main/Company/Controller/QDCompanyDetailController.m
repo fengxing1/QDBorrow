@@ -255,7 +255,6 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     } else {
         QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
         [self.navigationController pushViewController:loginVC animated:YES];
-        
     }
     
     

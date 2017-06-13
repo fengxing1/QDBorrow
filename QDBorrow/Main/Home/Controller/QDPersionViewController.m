@@ -11,12 +11,15 @@
 #import "YYModel.h"
 #import "LZPickViewManager.h"
 #import "QDAssetsChoicesTableViewCell.h"
+#import "QDApplyAssetsModel.h"
+#import "MBProgressHUD+MP.h"
+#import "QDEstimateQualificationViewController.h"
 
 static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 @interface QDPersionViewController ()
 
 @property (nonatomic, strong) NSMutableArray *persionTitleArray;
-
+@property (nonatomic, strong) QDApplyAssetsModel *assetsModel;
 
 @end
 
@@ -73,7 +76,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     if (self.persionInfoType == PersionInfoTypePersional) {
         [normalButton setTitle:@"下一步" forState:UIControlStateNormal];
     } else {
-        
+        [normalButton setTitle:@"完成" forState:UIControlStateNormal];
     }
 }
 
@@ -164,14 +167,44 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     return _recordInfo;
 }
 
+- (QDApplyAssetsModel *)assetsModel {
+    if (!_assetsModel) {
+        _assetsModel =   [[QDApplyAssetsModel alloc] init];
+    }
+    return _assetsModel;
+}
+
 - (void)bottomBtnClick {
     if (self.persionInfoType == PersionInfoTypePersional) {
-        QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
-        persionVC.persionInfoType = PersionInfoTypeAssets;
-        [self.navigationController pushViewController:persionVC animated:YES];
+        if ([self validateMessage]) {
+            QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
+            persionVC.persionInfoType = PersionInfoTypeAssets;
+            [self.navigationController pushViewController:persionVC animated:YES];
+        }
     } else {
-        //填写个人资料
+        if ([self validateMessage]) {
+            //填写个人资料
+            QDEstimateQualificationViewController * assetsVC = [[QDEstimateQualificationViewController alloc] init];
+            [self.navigationController pushViewController:assetsVC animated:YES];
+        }
     }
+}
+
+- (BOOL)validateMessage {
+    if (self.persionInfoType == PersionInfoTypePersional) {
+        if (self.recordInfo.allKeys.count < 4) {
+            [MBProgressHUD showMessage:@"还有部分信息尚未填写,请全部填写！" ToView:self.view RemainTime:2.0f];
+            return false;
+        }
+    } else {
+        if (self.recordInfo.allKeys.count < 14) {
+            [MBProgressHUD showMessage:@"还有部分信息尚未填写,请全部填写！" ToView:self.view RemainTime:2.0f];
+            return false;
+        }
+    }
+    
+    return true;
+    
 }
 
 /*
