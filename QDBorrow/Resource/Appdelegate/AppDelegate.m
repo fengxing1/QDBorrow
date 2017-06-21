@@ -21,6 +21,11 @@
 #import "QDMyViewController.h"
 #import "BaiduMobStat.h"
 #import "QDForumViewController.h"
+#import "QDJumpViewController.h"
+#import "GVUserDefaults.h"
+#import "AdvertiseHelper.h"
+#import "introductoryPagesHelper.h"
+#import <BmobSDK/Bmob.h>
 
 #import <SobotKit/SobotKit.h>
 #import <UserNotifications/UserNotifications.h>
@@ -29,6 +34,7 @@
 
 #define APP_ID @"QGSs41nGgfDofETOfRgAKdSj-gzGzoHsz"
 #define APP_KEY @"fmavP4Ny83CAmboSlDCWpQl3"
+#define BMOB_APP_ID @"5972c80f22b4adf964317188a0e6675c"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -46,6 +52,7 @@
     [self startBaiduMobileStat];
     
 #endif
+    [Bmob registerWithAppKey:BMOB_APP_ID];
     
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     
@@ -63,7 +70,12 @@
 //    });
     // 界面
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self createTabBarController];
+    [self setupLoginViewController];
+    //引导页面加载
+    [self setupIntroductoryPage];
+    
+    //启动广告（记得放最后，才可以盖在页面上面）
+    [self setupAdveriseView];
     
     // 启动动画
     [self startLaunchingAnimation];
@@ -97,6 +109,26 @@
 
     return YES;
 }
+
+//先跳转到首页
+- (void)setupLoginViewController {
+    QDJumpViewController *jumpViewController = [[QDJumpViewController alloc] init];
+    self.window.rootViewController = jumpViewController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+}
+
+#pragma mark 启动广告
+-(void)setupAdveriseView
+{
+    // TODO 请求广告接口 获取广告图片
+    
+    //现在了一些固定的图片url代替
+    NSArray *imageArray = @[@"http://imgsrc.baidu.com/forum/pic/item/9213b07eca80653846dc8fab97dda144ad348257.jpg", @"http://pic.paopaoche.net/up/2012-2/20122220201612322865.png", @"http://img5.pcpop.com/ArticleImages/picshow/0x0/20110801/2011080114495843125.jpg", @"http://www.mangowed.com/uploads/allimg/130410/1-130410215449417.jpg"];
+    
+    [AdvertiseHelper showAdvertiserView:imageArray];
+}
+
 
 -(void)registerPush:(UIApplication *)application{
     // ios8后，需要添加这个注册，才能得到授权
@@ -235,6 +267,17 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
+#pragma mark 引导页
+-(void)setupIntroductoryPage
+{
+    if (BBUserDefault.isNoFirstLaunch)
+    {
+        return;
+    }
+    BBUserDefault.isNoFirstLaunch=YES;
+    NSArray *images=@[@"introductoryPage1",@"introductoryPage2",@"introductoryPage3",@"introductoryPage4"];
+    [introductoryPagesHelper showIntroductoryPageView:images];
+}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.

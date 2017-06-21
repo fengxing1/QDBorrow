@@ -17,6 +17,7 @@ target 'QDBorrow' do
     pod 'SDCycleScrollView', '~> 1.64'
     pod 'AXWebViewController', '~> 0.1.10'
     pod 'SobotKit', '~> 2.2.0'
+    pod 'BmobSDK'
     target 'QDBorrowTests' do
         
     end

@@ -1,0 +1,24 @@
+//
+//  PrefixHeader.pch
+//  MobileProject
+//
+//  Created by wujunyang on 16/1/5.
+//  Copyright © 2016年 wujunyang. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//引入Masonry两个宏 便于写布局代码
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+MP.h"
+#import "Macros.h"
+#import "GVUserDefaults+BBProperties.h"
+#import "MBConstants.h"
+#import "NotificationContants.h"
+
+
+#endif /* PrefixHeader_pch */

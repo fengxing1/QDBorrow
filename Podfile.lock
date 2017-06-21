@@ -2,6 +2,7 @@ PODS:
   - AVOSCloud (4.4.0)
   - AXWebViewController (0.1.10):
     - NJKWebViewProgress
+  - BmobSDK (2.1.9)
   - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
   - DACircularProgress (2.3.1)
@@ -31,6 +32,7 @@ PODS:
 DEPENDENCIES:
   - AVOSCloud
   - AXWebViewController (~> 0.1.10)
+  - BmobSDK
   - Crashlytics
   - Fabric
   - Masonry (~> 0.6.1)
@@ -47,6 +49,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AVOSCloud: c2cbba727f10776c995108d7e8fd3142d703ebaa
   AXWebViewController: a7199920711091804d3ed5741685a4ce6103bbd4
+  BmobSDK: ecedc8fd992b43027b78cf42624fdb28e417e7db
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
@@ -62,6 +65,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 58e83c554940a3a1d8ae5cb76aa312ac658ab05e
+PODFILE CHECKSUM: e176b6ba94cc45379dbf557ec9df4989621dfda5
 
 COCOAPODS: 1.2.1
