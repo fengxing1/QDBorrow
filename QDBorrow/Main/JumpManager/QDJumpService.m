@@ -7,6 +7,9 @@
 //
 
 #import "QDJumpService.h"
+#import <BmobSDK/Bmob.h>
+NSString *const kClassNameTabbarStatus = @"TCSwitch";
+
 
 @implementation QDJumpService
 
@@ -20,13 +23,11 @@
     return sharedAccountManagerInstance;
 }
 
-//控制跳转
-//- (void)registUser:(NSString *)userName password:(NSString *)pwd email:(NSString *)email block:(AVBooleanResultBlock)block{
-//    AVUser *user = [AVUser user];
-//    user.username = userName;
-//    user.password = pwd;
-//    user.email = email;
-//    [user signUpInBackgroundWithBlock:block];
-//}
+- (void)changeTabbarWithBlock:(BmobObjectResultBlock)block {
+    BmobQuery *query = [BmobQuery queryWithClassName:kClassNameTabbarStatus];
+    [query getObjectInBackgroundWithId:@"KX3J555B" block:block];
+}
+
+
 
 @end

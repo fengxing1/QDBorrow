@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <BmobSDK/Bmob.h>
 @interface QDJumpService : NSObject
 + (id)sharedInstance;
+- (void)changeTabbarWithBlock:(BmobObjectResultBlock)block;
 @end

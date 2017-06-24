@@ -9,6 +9,7 @@
 #import "QDJumpViewController.h"
 #import "Macros.h"
 #import "AppDelegate.h"
+#import "QDJumpService.h"
 
 @interface QDJumpViewController ()
 
@@ -23,8 +24,28 @@
     
 }
 
+
 - (void)configRealHomeViewController {
+    [[QDJumpService sharedInstance] changeTabbarWithBlock:^(BmobObject *object, NSError *error) {
+        if (!error) {
+            if (object && [object objectForKey:@"showNeedTabbar"]) {
+                [self showOtherLoanView];
+            } else {
+                [self showMyLoanView];
+            }
+        } else {
+            [self showMyLoanView];
+        }
+    }];
+    
+}
+
+- (void)showMyLoanView {
     [((AppDelegate*) AppDelegateInstance) createTabBarController];
+}
+
+- (void)showOtherLoanView {
+    [((AppDelegate*) AppDelegateInstance) createMyLoanTabBarController];
 }
 
 

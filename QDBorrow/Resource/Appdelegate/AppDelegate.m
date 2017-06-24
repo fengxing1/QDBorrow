@@ -209,6 +209,19 @@
     [self.window makeKeyAndVisible];
 }
 
+- (void)createMyLoanTabBarController {
+    QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];
+    
+    // 首页
+    HomeViewController *homeViewController = [[HomeViewController alloc] init];
+    homeViewController.hidesBottomBarWhenPushed = NO;
+    QDNavigationController *homeViewNavController = [[QDNavigationController alloc] initWithRootViewController:homeViewController];
+    homeViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon_tabbar_uikit") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_uikit_selected") tag:0];
+    tabBarViewController.viewControllers = @[homeViewNavController];
+    self.window.rootViewController = tabBarViewController;
+    [self.window makeKeyAndVisible];
+
+}
 
 - (void)startLaunchingAnimation {
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
