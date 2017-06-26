@@ -7,7 +7,6 @@
 //
 
 #import "QDJumpService.h"
-#import <BmobSDK/Bmob.h>
 NSString *const kClassNameTabbarStatus = @"TCSwitch";
 
 

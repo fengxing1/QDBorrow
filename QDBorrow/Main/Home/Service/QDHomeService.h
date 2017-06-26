@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <BmobSDK/Bmob.h>
 
 @interface QDHomeService : NSObject
 
 + (id)sharedInstance;
+
+- (void)saveHomeData;
+
+- (void)homeBannerDataWithBlock:(BmobObjectArrayResultBlock)block ;
+
+- (void)homeBorrowDataWithBlock:(BmobObjectArrayResultBlock)block ;
 
 @end
