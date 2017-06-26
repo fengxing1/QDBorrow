@@ -185,11 +185,11 @@
 //    UIViewController *sobotViewController = [self sobotViewController];
 //    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:sobotViewController];
     
-    QDForumViewController *forumViewController = [[QDForumViewController alloc] initWithAddress:@"http://114.215.210.61:10080/bbs/portal.php?mobile=2"];
-    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:forumViewController];
-    forumViewController.hidesBottomBarWhenPushed = NO;
-//    certNavController.navigationBarHidden = YES;
-    certNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"论坛" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
+//    QDForumViewController *forumViewController = [[QDForumViewController alloc] initWithAddress:@"http://114.215.210.61:10080/bbs/portal.php?mobile=2"];
+//    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:forumViewController];
+//    forumViewController.hidesBottomBarWhenPushed = NO;
+////    certNavController.navigationBarHidden = YES;
+//    certNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"论坛" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
     
 //    
 //    QDCertViewController *cerditController = [[QDCertViewController alloc] init];
@@ -204,7 +204,7 @@
     myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:4];
     
     // window root controller
-    tabBarViewController.viewControllers = @[homeViewNavController, loanNavController,certNavController,myNavController];
+    tabBarViewController.viewControllers = @[homeViewNavController, loanNavController,myNavController];
     self.window.rootViewController = tabBarViewController;
     [self.window makeKeyAndVisible];
 }

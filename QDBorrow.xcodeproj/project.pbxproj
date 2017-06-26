@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091506041F00AA93002D2805 /* QDHomeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 091506031F00AA93002D2805 /* QDHomeService.m */; };
 		092F9F8E1EEF8CE000DA3578 /* QDFinishApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092F9F8C1EEF8CE000DA3578 /* QDFinishApplyViewController.m */; };
 		092F9F8F1EEF8CE000DA3578 /* QDFinishApplyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092F9F8D1EEF8CE000DA3578 /* QDFinishApplyViewController.xib */; };
 		0964C9C01EE0F30E0017F6D6 /* QDForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0964C9BF1EE0F30E0017F6D6 /* QDForumViewController.m */; };
@@ -215,6 +216,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		091506021F00AA93002D2805 /* QDHomeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeService.h; sourceTree = "<group>"; };
+		091506031F00AA93002D2805 /* QDHomeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeService.m; sourceTree = "<group>"; };
 		092F9F8B1EEF8CE000DA3578 /* QDFinishApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFinishApplyViewController.h; sourceTree = "<group>"; };
 		092F9F8C1EEF8CE000DA3578 /* QDFinishApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFinishApplyViewController.m; sourceTree = "<group>"; };
 		092F9F8D1EEF8CE000DA3578 /* QDFinishApplyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDFinishApplyViewController.xib; sourceTree = "<group>"; };
@@ -609,6 +612,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091506011F00A5A2002D2805 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				091506021F00AA93002D2805 /* QDHomeService.h */,
+				091506031F00AA93002D2805 /* QDHomeService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		0964C9BD1EE0F29A0017F6D6 /* Forum */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +781,7 @@
 		0970F4A31EC29FC200FC4794 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				091506011F00A5A2002D2805 /* Service */,
 				0970F4A41EC29FC200FC4794 /* Controller */,
 				0970F4A71EC29FC200FC4794 /* Model */,
 				0970F4AE1EC29FC200FC4794 /* View */,
@@ -1879,6 +1892,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				091506041F00AA93002D2805 /* QDHomeService.m in Sources */,
 				0970F5131EC29FC200FC4794 /* QDCommonGroupListViewController.m in Sources */,
 				226CB2131EC71C8900C15625 /* LZAreaPickerView.m in Sources */,
 				22DB03231EED870700AF2A60 /* QDAssetsChoicesTableViewCell.m in Sources */,

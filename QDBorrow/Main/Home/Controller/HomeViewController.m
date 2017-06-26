@@ -21,6 +21,7 @@
 #import "QDCompanyDetailController.h"
 #import "MBProgressHUD+MP.h"
 #import "MJRefreshNormalHeader.h"
+#import <BmobSDK/Bmob.h>
 
 static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
@@ -41,7 +42,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self confirmUI];
-    [self configData];
+//    [self configData];
 //    [self addBorrorData];
 //    [self addCerList];
     
