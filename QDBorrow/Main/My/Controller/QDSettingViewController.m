@@ -9,13 +9,13 @@
 #import "QDSettingViewController.h"
 #import "QDAboutViewController.h"
 #import "QDUIHelper.h"
-#import "AVUser.h"
+#import <BmobSDK/Bmob.h>
 #import "UIAlertView+Block.h"
 
 
 @interface QDSettingViewController ()
 @property(nonatomic, strong) QMUIButton *longinBtn;
-@property (nonatomic, strong) AVUser *user;
+@property (nonatomic, strong) BmobUser *user;
 
 @end
 
@@ -26,7 +26,7 @@
     [super initDataSource];
     NSMutableArray *array = [NSMutableArray arrayWithObjects:@"关于我们",@"商务合作",@"官方客服群", @"官方邮箱",nil];
     self.dataSource = array;
-    self.user = [AVUser currentUser];
+    self.user = [BmobUser currentUser];
     
 }
 
@@ -74,7 +74,7 @@
 }
 
 - (void)exitLoginClick {
-    [AVUser logOut];
+    [BmobUser logout];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshData" object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }

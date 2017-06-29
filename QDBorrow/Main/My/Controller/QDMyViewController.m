@@ -9,7 +9,6 @@
 #import "QDMyViewController.h"
 #import "QDAboutViewController.h"
 #import "QDMyListCell.h"
-#import "AVUser.h"
 #import "QDMyAccountCell.h"
 #import "QDLoginOrRegisterViewController.h"
 #import <SobotKit/SobotKit.h>

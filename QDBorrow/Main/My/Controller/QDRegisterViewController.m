@@ -109,8 +109,7 @@
         return;
     }
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-    [[LoginService sharedInstance] registUser:self.phoneTextField.text password:self.passwordTextField.text email:self.emailTextField.text block:^(BOOL succeeded, NSError * _Nullable error) {
-        [MBProgressHUD hideHUDForView:self.view];
+    [[LoginService sharedInstance] registUser:self.phoneTextField.text password:self.passwordTextField.text email:self.emailTextField.text bmobBlock:^(BOOL isSuccessful, NSError *error) {
         if (!error) {
             //注册成功
             [MBProgressHUD showMessage:@"注册成功" ToView:self.view RemainTime:2.0];
@@ -121,6 +120,7 @@
             return;
         }
     }];
+    
 }
 
 

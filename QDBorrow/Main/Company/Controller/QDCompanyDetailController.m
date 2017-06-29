@@ -18,8 +18,8 @@
 #import "QDProductIntroduceCell.h"
 #import "QDPersionViewController.h"
 #import "UIAlertView+Block.h"
-#import "AVUser.h"
 #import "QDLoginOrRegisterViewController.h"
+#import <BmobSDK/Bmob.h>
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 static NSString *const kReusableIdentifierChooseCell = @"chooseCell";
@@ -245,7 +245,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 //评估页面
 - (void)toEstimateQualification {
     //先进行登录校验
-    if ([AVUser currentUser]) {
+    if ([BmobUser currentUser]) {
         [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
             QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
             persionVC.persionInfoType = PersionInfoTypePersional;

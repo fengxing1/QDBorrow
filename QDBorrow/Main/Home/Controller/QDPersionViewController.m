@@ -15,9 +15,9 @@
 #import "MBProgressHUD+MP.h"
 #import "AVObject.h"
 #import "YYModel.h"
-#import "AVUser.h"
 #import "MBProgressHUD+MP.h"
 #import "QDFinishApplyViewController.h"
+#import <BmobSDK/Bmob.h>
 //#import "QDEstimateQualificationViewController.h"
 
 static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
@@ -191,17 +191,17 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     } else {
         if ([self validateMessage]) {
             //完成注册
-            AVObject *borrow = [AVObject objectWithClassName:@"QDApplyOrder"];
-            AVUser *user = [AVUser currentUser];
+            BmobObject *borrow = [BmobObject objectWithClassName:@"QDApplyOrder"];
+            BmobUser *user = [BmobUser currentUser];
             [borrow setObject:user.username forKey:@"userId"];
             [borrow setObject:[self.recordInfo yy_modelToJSONString] forKey:@"applyInfo"];
             [MBProgressHUD showInfo:@"加载中..." ToView:self.view];
-            [borrow saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                if (succeeded) {
+            [borrow saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                [MBProgressHUD hideHUDForView:self.view];
+                if (isSuccessful) {
                     QDFinishApplyViewController *applyVC = [[QDFinishApplyViewController alloc] init];
                     [self.navigationController pushViewController:applyVC animated:YES];
                 }
-                [MBProgressHUD hideHUDForView:self.view];
             }];
         }
     }

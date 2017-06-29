@@ -107,8 +107,7 @@
         return;
     }
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-    [[LoginService sharedInstance] loginUser:self.phoneStr andPassword:self.passwordStr block:^(AVUser * _Nullable user, NSError * _Nullable error) {
-        [MBProgressHUD hideHUDForView:self.view];
+    [[LoginService sharedInstance] loginUser:self.phoneStr andPassword:self.passwordStr bmobBlock:^(BmobUser *user, NSError *error) {
         if (!error) {
             //登陆成功
             [MBProgressHUD showMessage:@"登陆成功" ToView:self.view RemainTime:2.0];

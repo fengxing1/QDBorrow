@@ -9,7 +9,15 @@
 #import "LoginService.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "NSString+Trims.h"
+typedef NS_ENUM(NSInteger,QDUserType) {
+    QDUserTypeBmob,
+    QDUserTypeAVUser
+};
 
+@interface LoginService ()
+@property (nonatomic, assign) NSInteger userType;
+
+@end
 
 @implementation LoginService
 
@@ -19,6 +27,7 @@
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
         sharedAccountManagerInstance = [[self alloc] init];
+        sharedAccountManagerInstance.userType = 0;
     });
     return sharedAccountManagerInstance;
 }
@@ -35,7 +44,25 @@
 //通过用户名和密码登录
 - (void)loginUser:(NSString *)userName andPassword:(NSString *)pwd block:(AVUserResultBlock)block{
     if ([userName trimmingWhitespace] && [pwd trimmingWhitespace]) {
-        [AVUser logInWithUsernameInBackground:userName password:pwd block:block];
+       [AVUser logInWithUsernameInBackground:userName password:pwd block:block];
+        
+    }
+}
+
+//bmob注册
+- (void)registUser:(NSString *)userName password:(NSString *)pwd email:(NSString *)email bmobBlock:(BmobBooleanResultBlock)block{
+    BmobUser *bUser = [[BmobUser alloc] init];
+    [bUser setUsername:userName];
+    [bUser setPassword:pwd];
+    [bUser setEmail:email];
+    [bUser signUpInBackgroundWithBlock:block];
+}
+
+//bmob登录
+- (void)loginUser:(NSString *)userName andPassword:(NSString *)pwd bmobBlock:(BmobUserResultBlock)block{
+    if ([userName trimmingWhitespace] && [pwd trimmingWhitespace]) {
+        [BmobUser loginWithUsernameInBackground:userName password:pwd block:block];
+        
     }
 }
 
