@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AVObject.h"
+#import <BmobSDK/Bmob.h>
 
 @interface BorrowDetailModel : NSObject
 @property (nonatomic, assign) long companyId;
@@ -38,4 +39,6 @@
 @property (nonatomic, strong) NSString *companyIntroduce;
 
 - (instancetype)initWithAVObject:(AVObject *)detail;
+
+- (instancetype)initWithBmObject:(BmobObject *)detail;
 @end

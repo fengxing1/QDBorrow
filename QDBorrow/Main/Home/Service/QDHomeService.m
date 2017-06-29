@@ -22,7 +22,7 @@
 }
 
 - (void)homeBannerDataWithBlock:(BmobObjectArrayResultBlock)block {
-    BmobQuery *query = [BmobQuery queryWithClassName:@"QDBorrow"];
+    BmobQuery *query = [BmobQuery queryWithClassName:@"QDBanner"];
     [query findObjectsInBackgroundWithBlock:block];
     
 }
@@ -30,6 +30,7 @@
 - (void)homeBorrowDataWithBlock:(BmobObjectArrayResultBlock)block {
     BmobQuery *query = [BmobQuery queryWithClassName:@"QDBorrow"];
     [query whereKey:@"bshowAtHome" equalTo:@1];
+    [query orderByAscending:@"companyId"];
     [query findObjectsInBackgroundWithBlock:block];
 }
 

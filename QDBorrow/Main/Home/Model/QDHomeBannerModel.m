@@ -21,4 +21,15 @@
     return self;
 }
 
+- (instancetype)initWithBannerObject:(BmobObject *)bmobObject {
+    self = [super init];
+    if (self) {
+        self.bannerId = (long)[bmobObject objectForKey:@"bannerId"];
+        self.imageUrl = [bmobObject objectForKey:@"imageUrl"];
+        self.bannerType = (NSInteger)[bmobObject objectForKey:@"bannerType"];
+        self.value = [bmobObject objectForKey:@"value"];
+        self.showDetail = [[bmobObject objectForKey:@"showDetail"] integerValue];
+    }
+    return self;
+}
 @end

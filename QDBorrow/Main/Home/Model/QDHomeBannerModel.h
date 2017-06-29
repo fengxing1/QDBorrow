@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AVObject.h"
+#import <BmobSDK/Bmob.h>
 
 @interface QDHomeBannerModel : NSObject
 @property (nonatomic, assign) long bannerId;
@@ -18,5 +19,7 @@
 @property (nonatomic, assign) NSInteger showDetail;
 
 - (instancetype)initWithAVObject:(AVObject *)bannerDict;
+
+- (instancetype)initWithBannerObject:(BmobObject *)bmobObject;
 
 @end

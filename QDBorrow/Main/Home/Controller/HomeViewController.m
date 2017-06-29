@@ -87,26 +87,25 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     }
     
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-    AVQuery *queryBanner = [AVQuery queryWithClassName:@"QDBanner"];
-    [queryBanner findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        [self.tableView.mj_header endRefreshing];
+    [[QDHomeService sharedInstance] homeBannerDataWithBlock:^(NSArray *array, NSError *error) {
+         [self.tableView.mj_header endRefreshing];
         if (!error) {
             [self.homeModel.bannerArray removeAllObjects];
             [self.homeModel.borrowDetailArray removeAllObjects];
-            for (AVObject *avBanner in objects) {
-                QDHomeBannerModel *bannerModel = [[QDHomeBannerModel alloc] initWithAVObject:avBanner];
+            for (BmobObject *bmBanner in array) {
+                QDHomeBannerModel *bannerModel = [[QDHomeBannerModel alloc] initWithBannerObject:bmBanner];
                 [self.homeModel.bannerArray addObject:bannerModel];
-                
             }
-            
-            NSString *cql = [NSString stringWithFormat:@"select * from %@", @"QDBorrow where bshowAtHome = 1 order by companyId"];
-            [AVQuery doCloudQueryInBackgroundWithCQL:cql callback:^(AVCloudQueryResult * _Nullable result, NSError * _Nullable error) {
-                [MBProgressHUD hideHUDForView:self.view];
-                for (AVObject *avBorrow in result.results) {
-                    BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithAVObject:avBorrow];
-                    [self.homeModel.borrowDetailArray addObject:detail];
+            [[QDHomeService sharedInstance] homeBorrowDataWithBlock:^(NSArray *array, NSError *error) {
+                if (!error) {
+                    for (BmobObject *bmBorrrow in array) {
+                        BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithBmObject:bmBorrrow];
+                        [self.homeModel.borrowDetailArray addObject:detail];
+                    }
+                     [self.tableView reloadData];
                 }
-                [self.tableView reloadData];
+                [MBProgressHUD hideHUDForView:self.view];
+                
             }];
         } else {
             [MBProgressHUD hideHUDForView:self.view];
@@ -115,10 +114,8 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
                     [self configData];
                 }
             } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"取消" otherButtonTitles:@"重新刷新", nil];
-            
         }
     }];
-    
 }
 
 - (void)addBorrorData {
