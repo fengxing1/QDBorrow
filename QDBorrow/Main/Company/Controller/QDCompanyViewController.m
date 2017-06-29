@@ -13,6 +13,8 @@
 #import "QDCompanyDetailController.h"
 #import "MBProgressHUD+MP.h"
 #import "MJRefreshNormalHeader.h"
+#import "QDHomeService.h"
+#import <BmobSDK/Bmob.h>
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
@@ -30,11 +32,6 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     [self configData];
 }
 
-- (instancetype)init {
-    return [self initWithStyle:UITableViewStyleGrouped];
-}
-
-
 - (void)configUI {
     self.title = @"找借贷";
     self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
@@ -48,18 +45,25 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
         self.borrowArray = [[NSMutableArray alloc] init];
     }
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-    NSString *cql = [NSString stringWithFormat:@"select * from %@", @"QDBorrow order by companyId"];
-    [AVQuery doCloudQueryInBackgroundWithCQL:cql callback:^(AVCloudQueryResult * _Nullable result, NSError * _Nullable error) {
+    [[QDHomeService sharedInstance] companyBorrowListWithBlock:^(NSArray *array, NSError *error) {
         [self.tableView.mj_header endRefreshing];
-        [MBProgressHUD hideHUDForView:self.view];
-        for (AVObject *avBorrow in result.results) {
-            BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithAVObject:avBorrow];
-            [self.borrowArray addObject:detail];
+        if (!error) {
+            for (BmobObject *bmObject in array) {
+                BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithBmObject:bmObject];
+                [self.borrowArray addObject:detail];
+            }
+            [self.tableView reloadData];
+            
         }
-        [self.tableView reloadData];
     }];
 }
 
+
+
+
+- (instancetype)init {
+    return [self initWithStyle:UITableViewStyleGrouped];
+}
 
 #pragma mark tableview datasoure and delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

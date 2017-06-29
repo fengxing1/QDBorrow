@@ -34,22 +34,28 @@
     [query findObjectsInBackgroundWithBlock:block];
 }
 
+- (void)companyBorrowListWithBlock:(BmobObjectArrayResultBlock)block {
+    BmobQuery *query = [BmobQuery queryWithClassName:@"QDBorrow"];
+    [query orderByAscending:@"companyId"];
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
 
 - (void)saveHomeData {
-    for (int i = 0; i <= 3; i ++) {
-        BmobObject *banner = [BmobObject objectWithClassName:@"QDBanner"];
-        [banner setObject:[NSNumber numberWithInt:i] forKey:@"bannerId"];
-        if (i == 0) {
-            [banner setObject:@"http://obvn1tlyd.bkt.clouddn.com/ee0148764ceb62c3f826316c7e0aa3ce.jpeg" forKey:@"imageUrl"];
-        } else if(i == 2) {
-            [banner setObject:@"http://obvn1tlyd.bkt.clouddn.com/d5fe3dc9c61e887b6d10c818a5eaf0b5.jpg" forKey:@"imageUrl"];
-        } else {
-            [banner setObject:@"http://obvn1tlyd.bkt.clouddn.com/9976dacbb2aad071270d87156820ef68.jpg" forKey:@"imageUrl"];
-        }
-        [banner setObject:@0 forKey:@"bannerType"];
-        [banner setObject:@"www.baidu.com" forKey:@"value"];
-        [banner saveInBackground];
-    }
+//    for (int i = 0; i <= 3; i ++) {
+//        BmobObject *banner = [BmobObject objectWithClassName:@"QDBanner"];
+//        [banner setObject:[NSNumber numberWithInt:i] forKey:@"bannerId"];
+//        if (i == 0) {
+//            [banner setObject:@"http://obvn1tlyd.bkt.clouddn.com/ee0148764ceb62c3f826316c7e0aa3ce.jpeg" forKey:@"imageUrl"];
+//        } else if(i == 2) {
+//            [banner setObject:@"http://obvn1tlyd.bkt.clouddn.com/d5fe3dc9c61e887b6d10c818a5eaf0b5.jpg" forKey:@"imageUrl"];
+//        } else {
+//            [banner setObject:@"http://obvn1tlyd.bkt.clouddn.com/9976dacbb2aad071270d87156820ef68.jpg" forKey:@"imageUrl"];
+//        }
+//        [banner setObject:@0 forKey:@"bannerType"];
+//        [banner setObject:@"www.baidu.com" forKey:@"value"];
+//        [banner saveInBackground];
+//    }
 
     
     {

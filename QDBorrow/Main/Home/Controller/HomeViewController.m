@@ -44,6 +44,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     [super viewDidLoad];
     [self confirmUI];
     [self configData];
+    
 //    [self addBorrorData];
 //    [self addCerList];
     

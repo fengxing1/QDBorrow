@@ -217,9 +217,25 @@
     homeViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *homeViewNavController = [[QDNavigationController alloc] initWithRootViewController:homeViewController];
     homeViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon_tabbar_uikit") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_uikit_selected") tag:0];
-    tabBarViewController.viewControllers = @[homeViewNavController];
+   
+
+    // 找贷款
+    QDCompanyViewController *loanViewController = [[QDCompanyViewController alloc] init];
+    loanViewController.hidesBottomBarWhenPushed = NO;
+    QDNavigationController *loanNavController = [[QDNavigationController alloc] initWithRootViewController:loanViewController];
+    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:1];
+    
+    //个人中心
+    QDMyViewController *myViewController = [[QDMyViewController alloc] init];
+    myViewController.hidesBottomBarWhenPushed = NO;
+    QDNavigationController *myNavController = [[QDNavigationController alloc] initWithRootViewController:myViewController];
+    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:3];
+    
+     tabBarViewController.viewControllers = @[homeViewNavController,loanNavController,myNavController];
+    
     self.window.rootViewController = tabBarViewController;
     [self.window makeKeyAndVisible];
+    
 
 }
 

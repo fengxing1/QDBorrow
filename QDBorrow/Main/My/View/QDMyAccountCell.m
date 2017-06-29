@@ -7,7 +7,7 @@
 //
 
 #import "QDMyAccountCell.h"
-#import "AVUser.h"
+#import <BmobSDK/Bmob.h>
 #import "QMUIKit.h"
 
 @implementation QDMyAccountCell
@@ -19,7 +19,7 @@
 }
 
 - (void)layoutSubviews {
-    AVUser *user = [AVUser currentUser];
+    BmobUser *user = [BmobUser currentUser];
     if (user) {
         self.nameLabel.text = user.username;
     } else {

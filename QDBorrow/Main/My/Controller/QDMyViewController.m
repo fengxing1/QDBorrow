@@ -16,13 +16,14 @@
 #import "QDMessageViewController.h"
 #import "QDHelpViewListViewController.h"
 #import "QDSettingViewController.h"
+#import <BmobSDK/Bmob.h>
 
 static NSString *const kReusableIdentifierMyListCell  = @"myCell";
 static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 
 @interface QDMyViewController ()
-@property (nonatomic, strong) AVUser *user;
+@property (nonatomic, strong) BmobUser *user;
 
 @end
 
@@ -57,7 +58,7 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 - (void)configData {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"refreshData" object:nil];
-    self.user = [AVUser currentUser];
+    self.user = [BmobUser currentUser];
     
 }
 
@@ -462,7 +463,7 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 
 - (void)refreshData {
-    self.user = [AVUser currentUser];
+    self.user = [BmobUser currentUser];
     [self.tableView reloadData];
     
 }

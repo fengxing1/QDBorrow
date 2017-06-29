@@ -18,5 +18,6 @@
 - (void)homeBannerDataWithBlock:(BmobObjectArrayResultBlock)block ;
 
 - (void)homeBorrowDataWithBlock:(BmobObjectArrayResultBlock)block ;
+- (void)companyBorrowListWithBlock:(BmobObjectArrayResultBlock)block;
 
 @end
