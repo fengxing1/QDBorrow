@@ -621,6 +621,13 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		0918AC851F0A701000C0949B /* BorrowMain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BorrowMain;
+			sourceTree = "<group>";
+		};
 		0964C9BD1EE0F29A0017F6D6 /* Forum */ = {
 			isa = PBXGroup;
 			children = (
@@ -766,6 +773,7 @@
 		0970F4A21EC29FC200FC4794 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0918AC851F0A701000C0949B /* BorrowMain */,
 				22751B901EFAB941002A9A45 /* JumpManager */,
 				0964C9BD1EE0F29A0017F6D6 /* Forum */,
 				2210D9FE1EC9F82300366846 /* My */,

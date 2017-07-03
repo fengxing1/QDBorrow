@@ -16,6 +16,7 @@
 
 - (void)createMyLoanTabBarController;
 
-
+-(void)setupIntroductoryPage;
+-(void)setupAdveriseView;
 @end
 

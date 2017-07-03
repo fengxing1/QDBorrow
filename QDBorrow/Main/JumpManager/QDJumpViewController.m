@@ -10,6 +10,7 @@
 #import "Macros.h"
 #import "AppDelegate.h"
 #import "QDJumpService.h"
+#import "UIAlertView+Block.h"
 
 @interface QDJumpViewController ()
 
@@ -34,7 +35,11 @@
                 [self showMyLoanView];
             }
         } else {
-            [self showMyLoanView];
+            [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+                if (buttonIndex) {
+                    [self configRealHomeViewController];
+                }
+            } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"取消" otherButtonTitles:@"重新刷新", nil];
         }
     }];
     

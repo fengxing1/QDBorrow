@@ -71,14 +71,15 @@
     // 界面
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self setupLoginViewController];
+    
+    // 启动动画
+    [self startLaunchingAnimation];
+    
     //引导页面加载
     [self setupIntroductoryPage];
     
     //启动广告（记得放最后，才可以盖在页面上面）
     [self setupAdveriseView];
-    
-    // 启动动画
-    [self startLaunchingAnimation];
     
     //添加智齿
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
@@ -304,7 +305,7 @@
         return;
     }
     BBUserDefault.isNoFirstLaunch=YES;
-    NSArray *images=@[@"introductoryPage1",@"introductoryPage2",@"introductoryPage3",@"introductoryPage4"];
+    NSArray *images=@[@"introductoryPage1",@"introductoryPage2",@"introductoryPage3"];
     [introductoryPagesHelper showIntroductoryPageView:images];
 }
 
