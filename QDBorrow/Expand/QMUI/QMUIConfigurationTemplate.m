@@ -78,7 +78,7 @@
     //- QMUICMI.navBarButtonFont = UIFontMake(17);                                      // NavBarButtonFont
     //- QMUICMI.navBarButtonFontBold = UIFontBoldMake(17);                              // NavBarButtonFontBold
 //    QMUICMI.navBarBackgroundImage = [UIImage qmui_imageWithColor:UIColorMake(30, 97, 230)];
-    QMUICMI.navBarBackgroundImage = [UIImageMake(@"navigationbar_background") resizableImageWithCapInsets:UIEdgeInsetsMake(0, 2, 0, 2)];                                            // NavBarBackgroundImage
+    QMUICMI.navBarBackgroundImage = [UIImageMake(@"bg_big_card2") resizableImageWithCapInsets:UIEdgeInsetsMake(0, 2, 0, 2)];                                            // NavBarBackgroundImage
     QMUICMI.navBarShadowImage = [UIImage new];                                                // NavBarShadowImage
     //- QMUICMI.navBarBarTintColor = nil;                                               // NavBarBarTintColor
     QMUICMI.navBarTintColor = UIColorWhite;                                         // NavBarTintColor
@@ -95,10 +95,10 @@
     
 #pragma mark - TabBar
     
-    QMUICMI.tabBarBackgroundImage = [UIImage qmui_imageWithColor:UIColorMake(249, 249, 249)];                                                            // TabBarBackgroundImage
-    //- QMUICMI.tabBarBarTintColor = nil;    // TabBarBarTintColor
+//    QMUICMI.tabBarBackgroundImage = [UIImage qmui_imageWithColor:UIColorMake(249, 249, 249)];                                                            // TabBarBackgroundImage
+//    - QMUICMI.tabBarBarTintColor = nil;    // TabBarBarTintColor
     QMUICMI.tabBarShadowImageColor = UIColorSeparator;                                    // TabBarShadowImageColor
-    QMUICMI.tabBarTintColor = UIColorMake(4, 189, 231);                                            // TabBarTintColor
+    QMUICMI.tabBarTintColor = UIColorTheme1;                                            // TabBarTintColor
     QMUICMI.tabBarItemTitleColor = UIColorGray6;                                      // TabBarItemTitleColor
     QMUICMI.tabBarItemTitleColorSelected = TabBarTintColor;                                         // TabBarItemTitleColorSelected
     
@@ -106,7 +106,7 @@
     
     //- QMUICMI.toolBarHighlightedAlpha = 0.4f;                                                                         // ToolBarHighlightedAlpha
     //- QMUICMI.toolBarDisabledAlpha = 0.4f;                                                                            // ToolBarDisabledAlpha
-    QMUICMI.toolBarTintColor = UIColorBlue;                                                                         // ToolBarTintColor
+    QMUICMI.toolBarTintColor = UIColorRed;                                                                         // ToolBarTintColor
     //- QMUICMI.toolBarTintColorHighlighted = [ToolBarTintColor colorWithAlphaComponent:ToolBarHighlightedAlpha];       // ToolBarTintColorHighlighted
     //- QMUICMI.toolBarTintColorDisabled = [ToolBarTintColor colorWithAlphaComponent:ToolBarDisabledAlpha];             // ToolBarTintColorDisabled
     //- QMUICMI.toolBarBackgroundImage = nil;                                                                           // ToolBarBackgroundImage

@@ -171,41 +171,25 @@
     
     // 首页
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
-    homeViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *homeViewNavController = [[QDNavigationController alloc] initWithRootViewController:homeViewController];
-    homeViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon_tabbar_uikit") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_uikit_selected") tag:0];
+    homeViewController.hidesBottomBarWhenPushed = NO;
+    homeViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon-home-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-home-light") tag:0];
+    
     
     // 找贷款
     QDCompanyViewController *loanViewController = [[QDCompanyViewController alloc] init];
     loanViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *loanNavController = [[QDNavigationController alloc] initWithRootViewController:loanViewController];
-    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:1];
+    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon-fuwu-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-fuwu-light") tag:1];
     
-    // 信用卡
-    
-//    UIViewController *sobotViewController = [self sobotViewController];
-//    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:sobotViewController];
-    
-//    QDForumViewController *forumViewController = [[QDForumViewController alloc] initWithAddress:@"http://114.215.210.61:10080/bbs/portal.php?mobile=2"];
-//    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:forumViewController];
-//    forumViewController.hidesBottomBarWhenPushed = NO;
-////    certNavController.navigationBarHidden = YES;
-//    certNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"论坛" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
-    
-//    
-//    QDCertViewController *cerditController = [[QDCertViewController alloc] init];
-//    QDNavigationController *certNavController = [[QDNavigationController alloc] initWithRootViewController:cerditController];
-//    cerditController.hidesBottomBarWhenPushed = NO;
-//    certNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"信用卡" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
-    
-    //我的
+    //个人中心
     QDMyViewController *myViewController = [[QDMyViewController alloc] init];
     myViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *myNavController = [[QDNavigationController alloc] initWithRootViewController:myViewController];
-    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:4];
+    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon-wode-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-wode-light") tag:3];
     
-    // window root controller
-    tabBarViewController.viewControllers = @[homeViewNavController, loanNavController,myNavController];
+    tabBarViewController.viewControllers = @[homeViewNavController,loanNavController,myNavController];
+    
     self.window.rootViewController = tabBarViewController;
     [self.window makeKeyAndVisible];
 }
@@ -215,22 +199,22 @@
     
     // 首页
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
-    homeViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *homeViewNavController = [[QDNavigationController alloc] initWithRootViewController:homeViewController];
-    homeViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon_tabbar_uikit") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_uikit_selected") tag:0];
+    homeViewController.hidesBottomBarWhenPushed = NO;
+    homeViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon-home-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-home-light") tag:0];
    
 
     // 找贷款
     QDCompanyViewController *loanViewController = [[QDCompanyViewController alloc] init];
     loanViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *loanNavController = [[QDNavigationController alloc] initWithRootViewController:loanViewController];
-    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:1];
+    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon-fuwu-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-fuwu-light") tag:1];
     
     //个人中心
     QDMyViewController *myViewController = [[QDMyViewController alloc] init];
     myViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *myNavController = [[QDNavigationController alloc] initWithRootViewController:myViewController];
-    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:3];
+    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon-wode-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-wode-light") tag:3];
     
      tabBarViewController.viewControllers = @[homeViewNavController,loanNavController,myNavController];
     

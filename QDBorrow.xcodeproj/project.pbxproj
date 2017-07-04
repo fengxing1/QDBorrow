@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		091506041F00AA93002D2805 /* QDHomeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 091506031F00AA93002D2805 /* QDHomeService.m */; };
+		0918AC881F0B2E0D00C0949B /* QDBorrowHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0918AC871F0B2E0D00C0949B /* QDBorrowHomeViewController.m */; };
+		0918AC8B1F0B69CC00C0949B /* QDBorrowMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0918AC8A1F0B69CC00C0949B /* QDBorrowMessageViewController.m */; };
 		092F9F8E1EEF8CE000DA3578 /* QDFinishApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092F9F8C1EEF8CE000DA3578 /* QDFinishApplyViewController.m */; };
 		092F9F8F1EEF8CE000DA3578 /* QDFinishApplyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092F9F8D1EEF8CE000DA3578 /* QDFinishApplyViewController.xib */; };
 		0964C9C01EE0F30E0017F6D6 /* QDForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0964C9BF1EE0F30E0017F6D6 /* QDForumViewController.m */; };
@@ -218,6 +220,10 @@
 /* Begin PBXFileReference section */
 		091506021F00AA93002D2805 /* QDHomeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeService.h; sourceTree = "<group>"; };
 		091506031F00AA93002D2805 /* QDHomeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeService.m; sourceTree = "<group>"; };
+		0918AC861F0B2E0D00C0949B /* QDBorrowHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBorrowHomeViewController.h; sourceTree = "<group>"; };
+		0918AC871F0B2E0D00C0949B /* QDBorrowHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBorrowHomeViewController.m; sourceTree = "<group>"; };
+		0918AC891F0B69CC00C0949B /* QDBorrowMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBorrowMessageViewController.h; sourceTree = "<group>"; };
+		0918AC8A1F0B69CC00C0949B /* QDBorrowMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBorrowMessageViewController.m; sourceTree = "<group>"; };
 		092F9F8B1EEF8CE000DA3578 /* QDFinishApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFinishApplyViewController.h; sourceTree = "<group>"; };
 		092F9F8C1EEF8CE000DA3578 /* QDFinishApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFinishApplyViewController.m; sourceTree = "<group>"; };
 		092F9F8D1EEF8CE000DA3578 /* QDFinishApplyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDFinishApplyViewController.xib; sourceTree = "<group>"; };
@@ -624,6 +630,10 @@
 		0918AC851F0A701000C0949B /* BorrowMain */ = {
 			isa = PBXGroup;
 			children = (
+				0918AC861F0B2E0D00C0949B /* QDBorrowHomeViewController.h */,
+				0918AC871F0B2E0D00C0949B /* QDBorrowHomeViewController.m */,
+				0918AC891F0B69CC00C0949B /* QDBorrowMessageViewController.h */,
+				0918AC8A1F0B69CC00C0949B /* QDBorrowMessageViewController.m */,
 			);
 			path = BorrowMain;
 			sourceTree = "<group>";
@@ -2014,6 +2024,7 @@
 				2210DB1A1ED087AB00366846 /* NSMutableString+Ruby.m in Sources */,
 				0970F5221EC29FC200FC4794 /* QDWebViewController.m in Sources */,
 				22DC7A281EDEF2E7009DB868 /* QDMyListCell.m in Sources */,
+				0918AC8B1F0B69CC00C0949B /* QDBorrowMessageViewController.m in Sources */,
 				0970F51B1EC29FC200FC4794 /* QMUIConfigurationTemplate.m in Sources */,
 				2210DB1B1ED087AB00366846 /* NSString+Base64.m in Sources */,
 				226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */,
@@ -2029,6 +2040,7 @@
 				0970F5171EC29FC200FC4794 /* QDCommonViewController.m in Sources */,
 				2210DAEB1ED087AB00366846 /* NSData+Base64.m in Sources */,
 				2210DAF01ED087AB00366846 /* NSData+zlib.m in Sources */,
+				0918AC881F0B2E0D00C0949B /* QDBorrowHomeViewController.m in Sources */,
 				2210DA081ECB489100366846 /* QDMyViewController.m in Sources */,
 				2210DB281ED087AB00366846 /* NSString+Size.m in Sources */,
 				22751B961EFABA80002A9A45 /* QDJumpService.m in Sources */,

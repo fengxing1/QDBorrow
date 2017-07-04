@@ -53,20 +53,21 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+//    [self.navigationController setNavigationBarHidden:YES animated:NO];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.tabBarController.tabBar.hidden=NO;
+    [self.tabBarController.tabBar setHidden:NO];
 }
 
 - (instancetype)init {
     return [self initWithStyle:UITableViewStyleGrouped];
+    //    self.tableViewInitialContentInset = UIEdgeInsetsMake(-40, 0, 25, 0);
 }
 
 - (instancetype)initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithStyle:style]) {
         if (style == UITableViewStyleGrouped) {
-            self.tableViewInitialContentInset = UIEdgeInsetsMake(-40, 0, 25, 0);
-//            self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 200);
+            self.tableViewInitialContentInset = UIEdgeInsetsMake(30, 0, 0, 0);
+            //            self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 200);
         }
     }
     return self;

@@ -47,6 +47,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     [[QDHomeService sharedInstance] companyBorrowListWithBlock:^(NSArray *array, NSError *error) {
         [self.tableView.mj_header endRefreshing];
+        [MBProgressHUD hideHUDForView:self.view];
         if (!error) {
             for (BmobObject *bmObject in array) {
                 BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithBmObject:bmObject];
