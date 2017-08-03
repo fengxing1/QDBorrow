@@ -15,6 +15,7 @@
 @property(nonatomic,strong)UIScrollView *bigScrollView;
 @property(nonatomic)NSArray *imageArray;
 @property(nonatomic,strong)UIPageControl *pageControl;
+
 @end
 
 
@@ -81,6 +82,9 @@
         [scrollView setContentOffset:CGPointMake(self.bounds.size.width * (_pageControl.currentPage), scrollView.contentOffset.y) animated:YES];
     }
     if (scrollView.contentOffset.x == (_imageArray.count) *MainScreen_width) {
+        if (self.clickLastImageAction) {
+            self.clickLastImageAction();
+        }
         [self removeFromSuperview];
     }
 }

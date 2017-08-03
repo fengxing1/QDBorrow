@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface introductoryPagesView : UIView
-
+//最后一个页面的回调
+@property (nonatomic, strong) void (^clickLastImageAction)();
 -(instancetype)initPagesViewWithFrame:(CGRect)frame Images:(NSArray *)images;
 
 @end

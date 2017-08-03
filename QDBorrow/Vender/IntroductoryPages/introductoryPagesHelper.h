@@ -10,6 +10,8 @@
 #import "introductoryPagesView.h"
 
 @interface introductoryPagesHelper : NSObject
+//最后一个页面的回调
+@property (nonatomic, strong) void (^clickLastImageAction)();
 
 + (instancetype)shareInstance;
 

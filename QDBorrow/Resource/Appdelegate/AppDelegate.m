@@ -75,11 +75,10 @@
     // 启动动画
     [self startLaunchingAnimation];
     
-    //引导页面加载
-    [self setupIntroductoryPage];
     
-    //启动广告（记得放最后，才可以盖在页面上面）
-    [self setupAdveriseView];
+    
+//    //启动广告（记得放最后，才可以盖在页面上面）
+//    [self setupAdveriseView];
     
     //添加智齿
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
@@ -281,17 +280,6 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
-#pragma mark 引导页
--(void)setupIntroductoryPage
-{
-    if (BBUserDefault.isNoFirstLaunch)
-    {
-        return;
-    }
-    BBUserDefault.isNoFirstLaunch=YES;
-    NSArray *images=@[@"introductoryPage1",@"introductoryPage2",@"introductoryPage3"];
-    [introductoryPagesHelper showIntroductoryPageView:images];
-}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.

@@ -11,6 +11,7 @@
 @interface introductoryPagesHelper()
 @property (nonatomic) UIWindow *rootWindow;
 @property(nonatomic,strong)introductoryPagesView *curIntroductoryPagesView;
+
 @end
 
 @implementation introductoryPagesHelper
@@ -41,9 +42,14 @@
     if (![introductoryPagesHelper shareInstance].curIntroductoryPagesView) {
         [introductoryPagesHelper shareInstance].curIntroductoryPagesView=[[introductoryPagesView alloc]initPagesViewWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height) Images:imageArray];
     }
-    
+    [introductoryPagesHelper shareInstance].curIntroductoryPagesView.clickLastImageAction = ^{
+        if ([introductoryPagesHelper shareInstance].clickLastImageAction) {
+            [introductoryPagesHelper shareInstance].clickLastImageAction();
+        }
+    };
     [introductoryPagesHelper shareInstance].rootWindow = [UIApplication sharedApplication].keyWindow;
     [[introductoryPagesHelper shareInstance].rootWindow addSubview:[introductoryPagesHelper shareInstance].curIntroductoryPagesView];
+    
 }
 
 @end

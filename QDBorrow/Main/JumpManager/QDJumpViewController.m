@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "QDJumpService.h"
 #import "UIAlertView+Block.h"
+#import "introductoryPagesHelper.h"
 
 @interface QDJumpViewController ()
 
@@ -20,14 +21,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self configRealHomeViewController];
     
+   
+    // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //引导页面加载
+    [self setupIntroductoryPage];
+}
+
+#pragma mark 引导页
+-(void)setupIntroductoryPage
+{
+    if (BBUserDefault.isNoFirstLaunch)
+    {
+        [self configRealHomeViewController];
+        return;
+    }
+    BBUserDefault.isNoFirstLaunch=YES;
+    NSArray *images=@[@"introductoryPage1",@"introductoryPage2",@"introductoryPage3"];
+    [introductoryPagesHelper showIntroductoryPageView:images];
+    [introductoryPagesHelper shareInstance].clickLastImageAction = ^{
+        [self configRealHomeViewController];
+    };
+}
 
 - (void)configRealHomeViewController {
+    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     [[QDJumpService sharedInstance] changeTabbarWithBlock:^(BmobObject *object, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view];
         if (!error) {
             if (object && [object objectForKey:@"showNeedTabbar"]) {
                 [self showOtherLoanView];
@@ -42,8 +66,8 @@
             } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"取消" otherButtonTitles:@"重新刷新", nil];
         }
     }];
-    
 }
+
 
 - (void)showMyLoanView {
     [((AppDelegate*) AppDelegateInstance) createTabBarController];
