@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QDBorrowHomeViewController : UIViewController
+@interface QDBorrowHomeViewController : QMUICommonTableViewController
 
 @end

@@ -10,6 +10,7 @@
 		091506041F00AA93002D2805 /* QDHomeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 091506031F00AA93002D2805 /* QDHomeService.m */; };
 		092F9F8E1EEF8CE000DA3578 /* QDFinishApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092F9F8C1EEF8CE000DA3578 /* QDFinishApplyViewController.m */; };
 		092F9F8F1EEF8CE000DA3578 /* QDFinishApplyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092F9F8D1EEF8CE000DA3578 /* QDFinishApplyViewController.xib */; };
+		0954B85D1F41523B00500ED9 /* LiuXSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954B85C1F41523B00500ED9 /* LiuXSlider.m */; };
 		0964C9C01EE0F30E0017F6D6 /* QDForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0964C9BF1EE0F30E0017F6D6 /* QDForumViewController.m */; };
 		0964C9C61EE126FA0017F6D6 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0964C9C51EE126FA0017F6D6 /* UIColor+Hex.m */; };
 		0970F39D1EC29F2900FC4794 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F39C1EC29F2900FC4794 /* main.m */; };
@@ -225,6 +226,8 @@
 		092F9F8B1EEF8CE000DA3578 /* QDFinishApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFinishApplyViewController.h; sourceTree = "<group>"; };
 		092F9F8C1EEF8CE000DA3578 /* QDFinishApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFinishApplyViewController.m; sourceTree = "<group>"; };
 		092F9F8D1EEF8CE000DA3578 /* QDFinishApplyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDFinishApplyViewController.xib; sourceTree = "<group>"; };
+		0954B85B1F41523B00500ED9 /* LiuXSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuXSlider.h; sourceTree = "<group>"; };
+		0954B85C1F41523B00500ED9 /* LiuXSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuXSlider.m; sourceTree = "<group>"; };
 		0964C9BE1EE0F30E0017F6D6 /* QDForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDForumViewController.h; sourceTree = "<group>"; };
 		0964C9BF1EE0F30E0017F6D6 /* QDForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDForumViewController.m; sourceTree = "<group>"; };
 		0964C9C41EE126FA0017F6D6 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
@@ -639,6 +642,15 @@
 				09AFCA7A1F341DA500F3C79A /* View */,
 			);
 			path = BorrowMain;
+			sourceTree = "<group>";
+		};
+		0954B85A1F41520C00500ED9 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				0954B85B1F41523B00500ED9 /* LiuXSlider.h */,
+				0954B85C1F41523B00500ED9 /* LiuXSlider.m */,
+			);
+			path = Slider;
 			sourceTree = "<group>";
 		};
 		0964C9BD1EE0F29A0017F6D6 /* Forum */ = {
@@ -1462,6 +1474,7 @@
 		226CB1FA1EC71C1E00C15625 /* Controls(自定义控件) */ = {
 			isa = PBXGroup;
 			children = (
+				0954B85A1F41520C00500ED9 /* Slider */,
 				22A3737D1EE23BE70090548C /* EaseBlankPage */,
 				226CB1FB1EC71C8800C15625 /* LZPickerView */,
 			);
@@ -2076,6 +2089,7 @@
 				226CB2181EC71C8900C15625 /* LZPickViewManager.m in Sources */,
 				2210DB291ED087AB00366846 /* NSString+Trims.m in Sources */,
 				2210DB341ED087AB00366846 /* NSUserDefaults+iCloudSync.m in Sources */,
+				0954B85D1F41523B00500ED9 /* LiuXSlider.m in Sources */,
 				22DC7A2D1EDEFE2E009DB868 /* QDMyAccountCell.m in Sources */,
 				0970F5181EC29FC200FC4794 /* QDNavigationController.m in Sources */,
 				2210DB091ED087AB00366846 /* NSDecimalNumber+Extensions.m in Sources */,
