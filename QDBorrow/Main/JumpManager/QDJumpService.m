@@ -24,7 +24,7 @@ NSString *const kClassNameTabbarStatus = @"TCSwitch";
 
 - (void)changeTabbarWithBlock:(BmobObjectResultBlock)block {
     BmobQuery *query = [BmobQuery queryWithClassName:kClassNameTabbarStatus];
-    [query getObjectInBackgroundWithId:@"KX3J555B" block:block];
+    [query getObjectInBackgroundWithId:@"6FBh0001" block:block];
 }
 
 

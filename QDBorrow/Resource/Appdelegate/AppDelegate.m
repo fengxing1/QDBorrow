@@ -29,6 +29,8 @@
 
 #import <SobotKit/SobotKit.h>
 #import <UserNotifications/UserNotifications.h>
+#import "QDBorrowHomeViewController.h"
+#import "QDBorrowMessageViewController.h"
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 
@@ -165,6 +167,7 @@
 }
 
 
+//借贷
 - (void)createTabBarController {
     QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];
     
@@ -193,14 +196,15 @@
     [self.window makeKeyAndVisible];
 }
 
+//担保
 - (void)createMyLoanTabBarController {
     QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];
     
     // 首页
-    HomeViewController *homeViewController = [[HomeViewController alloc] init];
-    QDNavigationController *homeViewNavController = [[QDNavigationController alloc] initWithRootViewController:homeViewController];
-    homeViewController.hidesBottomBarWhenPushed = NO;
-    homeViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon-home-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-home-light") tag:0];
+    QDBorrowHomeViewController *borrowVC = [[QDBorrowHomeViewController alloc] init];
+    QDNavigationController *homeViewNavController = [[QDNavigationController alloc] initWithRootViewController:borrowVC];
+    borrowVC.hidesBottomBarWhenPushed = NO;
+    borrowVC.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon-home-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-home-light") tag:0];
    
 
     // 找贷款

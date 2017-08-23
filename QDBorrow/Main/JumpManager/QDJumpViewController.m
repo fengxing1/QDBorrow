@@ -53,7 +53,7 @@
     [[QDJumpService sharedInstance] changeTabbarWithBlock:^(BmobObject *object, NSError *error) {
         [MBProgressHUD hideHUDForView:self.view];
         if (!error) {
-            if (object && [object objectForKey:@"showNeedTabbar"]) {
+            if (object && [[object objectForKey:@"showNeedTabbar"] boolValue]) {
                 [self showOtherLoanView];
             } else {
                 [self showMyLoanView];
@@ -70,11 +70,11 @@
 
 
 - (void)showMyLoanView {
-    [((AppDelegate*) AppDelegateInstance) createTabBarController];
+    [((AppDelegate*) AppDelegateInstance) createMyLoanTabBarController];
 }
 
 - (void)showOtherLoanView {
-    [((AppDelegate*) AppDelegateInstance) createMyLoanTabBarController];
+    [((AppDelegate*) AppDelegateInstance) createTabBarController];
 }
 
 
