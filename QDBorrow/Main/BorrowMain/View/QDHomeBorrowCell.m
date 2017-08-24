@@ -55,9 +55,15 @@ typedef NS_ENUM(NSInteger,BorrowTimeType) {
     if (bSelect) {
         [self.fifteenDayBtn setBackgroundColor:[UIColor colorWithHeX:0xFFBDB7]];
         [self.thirtyDayBtn setBackgroundColor:[UIColor whiteColor]];
+        self.thirtyDayBtn.layer.borderWidth = 1;
+        self.thirtyDayBtn.layer.borderColor = [UIColor grayColor].CGColor;
+        self.fifteenDayBtn.layer.borderWidth = 0.0;
     }else {
         [self.fifteenDayBtn setBackgroundColor:[UIColor whiteColor]];
-        [self.thirtyDayBtn setBackgroundColor:[UIColor whiteColor]];
+        [self.thirtyDayBtn setBackgroundColor:[UIColor colorWithHeX:0xFFBDB7]];
+        self.fifteenDayBtn.layer.borderWidth = 1;
+        self.fifteenDayBtn.layer.borderColor = [UIColor grayColor].CGColor;
+        self.thirtyDayBtn.layer.borderWidth = 0.0;
     }
 }
 - (IBAction)fifteenDayClick:(id)sender {
