@@ -11,7 +11,7 @@
 
 
 
-#define SelectViewBgColor   [UIColor colorWithRed:9/255.0 green:170/255.0 blue:238/255.0 alpha:1]
+#define SelectViewBgColor   [UIColor colorWithRed:255/255.0 green:82/255.0 blue:61/255.0 alpha:1]
 #define defaultViewBgColor  [UIColor lightGrayColor]
 
 #define LiuXSlideWidth      (self.bounds.size.width)
@@ -101,7 +101,7 @@
         _centerImage=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CenterImage_W, CenterImage_W)];
         _centerImage.center=CGPointMake(0, CenterImage_Y);
         _centerImage.userInteractionEnabled=NO;
-        _centerImage.alpha=.5;
+//        _centerImage.alpha=.5;
         [self addSubview:_centerImage];
         
         _selectLab=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];

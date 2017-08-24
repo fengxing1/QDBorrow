@@ -10,26 +10,76 @@
 #import "LiuXSlider.h"
 #import "QMUICommonDefines.h"
 #import "UIImage+QMUI.h"
+#import "UIColor+Hex.h"
+
+typedef void(^borrowWay)(int borrowType,NSString *borrowCount);
+
+typedef NS_ENUM(NSInteger,BorrowTimeType) {
+    BorrowTimeTypeFiften = 1,
+    BorrowTimeTypeThird
+};
+@interface QDHomeBorrowCell ()
+@property (nonatomic, assign) NSInteger borrowCountIndex;
+@property (nonatomic, strong) NSArray *borrowCountArray;
+@property (nonatomic, copy) NSString *borrowCount;
+@property (nonatomic, assign) BorrowTimeType borrowType;
+@property (nonatomic,copy) borrowWay block;
+@end
 
 @implementation QDHomeBorrowCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    LiuXSlider *slider=[[LiuXSlider alloc] initWithFrame:CGRectMake(20, 50, SCREEN_WIDTH - 40,80 ) titles:@[@"1000元",@"2000元",@"3000元",@"4000元",@"5000元",@"6000元"] firstAndLastTitles:@[@"1000",@"6000"] defaultIndex:1 sliderImage:[UIImage qmui_imageWithColor:UIColorMake(250, 58, 58)]];
+    UIImage *image = [UIImage qmui_imageWithColor:[UIColor colorWithHeX:0xFF523D] size:CGSizeMake(12, 12) cornerRadius:6];
+    self.borrowCountArray = @[@"1000元",@"2000元",@"3000元",@"4000元",@"5000元",@"6000元"] ;
+    LiuXSlider *slider=[[LiuXSlider alloc] initWithFrame:CGRectMake(20, 225, SCREEN_WIDTH - 40,80 ) titles:self.borrowCountArray firstAndLastTitles:@[@"1000",@"6000"] defaultIndex:2 sliderImage:image];
     [self.contentView addSubview:slider];
     slider.block=^(int index){
-        NSLog(@"当前index==%d",index);
+        self.borrowCount = self.borrowCountArray[index];
+        self.borrowCountIndex = index;
+        [self resetBorrowUI];
     };
+    self.borrowCountIndex = 2;
+    self.fifteenDayBtn.layer.cornerRadius = 5;
+    self.fifteenDayBtn.layer.masksToBounds = YES;
+    self.thirtyDayBtn.layer.cornerRadius = 5;
+    self.thirtyDayBtn.layer.masksToBounds = YES;
+    [self selectFiftenBtn:YES];
+    self.borrowType = BorrowTimeTypeFiften;
+    
     
 }
+
+- (void)selectFiftenBtn:(BOOL)bSelect {
+    if (bSelect) {
+        [self.fifteenDayBtn setBackgroundColor:[UIColor colorWithHeX:0xFFBDB7]];
+        [self.thirtyDayBtn setBackgroundColor:[UIColor whiteColor]];
+    }else {
+        [self.fifteenDayBtn setBackgroundColor:[UIColor whiteColor]];
+        [self.thirtyDayBtn setBackgroundColor:[UIColor whiteColor]];
+    }
+}
 - (IBAction)fifteenDayClick:(id)sender {
+    self.borrowType = 1;
+    [self selectFiftenBtn:YES];
+    [self resetBorrowUI];
 }
 
 - (IBAction)thirtyDayClick:(id)sender {
+    self.borrowType = 2;
+    [self selectFiftenBtn:NO];
+    [self resetBorrowUI];
 }
 
+- (void)resetBorrowUI {
+    
+}
+
+
 - (IBAction)goBorrowClick:(id)sender {
+    //发起回调，去controller层发起网络请求
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
