@@ -7,6 +7,13 @@
 //
 
 #import "QDMessageCell.h"
+@interface QDMessageCell ()
+@property (weak, nonatomic) IBOutlet UILabel *messageTypeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+@end
 
 @implementation QDMessageCell
 

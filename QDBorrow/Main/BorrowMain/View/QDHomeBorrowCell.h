@@ -7,15 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void(^borrowWay)(int borrowType,NSInteger borrowCount);
 
 @interface QDHomeBorrowCell : UITableViewCell
+//总费用
 @property (weak, nonatomic) IBOutlet UILabel *totalFeeCountLabel;
+//到账金额
 @property (weak, nonatomic) IBOutlet UILabel *gainCountLabel;
+//手续费用
 @property (weak, nonatomic) IBOutlet UILabel *poundageCountLabel;
+//借款时间
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *fifteenDayBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *thirtyDayBtn;
 @property (weak, nonatomic) IBOutlet UIButton *goBorrowBtn;
+
+@property (nonatomic,copy) borrowWay block;
 @end

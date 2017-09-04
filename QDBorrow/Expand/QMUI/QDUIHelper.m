@@ -56,7 +56,7 @@
     button.adjustsButtonWhenHighlighted = YES;
     button.titleLabel.font = UIFontBoldMake(14);
     [button setTitleColor:UIColorWhite forState:UIControlStateNormal];
-    button.backgroundColor = UIColorBlue;
+    button.backgroundColor = UIColorRed;
     button.highlightedBackgroundColor = UIColorMake(0, 168, 225);// 高亮时的背景色
     button.layer.cornerRadius = 4;
     return button;

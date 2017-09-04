@@ -9,6 +9,7 @@
 #import "QDFinishApplyViewController.h"
 #import "QMUIKit.h"
 #import "QDCompanyDetailController.h"
+#import "QDBorrowHomeViewController.h"
 
 @interface QDFinishApplyViewController ()
 @property (nonatomic, strong) QMUIButton *normalButton;
@@ -31,8 +32,8 @@
     self.normalButton.adjustsButtonWhenHighlighted = YES;
     self.normalButton.titleLabel.font = UIFontBoldMake(14);
     [self.normalButton setTitleColor:UIColorWhite forState:UIControlStateNormal];
-    self.normalButton.backgroundColor = UIColorBlue;
-    self.normalButton.highlightedBackgroundColor = UIColorMake(0, 168, 225);// 高亮时的背景色
+    self.normalButton.backgroundColor = UIColorRed;
+//    self.normalButton.highlightedBackgroundColor = UIColorMake(0, 168, 225);// 高亮时的背景色
     self.normalButton.frame = CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50);
     [self.view addSubview:self.normalButton];
     [self.normalButton addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -42,7 +43,7 @@
 
 - (void)bottomBtnClick {
     for (UIViewController *vc in self.navigationController.viewControllers) {
-        if ([vc isKindOfClass:[QDCompanyDetailController class]]) {
+        if ([vc isKindOfClass:[QDCompanyDetailController class]] || [vc isKindOfClass:[QDBorrowHomeViewController class]] ) {
             [self.navigationController popToViewController:vc animated:YES];
             return;
         }

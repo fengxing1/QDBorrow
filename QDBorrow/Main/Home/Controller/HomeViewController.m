@@ -66,7 +66,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (instancetype)initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithStyle:style]) {
         if (style == UITableViewStyleGrouped) {
-            self.tableViewInitialContentInset = UIEdgeInsetsMake(30, 0, 0, 0);
+            self.tableViewInitialContentInset = UIEdgeInsetsMake(28, 0, 0, 0);
             //            self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 200);
         }
     }

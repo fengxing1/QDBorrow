@@ -17,5 +17,5 @@ typedef  NS_ENUM(NSInteger, PersionInfoType) {
 @property (nonatomic, assign) PersionInfoType persionInfoType;
 @property (nonatomic, strong) NSMutableDictionary *recordInfo;
 @property (nonatomic, strong) NSArray *persionInfo;
-
+@property (nonatomic, assign) NSInteger fromBorrow;
 @end

@@ -12,7 +12,7 @@
 #import "UIImage+QMUI.h"
 #import "UIColor+Hex.h"
 
-typedef void(^borrowWay)(int borrowType,NSString *borrowCount);
+
 
 typedef NS_ENUM(NSInteger,BorrowTimeType) {
     BorrowTimeTypeFiften = 1,
@@ -21,9 +21,10 @@ typedef NS_ENUM(NSInteger,BorrowTimeType) {
 @interface QDHomeBorrowCell ()
 @property (nonatomic, assign) NSInteger borrowCountIndex;
 @property (nonatomic, strong) NSArray *borrowCountArray;
+@property (nonatomic, strong) NSArray *borrowStringArray;
+@property (nonatomic, strong) NSArray *processArray;
 @property (nonatomic, copy) NSString *borrowCount;
 @property (nonatomic, assign) BorrowTimeType borrowType;
-@property (nonatomic,copy) borrowWay block;
 @end
 
 @implementation QDHomeBorrowCell
@@ -31,9 +32,15 @@ typedef NS_ENUM(NSInteger,BorrowTimeType) {
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.goBorrowBtn.layer.cornerRadius = 5;
+    self.goBorrowBtn.layer.masksToBounds = YES;
+//    self.goBorrowBtn.backgroundColor = [UIColor colorWithHeX:0xFF523D];
     UIImage *image = [UIImage qmui_imageWithColor:[UIColor colorWithHeX:0xFF523D] size:CGSizeMake(12, 12) cornerRadius:6];
-    self.borrowCountArray = @[@"1000元",@"2000元",@"3000元",@"4000元",@"5000元",@"6000元"] ;
-    LiuXSlider *slider=[[LiuXSlider alloc] initWithFrame:CGRectMake(20, 225, SCREEN_WIDTH - 40,80 ) titles:self.borrowCountArray firstAndLastTitles:@[@"1000",@"6000"] defaultIndex:2 sliderImage:image];
+    
+    self.borrowStringArray = @[@"1000元",@"2000元",@"3000元",@"4000元",@"5000元",@"6000元"] ;
+    self.borrowCountArray = @[@1000,@2000,@3000,@4000,@5000,@6000] ;
+    self.processArray = @[@100,@150,@200,@250,@300,@350];
+    LiuXSlider *slider=[[LiuXSlider alloc] initWithFrame:CGRectMake(20, 225, SCREEN_WIDTH - 40,80 ) titles:self.borrowStringArray firstAndLastTitles:@[@"1000元",@"6000元"] defaultIndex:2 sliderImage:image];
     [self.contentView addSubview:slider];
     slider.block=^(int index){
         self.borrowCount = self.borrowCountArray[index];
@@ -47,6 +54,7 @@ typedef NS_ENUM(NSInteger,BorrowTimeType) {
     self.thirtyDayBtn.layer.masksToBounds = YES;
     [self selectFiftenBtn:YES];
     self.borrowType = BorrowTimeTypeFiften;
+    [self resetBorrowUI];
     
     
 }
@@ -79,13 +87,24 @@ typedef NS_ENUM(NSInteger,BorrowTimeType) {
 }
 
 - (void)resetBorrowUI {
-    
+    NSInteger processCount = [self.processArray[self.borrowCountIndex] integerValue];
+    NSInteger borrowCount = [self.borrowCountArray[self.borrowCountIndex] integerValue];
+    if (self.borrowType == 2) {
+        processCount = processCount * 2;
+        self.timeLabel.text = @"30";
+    } else {
+        self.timeLabel.text = @"15";
+    }
+    self.totalFeeCountLabel.text = [NSString stringWithFormat:@"%ld",(processCount + borrowCount)];
+    self.gainCountLabel.text = [NSString stringWithFormat:@"%ld",borrowCount];
+    self.poundageCountLabel.text = [NSString stringWithFormat:@"%ld",processCount];
 }
 
 
 - (IBAction)goBorrowClick:(id)sender {
     //发起回调，去controller层发起网络请求
-    
+    NSInteger borrowCount = [self.borrowCountArray[self.borrowCountIndex] integerValue];
+    self.block(self.borrowType, borrowCount);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

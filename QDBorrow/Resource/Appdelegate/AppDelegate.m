@@ -26,7 +26,7 @@
 #import "AdvertiseHelper.h"
 #import "introductoryPagesHelper.h"
 #import <BmobSDK/Bmob.h>
-
+#import "QDBorrowMessageViewController.h"
 #import <SobotKit/SobotKit.h>
 #import <UserNotifications/UserNotifications.h>
 #import "QDBorrowHomeViewController.h"
@@ -208,10 +208,10 @@
    
 
     // 找贷款
-    QDCompanyViewController *loanViewController = [[QDCompanyViewController alloc] init];
-    loanViewController.hidesBottomBarWhenPushed = NO;
-    QDNavigationController *loanNavController = [[QDNavigationController alloc] initWithRootViewController:loanViewController];
-    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon-fuwu-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-fuwu-light") tag:1];
+    QDBorrowMessageViewController *messageVC = [[QDBorrowMessageViewController alloc] init];
+//    messageVC.hidesBottomBarWhenPushed = NO;
+    QDNavigationController *loanNavController = [[QDNavigationController alloc] initWithRootViewController:messageVC];
+    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"消息" image:[UIImageMake(@"icon-fuwu-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-fuwu-light") tag:1];
     
     //个人中心
     QDMyViewController *myViewController = [[QDMyViewController alloc] init];
