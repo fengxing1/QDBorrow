@@ -27,12 +27,11 @@ static NSString *const kReusableIdentifierMessageCell  = @"messageCell";
     // Do any additional setup after loading the view.
     self.title = @"消息";
     [self configUI];
-    [self refreshView];
-    
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tabBarController.tabBar setHidden:NO];
+    [self refreshView];
 }
 
 - (void)configUI {

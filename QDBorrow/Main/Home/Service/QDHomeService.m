@@ -42,7 +42,13 @@
 
 - (void)messageDataWithBlock:(BmobObjectArrayResultBlock)block {
     BmobQuery *query = [BmobQuery queryWithClassName:@"QDMessage"];
-    [query whereKey:@"mobileNumber" equalTo:[BmobUser currentUser].mobilePhoneNumber];
+    NSString *phoneNum = [BmobUser currentUser].mobilePhoneNumber;
+    if (phoneNum) {
+        [query whereKey:@"mobileNumber" equalTo:phoneNum];
+    } else {
+        [query whereKey:@"mobileNumber" equalTo:@"11111111111"];
+    }
+    
     [query findObjectsInBackgroundWithBlock:block];
 }
 
