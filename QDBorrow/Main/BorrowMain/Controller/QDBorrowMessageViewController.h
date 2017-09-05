@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QMUICommonTableViewController.h"
 
-@interface QDBorrowMessageViewController : UIViewController
+@interface QDBorrowMessageViewController : QMUICommonTableViewController
 
 @end

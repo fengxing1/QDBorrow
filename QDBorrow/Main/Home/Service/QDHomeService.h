@@ -20,4 +20,7 @@
 - (void)homeBorrowDataWithBlock:(BmobObjectArrayResultBlock)block ;
 - (void)companyBorrowListWithBlock:(BmobObjectArrayResultBlock)block;
 
+//阅读消息
+- (void)messageDataWithBlock:(BmobObjectArrayResultBlock)block;
+
 @end

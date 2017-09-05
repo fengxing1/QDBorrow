@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QDMessageModel.h"
 
 @interface QDMessageCell : UITableViewCell
+@property (nonatomic, strong) QDMessageModel *messageModel;
 
 @end

@@ -38,8 +38,9 @@
 		0970F5221EC29FC200FC4794 /* QDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4B81EC29FC200FC4794 /* QDWebViewController.m */; };
 		0970F5231EC29FC200FC4794 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4BC1EC29FC200FC4794 /* AppDelegate.m */; };
 		0970F5241EC29FC200FC4794 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4C01EC29FC200FC4794 /* UIPlaceHolderTextView.m */; };
-		0976F07F1F595C2800C1B6EF /* QDMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0976F07D1F595C2800C1B6EF /* QDMessageCell.m */; };
-		0976F0801F595C2800C1B6EF /* QDMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0976F07E1F595C2800C1B6EF /* QDMessageCell.xib */; };
+		0976F0A61F5E52C800C1B6EF /* QDMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0976F0A51F5E52C800C1B6EF /* QDMessageModel.m */; };
+		0976F0AA1F5E537700C1B6EF /* QDMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0976F0A81F5E537700C1B6EF /* QDMessageCell.m */; };
+		0976F0AB1F5E537700C1B6EF /* QDMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0976F0A91F5E537700C1B6EF /* QDMessageCell.xib */; };
 		09AFCA801F341E1A00F3C79A /* QDBorrowHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AFCA7D1F341E1A00F3C79A /* QDBorrowHomeViewController.m */; };
 		09AFCA811F341E1A00F3C79A /* QDBorrowMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AFCA7F1F341E1A00F3C79A /* QDBorrowMessageViewController.m */; };
 		09AFCA851F341E7B00F3C79A /* QDHomeBorrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AFCA831F341E7B00F3C79A /* QDHomeBorrowCell.m */; };
@@ -286,9 +287,11 @@
 		0970F4BC1EC29FC200FC4794 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0970F4BF1EC29FC200FC4794 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
 		0970F4C01EC29FC200FC4794 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
-		0976F07C1F595C2800C1B6EF /* QDMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMessageCell.h; sourceTree = "<group>"; };
-		0976F07D1F595C2800C1B6EF /* QDMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMessageCell.m; sourceTree = "<group>"; };
-		0976F07E1F595C2800C1B6EF /* QDMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDMessageCell.xib; sourceTree = "<group>"; };
+		0976F0A41F5E52C800C1B6EF /* QDMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMessageModel.h; sourceTree = "<group>"; };
+		0976F0A51F5E52C800C1B6EF /* QDMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMessageModel.m; sourceTree = "<group>"; };
+		0976F0A71F5E537700C1B6EF /* QDMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDMessageCell.h; sourceTree = "<group>"; };
+		0976F0A81F5E537700C1B6EF /* QDMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDMessageCell.m; sourceTree = "<group>"; };
+		0976F0A91F5E537700C1B6EF /* QDMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDMessageCell.xib; sourceTree = "<group>"; };
 		09AFCA7C1F341E1A00F3C79A /* QDBorrowHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBorrowHomeViewController.h; sourceTree = "<group>"; };
 		09AFCA7D1F341E1A00F3C79A /* QDBorrowHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBorrowHomeViewController.m; sourceTree = "<group>"; };
 		09AFCA7E1F341E1A00F3C79A /* QDBorrowMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBorrowMessageViewController.h; sourceTree = "<group>"; };
@@ -643,6 +646,7 @@
 		0918AC851F0A701000C0949B /* BorrowMain */ = {
 			isa = PBXGroup;
 			children = (
+				0976F0A31F5E49B800C1B6EF /* Model */,
 				09AFCA7B1F341DF000F3C79A /* Controller */,
 				09AFCA7A1F341DA500F3C79A /* View */,
 			);
@@ -941,9 +945,21 @@
 			path = UIPlaceHolderTextView;
 			sourceTree = "<group>";
 		};
+		0976F0A31F5E49B800C1B6EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0976F0A41F5E52C800C1B6EF /* QDMessageModel.h */,
+				0976F0A51F5E52C800C1B6EF /* QDMessageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		09AFCA7A1F341DA500F3C79A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0976F0A71F5E537700C1B6EF /* QDMessageCell.h */,
+				0976F0A81F5E537700C1B6EF /* QDMessageCell.m */,
+				0976F0A91F5E537700C1B6EF /* QDMessageCell.xib */,
 				09AFCA821F341E7B00F3C79A /* QDHomeBorrowCell.h */,
 				09AFCA831F341E7B00F3C79A /* QDHomeBorrowCell.m */,
 				09AFCA841F341E7B00F3C79A /* QDHomeBorrowCell.xib */,
@@ -958,9 +974,6 @@
 				09AFCA7D1F341E1A00F3C79A /* QDBorrowHomeViewController.m */,
 				09AFCA7E1F341E1A00F3C79A /* QDBorrowMessageViewController.h */,
 				09AFCA7F1F341E1A00F3C79A /* QDBorrowMessageViewController.m */,
-				0976F07C1F595C2800C1B6EF /* QDMessageCell.h */,
-				0976F07D1F595C2800C1B6EF /* QDMessageCell.m */,
-				0976F07E1F595C2800C1B6EF /* QDMessageCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1820,7 +1833,7 @@
 				0970F3A81EC29F2900FC4794 /* Assets.xcassets in Resources */,
 				22A373881EE23BE70090548C /* blankpage_image_loadFail@2x.png in Resources */,
 				2210DA051ECB425B00366846 /* QDCerditCell.xib in Resources */,
-				0976F0801F595C2800C1B6EF /* QDMessageCell.xib in Resources */,
+				0976F0AB1F5E537700C1B6EF /* QDMessageCell.xib in Resources */,
 				22A373891EE23BE70090548C /* blankpage_image_loadFail@3x.png in Resources */,
 				2210DAF81ED087AB00366846 /* NSDateTimeAgo.bundle in Resources */,
 				22DB03241EED870700AF2A60 /* QDAssetsChoicesTableViewCell.xib in Resources */,
@@ -1989,6 +2002,7 @@
 				092F9F8E1EEF8CE000DA3578 /* QDFinishApplyViewController.m in Sources */,
 				2210DB031ED087AB00366846 /* NSHTTPCookieStorage+FreezeDry.m in Sources */,
 				2210DAEE1ED087AB00366846 /* NSData+Hash.m in Sources */,
+				0976F0AA1F5E537700C1B6EF /* QDMessageCell.m in Sources */,
 				0970F51F1EC29FC200FC4794 /* QDHomeModel.m in Sources */,
 				0970F5201EC29FC200FC4794 /* QDBannerTableViewCell.m in Sources */,
 				2210DB221ED087AB00366846 /* NSString+MIME.m in Sources */,
@@ -2009,7 +2023,6 @@
 				22751B9D1EFABE2C002A9A45 /* GVUserDefaults.m in Sources */,
 				229BAA811EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m in Sources */,
 				2210DAF51ED087AB00366846 /* NSDate+Reporting.m in Sources */,
-				0976F07F1F595C2800C1B6EF /* QDMessageCell.m in Sources */,
 				2210DB001ED087AB00366846 /* NSException+Trace.m in Sources */,
 				09B4BC4D1EC351CC0056B472 /* QDCertViewController.m in Sources */,
 				22A3738D1EE23BE70090548C /* UIView+EaseBlankPage.m in Sources */,
@@ -2046,6 +2059,7 @@
 				2210DA271ECF436400366846 /* QDAboutViewController.m in Sources */,
 				2210DB1C1ED087AB00366846 /* NSString+Contains.m in Sources */,
 				0970F39D1EC29F2900FC4794 /* main.m in Sources */,
+				0976F0A61F5E52C800C1B6EF /* QDMessageModel.m in Sources */,
 				0970F5241EC29FC200FC4794 /* UIPlaceHolderTextView.m in Sources */,
 				226CB2151EC71C8900C15625 /* LZMultiPickerView.m in Sources */,
 				2210DB201ED087AB00366846 /* NSString+Hash.m in Sources */,

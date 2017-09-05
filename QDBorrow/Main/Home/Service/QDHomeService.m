@@ -40,6 +40,11 @@
     [query findObjectsInBackgroundWithBlock:block];
 }
 
+- (void)messageDataWithBlock:(BmobObjectArrayResultBlock)block {
+    BmobQuery *query = [BmobQuery queryWithClassName:@"QDMessage"];
+    [query whereKey:@"mobileNumber" equalTo:[BmobUser currentUser].mobilePhoneNumber];
+    [query findObjectsInBackgroundWithBlock:block];
+}
 
 - (void)saveHomeData {
 //    for (int i = 0; i <= 3; i ++) {

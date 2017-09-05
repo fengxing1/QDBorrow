@@ -86,6 +86,7 @@ static NSString *const kReusableIdentifierBorrowCell  = @"borrowCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.tabBarController.tabBar setHidden:NO];
 }
 
 

@@ -78,7 +78,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     normalButton.frame = CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50);
     [self.view addSubview:normalButton];
     [normalButton addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    if (self.persionInfoType == PersionInfoTypePersional && !self.fromBorrow) {
+    if (self.persionInfoType == PersionInfoTypePersional) {
         [normalButton setTitle:@"下一步" forState:UIControlStateNormal];
     } else {
         [normalButton setTitle:@"完成" forState:UIControlStateNormal];
@@ -180,7 +180,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 }
 
 - (void)bottomBtnClick {
-    if (self.persionInfoType == PersionInfoTypePersional && !self.fromBorrow) {
+    if (self.persionInfoType == PersionInfoTypePersional) {
         if ([self validateMessage]) {
             QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
             persionVC.persionInfoType = PersionInfoTypeAssets;
