@@ -2285,7 +2285,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/QDBorrow/Expand/SDKFile/Baidu",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mayidai.qdborrow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mayidai.suishoudai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2309,7 +2309,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/QDBorrow/Expand/SDKFile/Baidu",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mayidai.qdborrow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mayidai.suishoudai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
