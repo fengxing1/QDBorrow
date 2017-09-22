@@ -88,7 +88,6 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
         [self.homeModel.borrowDetailArray removeAllObjects];
     }
     
-    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     [[QDHomeService sharedInstance] homeBannerDataWithBlock:^(NSArray *array, NSError *error) {
          [self.tableView.mj_header endRefreshing];
         if (!error) {
