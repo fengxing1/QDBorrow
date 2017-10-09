@@ -29,7 +29,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self configUI];
-    [self configData];
+    [self configData:NO];
 }
 
 - (void)configUI {
@@ -37,12 +37,19 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.tableView registerNib:[UINib nibWithNibName:@"QDCompanyTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(configData)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshTable)];
 }
 
-- (void)configData {
+- (void)refreshTable {
+    [self configData:YES];
+}
+
+- (void)configData:(BOOL)bRefresh {
     if (!self.borrowArray) {
         self.borrowArray = [[NSMutableArray alloc] init];
+    }
+    if(bRefresh) {
+        [self.borrowArray removeAllObjects];
     }
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     [[QDHomeService sharedInstance] companyBorrowListWithBlock:^(NSArray *array, NSError *error) {
