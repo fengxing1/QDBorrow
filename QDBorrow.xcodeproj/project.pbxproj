@@ -192,6 +192,9 @@
 		22A373AE1EE40ACA0090548C /* helpJson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22A373AD1EE40ACA0090548C /* helpJson.txt */; };
 		22A373B21EE40BD20090548C /* QDHelpViewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373B11EE40BD20090548C /* QDHelpViewListViewController.m */; };
 		22A373B51EE4203B0090548C /* QDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A373B41EE4203B0090548C /* QDSettingViewController.m */; };
+		22CFE3C71FA76FAD000D5DD0 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CFE3C61FA76FAD000D5DD0 /* MyViewController.m */; };
+		22CFE3CA1FA76FDB000D5DD0 /* ToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CFE3C91FA76FDB000D5DD0 /* ToolsViewController.m */; };
+		22CFE3CD1FA76FE9000D5DD0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CFE3CC1FA76FE9000D5DD0 /* HomeViewController.m */; };
 		22DB03231EED870700AF2A60 /* QDAssetsChoicesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB03211EED870700AF2A60 /* QDAssetsChoicesTableViewCell.m */; };
 		22DB03241EED870700AF2A60 /* QDAssetsChoicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DB03221EED870700AF2A60 /* QDAssetsChoicesTableViewCell.xib */; };
 		22DC7A281EDEF2E7009DB868 /* QDMyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC7A261EDEF2E7009DB868 /* QDMyListCell.m */; };
@@ -574,6 +577,12 @@
 		22A373B11EE40BD20090548C /* QDHelpViewListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHelpViewListViewController.m; sourceTree = "<group>"; };
 		22A373B31EE4203B0090548C /* QDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDSettingViewController.h; sourceTree = "<group>"; };
 		22A373B41EE4203B0090548C /* QDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDSettingViewController.m; sourceTree = "<group>"; };
+		22CFE3C51FA76FAD000D5DD0 /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		22CFE3C61FA76FAD000D5DD0 /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		22CFE3C81FA76FDB000D5DD0 /* ToolsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolsViewController.h; sourceTree = "<group>"; };
+		22CFE3C91FA76FDB000D5DD0 /* ToolsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolsViewController.m; sourceTree = "<group>"; };
+		22CFE3CB1FA76FE9000D5DD0 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		22CFE3CC1FA76FE9000D5DD0 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		22DB03201EED870700AF2A60 /* QDAssetsChoicesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDAssetsChoicesTableViewCell.h; sourceTree = "<group>"; };
 		22DB03211EED870700AF2A60 /* QDAssetsChoicesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDAssetsChoicesTableViewCell.m; sourceTree = "<group>"; };
 		22DB03221EED870700AF2A60 /* QDAssetsChoicesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDAssetsChoicesTableViewCell.xib; sourceTree = "<group>"; };
@@ -807,6 +816,7 @@
 		0970F4A21EC29FC200FC4794 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				22CFE3C11FA76E7A000D5DD0 /* SheBao */,
 				0918AC851F0A701000C0949B /* BorrowMain */,
 				22751B901EFAB941002A9A45 /* JumpManager */,
 				0964C9BD1EE0F29A0017F6D6 /* Forum */,
@@ -1669,6 +1679,43 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		22CFE3C11FA76E7A000D5DD0 /* SheBao */ = {
+			isa = PBXGroup;
+			children = (
+				22CFE3C41FA76EBA000D5DD0 /* Tools */,
+				22CFE3C31FA76EB4000D5DD0 /* My */,
+				22CFE3C21FA76EA2000D5DD0 /* Home */,
+			);
+			path = SheBao;
+			sourceTree = "<group>";
+		};
+		22CFE3C21FA76EA2000D5DD0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				22CFE3CB1FA76FE9000D5DD0 /* HomeViewController.h */,
+				22CFE3CC1FA76FE9000D5DD0 /* HomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		22CFE3C31FA76EB4000D5DD0 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				22CFE3C51FA76FAD000D5DD0 /* MyViewController.h */,
+				22CFE3C61FA76FAD000D5DD0 /* MyViewController.m */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		22CFE3C41FA76EBA000D5DD0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				22CFE3C81FA76FDB000D5DD0 /* ToolsViewController.h */,
+				22CFE3C91FA76FDB000D5DD0 /* ToolsViewController.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		442C1987B48A94241E6A0B9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2060,8 +2107,10 @@
 				2210DB1C1ED087AB00366846 /* NSString+Contains.m in Sources */,
 				0970F39D1EC29F2900FC4794 /* main.m in Sources */,
 				0976F0A61F5E52C800C1B6EF /* QDMessageModel.m in Sources */,
+				22CFE3C71FA76FAD000D5DD0 /* MyViewController.m in Sources */,
 				0970F5241EC29FC200FC4794 /* UIPlaceHolderTextView.m in Sources */,
 				226CB2151EC71C8900C15625 /* LZMultiPickerView.m in Sources */,
+				22CFE3CD1FA76FE9000D5DD0 /* HomeViewController.m in Sources */,
 				2210DB201ED087AB00366846 /* NSString+Hash.m in Sources */,
 				2210DB241ED087AB00366846 /* NSString+RegexCategory.m in Sources */,
 				223285661EC7F62E004AF053 /* QDCompanyDetailController.m in Sources */,
@@ -2094,6 +2143,7 @@
 				2210DA2C1ED0879600366846 /* MBProgressHUD+MP.m in Sources */,
 				2210DAF71ED087AB00366846 /* NSDate+Utilities.m in Sources */,
 				2210DB191ED087AB00366846 /* NSSet+Block.m in Sources */,
+				22CFE3CA1FA76FDB000D5DD0 /* ToolsViewController.m in Sources */,
 				2210DB211ED087AB00366846 /* NSString+Matcher.m in Sources */,
 				2210DAED1ED087AB00366846 /* NSData+Gzip.m in Sources */,
 				2210DB151ED087AB00366846 /* NSObject+MKBlockTimer.m in Sources */,
