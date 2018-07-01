@@ -31,6 +31,11 @@
 #import <UserNotifications/UserNotifications.h>
 #import "QDBorrowHomeViewController.h"
 #import "QDBorrowMessageViewController.h"
+#import "TMControlManagerViewController.h"
+#import "TMSideViewController.h"
+#import "MMDrawerController.h"
+#import "YTKNetworkConfig.h"
+
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 
@@ -47,13 +52,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-#if DEBUG 
+
+#if DEBUG
     
-#else 
+#else
+    
     [self initFabric];
     [self startBaiduMobileStat];
     
 #endif
+    [self didChangeStatusFrameNotification];
     [Bmob registerWithAppKey:BMOB_APP_ID];
     
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
@@ -91,7 +99,11 @@
         center.delegate = self;
         [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert |UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error) {
             if (!error) {
-                [[UIApplication sharedApplication] registerForRemoteNotifications];
+                dispatch_async(dispatch_get_main_queue(),^{
+                     [[UIApplication sharedApplication] registerForRemoteNotifications];
+                });
+                
+               
             }
         }];
     }else{
@@ -109,8 +121,17 @@
     // 错误日志收集
     [ZCLibClient setZCLibUncaughtExceptionHandler];
 
+    [self setNetworkBaseUrl];
+    
     return YES;
 }
+
+- (void)setNetworkBaseUrl {
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
+    config.baseUrl = @"http://101.132.109.136:8080";
+}
+
+
 
 //先跳转到首页
 - (void)setupLoginViewController {
@@ -169,8 +190,51 @@
 
 //借贷
 - (void)createTabBarController {
-    QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];
+
+
+    TMControlManagerViewController *controlManageVC = [[TMControlManagerViewController alloc] init];
+    UINavigationController *controlManagerVCNV = [[UINavigationController alloc] initWithRootViewController:controlManageVC];
     
+    TMSideViewController *sideVC = [[TMSideViewController alloc] init];
+    
+    MMDrawerController *drawerController = [[MMDrawerController alloc] initWithCenterViewController:controlManagerVCNV leftDrawerViewController:sideVC];
+    /** 设置打开/关闭抽屉的手势 */
+    drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    drawerController.closeDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    drawerController.showsShadow = NO;
+    /** 设置左边抽屉显示的多少 */
+    drawerController.maximumLeftDrawerWidth = SCREEN_SIZE.width - 50;
+    self.window.rootViewController = drawerController;
+    [self.window makeKeyAndVisible];
+}
+
+//担保
+- (void)createMyLoanTabBarController {
+//    QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];
+//
+//    // 首页
+//    QDBorrowHomeViewController *borrowVC = [[QDBorrowHomeViewController alloc] init];
+//    QDNavigationController *homeViewNavController = [[QDNavigationController alloc] initWithRootViewController:borrowVC];
+//    borrowVC.hidesBottomBarWhenPushed = NO;
+//    borrowVC.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon-home-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-home-light") tag:0];
+//
+//
+//    // 找贷款
+//    QDBorrowMessageViewController *messageVC = [[QDBorrowMessageViewController alloc] init];
+////    messageVC.hidesBottomBarWhenPushed = NO;
+//    QDNavigationController *loanNavController = [[QDNavigationController alloc] initWithRootViewController:messageVC];
+//    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"消息" image:[UIImageMake(@"icon-fuwu-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-fuwu-light") tag:1];
+//
+//    //个人中心
+//    QDMyViewController *myViewController = [[QDMyViewController alloc] init];
+//    myViewController.hidesBottomBarWhenPushed = NO;
+//    QDNavigationController *myNavController = [[QDNavigationController alloc] initWithRootViewController:myViewController];
+//    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon-wode-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-wode-light") tag:3];
+//
+//     tabBarViewController.viewControllers = @[homeViewNavController,loanNavController,myNavController];
+    //    QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];
+    //
+    QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];
     // 首页
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
     QDNavigationController *homeViewNavController = [[QDNavigationController alloc] initWithRootViewController:homeViewController];
@@ -191,40 +255,21 @@
     myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon-wode-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-wode-light") tag:3];
     
     tabBarViewController.viewControllers = @[homeViewNavController,loanNavController,myNavController];
-    
     self.window.rootViewController = tabBarViewController;
     [self.window makeKeyAndVisible];
+    
+
 }
 
-//担保
-- (void)createMyLoanTabBarController {
-    QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];
-    
-    // 首页
-    QDBorrowHomeViewController *borrowVC = [[QDBorrowHomeViewController alloc] init];
-    QDNavigationController *homeViewNavController = [[QDNavigationController alloc] initWithRootViewController:borrowVC];
-    borrowVC.hidesBottomBarWhenPushed = NO;
-    borrowVC.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon-home-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-home-light") tag:0];
-   
+- (void)didChangeStatusFrameNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeStatusBarFrame:) name:UIApplicationDidChangeStatusBarFrameNotification object:nil];
+}
 
-    // 找贷款
-    QDBorrowMessageViewController *messageVC = [[QDBorrowMessageViewController alloc] init];
-//    messageVC.hidesBottomBarWhenPushed = NO;
-    QDNavigationController *loanNavController = [[QDNavigationController alloc] initWithRootViewController:messageVC];
-    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"消息" image:[UIImageMake(@"icon-fuwu-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-fuwu-light") tag:1];
-    
-    //个人中心
-    QDMyViewController *myViewController = [[QDMyViewController alloc] init];
-    myViewController.hidesBottomBarWhenPushed = NO;
-    QDNavigationController *myNavController = [[QDNavigationController alloc] initWithRootViewController:myViewController];
-    myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon-wode-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-wode-light") tag:3];
-    
-     tabBarViewController.viewControllers = @[homeViewNavController,loanNavController,myNavController];
-    
-    self.window.rootViewController = tabBarViewController;
-    [self.window makeKeyAndVisible];
-    
-
+- (void)didChangeStatusBarFrame:(NSNotification *)noti {
+    NSLog(@"%@",noti.userInfo[@"UIApplicationStatusBarFrameUserInfoKey"]);
+    if ([UIApplication sharedApplication].statusBarFrame.size.height==40) {
+        
+    }
 }
 
 - (void)startLaunchingAnimation {

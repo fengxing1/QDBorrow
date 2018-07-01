@@ -43,17 +43,6 @@ static NSString *const kReusableIdentifierBorrowCell  = @"borrowCell";
     return [self initWithStyle:UITableViewStyleGrouped];
 }
 
-- (instancetype)initWithStyle:(UITableViewStyle)style {
-    if (self = [super initWithStyle:style]) {
-        if (style == UITableViewStyleGrouped) {
-            self.tableViewInitialContentInset = UIEdgeInsetsMake(28, 0, 30, 0);
-            //            self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 200);
-        }
-    }
-    return self;
-}
-
-
 - (void)configData {
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     [[QDHomeService sharedInstance] homeBannerDataWithBlock:^(NSArray *array, NSError *error) {
@@ -77,7 +66,7 @@ static NSString *const kReusableIdentifierBorrowCell  = @"borrowCell";
 
 - (void)confirmUI {
     self.title = @"首页";
-    self.tableView.tableHeaderView = nil;
+    self.tableView.contentInset = UIEdgeInsetsMake(-28, 0, 0, 0);
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.tableView registerClass:[QDBannerTableViewCell class] forCellReuseIdentifier:kReusableIdentifierBannerCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"QDHomeBorrowCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierBorrowCell];

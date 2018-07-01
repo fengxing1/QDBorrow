@@ -8,6 +8,6 @@
 
 #import "QMUICommonTableViewController.h"
 
-@interface HomeViewController : QMUICommonTableViewController
+@interface HomeViewController : QMUICommonViewController
 
 @end

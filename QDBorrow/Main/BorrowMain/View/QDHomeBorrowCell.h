@@ -12,7 +12,7 @@ typedef void(^borrowWay)(int borrowType,NSInteger borrowCount);
 @interface QDHomeBorrowCell : UITableViewCell
 //总费用
 @property (weak, nonatomic) IBOutlet UILabel *totalFeeCountLabel;
-//到账金额
+//到账金额Ô
 @property (weak, nonatomic) IBOutlet UILabel *gainCountLabel;
 //手续费用
 @property (weak, nonatomic) IBOutlet UILabel *poundageCountLabel;

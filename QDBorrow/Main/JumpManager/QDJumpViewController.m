@@ -12,6 +12,7 @@
 #import "QDJumpService.h"
 #import "UIAlertView+Block.h"
 #import "introductoryPagesHelper.h"
+#import "QDJumpRequest.h"
 
 @interface QDJumpViewController ()
 
@@ -50,22 +51,36 @@
 
 - (void)configRealHomeViewController {
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-    [[QDJumpService sharedInstance] changeTabbarWithBlock:^(BmobObject *object, NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view];
-        if (!error) {
-            if (object && [[object objectForKey:@"showNeedTabbar"] boolValue]) {
-                [self showOtherLoanView];
-            } else {
-                [self showMyLoanView];
-            }
-        } else {
-            [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
-                if (buttonIndex) {
-                    [self configRealHomeViewController];
-                }
-            } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"取消" otherButtonTitles:@"重新刷新", nil];
+    QDJumpRequest *jumpRequest = [[QDJumpRequest alloc] init];
+    [jumpRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        BOOL bJumpBorrow = [[request.responseObject valueForKey:@"data"] boolValue];
+        if (bJumpBorrow) {
+            [self showMyLoanView];
+        }  else {
+            [self showOtherLoanView];
         }
+        
+//        [self showMyLoanView];
+//        BOOL jump = request.response;
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
     }];
+//    [[QDJumpService sharedInstance] changeTabbarWithBlock:^(BmobObject *object, NSError *error) {
+//        [MBProgressHUD hideHUDForView:self.view];
+//        if (!error) {
+//            if (object && [[object objectForKey:@"showNeedTabbar"] boolValue]) {
+//                [self showOtherLoanView];
+//            } else {
+//                [self showMyLoanView];
+//            }
+//        } else {
+//            [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+//                if (buttonIndex) {
+//                    [self configRealHomeViewController];
+//                }
+//            } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"取消" otherButtonTitles:@"重新刷新", nil];
+//        }
+//    }];
 }
 
 

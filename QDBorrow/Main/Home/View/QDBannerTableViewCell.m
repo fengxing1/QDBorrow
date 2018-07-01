@@ -8,6 +8,7 @@
 
 #import "QDBannerTableViewCell.h"
 #import "QMUIKit.h"
+#import "QDBannerModel.h"
 
 @implementation QDBannerTableViewCell
 
@@ -30,15 +31,15 @@
     return self;
 }
 
-- (void)setBannerList:(NSMutableArray *)bannerList
+- (void)setBannerList:(NSArray *)bannerList
 {
     _bannerList = bannerList;
     NSMutableArray *imageUrlArr = [[NSMutableArray alloc] init];
     if (_bannerList.count) {
         self.sdCycleView.frame = CGRectMake(0, 0, SCREEN_WIDTH, (200 * SCREEN_WIDTH / 375));
-        for (QDHomeBannerModel *banner in _bannerList)  {
-            if (banner.imageUrl) {
-                [imageUrlArr addObject:banner.imageUrl];
+        for (QDBannerModel *banner in _bannerList)  {
+            if (banner.image) {
+                [imageUrlArr addObject:banner.image];
             }
             
         }
@@ -52,7 +53,7 @@
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(cellOfBannerClick:)])
     {
-        QDHomeBannerModel *banner = self.bannerList[index];
+        QDBannerModel *banner = self.bannerList[index];
         [self.delegate cellOfBannerClick:banner];
     }
 }
