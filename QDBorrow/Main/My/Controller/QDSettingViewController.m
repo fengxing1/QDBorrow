@@ -11,6 +11,7 @@
 #import "QDUIHelper.h"
 #import <BmobSDK/Bmob.h>
 #import "UIAlertView+Block.h"
+#import "QDUserManager.h"
 
 
 @interface QDSettingViewController ()
@@ -74,7 +75,8 @@
 }
 
 - (void)exitLoginClick {
-    [BmobUser logout];
+    [[QDUserManager sharedInstance] exitUser];
+//    [BmobUser logout];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshData" object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }

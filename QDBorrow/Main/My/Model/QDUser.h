@@ -12,5 +12,6 @@
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *verifyCode;
+@property (nonatomic, copy) NSString *sessionId;
 
 @end

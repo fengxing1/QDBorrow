@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,6 +15,7 @@
                 <outlet property="passwordTextField" destination="uZu-OF-SO9" id="y8a-xP-tqS"/>
                 <outlet property="phoneTextField" destination="XDG-p6-KHM" id="zgP-jk-W6h"/>
                 <outlet property="registerBackView" destination="c8X-xk-doh" id="00Y-r0-Lw9"/>
+                <outlet property="sendMessageBtn" destination="7q7-9B-Gtf" id="58d-wo-ERQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -65,8 +66,8 @@
                                 <constraint firstAttribute="width" constant="16" id="dwD-Ao-cEY"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WfO-47-Ejo">
-                            <rect key="frame" x="46" y="69" width="275" height="23"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WfO-47-Ejo">
+                            <rect key="frame" x="46" y="69" width="179" height="23"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="23" id="CWl-gA-Htm"/>
                             </constraints>
@@ -74,6 +75,20 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7q7-9B-Gtf">
+                            <rect key="frame" x="243" y="65" width="101" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="101" id="Hi1-o1-oBb"/>
+                                <constraint firstAttribute="height" constant="30" id="PdT-AA-UuO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="发送验证码">
+                                <color key="titleColor" red="0.88235294117647056" green="0.16862745098039217" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="sendMessageClick:" destination="-1" eventType="touchUpInside" id="IgF-Kw-DNG"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -85,12 +100,14 @@
                         <constraint firstAttribute="height" constant="150" id="Z5y-oP-87j"/>
                         <constraint firstItem="xIq-Lz-uHX" firstAttribute="leading" secondItem="c8X-xk-doh" secondAttribute="leading" constant="15" id="ZSw-KY-lA2"/>
                         <constraint firstItem="WfO-47-Ejo" firstAttribute="leading" secondItem="gfD-Xb-SyO" secondAttribute="trailing" constant="15" id="bn5-4m-rNZ"/>
+                        <constraint firstItem="7q7-9B-Gtf" firstAttribute="leading" secondItem="WfO-47-Ejo" secondAttribute="trailing" constant="18" id="dWl-Uj-hAf"/>
                         <constraint firstAttribute="trailing" secondItem="uZu-OF-SO9" secondAttribute="trailing" constant="54" id="e6v-7Y-h5i"/>
                         <constraint firstItem="uZu-OF-SO9" firstAttribute="top" secondItem="WfO-47-Ejo" secondAttribute="bottom" constant="26" id="g1K-ZU-RXS"/>
+                        <constraint firstItem="7q7-9B-Gtf" firstAttribute="top" secondItem="XDG-p6-KHM" secondAttribute="bottom" constant="25" id="gLW-Ro-iFb"/>
                         <constraint firstItem="uZu-OF-SO9" firstAttribute="leading" secondItem="xIq-Lz-uHX" secondAttribute="trailing" constant="15" id="lzP-1K-kx9"/>
                         <constraint firstItem="lFd-uO-cGz" firstAttribute="leading" secondItem="c8X-xk-doh" secondAttribute="leading" constant="15" id="mEg-Zw-mwS"/>
                         <constraint firstItem="XDG-p6-KHM" firstAttribute="leading" secondItem="lFd-uO-cGz" secondAttribute="trailing" constant="15" id="nWK-pK-FOd"/>
-                        <constraint firstAttribute="trailing" secondItem="WfO-47-Ejo" secondAttribute="trailing" constant="54" id="q5p-ff-gKc"/>
+                        <constraint firstAttribute="trailing" secondItem="WfO-47-Ejo" secondAttribute="trailing" constant="150" id="q5p-ff-gKc"/>
                         <constraint firstItem="lFd-uO-cGz" firstAttribute="top" secondItem="c8X-xk-doh" secondAttribute="top" constant="18" id="xKM-iI-L8e"/>
                         <constraint firstItem="gfD-Xb-SyO" firstAttribute="leading" secondItem="c8X-xk-doh" secondAttribute="leading" constant="15" id="zjy-dA-D4B"/>
                     </constraints>
@@ -102,6 +119,7 @@
                 <constraint firstItem="c8X-xk-doh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tau-se-jjr"/>
                 <constraint firstItem="c8X-xk-doh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="mrG-0Z-8hZ"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="79.5"/>
         </view>
     </objects>
     <resources>

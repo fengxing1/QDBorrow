@@ -128,7 +128,7 @@
 
 - (void)setNetworkBaseUrl {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
-    config.baseUrl = @"http://101.132.109.136:8080";
+    config.baseUrl = @"http://101.132.109.136:8080/";
 }
 
 

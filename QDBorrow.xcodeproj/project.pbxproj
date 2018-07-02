@@ -217,6 +217,9 @@
 		225AB93C20E8EF4F00BE8147 /* QDBorrowDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB93B20E8EF4F00BE8147 /* QDBorrowDetailModel.m */; };
 		225AB93F20E8FA5400BE8147 /* QDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB93E20E8FA5400BE8147 /* QDUser.m */; };
 		225AB94220E8FD4700BE8147 /* QDUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB94120E8FD4700BE8147 /* QDUserManager.m */; };
+		225AB94620EA6D4B00BE8147 /* QDSendMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB94520EA6D4B00BE8147 /* QDSendMessageRequest.m */; };
+		225AB94920EA713200BE8147 /* QDRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB94820EA713200BE8147 /* QDRegisterRequest.m */; };
+		225AB94C20EA723500BE8147 /* QDLoginReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB94B20EA723500BE8147 /* QDLoginReqeust.m */; };
 		2263A6831EEEE0790016D1F0 /* QDApplyAssetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2263A6821EEEE0790016D1F0 /* QDApplyAssetsModel.m */; };
 		226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */; };
 		226CB2121EC71C8900C15625 /* LZAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1FE1EC71C8800C15625 /* LZAddressPickerView.m */; };
@@ -689,6 +692,12 @@
 		225AB93E20E8FA5400BE8147 /* QDUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDUser.m; sourceTree = "<group>"; };
 		225AB94020E8FD4700BE8147 /* QDUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDUserManager.h; sourceTree = "<group>"; };
 		225AB94120E8FD4700BE8147 /* QDUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDUserManager.m; sourceTree = "<group>"; };
+		225AB94420EA6D4B00BE8147 /* QDSendMessageRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDSendMessageRequest.h; sourceTree = "<group>"; };
+		225AB94520EA6D4B00BE8147 /* QDSendMessageRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDSendMessageRequest.m; sourceTree = "<group>"; };
+		225AB94720EA713200BE8147 /* QDRegisterRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDRegisterRequest.h; sourceTree = "<group>"; };
+		225AB94820EA713200BE8147 /* QDRegisterRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDRegisterRequest.m; sourceTree = "<group>"; };
+		225AB94A20EA723500BE8147 /* QDLoginReqeust.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDLoginReqeust.h; sourceTree = "<group>"; };
+		225AB94B20EA723500BE8147 /* QDLoginReqeust.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDLoginReqeust.m; sourceTree = "<group>"; };
 		2263A6811EEEE0790016D1F0 /* QDApplyAssetsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDApplyAssetsModel.h; sourceTree = "<group>"; };
 		2263A6821EEEE0790016D1F0 /* QDApplyAssetsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDApplyAssetsModel.m; sourceTree = "<group>"; };
 		226CB1F71EC6F3EB00C15625 /* QDInstallmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDInstallmentModel.h; sourceTree = "<group>"; };
@@ -1240,6 +1249,7 @@
 		2210D9FE1EC9F82300366846 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				225AB94320EA6BAB00BE8147 /* Request */,
 				22A373A91EE4088C0090548C /* Model */,
 				2210DA001EC9F84D00366846 /* View */,
 				2210D9FF1EC9F83A00366846 /* Controller */,
@@ -2027,6 +2037,19 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		225AB94320EA6BAB00BE8147 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				225AB94420EA6D4B00BE8147 /* QDSendMessageRequest.h */,
+				225AB94520EA6D4B00BE8147 /* QDSendMessageRequest.m */,
+				225AB94720EA713200BE8147 /* QDRegisterRequest.h */,
+				225AB94820EA713200BE8147 /* QDRegisterRequest.m */,
+				225AB94A20EA723500BE8147 /* QDLoginReqeust.h */,
+				225AB94B20EA723500BE8147 /* QDLoginReqeust.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		226CB1F61EC6F32200C15625 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2533,9 +2556,11 @@
 				225AB8B720E82F4A00BE8147 /* iCarousel.m in Sources */,
 				22DB03231EED870700AF2A60 /* QDAssetsChoicesTableViewCell.m in Sources */,
 				2210DB011ED087AB00366846 /* NSFileHandle+readLine.m in Sources */,
+				225AB94920EA713200BE8147 /* QDRegisterRequest.m in Sources */,
 				2210DAFE1ED087AB00366846 /* NSDictionary+URL.m in Sources */,
 				225AB8B220E82F4A00BE8147 /* TMControlManagerViewController.m in Sources */,
 				22DC7A3C1EDF154D009DB868 /* QDRegisterViewController.m in Sources */,
+				225AB94620EA6D4B00BE8147 /* QDSendMessageRequest.m in Sources */,
 				0970F5231EC29FC200FC4794 /* AppDelegate.m in Sources */,
 				226CB2191EC71C8900C15625 /* LZToolbar.m in Sources */,
 				2210DB2E1ED087AB00366846 /* NSTimer+Blocks.m in Sources */,
@@ -2606,6 +2631,7 @@
 				225AB91E20E82F6600BE8147 /* TMCategory.m in Sources */,
 				229BAA811EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m in Sources */,
 				2210DAF51ED087AB00366846 /* NSDate+Reporting.m in Sources */,
+				225AB94C20EA723500BE8147 /* QDLoginReqeust.m in Sources */,
 				225AB91C20E82F6600BE8147 /* TMBill.m in Sources */,
 				2210DB001ED087AB00366846 /* NSException+Trace.m in Sources */,
 				09B4BC4D1EC351CC0056B472 /* QDCertViewController.m in Sources */,

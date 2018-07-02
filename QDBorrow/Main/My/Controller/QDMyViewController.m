@@ -15,14 +15,15 @@
 #import "QDMessageViewController.h"
 #import "QDHelpViewListViewController.h"
 #import "QDSettingViewController.h"
-#import <BmobSDK/Bmob.h>
+#import "QDUserManager.h"
+
 
 static NSString *const kReusableIdentifierMyListCell  = @"myCell";
 static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 
 @interface QDMyViewController () <UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, strong) BmobUser *user;
+@property (nonatomic, strong) QDUser *user;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
@@ -44,8 +45,6 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 - (void)configData {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"refreshData" object:nil];
-    self.user = [BmobUser currentUser];
-    
 }
 
 - (void)configUI {
@@ -105,9 +104,9 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 //    return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 20.0;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 10.0;
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -249,7 +248,7 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 // 自定义用户信息参数
 - (void)customUserInformationWith:(ZCLibInitInfo*)initInfo{
     if (self.user) {
-        initInfo.userId = self.user.username;
+        initInfo.userId = self.user.userName;
     } else {
         initInfo.userId = @"12345";
     }
@@ -450,7 +449,7 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 
 - (void)refreshData {
-    self.user = [BmobUser currentUser];
+    self.user = [[QDUserManager sharedInstance] getUser];
     [self.tableView reloadData];
     
 }

@@ -12,4 +12,10 @@
 @interface QDUserManager : NSObject
 @property (nonatomic, strong) QDUser *user;
 
++ (instancetype)sharedInstance;
+- (QDUser *)getUser;
+- (void)saveUser:(QDUser *)user;
+- (BOOL)validateUser;
+- (void)exitUser;
+
 @end

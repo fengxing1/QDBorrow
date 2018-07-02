@@ -28,12 +28,19 @@
     return [QDUserManager sharedInstance];
 }
 
+- (void)exitUser {
+    self.user = nil;
+    [NSKeyedArchiver archiveRootObject:[NSNull null] toFile:[self userFilePath]];
+}
 
 - (QDUser *)getUser {
     if (self.user) {
         return self.user;
     } else {
        QDUser *user = [NSKeyedUnarchiver unarchiveObjectWithFile:[self userFilePath]];
+        if ([user isKindOfClass:[NSNull class]]) {
+            return nil;
+        }
         return user;
     }
 }
