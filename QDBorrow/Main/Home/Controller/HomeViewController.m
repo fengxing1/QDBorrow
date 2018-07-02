@@ -10,8 +10,6 @@
 #import "LoginService.h"
 #import "QMUIKit.h"
 #import "QDCommonTableViewController.h"
-#import "QDHomeBannerModel.h"
-#import "BorrowDetailModel.h"
 #import "QDHomeModel.h"
 #import "YYModel.h"
 #import "UIAlertView+Block.h"
@@ -35,7 +33,6 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 @property(nonatomic, strong) QMUIButton *registButton;
 @property(nonatomic, strong) QMUIButton *loginButton;
 @property(nonatomic, strong) QMUIButton *statusButton;
-@property(nonatomic, strong) QDHomeModel *homeModel;
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -70,6 +67,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     QDHomeRequest *homeRequest = [[QDHomeRequest alloc] init];
     [homeRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD hideHUDForView:self.view];
         if ([self.tableView.mj_header isRefreshing]) {
             [self.tableView.mj_header endRefreshing];
         }
@@ -179,15 +177,15 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.homeModel) {
+    if (self.homeList) {
         if (section == 0) {
-            if (self.homeModel.bannerArray && self.homeModel.bannerArray.count) {
+            if (self.homeList.bannerVOList && self.homeList.bannerVOList.count) {
                 return 1;
             }
             return 0;
         } else {
-            if (self.homeModel.borrowDetailArray && self.homeModel.borrowDetailArray.count) {
-                return self.homeModel.borrowDetailArray.count;
+            if (self.homeList.borrowVOList && self.homeList.borrowVOList.count) {
+                return self.homeList.borrowVOList.count;
             }
             return 0;
         }
@@ -206,8 +204,8 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     } else {
         QBBusinessTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCompanyCell];
         companyCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        if (self.homeModel.borrowDetailArray.count >= indexPath.row) {
-            companyCell.borrowModel = self.homeModel.borrowDetailArray[indexPath.row];
+        if (self.homeList.borrowVOList.count >= indexPath.row) {
+            companyCell.borrowModel = self.homeList.borrowVOList[indexPath.row];
         }
         return companyCell;
         
@@ -241,9 +239,9 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        BorrowDetailModel *borrowModel = self.homeModel.borrowDetailArray[indexPath.row];
+        BorrowDetailModel *borrowModel = self.homeList.borrowVOList[indexPath.row];
         QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
-        companyDetailViewController.borrowModel = borrowModel;
+//        companyDetailViewController.borrowModel = borrowModel;
         [self.navigationController pushViewController:companyDetailViewController animated:YES];
     }
     

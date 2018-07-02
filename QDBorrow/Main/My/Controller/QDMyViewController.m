@@ -21,8 +21,9 @@ static NSString *const kReusableIdentifierMyListCell  = @"myCell";
 static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 
-@interface QDMyViewController ()
+@interface QDMyViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) BmobUser *user;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -34,21 +35,7 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
     [self configData];
     [self configUI];
 }
-//
-- (instancetype)init {
-    return [self initWithStyle:UITableViewStyleGrouped];
-//    self.tableViewInitialContentInset = UIEdgeInsetsMake(-40, 0, 25, 0);
-}
 
-- (instancetype)initWithStyle:(UITableViewStyle)style {
-    if (self = [super initWithStyle:style]) {
-        if (style == UITableViewStyleGrouped) {
-            self.tableViewInitialContentInset = UIEdgeInsetsMake(30, 0, 0, 0);
-            //            self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 200);
-        }
-    }
-    return self;
-}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
@@ -63,8 +50,9 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 - (void)configUI {
     self.title = @"个人中心";
-    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.view addSubview:self.tableView];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 //    self.tableViewInitialContentInset = UIEdgeInsetsMake(-40, 0, 0, 0);
 //    headerView.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = nil;
@@ -465,6 +453,13 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
     self.user = [BmobUser currentUser];
     [self.tableView reloadData];
     
+}
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64) style:UITableViewStyleGrouped];
+    }
+    return _tableView;
 }
 
 

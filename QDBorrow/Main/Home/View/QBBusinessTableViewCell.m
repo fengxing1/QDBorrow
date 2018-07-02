@@ -9,6 +9,7 @@
 #import "QBBusinessTableViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "QMUIKit.h"
+#import "QDBannerModel.h"
 
 @interface QBBusinessTableViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *businessIconImageView;
@@ -36,16 +37,12 @@
     
 }
 
-- (void)setBorrowModel:(BorrowDetailModel *)borrowModel {
+- (void)setBorrowModel:(QDBorrowModel *)borrowModel {
     _borrowModel = borrowModel;
-    [self.businessIconImageView sd_setImageWithURL:[NSURL URLWithString:borrowModel.imageIcon] placeholderImage:nil];
-    self.businessNameLabel.text = borrowModel.companyName;
-    self.businessDetailLabel.text = borrowModel.companyDetail;
-    if (borrowModel.showButton) {
-        self.peopleCountLabel.text = [NSString stringWithFormat:@"%ld人已放款",borrowModel.peopleNum];
-    } else {
-        self.peopleCountLabel.text = [NSString stringWithFormat:@"%ld人已浏览",borrowModel.peopleNum];
-    }
+    [self.businessIconImageView sd_setImageWithURL:[NSURL URLWithString:borrowModel.image] placeholderImage:nil];
+    self.businessNameLabel.text = borrowModel.productName;
+    self.businessDetailLabel.text = borrowModel.productDetail;
+    self.peopleCountLabel.text = [NSString stringWithFormat:@"%ld人已放款",borrowModel.peopleNumber];
     
 }
 

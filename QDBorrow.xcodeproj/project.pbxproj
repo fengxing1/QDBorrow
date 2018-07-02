@@ -214,6 +214,9 @@
 		225AB93320E8BD5400BE8147 /* QDHomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB93220E8BD5400BE8147 /* QDHomeRequest.m */; };
 		225AB93620E8C01000BE8147 /* QDHomeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB93520E8C01000BE8147 /* QDHomeList.m */; };
 		225AB93920E8C67700BE8147 /* QDJumpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB93820E8C67700BE8147 /* QDJumpRequest.m */; };
+		225AB93C20E8EF4F00BE8147 /* QDBorrowDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB93B20E8EF4F00BE8147 /* QDBorrowDetailModel.m */; };
+		225AB93F20E8FA5400BE8147 /* QDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB93E20E8FA5400BE8147 /* QDUser.m */; };
+		225AB94220E8FD4700BE8147 /* QDUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB94120E8FD4700BE8147 /* QDUserManager.m */; };
 		2263A6831EEEE0790016D1F0 /* QDApplyAssetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2263A6821EEEE0790016D1F0 /* QDApplyAssetsModel.m */; };
 		226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */; };
 		226CB2121EC71C8900C15625 /* LZAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1FE1EC71C8800C15625 /* LZAddressPickerView.m */; };
@@ -680,6 +683,12 @@
 		225AB93520E8C01000BE8147 /* QDHomeList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDHomeList.m; sourceTree = "<group>"; };
 		225AB93720E8C67700BE8147 /* QDJumpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDJumpRequest.h; sourceTree = "<group>"; };
 		225AB93820E8C67700BE8147 /* QDJumpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDJumpRequest.m; sourceTree = "<group>"; };
+		225AB93A20E8EF4F00BE8147 /* QDBorrowDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDBorrowDetailModel.h; sourceTree = "<group>"; };
+		225AB93B20E8EF4F00BE8147 /* QDBorrowDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDBorrowDetailModel.m; sourceTree = "<group>"; };
+		225AB93D20E8FA5400BE8147 /* QDUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDUser.h; sourceTree = "<group>"; };
+		225AB93E20E8FA5400BE8147 /* QDUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDUser.m; sourceTree = "<group>"; };
+		225AB94020E8FD4700BE8147 /* QDUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDUserManager.h; sourceTree = "<group>"; };
+		225AB94120E8FD4700BE8147 /* QDUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDUserManager.m; sourceTree = "<group>"; };
 		2263A6811EEEE0790016D1F0 /* QDApplyAssetsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDApplyAssetsModel.h; sourceTree = "<group>"; };
 		2263A6821EEEE0790016D1F0 /* QDApplyAssetsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDApplyAssetsModel.m; sourceTree = "<group>"; };
 		226CB1F71EC6F3EB00C15625 /* QDInstallmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDInstallmentModel.h; sourceTree = "<group>"; };
@@ -1136,6 +1145,8 @@
 				225AB92E20E8BB0E00BE8147 /* QDBorrowModel.m */,
 				225AB93420E8C01000BE8147 /* QDHomeList.h */,
 				225AB93520E8C01000BE8147 /* QDHomeList.m */,
+				225AB93A20E8EF4F00BE8147 /* QDBorrowDetailModel.h */,
+				225AB93B20E8EF4F00BE8147 /* QDBorrowDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2200,6 +2211,10 @@
 				22A373AD1EE40ACA0090548C /* helpJson.txt */,
 				22A373AA1EE408DC0090548C /* QDHelpModel.h */,
 				22A373AB1EE408DC0090548C /* QDHelpModel.m */,
+				225AB93D20E8FA5400BE8147 /* QDUser.h */,
+				225AB93E20E8FA5400BE8147 /* QDUser.m */,
+				225AB94020E8FD4700BE8147 /* QDUserManager.h */,
+				225AB94120E8FD4700BE8147 /* QDUserManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2545,7 +2560,9 @@
 				2210DAE91ED087AB00366846 /* NSBundle+AppIcon.m in Sources */,
 				2210DAFF1ED087AB00366846 /* NSDictionary+XML.m in Sources */,
 				225AB90E20E82F6600BE8147 /* TMAddCategoryViewController.m in Sources */,
+				225AB94220E8FD4700BE8147 /* QDUserManager.m in Sources */,
 				2210DB301ED087AB00366846 /* NSURL+QueryDictionary.m in Sources */,
+				225AB93F20E8FA5400BE8147 /* QDUser.m in Sources */,
 				0964C9C61EE126FA0017F6D6 /* UIColor+Hex.m in Sources */,
 				09B4BC461EC34DC00056B472 /* QDCompanyViewController.m in Sources */,
 				225AB91620E82F6600BE8147 /* TMCategoryCollectionViewFlowLayout.m in Sources */,
@@ -2622,6 +2639,7 @@
 				225AB90020E82F6500BE8147 /* TMBooks.m in Sources */,
 				223285631EC7E9BC004AF053 /* QDMultiLabelCell.m in Sources */,
 				2210DB0E1ED087AB00366846 /* NSObject+AppInfo.m in Sources */,
+				225AB93C20E8EF4F00BE8147 /* QDBorrowDetailModel.m in Sources */,
 				225AB92C20E8BA7000BE8147 /* QDBannerModel.m in Sources */,
 				2210DAE71ED087AB00366846 /* NSArray+Block.m in Sources */,
 				225AB90320E82F6500BE8147 /* TMSideButton.m in Sources */,
