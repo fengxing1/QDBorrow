@@ -36,27 +36,15 @@
     self.oneLineLayer.frame = CGRectMake(0, 80, SCREEN_WIDTH, PixelOne);
 }
 
-- (void)setBorrowDtail:(BorrowDetailModel *)borrowDtail {
+- (void)setBorrowDtail:(QDCompanyDetailModel *)borrowDtail {
     _borrowDtail = borrowDtail;
-    [self.companyIconImageView sd_setImageWithURL:[NSURL URLWithString:borrowDtail.imageIcon] placeholderImage:nil];
-    self.companyNameLabel.text = borrowDtail.companyName;
-    if (borrowDtail.showButton) {
-        self.penpleCountLabel.text = [NSString stringWithFormat:@"%ld人已放款",borrowDtail.peopleNum];
-    } else {
-        self.penpleCountLabel.text = [NSString stringWithFormat:@"%ld人已浏览",borrowDtail.peopleNum];
-    }
+    [self.companyIconImageView sd_setImageWithURL:[NSURL URLWithString:borrowDtail.image] placeholderImage:nil];
+    self.companyNameLabel.text = borrowDtail.productName;
+    self.penpleCountLabel.text = [NSString stringWithFormat:@"%ld人已放款",borrowDtail.peopleNumber];
     
-    self.companyDetailLabel.text = borrowDtail.companyDetail;
+    self.companyDetailLabel.text = borrowDtail.productDetail;
 }
 
-- (void)setBShowInDetail:(Boolean)bShowInDetail {
-    _bShowInDetail = bShowInDetail;
-    if (bShowInDetail) {
-        self.oneLineLayer.hidden = YES;
-    } else {
-        self.oneLineLayer.hidden = NO;
-    }
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

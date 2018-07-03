@@ -24,6 +24,8 @@
 #import "QDHomeRequest.h"
 #import "QDHomeList.h"
 #import "YYModel.h"
+#import "QDUserManager.h"
+#import "QDLoginOrRegisterViewController.h"
 
 static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
@@ -239,10 +241,17 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        BorrowDetailModel *borrowModel = self.homeList.borrowVOList[indexPath.row];
-        QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
-//        companyDetailViewController.borrowModel = borrowModel;
-        [self.navigationController pushViewController:companyDetailViewController animated:YES];
+        //判断用户登录没，没有去登陆
+        if ([[QDUserManager sharedInstance] validateUser]) {
+            QDBorrowModel *borrowModel = self.homeList.borrowVOList[indexPath.row];
+            QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
+            companyDetailViewController.id = borrowModel.id;
+            [self.navigationController pushViewController:companyDetailViewController animated:YES];
+        } else {
+            QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
+            [self.navigationController pushViewController:loginVC animated:YES];
+        }
+        
     }
     
 }

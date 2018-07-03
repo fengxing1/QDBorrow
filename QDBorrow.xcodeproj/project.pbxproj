@@ -220,8 +220,9 @@
 		225AB94620EA6D4B00BE8147 /* QDSendMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB94520EA6D4B00BE8147 /* QDSendMessageRequest.m */; };
 		225AB94920EA713200BE8147 /* QDRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB94820EA713200BE8147 /* QDRegisterRequest.m */; };
 		225AB94C20EA723500BE8147 /* QDLoginReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB94B20EA723500BE8147 /* QDLoginReqeust.m */; };
+		225AB95320EBCF5300BE8147 /* QDCompanyDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB95220EBCF5300BE8147 /* QDCompanyDetailRequest.m */; };
+		225AB95620EBD11200BE8147 /* QDCompanyDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB95520EBD11200BE8147 /* QDCompanyDetailModel.m */; };
 		2263A6831EEEE0790016D1F0 /* QDApplyAssetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2263A6821EEEE0790016D1F0 /* QDApplyAssetsModel.m */; };
-		226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */; };
 		226CB2121EC71C8900C15625 /* LZAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1FE1EC71C8800C15625 /* LZAddressPickerView.m */; };
 		226CB2131EC71C8900C15625 /* LZAreaPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB2001EC71C8800C15625 /* LZAreaPickerView.m */; };
 		226CB2141EC71C8900C15625 /* LZDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB2021EC71C8800C15625 /* LZDatePicker.m */; };
@@ -698,10 +699,12 @@
 		225AB94820EA713200BE8147 /* QDRegisterRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDRegisterRequest.m; sourceTree = "<group>"; };
 		225AB94A20EA723500BE8147 /* QDLoginReqeust.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDLoginReqeust.h; sourceTree = "<group>"; };
 		225AB94B20EA723500BE8147 /* QDLoginReqeust.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDLoginReqeust.m; sourceTree = "<group>"; };
+		225AB95120EBCF5300BE8147 /* QDCompanyDetailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDCompanyDetailRequest.h; sourceTree = "<group>"; };
+		225AB95220EBCF5300BE8147 /* QDCompanyDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCompanyDetailRequest.m; sourceTree = "<group>"; };
+		225AB95420EBD11200BE8147 /* QDCompanyDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDCompanyDetailModel.h; sourceTree = "<group>"; };
+		225AB95520EBD11200BE8147 /* QDCompanyDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCompanyDetailModel.m; sourceTree = "<group>"; };
 		2263A6811EEEE0790016D1F0 /* QDApplyAssetsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDApplyAssetsModel.h; sourceTree = "<group>"; };
 		2263A6821EEEE0790016D1F0 /* QDApplyAssetsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDApplyAssetsModel.m; sourceTree = "<group>"; };
-		226CB1F71EC6F3EB00C15625 /* QDInstallmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDInstallmentModel.h; sourceTree = "<group>"; };
-		226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDInstallmentModel.m; sourceTree = "<group>"; };
 		226CB1FD1EC71C8800C15625 /* LZAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAddressPickerView.h; sourceTree = "<group>"; };
 		226CB1FE1EC71C8800C15625 /* LZAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAddressPickerView.m; sourceTree = "<group>"; };
 		226CB1FF1EC71C8800C15625 /* LZAreaPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAreaPickerView.h; sourceTree = "<group>"; };
@@ -835,6 +838,8 @@
 			children = (
 				091506021F00AA93002D2805 /* QDHomeService.h */,
 				091506031F00AA93002D2805 /* QDHomeService.m */,
+				225AB95120EBCF5300BE8147 /* QDCompanyDetailRequest.h */,
+				225AB95220EBCF5300BE8147 /* QDCompanyDetailRequest.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -2053,8 +2058,8 @@
 		226CB1F61EC6F32200C15625 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				226CB1F71EC6F3EB00C15625 /* QDInstallmentModel.h */,
-				226CB1F81EC6F3EB00C15625 /* QDInstallmentModel.m */,
+				225AB95420EBD11200BE8147 /* QDCompanyDetailModel.h */,
+				225AB95520EBD11200BE8147 /* QDCompanyDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2568,6 +2573,7 @@
 				225AB90420E82F6500BE8147 /* TMSideCell.m in Sources */,
 				2210DB331ED087AB00366846 /* NSURLRequest+ParamsFromDictionary.m in Sources */,
 				225AB8FB20E82F6500BE8147 /* TMPiewCategoryDetailViewController.m in Sources */,
+				225AB95620EBD11200BE8147 /* QDCompanyDetailModel.m in Sources */,
 				225AB91220E82F6600BE8147 /* TMActionSheetView.m in Sources */,
 				2210DB271ED087AB00366846 /* NSString+Score.m in Sources */,
 				2210DB0A1ED087AB00366846 /* NSNumber+CGFloat.m in Sources */,
@@ -2720,7 +2726,6 @@
 				225AB8B420E82F4A00BE8147 /* LYPushTransition.m in Sources */,
 				0970F51B1EC29FC200FC4794 /* QMUIConfigurationTemplate.m in Sources */,
 				2210DB1B1ED087AB00366846 /* NSString+Base64.m in Sources */,
-				226CB1F91EC6F3EB00C15625 /* QDInstallmentModel.m in Sources */,
 				2210DA2C1ED0879600366846 /* MBProgressHUD+MP.m in Sources */,
 				2210DAF71ED087AB00366846 /* NSDate+Utilities.m in Sources */,
 				2210DB191ED087AB00366846 /* NSSet+Block.m in Sources */,
@@ -2753,6 +2758,7 @@
 				225AB8FD20E82F6500BE8147 /* TMLabel.m in Sources */,
 				0970F5181EC29FC200FC4794 /* QDNavigationController.m in Sources */,
 				2210DB091ED087AB00366846 /* NSDecimalNumber+Extensions.m in Sources */,
+				225AB95320EBCF5300BE8147 /* QDCompanyDetailRequest.m in Sources */,
 				0970F5211EC29FC200FC4794 /* LoginService.m in Sources */,
 				225AB91020E82F6600BE8147 /* TMRemarkViewController.m in Sources */,
 				22751BA31EFABE34002A9A45 /* introductoryPagesHelper.m in Sources */,

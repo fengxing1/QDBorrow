@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BorrowDetailModel.h"
+#import "QDCompanyDetailModel.h"
 
 @interface QDCompanyTableViewCell : UITableViewCell
-@property (nonatomic, strong) BorrowDetailModel *borrowDtail;
-@property (nonatomic, assign) Boolean bShowInDetail;
+@property (nonatomic, strong) QDCompanyDetailModel *borrowDtail;
 
 @end

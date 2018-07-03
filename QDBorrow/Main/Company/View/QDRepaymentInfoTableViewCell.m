@@ -37,23 +37,24 @@
 
 //等额本息计算公式：〔贷款本金×月利率×（1＋月利率）＾还款月数〕÷〔（1＋月利率）＾还款月数－1〕
 //monthlyRepayment = capitalization * rateOfMonth * pow((1 + rateOfMonth), months) / (pow((1 + rateOfMonth), months) - 1);
-- (void)setInstallmentModel:(QDInstallmentModel *)installmentModel {
-    _installmentModel = installmentModel;
+
+- (void)setMoney:(long)currentMoney time:(long)currentTime rate:(double)monthyRate {
     CGFloat monthlyRepayment = 0;
     //本金
-    CGFloat capitalization = installmentModel.moneyCount;
+    CGFloat capitalization = (float)currentMoney;
     //月利率
-    CGFloat rateOfMonth = installmentModel.interest / 100.0;
+    CGFloat rateOfMonth = monthyRate / 100.0;
     //月数
-    NSInteger months = installmentModel.installCount;
+    CGFloat months = currentTime;
     
-    monthlyRepayment = capitalization * rateOfMonth * pow((1 + rateOfMonth), months) / (pow((1 + rateOfMonth), months) - 1);
+    monthlyRepayment = (capitalization * rateOfMonth * pow((1 + rateOfMonth), months) / (pow((1 + rateOfMonth), months) - 1) - currentMoney) * (currentMoney / 30) + capitalization;
     self.repayCountLabel.text = [NSString stringWithFormat:@"%.2f",monthlyRepayment];
-    NSString *rate = [NSString stringWithFormat:@"%.2f",installmentModel.interest];
+    NSString *rate = [NSString stringWithFormat:@"%.2f",monthyRate];
     self.rateLabel.text = [rate stringByAppendingString:@"%"];
-    self.timeLabel.text = installmentModel.fastTimeStr;
-    
+    self.timeLabel.text = @"十分钟放款";
 }
+
+
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

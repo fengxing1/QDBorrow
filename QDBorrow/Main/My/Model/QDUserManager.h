@@ -17,5 +17,8 @@
 - (void)saveUser:(QDUser *)user;
 - (BOOL)validateUser;
 - (void)exitUser;
+- (NSString *)getUserName;
+
+- (NSString *)sessionId;
 
 @end

@@ -11,7 +11,6 @@
 #import "QDChooseTableViewCell.h"
 #import "QDRepaymentInfoTableViewCell.h"
 #import "QDMultiLabelCell.h"
-#import "QDInstallmentModel.h"
 #import "QDUIHelper.h"
 #import "QDWebViewController.h"
 #import "LZPickViewManager.h"
@@ -19,7 +18,9 @@
 #import "QDPersionViewController.h"
 #import "UIAlertView+Block.h"
 #import "QDLoginOrRegisterViewController.h"
-#import <BmobSDK/Bmob.h>
+#import "QDCompanyDetailRequest.h"
+#import "QDCompanyDetailModel.h"
+#import "YYModel.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 static NSString *const kReusableIdentifierChooseCell = @"chooseCell";
@@ -28,10 +29,14 @@ static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
 static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 @interface QDCompanyDetailController ()
 @property (nonatomic, strong) QDAmountOfCount *amountModel;
-@property (nonatomic, strong) QDInstallmentModel *installModel;
-@property(nonatomic, strong) QMUIButton *normalButton;
+@property (nonatomic, strong) QMUIButton *normalButton;
+@property (nonatomic, strong) QDCompanyDetailModel *companyInfoModel;
 
-@property (nonatomic, strong)NSMutableArray *moneyCountArray;
+@property (nonatomic, strong) NSArray *moneyCountArray;
+//记录选择的金额
+@property (nonatomic, assign) long currentMoney;
+//借了选择日期
+@property (nonatomic, assign) long currentMonth;
 
 @end
 
@@ -73,18 +78,36 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 }
 
 - (void)configData {
-    self.amountModel = [[QDAmountOfCount alloc] init];
-    self.amountModel.maxMoneyCount = self.borrowModel.maxMoney;
-    self.amountModel.minMoneyCount = self.borrowModel.minMoney;
-    self.amountModel.moneyCount = self.borrowModel.minMoney;
-    self.amountModel.amortizationNumArray = self.borrowModel.amortizationNumArray;
-    self.amountModel.mounthCount = [self.borrowModel.amortizationNumArray[0] integerValue];
-    
-    self.installModel = [[QDInstallmentModel alloc] init];
-    self.installModel.moneyCount = self.borrowModel.minMoney;
-    self.installModel.installCount = [self.borrowModel.amortizationNumArray[0] integerValue];
-    self.installModel.interest = self.borrowModel.monthyRate;
-    self.installModel.fastTimeStr = self.borrowModel.fastestTime;
+    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
+    QDCompanyDetailRequest *request = [[QDCompanyDetailRequest alloc] init];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD hideHUDForView:self.view];
+         if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
+             self.companyInfoModel = [QDCompanyDetailModel yy_modelWithJSON:[request.responseJSONObject valueForKey:@"data"]];
+             self.title = self.companyInfoModel.productName;
+             self.currentMonth = [[self.companyInfoModel.debitMoney componentsSeparatedByString:@","].firstObject longLongValue];
+             self.currentMoney = [[self.companyInfoModel.debitMoney componentsSeparatedByString:@","].firstObject longLongValue];
+             [self.tableView reloadData];
+         } else {
+             [MBProgressHUD showMessage:[request.responseJSONObject valueForKey:@"desc"] ToView:self.view RemainTime:2.0];
+         }
+       
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD showError:request.error.localizedDescription ToView:self.view];
+        //        [MBProgressHUD showError:request.error.localizedDescription ToView:self.view];
+    }];
+//    self.amountModel = [[QDAmountOfCount alloc] init];
+//    self.amountModel.maxMoneyCount = self.borrowModel.maxMoney;
+//    self.amountModel.minMoneyCount = self.borrowModel.minMoney;
+//    self.amountModel.moneyCount = self.borrowModel.minMoney;
+//    self.amountModel.amortizationNumArray = self.borrowModel.amortizationNumArray;
+//    self.amountModel.mounthCount = [self.borrowModel.amortizationNumArray[0] integerValue];
+//
+//    self.installModel = [[QDInstallmentModel alloc] init];
+//    self.installModel.moneyCount = self.borrowModel.minMoney;
+//    self.installModel.installCount = [self.borrowModel.amortizationNumArray[0] integerValue];
+//    self.installModel.interest = self.borrowModel.monthyRate;
+//    self.installModel.fastTimeStr = self.borrowModel.fastestTime;
     
 }
 
@@ -100,16 +123,15 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     self.normalButton.frame = CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50);
     [self.view addSubview:self.normalButton];
     [self.normalButton addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    if (self.borrowModel.showButton) {
-        [self.normalButton setTitle:@"申请贷款" forState:UIControlStateNormal];
-    } else {
-        [self.normalButton setTitle:@"评估贷款资格" forState:UIControlStateNormal];
-    }
+    [self.normalButton setTitle:@"申请贷款" forState:UIControlStateNormal];
 }
 
 #pragma mark tableview datasoure and delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    if (self.companyInfoModel) {
+        return 4;
+    }
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -124,9 +146,8 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             QDCompanyTableViewCell *companyCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCompanyCell];
-            companyCell.borrowDtail = self.borrowModel;
+            companyCell.borrowDtail = self.companyInfoModel;
             companyCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            companyCell.bShowInDetail = YES;
             return companyCell;
         }
         else if (indexPath.row == 1) {
@@ -134,35 +155,35 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
             chooseCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             chooseCell.cellType = 0;
             chooseCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            chooseCell.amountCount = self.amountModel;
+            chooseCell.countArray = [self.companyInfoModel.debitMoney componentsSeparatedByString:@","];
             return chooseCell;
         } else if (indexPath.row == 2) {
             QDChooseTableViewCell *chooseCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierChooseCell];
             chooseCell.cellType = 1;
-            chooseCell.amountCount = self.amountModel;
+            chooseCell.countArray = [self.companyInfoModel.debitTime componentsSeparatedByString:@","];
             chooseCell.selectionStyle = UITableViewCellSelectionStyleNone;
             chooseCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             return chooseCell;
         } else {
             QDRepaymentInfoTableViewCell *repaymentCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierRepaymentCell];
-            repaymentCell.installmentModel = self.installModel;
+            [repaymentCell setMoney:self.currentMoney time:self.currentMonth rate:self.companyInfoModel.monthyRate];
             repaymentCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return repaymentCell;
         }
     }
     else if (indexPath.section == 1){
         QDProductIntroduceCell *introductCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierIntroduceCell];
-        introductCell.productIntroduce = self.borrowModel.qualification;
+        introductCell.productIntroduce = self.companyInfoModel.qualification;
         introductCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return introductCell;
     } else if (indexPath.section == 2){
         QDProductIntroduceCell *introductCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierIntroduceCell];
-        introductCell.productIntroduce = self.borrowModel.needdata;
+        introductCell.productIntroduce = self.companyInfoModel.needData;
         introductCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return introductCell;
     } else if (indexPath.section == 3) {
         QDProductIntroduceCell *introductCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierIntroduceCell];
-        introductCell.productIntroduce = self.borrowModel.companyIntroduce;
+        introductCell.productIntroduce = self.companyInfoModel.debitDesc;
         introductCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return introductCell;
     }
@@ -181,15 +202,15 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
             return 70;
         }
     } else if (indexPath.section == 1){
-        CGFloat height = [QDProductIntroduceCell heightOfCellWithIntroduce:self.borrowModel.qualification];
+        CGFloat height = [QDProductIntroduceCell heightOfCellWithIntroduce:self.companyInfoModel.qualification];
         return height;
         return height;
     } else if (indexPath.section == 2) {
-        CGFloat height = [QDProductIntroduceCell heightOfCellWithIntroduce:self.borrowModel.needdata];
+        CGFloat height = [QDProductIntroduceCell heightOfCellWithIntroduce:self.companyInfoModel.needData];
         return height;
         return height;
     } else if (indexPath.section == 3) {
-        CGFloat height = [QDProductIntroduceCell heightOfCellWithIntroduce:self.borrowModel.companyIntroduce];
+        CGFloat height = [QDProductIntroduceCell heightOfCellWithIntroduce:self.companyInfoModel.debitDesc];
         return height;
     }
     return  0.01;
@@ -235,11 +256,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 
 - (void)bottomBtnClick {
-    if (self.borrowModel.showButton && self.borrowModel.redirectUrl) {
-        [self toProductDetail];
-    } else {
-        [self toEstimateQualification];
-    }
+    [self toProductDetail];
 }
 
 //评估页面
@@ -262,7 +279,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 //产品页面
 - (void)toProductDetail {
-    NSString *redirectUrl = self.borrowModel.redirectUrl;
+    NSString *redirectUrl = self.companyInfoModel.url;
     if (!([redirectUrl containsString:@"http"] || [redirectUrl containsString:@"https"])) {
         redirectUrl = [@"http://" stringByAppendingString:redirectUrl];
     }
@@ -275,23 +292,18 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
         //弹出选择器，然后刷新页面数据
         if (indexPath.row == 1) {
             //初始化数组
-            if (!self.moneyCountArray) {
-                self.moneyCountArray = [[NSMutableArray alloc] init];
-                for (int i = (int)self.borrowModel.minMoney/1000 ; i <= self.borrowModel.maxMoney/1000; i ++) {
-                    [self.moneyCountArray addObject:[NSString stringWithFormat:@"%d",i*1000]];
-                }
-            }
+            self.moneyCountArray = [self.companyInfoModel.debitMoney componentsSeparatedByString:@","];
             [[LZPickViewManager sharePickViewManager] showPickViewWithSigleArray:self.moneyCountArray compltedBlock:^(NSString *compltedString) {
                 NSInteger amount = [compltedString integerValue];
                 self.amountModel.moneyCount = amount;
-                self.installModel.moneyCount = amount;
+                self.currentMoney = amount;
                 [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:1 inSection:0],[NSIndexPath indexPathForRow:3 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
             } cancelBlock:nil];
         } else if (indexPath.row == 2) {
-            [[LZPickViewManager sharePickViewManager] showPickViewWithSigleArray:self.borrowModel.amortizationNumArray compltedBlock:^(NSString *compltedString) {
+            [[LZPickViewManager sharePickViewManager] showPickViewWithSigleArray:[self.companyInfoModel.debitTime componentsSeparatedByString:@","] compltedBlock:^(NSString *compltedString) {
                 NSInteger amount = [compltedString integerValue];
                 self.amountModel.mounthCount = amount;
-                self.installModel.installCount = amount;
+                self.currentMonth = amount;
                 [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:2 inSection:0],[NSIndexPath indexPathForRow:3 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
             } cancelBlock:nil];
             

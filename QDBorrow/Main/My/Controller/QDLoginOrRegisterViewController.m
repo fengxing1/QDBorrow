@@ -112,18 +112,24 @@
     QDLoginReqeust *loginRequest = [[QDLoginReqeust alloc] initWithUsername:self.phoneStr password:self.passwordStr];
     [loginRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         //保存用户信息
+        if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
+            [MBProgressHUD hideHUDForView:self.view];
+            [MBProgressHUD showMessage:@"登陆成功" ToView:self.view RemainTime:2.0];
+            //保存用户信息
+            NSString *sessionId = [request.responseJSONObject valueForKey:@"data"];
+            QDUser *user = [[QDUser alloc] init];
+            user.userName = self.phoneLabel.text;
+            user.password = self.passwordLabel.text;
+            user.sessionId = sessionId;
+            [[QDUserManager sharedInstance] saveUser:user];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshData" object:nil];
+            [self performSelector:@selector(hideDelayed) withObject:nil afterDelay:2.0];
+        } else {
+            [MBProgressHUD hideHUDForView:self.view];
+            [MBProgressHUD showMessage:[request.responseJSONObject valueForKey:@"desc"] ToView:self.view RemainTime:2.0];
+        }
         
-        [MBProgressHUD hideHUDForView:self.view];
-        [MBProgressHUD showMessage:@"登陆成功" ToView:self.view RemainTime:2.0];
-        //保存用户信息
-        NSString *sessionId = [request.responseJSONObject valueForKey:@"data"];
-        QDUser *user = [[QDUser alloc] init];
-        user.userName = self.phoneLabel.text;
-        user.password = self.passwordLabel.text;
-        user.sessionId = sessionId;
-        [[QDUserManager sharedInstance] saveUser:user];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshData" object:nil];
-        [self performSelector:@selector(hideDelayed) withObject:nil afterDelay:2.0];
+        
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD hideHUDForView:self.view];
         [MBProgressHUD showMessage:request.error.localizedDescription ToView:self.view RemainTime:2.0];

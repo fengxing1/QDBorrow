@@ -22,14 +22,14 @@
     self.chooseDetailLabel.textColor= TableViewCellTitleLabelColor;
 }
 
-- (void)setAmountCount:(QDAmountOfCount *)amountCount {
-    _amountCount = amountCount;
+-(void)setCountArray:(NSArray *)countArray {
+    _countArray = countArray;
     if (!self.cellType) {
-        self.chooseTitleLabel.text = [NSString stringWithFormat:@"借款金额(%0.1f-%0.1f万)",amountCount.minMoneyCount/10000.0,amountCount.maxMoneyCount/10000.0];
-        self.chooseDetailLabel.text = [NSString stringWithFormat:@"%ld",(long)amountCount.moneyCount];
+        self.chooseTitleLabel.text = [NSString stringWithFormat:@"借款金额(%ld-%ld)元",[countArray.firstObject longValue],[countArray.lastObject longValue]];
+        self.chooseDetailLabel.text = [NSString stringWithFormat:@"%ld",[countArray.firstObject longValue]];
     } else {
-        self.chooseTitleLabel.text = [NSString stringWithFormat:@"分期期限(%@-%@月)",amountCount.amortizationNumArray[0],self.amountCount.amortizationNumArray[amountCount.amortizationNumArray.count-1]];
-        self.chooseDetailLabel.text = [NSString stringWithFormat:@"%ld",(long)amountCount.mounthCount];
+        self.chooseTitleLabel.text = [NSString stringWithFormat:@"分期期限(%@-%@天)",countArray.firstObject,countArray.lastObject];
+        self.chooseDetailLabel.text = [NSString stringWithFormat:@"%ld",[countArray.firstObject longValue]];
     }
 }
 

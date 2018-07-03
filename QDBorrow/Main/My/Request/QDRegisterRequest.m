@@ -31,8 +31,13 @@
 }
 
 - (YTKRequestMethod)requestMethod {
-    return YTKRequestMethodGET;
+    return YTKRequestMethodPOST;
 }
+
+- (YTKRequestSerializerType)requestSerializerType {
+    return YTKRequestSerializerTypeJSON;
+}
+
 
 - (id)requestArgument {
     return @{

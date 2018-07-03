@@ -15,6 +15,10 @@
     return [QDUserManager sharedInstance];
 }
 
+- (NSString *)getUserName {
+    return [self getUser].userName;
+}
+
 + (instancetype)sharedInstance {
     static QDUserManager * userManager = nil;
     static dispatch_once_t onceToken;
@@ -64,5 +68,8 @@
     return NO;
 }
 
+- (NSString *)getSessionId {
+    return  [self getUser].sessionId;
+}
 
 @end

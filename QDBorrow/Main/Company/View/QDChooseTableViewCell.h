@@ -20,7 +20,7 @@
 
 @interface QDChooseTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) QDAmountOfCount *amountCount;
+@property (nonatomic, strong) NSArray *countArray;
 //0表示是借款金额  1表示是分期期限
 @property (nonatomic, assign) NSInteger cellType;
 @property (weak, nonatomic) IBOutlet UIImageView *chooseIconImageView;

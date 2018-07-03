@@ -62,7 +62,7 @@
     
 #endif
     [self didChangeStatusFrameNotification];
-    [Bmob registerWithAppKey:BMOB_APP_ID];
+//    [Bmob registerWithAppKey:BMOB_APP_ID];
     
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     
@@ -129,6 +129,7 @@
 - (void)setNetworkBaseUrl {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = @"http://101.132.109.136:8080/";
+    config.debugLogEnabled = YES;
 }
 
 

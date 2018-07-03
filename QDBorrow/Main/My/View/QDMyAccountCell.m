@@ -7,7 +7,7 @@
 //
 
 #import "QDMyAccountCell.h"
-#import <BmobSDK/Bmob.h>
+#import "QDUserManager.h"
 #import "QMUIKit.h"
 
 @implementation QDMyAccountCell
@@ -19,9 +19,9 @@
 }
 
 - (void)layoutSubviews {
-    BmobUser *user = [BmobUser currentUser];
-    if (user) {
-        self.nameLabel.text = user.username;
+    NSString *userName = [[QDUserManager sharedInstance] getUserName];
+    if (userName) {
+        self.nameLabel.text = userName;
     } else {
         self.nameLabel.text = @"未登录";
     }

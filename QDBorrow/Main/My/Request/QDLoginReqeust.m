@@ -27,6 +27,10 @@
     return @"login.json";
 }
 
+- (YTKRequestSerializerType)requestSerializerType {
+    return YTKRequestSerializerTypeJSON;
+}
+
 - (YTKRequestMethod)requestMethod {
     return YTKRequestMethodPOST;
 }

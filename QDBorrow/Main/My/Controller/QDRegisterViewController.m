@@ -176,8 +176,15 @@
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     QDRegisterRequest *request = [[QDRegisterRequest alloc] initWithUsername:self.phoneTextField.text password:self.passwordTextField.text validate:self.emailTextField.text];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [MBProgressHUD showMessage:@"注册成功" ToView:self.view RemainTime:2.0];
-        [self performSelector:@selector(hideDelayed) withObject:nil afterDelay:2.0];
+        if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
+            [MBProgressHUD hideHUDForView:self.view];
+            [MBProgressHUD showMessage:@"注册成功" ToView:self.view RemainTime:2.0];
+            [self performSelector:@selector(hideDelayed) withObject:nil afterDelay:2.0];
+        } else {
+            [MBProgressHUD hideHUDForView:self.view];
+            [MBProgressHUD showMessage:[request.responseJSONObject valueForKey:@"desc"] ToView:self.view RemainTime:2.0];
+        }
+        
         
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD hideHUDForView:self.view];

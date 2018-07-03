@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QDInstallmentModel.h"
+#import "QDBorrowDetailModel.h"
 
 @interface QDRepaymentInfoTableViewCell : UITableViewCell
-@property (nonatomic, strong) QDInstallmentModel *installmentModel;
+
+- (void)setMoney:(long)currentMoney time:(long)currentTime rate:(double)monthyRate;
 
 @end

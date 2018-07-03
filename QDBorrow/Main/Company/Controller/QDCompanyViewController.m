@@ -14,7 +14,6 @@
 #import "MBProgressHUD+MP.h"
 #import "MJRefreshNormalHeader.h"
 #import "QDHomeService.h"
-#import <BmobSDK/Bmob.h>
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
@@ -109,7 +108,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BorrowDetailModel *borrowModel = self.borrowArray[indexPath.section];
     QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
-    companyDetailViewController.borrowModel = borrowModel;
+    companyDetailViewController.id = borrowModel.companyId;
     [self.navigationController pushViewController:companyDetailViewController animated:YES];
     
 }
