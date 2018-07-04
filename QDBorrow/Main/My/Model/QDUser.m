@@ -11,6 +11,7 @@
 #define kUserNameKey @"UserNameeKey"
 #define kPasswordKey @"PasswordKey"
 #define kVerifyCodeKey @"VerifyCodeKey"
+#define kSessionKey @"SessionKey"
 
 @implementation QDUser
 
@@ -19,6 +20,7 @@
         self.userName = [aDecoder decodeObjectForKey:kUserNameKey];
         self.password = [aDecoder decodeObjectForKey:kPasswordKey];
         self.verifyCode = [aDecoder decodeObjectForKey:kVerifyCodeKey];
+        self.sessionId = [aDecoder decodeObjectForKey:kSessionKey];
     }
     return self;
 }
@@ -27,6 +29,8 @@
     [aCoder encodeObject:self.userName forKey:kUserNameKey];
     [aCoder encodeObject:self.password forKey:kPasswordKey];
     [aCoder encodeObject:self.verifyCode forKey:kVerifyCodeKey];
+    [aCoder encodeObject:self.sessionId forKey:kSessionKey];
+
 }
 
 #pragma mark - NSCopying
@@ -37,6 +41,7 @@
     model.userName = [self.userName copy];
     model.password = [self.password copy];
     model.verifyCode = [self.verifyCode copy];
+    model.sessionId = [self.sessionId copy];
     return model;
     
 }

@@ -21,15 +21,17 @@
 #import "QDCompanyDetailRequest.h"
 #import "QDCompanyDetailModel.h"
 #import "YYModel.h"
+#import "BaiduMobStat.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 static NSString *const kReusableIdentifierChooseCell = @"chooseCell";
 static NSString *const kReusableIdentifierRepaymentCell = @"repaymentCell";
 static NSString *const kReusableIdentifierDescribeCell = @"multiLabelCell";
 static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
-@interface QDCompanyDetailController ()
+@interface QDCompanyDetailController () <UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) QDAmountOfCount *amountModel;
-@property (nonatomic, strong) QMUIButton *normalButton;
+@property (nonatomic, strong) UIButton *normalButton;
 @property (nonatomic, strong) QDCompanyDetailModel *companyInfoModel;
 
 @property (nonatomic, strong) NSArray *moneyCountArray;
@@ -51,35 +53,27 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-}
-
-
-- (instancetype)init {
-    return [self initWithStyle:UITableViewStyleGrouped];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 
 - (void)configUI {
     self.title = @"找借贷";
-    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
-    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:self.tableView];
     [self.tableView registerNib:[UINib nibWithNibName:@"QDCompanyTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"QDChooseTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierChooseCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"QDRepaymentInfoTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierRepaymentCell];
     [self.tableView registerClass:[QDMultiLabelCell class] forCellReuseIdentifier:kReusableIdentifierDescribeCell];
     [self.tableView registerClass:[QDProductIntroduceCell class] forCellReuseIdentifier:kReusableIdentifierIntroduceCell];
-    [self createBottomButton];
-   
-    UIView *footerView = [[UIView alloc] init];
-    footerView.backgroundColor = [UIColor clearColor];
-    footerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
-    self.tableView.tableFooterView = footerView;
+
 }
 
 - (void)configData {
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-    QDCompanyDetailRequest *request = [[QDCompanyDetailRequest alloc] init];
+    QDCompanyDetailRequest *request = [[QDCompanyDetailRequest alloc] initWithCompany:self.id];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD hideHUDForView:self.view];
          if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
@@ -88,6 +82,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
              self.currentMonth = [[self.companyInfoModel.debitMoney componentsSeparatedByString:@","].firstObject longLongValue];
              self.currentMoney = [[self.companyInfoModel.debitMoney componentsSeparatedByString:@","].firstObject longLongValue];
              [self.tableView reloadData];
+             [self createBottomView];
          } else {
              [MBProgressHUD showMessage:[request.responseJSONObject valueForKey:@"desc"] ToView:self.view RemainTime:2.0];
          }
@@ -96,34 +91,14 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
         [MBProgressHUD showError:request.error.localizedDescription ToView:self.view];
         //        [MBProgressHUD showError:request.error.localizedDescription ToView:self.view];
     }];
-//    self.amountModel = [[QDAmountOfCount alloc] init];
-//    self.amountModel.maxMoneyCount = self.borrowModel.maxMoney;
-//    self.amountModel.minMoneyCount = self.borrowModel.minMoney;
-//    self.amountModel.moneyCount = self.borrowModel.minMoney;
-//    self.amountModel.amortizationNumArray = self.borrowModel.amortizationNumArray;
-//    self.amountModel.mounthCount = [self.borrowModel.amortizationNumArray[0] integerValue];
-//
-//    self.installModel = [[QDInstallmentModel alloc] init];
-//    self.installModel.moneyCount = self.borrowModel.minMoney;
-//    self.installModel.installCount = [self.borrowModel.amortizationNumArray[0] integerValue];
-//    self.installModel.interest = self.borrowModel.monthyRate;
-//    self.installModel.fastTimeStr = self.borrowModel.fastestTime;
     
 }
 
-
-- (void)createBottomButton {
-    
-    self.normalButton = [[QMUIButton alloc] initWithFrame:CGRectMakeWithSize(CGSizeMake(200, 50))];
-    self.normalButton.adjustsButtonWhenHighlighted = YES;
-    self.normalButton.titleLabel.font = UIFontBoldMake(14);
-    [self.normalButton setTitleColor:UIColorWhite forState:UIControlStateNormal];
-    self.normalButton.backgroundColor = UIColorBlue;
-    self.normalButton.highlightedBackgroundColor = UIColorMake(0, 168, 225);// 高亮时的背景色
-    self.normalButton.frame = CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50);
-    [self.view addSubview:self.normalButton];
-    [self.normalButton addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.normalButton setTitle:@"申请贷款" forState:UIControlStateNormal];
+- (void)createBottomView {
+    UIView *view = [[UIView alloc] init];
+    view.frame = CGRectMake(0, SCREEN_HEIGHT - 1 - 50,SCREEN_WIDTH , 50);
+    [view addSubview:self.normalButton];
+    [self.view addSubview:view];
 }
 
 #pragma mark tableview datasoure and delegate
@@ -259,26 +234,10 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     [self toProductDetail];
 }
 
-//评估页面
-- (void)toEstimateQualification {
-    //先进行登录校验
-    if ([BmobUser currentUser]) {
-        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
-            QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
-            persionVC.persionInfoType = PersionInfoTypePersional;
-            __weak typeof(self) weakSelf = self;
-            [weakSelf.navigationController pushViewController:persionVC animated:YES];
-        } title:@"提示" message:@"为了准确为你评估贷款资格和额度，请准确如实填写相应资料！" cancelButtonName:@"确定" otherButtonTitles:nil];
-    } else {
-        QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
-        [self.navigationController pushViewController:loginVC animated:YES];
-    }
-    
-    
-}
 
 //产品页面
 - (void)toProductDetail {
+    [[BaiduMobStat defaultStat] logEvent:[NSString stringWithFormat:@"%ld",self.id] eventLabel:self.companyInfoModel.productName];
     NSString *redirectUrl = self.companyInfoModel.url;
     if (!([redirectUrl containsString:@"http"] || [redirectUrl containsString:@"https"])) {
         redirectUrl = [@"http://" stringByAppendingString:redirectUrl];
@@ -310,6 +269,28 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
         }
         
     }
+}
+
+- (UIButton *)normalButton {
+    if (!_normalButton) {
+        _normalButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _normalButton.titleLabel.font = UIFontBoldMake(14);
+        [_normalButton setTitleColor:UIColorWhite forState:UIControlStateNormal];
+        _normalButton.backgroundColor = UIColorRed;
+        //    self.normalButton.highlightedBackgroundColor = UIColorMake(0, 168, 225);// 高亮时的背景色
+        _normalButton.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
+        [_normalButton addTarget:self action:@selector(bottomBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        [_normalButton setTitle:@"申请贷款" forState:UIControlStateNormal];
+    }
+    return _normalButton;
+    
+}
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64-50) style:UITableViewStylePlain];
+    }
+    return _tableView;
 }
 
 /*

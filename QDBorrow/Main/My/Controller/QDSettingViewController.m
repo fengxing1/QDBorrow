@@ -76,7 +76,6 @@
 
 - (void)exitLoginClick {
     [[QDUserManager sharedInstance] exitUser];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshData" object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

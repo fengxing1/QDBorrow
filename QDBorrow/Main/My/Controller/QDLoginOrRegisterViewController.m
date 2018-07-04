@@ -122,7 +122,6 @@
             user.password = self.passwordLabel.text;
             user.sessionId = sessionId;
             [[QDUserManager sharedInstance] saveUser:user];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshData" object:nil];
             [self performSelector:@selector(hideDelayed) withObject:nil afterDelay:2.0];
         } else {
             [MBProgressHUD hideHUDForView:self.view];

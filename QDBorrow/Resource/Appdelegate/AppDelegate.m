@@ -128,7 +128,7 @@
 
 - (void)setNetworkBaseUrl {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
-    config.baseUrl = @"http://101.132.109.136:8080/";
+    config.baseUrl = @"http://www.gujian.store:8080/";
     config.debugLogEnabled = YES;
 }
 
@@ -185,7 +185,7 @@
     BaiduMobStat* statTracker = [BaiduMobStat defaultStat];
     statTracker.shortAppVersion  = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     statTracker.enableDebugOn = YES;
-    [statTracker startWithAppId:@"302621a2c7"];
+    [statTracker startWithAppId:@"d3c8d8b907"];
 }
 
 

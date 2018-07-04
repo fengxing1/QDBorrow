@@ -12,7 +12,7 @@
 #import "QDBorrowHomeViewController.h"
 
 @interface QDFinishApplyViewController ()
-@property (nonatomic, strong) QMUIButton *normalButton;
+@property (nonatomic, strong) UIButton *normalButton;
 @property (weak, nonatomic) IBOutlet UILabel *applyTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *applyDescLabel;
 
@@ -29,7 +29,6 @@
 - (void)configUI {
     self.title = @"申请成功";
     self.normalButton = [[QMUIButton alloc] initWithFrame:CGRectMakeWithSize(CGSizeMake(200, 50))];
-    self.normalButton.adjustsButtonWhenHighlighted = YES;
     self.normalButton.titleLabel.font = UIFontBoldMake(14);
     [self.normalButton setTitleColor:UIColorWhite forState:UIControlStateNormal];
     self.normalButton.backgroundColor = UIColorRed;

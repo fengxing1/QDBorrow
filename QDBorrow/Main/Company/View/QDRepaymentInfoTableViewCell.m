@@ -48,7 +48,7 @@
     CGFloat months = currentTime;
     
     monthlyRepayment = (capitalization * rateOfMonth * pow((1 + rateOfMonth), months) / (pow((1 + rateOfMonth), months) - 1) - currentMoney) * (currentMoney / 30) + capitalization;
-    self.repayCountLabel.text = [NSString stringWithFormat:@"%.2f",monthlyRepayment];
+    self.repayCountLabel.text = @"---";
     NSString *rate = [NSString stringWithFormat:@"%.2f",monthyRate];
     self.rateLabel.text = [rate stringByAppendingString:@"%"];
     self.timeLabel.text = @"十分钟放款";

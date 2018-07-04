@@ -9,7 +9,7 @@
 #import <QMUIKit/QMUIKit.h>
 #import "BorrowDetailModel.h"
 
-@interface QDCompanyDetailController : QMUICommonTableViewController
+@interface QDCompanyDetailController : QMUICommonViewController
 @property (nonatomic, assign) long id;
 
 @end

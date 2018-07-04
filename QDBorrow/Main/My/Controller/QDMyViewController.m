@@ -39,12 +39,12 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 
 - (void)configData {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"refreshData" object:nil];
 }
 
 - (void)configUI {

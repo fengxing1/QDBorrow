@@ -10,6 +10,5 @@
 #import "AXWebViewController.h"
 
 @interface QDWebViewController : AXWebViewController
-@property (nonatomic, assign) BOOL isLuntan;
 
 @end

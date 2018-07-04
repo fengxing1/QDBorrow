@@ -9,5 +9,5 @@
 #import <YTKNetwork/YTKNetwork.h>
 
 @interface QDCompanyDetailRequest : YTKBaseRequest
-
+- (id)initWithCompany:(long)id;
 @end
