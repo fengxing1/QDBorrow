@@ -36,7 +36,7 @@
     self.oneLineLayer.frame = CGRectMake(0, 80, SCREEN_WIDTH, PixelOne);
 }
 
-- (void)setBorrowDtail:(QDCompanyDetailModel *)borrowDtail {
+- (void)setBorrowDtail:(QDBorrowModel *)borrowDtail {
     _borrowDtail = borrowDtail;
     [self.companyIconImageView sd_setImageWithURL:[NSURL URLWithString:borrowDtail.image] placeholderImage:nil];
     self.companyNameLabel.text = borrowDtail.productName;
@@ -44,6 +44,7 @@
     
     self.companyDetailLabel.text = borrowDtail.productDetail;
 }
+
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

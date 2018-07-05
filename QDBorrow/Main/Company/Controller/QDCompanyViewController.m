@@ -7,18 +7,23 @@
 //
 
 #import "QDCompanyViewController.h"
-#import "BorrowDetailModel.h"
 #import "AVQuery.h"
 #import "QDCompanyTableViewCell.h"
 #import "QDCompanyDetailController.h"
 #import "MBProgressHUD+MP.h"
 #import "MJRefreshNormalHeader.h"
 #import "QDHomeService.h"
+#import "QDHomeRequest.h"
+#import "QDHomeList.h"
+#import "YYModel.h"
+#import "QDBorrowModel.h"
+#import "QDUserManager.h"
+#import "QDLoginOrRegisterViewController.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 @interface QDCompanyViewController ()
-@property (nonatomic, strong) NSMutableArray *borrowArray;
+@property (nonatomic, strong) QDHomeList *homeList;
 
 @end
 
@@ -44,24 +49,21 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 }
 
 - (void)configData:(BOOL)bRefresh {
-    if (!self.borrowArray) {
-        self.borrowArray = [[NSMutableArray alloc] init];
-    }
-    if(bRefresh) {
-        [self.borrowArray removeAllObjects];
-    }
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-    [[QDHomeService sharedInstance] companyBorrowListWithBlock:^(NSArray *array, NSError *error) {
-        [self.tableView.mj_header endRefreshing];
+    QDHomeRequest *homeRequest = [[QDHomeRequest alloc] init];
+    [homeRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD hideHUDForView:self.view];
-        if (!error) {
-            for (BmobObject *bmObject in array) {
-                BorrowDetailModel *detail = [[BorrowDetailModel alloc] initWithBmObject:bmObject];
-                [self.borrowArray addObject:detail];
-            }
-            [self.tableView reloadData];
-            
+        if ([self.tableView.mj_header isRefreshing]) {
+            [self.tableView.mj_header endRefreshing];
         }
+        self.homeList = [QDHomeList yy_modelWithJSON:[request.responseJSONObject valueForKey:@"data"]];
+        [self.tableView reloadData];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        if ([self.tableView.mj_header isRefreshing]) {
+            [self.tableView.mj_header endRefreshing];
+        }
+        [MBProgressHUD showError:request.error.localizedDescription ToView:self.view];
+        //        [MBProgressHUD showError:request.error.localizedDescription ToView:self.view];
     }];
 }
 
@@ -74,8 +76,8 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 #pragma mark tableview datasoure and delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (self.borrowArray) {
-        return  self.borrowArray.count;
+    if (self.homeList && self.homeList.borrowVOList) {
+        return  self.homeList.borrowVOList.count;
     }
     return 0;
 }
@@ -87,7 +89,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     QDCompanyTableViewCell *companyCell = [tableView dequeueReusableCellWithIdentifier:kReusableIdentifierCompanyCell];
     companyCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    companyCell.borrowDtail = self.borrowArray[indexPath.section];
+    companyCell.borrowDtail = self.homeList.borrowVOList[indexPath.section];
     return companyCell;
 }
 
@@ -106,10 +108,16 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    BorrowDetailModel *borrowModel = self.borrowArray[indexPath.section];
-    QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
-    companyDetailViewController.id = borrowModel.companyId;
-    [self.navigationController pushViewController:companyDetailViewController animated:YES];
+    //判断用户登录没，没有去登陆
+    if ([[QDUserManager sharedInstance] validateUser]) {
+        QDBorrowModel *borrowModel = self.homeList.borrowVOList[indexPath.section];
+        QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
+        companyDetailViewController.id = borrowModel.id;
+        [self.navigationController pushViewController:companyDetailViewController animated:YES];
+    } else {
+        QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
+        [self.navigationController pushViewController:loginVC animated:YES];
+    }
     
 }
 
