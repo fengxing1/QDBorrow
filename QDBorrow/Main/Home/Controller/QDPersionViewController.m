@@ -13,11 +13,9 @@
 #import "QDAssetsChoicesTableViewCell.h"
 #import "QDApplyAssetsModel.h"
 #import "MBProgressHUD+MP.h"
-#import "AVObject.h"
 #import "YYModel.h"
 #import "MBProgressHUD+MP.h"
 #import "QDFinishApplyViewController.h"
-#import <BmobSDK/Bmob.h>
 //#import "QDEstimateQualificationViewController.h"
 
 static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
@@ -191,21 +189,21 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     } else {
         if ([self validateMessage]) {
             //完成注册
-            BmobObject *borrow = [BmobObject objectWithClassName:@"QDApplyOrder"];
-            BmobUser *user = [BmobUser currentUser];
-            [borrow setObject:user.username forKey:@"userId"];
-            [borrow setObject:[self.recordInfo yy_modelToJSONString] forKey:@"applyInfo"];
-            [MBProgressHUD showInfo:@"提交信息中..." ToView:self.view];
-            [borrow saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-                if (isSuccessful) {
-                    [MBProgressHUD hideHUDForView:self.view];
-                    QDFinishApplyViewController *applyVC = [[QDFinishApplyViewController alloc] init];
-                    [self.navigationController pushViewController:applyVC animated:YES];
-                } else {
-                    [MBProgressHUD hideHUDForView:self.view];
-                     [MBProgressHUD showMessage:error.localizedDescription ToView:self.view RemainTime:2.0];
-                }
-            }];
+//            BmobObject *borrow = [BmobObject objectWithClassName:@"QDApplyOrder"];
+//            BmobUser *user = [BmobUser currentUser];
+//            [borrow setObject:user.username forKey:@"userId"];
+//            [borrow setObject:[self.recordInfo yy_modelToJSONString] forKey:@"applyInfo"];
+//            [MBProgressHUD showInfo:@"提交信息中..." ToView:self.view];
+//            [borrow saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+//                if (isSuccessful) {
+//                    [MBProgressHUD hideHUDForView:self.view];
+//                    QDFinishApplyViewController *applyVC = [[QDFinishApplyViewController alloc] init];
+//                    [self.navigationController pushViewController:applyVC animated:YES];
+//                } else {
+//                    [MBProgressHUD hideHUDForView:self.view];
+//                     [MBProgressHUD showMessage:error.localizedDescription ToView:self.view RemainTime:2.0];
+//                }
+//            }];
         }
     }
 }

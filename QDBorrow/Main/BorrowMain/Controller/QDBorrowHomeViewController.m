@@ -8,7 +8,6 @@
 
 #import "QDBorrowHomeViewController.h"
 #import "QDHomeModel.h"
-#import "QDHomeService.h"
 #import "UIAlertView+Block.h"
 #import "QDHomeBannerModel.h"
 #import "QDBannerTableViewCell.h"
@@ -45,22 +44,22 @@ static NSString *const kReusableIdentifierBorrowCell  = @"borrowCell";
 
 - (void)configData {
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-    [[QDHomeService sharedInstance] homeBannerDataWithBlock:^(NSArray *array, NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view];
-        if (!error) {
-            for (BmobObject *bmBanner in array) {
-                QDHomeBannerModel *bannerModel = [[QDHomeBannerModel alloc] initWithBannerObject:bmBanner];
-                [self.homeBannerArray addObject:bannerModel];
-            }
-            [self.tableView reloadData];
-        } else {
-            [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
-                if (buttonIndex) {
-                    [self configData];
-                }
-            } title:@"提示" message:@"网络出错，请刷新重试！" cancelButtonName:@"取消" otherButtonTitles:@"重新刷新", nil];
-        }
-    }];
+//    [[QDHomeService sharedInstance] homeBannerDataWithBlock:^(NSArray *array, NSError *error) {
+//        [MBProgressHUD hideHUDForView:self.view];
+//        if (!error) {
+//            for (BmobObject *bmBanner in array) {
+//                QDHomeBannerModel *bannerModel = [[QDHomeBannerModel alloc] initWithBannerObject:bmBanner];
+//                [self.homeBannerArray addObject:bannerModel];
+//            }
+//            [self.tableView reloadData];
+//        } else {
+//            [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+//                if (buttonIndex) {
+//                    [self configData];
+//                }
+//            } title:@"提示" message:@"网络出错，请刷新重试！" cancelButtonName:@"取消" otherButtonTitles:@"重新刷新", nil];
+//        }
+//    }];
 
 }
 
@@ -112,19 +111,19 @@ static NSString *const kReusableIdentifierBorrowCell  = @"borrowCell";
 
 
 - (void)bottomBtnClickWithType:(NSInteger)type andBorrowCount:(NSInteger)borrowCount {
-    //先进行登录校验
-    if ([BmobUser currentUser]) {
-        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
-            QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
-            persionVC.fromBorrow = 1;
-            persionVC.persionInfoType = PersionInfoTypePersional;
-            __weak typeof(self) weakSelf = self;
-            [weakSelf.navigationController pushViewController:persionVC animated:YES];
-        } title:@"提示" message:@"为了快速准确获取贷款，请准确填写贷款信息" cancelButtonName:@"确定" otherButtonTitles:nil];
-    } else {
-        QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
-        [self.navigationController pushViewController:loginVC animated:YES];
-    }
+//    //先进行登录校验
+//    if ([BmobUser currentUser]) {
+//        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+//            QDPersionViewController *persionVC = [[QDPersionViewController alloc] init];
+//            persionVC.fromBorrow = 1;
+//            persionVC.persionInfoType = PersionInfoTypePersional;
+//            __weak typeof(self) weakSelf = self;
+//            [weakSelf.navigationController pushViewController:persionVC animated:YES];
+//        } title:@"提示" message:@"为了快速准确获取贷款，请准确填写贷款信息" cancelButtonName:@"确定" otherButtonTitles:nil];
+//    } else {
+//        QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
+//        [self.navigationController pushViewController:loginVC animated:YES];
+//    }
 
 }
 

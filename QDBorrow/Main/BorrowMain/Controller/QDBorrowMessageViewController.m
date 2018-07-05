@@ -8,7 +8,6 @@
 
 #import "QDBorrowMessageViewController.h"
 #import "QDMessageCell.h"
-#import "QDHomeService.h"
 #import "QDMessageModel.h"
 #import "UIView+EaseBlankPage.h"
 #import "MJRefreshNormalHeader.h"
@@ -46,28 +45,28 @@ static NSString *const kReusableIdentifierMessageCell  = @"messageCell";
 
 - (void)refreshView {
     //刷新消息
-    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-    [[QDHomeService sharedInstance] messageDataWithBlock:^(NSArray *array, NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view];
-        [self.tableView.mj_header endRefreshing];
-        if (!error) {
-            [self.messageList removeAllObjects];
-            for (BmobObject *message in array) {
-                QDMessageModel *messageModel = [[QDMessageModel alloc] initWithBannerObject:message];
-                [self.messageList addObject:messageModel];
-            }
-            if (self.messageList.count) {
-                [self.tableView reloadData];
-            }
-            __weak typeof(self)weakSelf = self;
-            [self.view configBlankPage:EaseBlankPageTypeView hasData:self.messageList.count hasError:NO reloadButtonBlock:^(id sender) {
-                [weakSelf refreshView];
-                
-            }];
-        } else {
-            [MBProgressHUD showAutoMessage:error.localizedDescription ToView:self.view];
-        }
-    }];
+//    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
+//    [[QDHomeService sharedInstance] messageDataWithBlock:^(NSArray *array, NSError *error) {
+//        [MBProgressHUD hideHUDForView:self.view];
+//        [self.tableView.mj_header endRefreshing];
+//        if (!error) {
+//            [self.messageList removeAllObjects];
+//            for (BmobObject *message in array) {
+//                QDMessageModel *messageModel = [[QDMessageModel alloc] initWithBannerObject:message];
+//                [self.messageList addObject:messageModel];
+//            }
+//            if (self.messageList.count) {
+//                [self.tableView reloadData];
+//            }
+//            __weak typeof(self)weakSelf = self;
+//            [self.view configBlankPage:EaseBlankPageTypeView hasData:self.messageList.count hasError:NO reloadButtonBlock:^(id sender) {
+//                [weakSelf refreshView];
+//                
+//            }];
+//        } else {
+//            [MBProgressHUD showAutoMessage:error.localizedDescription ToView:self.view];
+//        }
+//    }];
 }
 
 #pragma mark -- tableview delegate and datesource

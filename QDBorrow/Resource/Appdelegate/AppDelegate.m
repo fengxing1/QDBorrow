@@ -13,9 +13,6 @@
 #import "QDTabBarViewController.h"
 #import "HomeViewController.h"
 #import "QDNavigationController.h"
-#import <AVOSCloud/AVOSCloud.h>
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 #import "QDCompanyViewController.h"
 #import "QDCertViewController.h"
 #import "QDMyViewController.h"
@@ -25,7 +22,6 @@
 #import "GVUserDefaults.h"
 #import "AdvertiseHelper.h"
 #import "introductoryPagesHelper.h"
-#import <BmobSDK/Bmob.h>
 #import "QDBorrowMessageViewController.h"
 #import <SobotKit/SobotKit.h>
 #import <UserNotifications/UserNotifications.h>
@@ -57,14 +53,15 @@
     
 #else
     
-    [self initFabric];
-    [self startBaiduMobileStat];
+    
     
 #endif
+    [self setNetworkBaseUrl];
+    [self startBaiduMobileStat];
     [self didChangeStatusFrameNotification];
 //    [Bmob registerWithAppKey:BMOB_APP_ID];
     
-    [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
+//    [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     
     // 启动 QMUI 的样式配置模板
     [QMUIConfigurationTemplate setupConfigurationTemplate];
@@ -79,6 +76,7 @@
 //        [QMUIQQEmotionManager emotionsForQQ];
 //    });
     // 界面
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self setupLoginViewController];
     
@@ -121,7 +119,7 @@
     // 错误日志收集
     [ZCLibClient setZCLibUncaughtExceptionHandler];
 
-    [self setNetworkBaseUrl];
+    
     
     return YES;
 }
@@ -146,7 +144,6 @@
 -(void)setupAdveriseView
 {
     // TODO 请求广告接口 获取广告图片
-    
     //现在了一些固定的图片url代替
     NSArray *imageArray = @[@"http://imgsrc.baidu.com/forum/pic/item/9213b07eca80653846dc8fab97dda144ad348257.jpg", @"http://pic.paopaoche.net/up/2012-2/20122220201612322865.png", @"http://img5.pcpop.com/ArticleImages/picshow/0x0/20110801/2011080114495843125.jpg", @"http://www.mangowed.com/uploads/allimg/130410/1-130410215449417.jpg"];
     
@@ -312,12 +309,6 @@
         [launchScreenView removeFromSuperview];
     }];
 }
-
-- (void)initFabric {
-    //Fabric设置
-    [Fabric with:@[[Crashlytics class]]];
-}
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

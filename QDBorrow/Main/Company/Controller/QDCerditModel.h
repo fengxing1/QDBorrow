@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AVObject.h"
 
 @interface QDCerditModel : NSObject
 @property (nonatomic, assign) long cerditId;
@@ -18,6 +17,5 @@
 //是否显示在详情页
 @property (nonatomic, assign) NSInteger showDetail;
 
-- (instancetype)initWithAVObject:(AVObject *)detail;
 
 @end

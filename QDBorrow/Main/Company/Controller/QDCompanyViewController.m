@@ -7,12 +7,10 @@
 //
 
 #import "QDCompanyViewController.h"
-#import "AVQuery.h"
 #import "QDCompanyTableViewCell.h"
 #import "QDCompanyDetailController.h"
 #import "MBProgressHUD+MP.h"
 #import "MJRefreshNormalHeader.h"
-#import "QDHomeService.h"
 #import "QDHomeRequest.h"
 #import "QDHomeList.h"
 #import "YYModel.h"

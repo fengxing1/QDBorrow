@@ -11,7 +11,6 @@
 #import "QDUIHelper.h"
 #import "NSString+Validate.h"
 #import "MBProgressHUD+MP.h"
-#import "LoginService.h"
 #import "UIColor+Hex.h"
 #import "QDRegisterRequest.h"
 #import "QDSendMessageRequest.h"

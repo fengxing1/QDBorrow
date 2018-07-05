@@ -9,12 +9,13 @@
 #import "QDJumpViewController.h"
 #import "Macros.h"
 #import "AppDelegate.h"
-#import "QDJumpService.h"
 #import "UIAlertView+Block.h"
 #import "introductoryPagesHelper.h"
 #import "QDJumpRequest.h"
+#import "Masonry.h"
 
 @interface QDJumpViewController ()
+@property (nonatomic, strong) UILabel *warningLabel;
 
 @end
 
@@ -22,30 +23,55 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   
     // Do any additional setup after loading the view.
+    [self setupUI];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    //引导页面加载
-    [self setupIntroductoryPage];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self configRealHomeViewController];
 }
+
+- (void)setupUI {
+    [self.view addSubview:self.warningLabel];
+    self.warningLabel.hidden = YES;
+    [self.warningLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(20);
+        make.right.equalTo(self.view).offset(-20);
+        make.centerY.equalTo(self.view);
+        make.height.equalTo(@80);
+    }];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.bottom.equalTo(self.view);
+    }];
+    [button addTarget:self action:@selector(tapEvent:) forControlEvents:UIControlEventTouchUpInside];
+    
+
+}
+
+- (void)tapEvent:(id *)sender {
+    [self configRealHomeViewController];
+}
+
+
+
 
 #pragma mark 引导页
 -(void)setupIntroductoryPage
 {
     if (BBUserDefault.isNoFirstLaunch)
     {
-        [self configRealHomeViewController];
+        [self showMyLoanView];
         return;
     }
     BBUserDefault.isNoFirstLaunch=YES;
     NSArray *images=@[@"introductoryPage1",@"introductoryPage2",@"introductoryPage3"];
     [introductoryPagesHelper showIntroductoryPageView:images];
     [introductoryPagesHelper shareInstance].clickLastImageAction = ^{
-        [self configRealHomeViewController];
+        [self showMyLoanView];;
     };
 }
 
@@ -53,34 +79,22 @@
     [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
     QDJumpRequest *jumpRequest = [[QDJumpRequest alloc] init];
     [jumpRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        BOOL bJumpBorrow = [[request.responseObject valueForKey:@"data"] boolValue];
-        if (bJumpBorrow) {
-            [self showMyLoanView];
-        }  else {
-            [self showOtherLoanView];
+        if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
+            BOOL bJumpBorrow = [[request.responseObject valueForKey:@"data"] boolValue];
+            if (bJumpBorrow) {
+                //引导页面加载
+                [self setupIntroductoryPage];
+            }  else {
+                [self showOtherLoanView];
+            }
+        } else {
+            [MBProgressHUD hideHUDForView:self.view];
+            self.warningLabel.hidden = NO;
         }
-        
-//        [self showMyLoanView];
-//        BOOL jump = request.response;
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
+        [MBProgressHUD hideHUDForView:self.view];
+        self.warningLabel.hidden = NO;
     }];
-//    [[QDJumpService sharedInstance] changeTabbarWithBlock:^(BmobObject *object, NSError *error) {
-//        [MBProgressHUD hideHUDForView:self.view];
-//        if (!error) {
-//            if (object && [[object objectForKey:@"showNeedTabbar"] boolValue]) {
-//                [self showOtherLoanView];
-//            } else {
-//                [self showMyLoanView];
-//            }
-//        } else {
-//            [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
-//                if (buttonIndex) {
-//                    [self configRealHomeViewController];
-//                }
-//            } title:@"提示" message:@"网络还没被允许，请确认！" cancelButtonName:@"取消" otherButtonTitles:@"重新刷新", nil];
-//        }
-//    }];
 }
 
 
@@ -90,6 +104,18 @@
 
 - (void)showOtherLoanView {
     [((AppDelegate*) AppDelegateInstance) createTabBarController];
+}
+
+- (UILabel *)warningLabel {
+    if (!_warningLabel) {
+        _warningLabel = [[UILabel alloc] init];
+        _warningLabel.text = @"网络还没有被允许，请去网络里重新设置。然后点击该页面刷新！";
+        _warningLabel.font = [UIFont systemFontOfSize:15];
+        _warningLabel.numberOfLines = 0;
+        _warningLabel.textAlignment = NSTextAlignmentCenter;
+        
+    }
+    return _warningLabel;
 }
 
 

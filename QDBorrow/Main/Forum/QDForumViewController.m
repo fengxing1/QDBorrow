@@ -10,7 +10,6 @@
 #import "QMUIKit.h"
 #import "UIColor+QMUI.h"
 #import "MBProgressHUD+MP.h"
-#import "AVQuery.h"
 #import "UIColor+Hex.h"
 #import "QMUIKit.h"
 

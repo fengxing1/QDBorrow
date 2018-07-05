@@ -10,7 +10,7 @@
 
 @implementation QDMessageModel
 
-- (instancetype)initWithBannerObject:(BmobObject *)bmobObject {
+- (instancetype)initWithBannerObject:(NSDictionary *)bmobObject {
     self = [super init];
     if (self) {
         self.messageType = [bmobObject objectForKey:@"message_type"];

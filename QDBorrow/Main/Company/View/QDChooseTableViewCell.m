@@ -25,11 +25,11 @@
 -(void)setCountArray:(NSArray *)countArray {
     _countArray = countArray;
     if (!self.cellType) {
-        self.chooseTitleLabel.text = [NSString stringWithFormat:@"借款金额(%ld-%ld)元",(long)countArray.firstObject,(long)countArray.lastObject];
+        self.chooseTitleLabel.text = [NSString stringWithFormat:@"借款金额(%ld-%ld)元",[countArray.firstObject longValue],[countArray.lastObject longValue]];
         self.chooseDetailLabel.text = [NSString stringWithFormat:@"%ld",(long)countArray.firstObject];
     } else {
         self.chooseTitleLabel.text = [NSString stringWithFormat:@"分期期限(%@-%@天)",countArray.firstObject,countArray.lastObject];
-        self.chooseDetailLabel.text = [NSString stringWithFormat:@"%ld",(long)countArray.firstObject];
+        self.chooseDetailLabel.text = [NSString stringWithFormat:@"%ld",[countArray.firstObject longValue]];
     }
 }
 

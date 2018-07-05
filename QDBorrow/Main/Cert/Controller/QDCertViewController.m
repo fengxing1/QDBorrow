@@ -7,7 +7,6 @@
 //
 
 #import "QDCertViewController.h"
-#import "AVQuery.h"
 #import "UIAlertView+Block.h"
 #import "QDCerditModel.h"
 #import "QMUITableViewCell.h"
@@ -31,7 +30,6 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-    [self configData];
     [self configUI];
     [self configService];
     
@@ -276,32 +274,6 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
 }
 
 
-
-
-- (void)configData {
-    self.cerditList = [[NSMutableArray alloc] init];
-    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
-    AVQuery *query = [AVQuery queryWithClassName:@"QDCerdit"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        [MBProgressHUD hideHUDForView:self.view];
-        if (!error) {
-            for (AVObject *avCerditDetail in objects) {
-                QDCerditModel *cerditModel = [[QDCerditModel alloc] initWithAVObject:avCerditDetail];
-                [self.cerditList addObject:cerditModel];
-            }
-            [self.tableView reloadData];
-        } else {
-            [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
-                if (!buttonIndex) {
-                    [self configData];
-                }
-            } title:@"提示" message:@"好像没有网络，刷新一下" cancelButtonName:@"刷新" otherButtonTitles:@"取消", nil];
-            
-            
-        }
-    }];
-    
-}
 
 // 自定义参数 商品信息相关
 - (void)customerGoodAndLeavePageWithParameter:(ZCKitInfo *)uiInfo{

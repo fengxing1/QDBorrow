@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		091506041F00AA93002D2805 /* QDHomeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 091506031F00AA93002D2805 /* QDHomeService.m */; };
 		092F9F8E1EEF8CE000DA3578 /* QDFinishApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092F9F8C1EEF8CE000DA3578 /* QDFinishApplyViewController.m */; };
 		092F9F8F1EEF8CE000DA3578 /* QDFinishApplyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092F9F8D1EEF8CE000DA3578 /* QDFinishApplyViewController.xib */; };
 		0954B85D1F41523B00500ED9 /* LiuXSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954B85C1F41523B00500ED9 /* LiuXSlider.m */; };
@@ -34,7 +33,6 @@
 		0970F51E1EC29FC200FC4794 /* QDHomeBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4AB1EC29FC200FC4794 /* QDHomeBannerModel.m */; };
 		0970F51F1EC29FC200FC4794 /* QDHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4AD1EC29FC200FC4794 /* QDHomeModel.m */; };
 		0970F5201EC29FC200FC4794 /* QDBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4B01EC29FC200FC4794 /* QDBannerTableViewCell.m */; };
-		0970F5211EC29FC200FC4794 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4B41EC29FC200FC4794 /* LoginService.m */; };
 		0970F5221EC29FC200FC4794 /* QDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4B81EC29FC200FC4794 /* QDWebViewController.m */; };
 		0970F5231EC29FC200FC4794 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4BC1EC29FC200FC4794 /* AppDelegate.m */; };
 		0970F5241EC29FC200FC4794 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4C01EC29FC200FC4794 /* UIPlaceHolderTextView.m */; };
@@ -234,7 +232,6 @@
 		226CB21A1EC71C8900C15625 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 226CB2101EC71C8800C15625 /* city.json */; };
 		226CB21B1EC71C8900C15625 /* Province.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226CB2111EC71C8800C15625 /* Province.plist */; };
 		22751B931EFAB9F5002A9A45 /* QDJumpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22751B921EFAB9F5002A9A45 /* QDJumpViewController.m */; };
-		22751B961EFABA80002A9A45 /* QDJumpService.m in Sources */ = {isa = PBXBuildFile; fileRef = 22751B951EFABA80002A9A45 /* QDJumpService.m */; };
 		22751B9C1EFABE2C002A9A45 /* GVUserDefaults+BBProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 22751B991EFABE2C002A9A45 /* GVUserDefaults+BBProperties.m */; };
 		22751B9D1EFABE2C002A9A45 /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 22751B9B1EFABE2C002A9A45 /* GVUserDefaults.m */; };
 		22751BA31EFABE34002A9A45 /* introductoryPagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 22751BA01EFABE34002A9A45 /* introductoryPagesHelper.m */; };
@@ -292,8 +289,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		091506021F00AA93002D2805 /* QDHomeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDHomeService.h; sourceTree = "<group>"; };
-		091506031F00AA93002D2805 /* QDHomeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeService.m; sourceTree = "<group>"; };
 		092F9F8B1EEF8CE000DA3578 /* QDFinishApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDFinishApplyViewController.h; sourceTree = "<group>"; };
 		092F9F8C1EEF8CE000DA3578 /* QDFinishApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDFinishApplyViewController.m; sourceTree = "<group>"; };
 		092F9F8D1EEF8CE000DA3578 /* QDFinishApplyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDFinishApplyViewController.xib; sourceTree = "<group>"; };
@@ -347,8 +342,6 @@
 		0970F4AD1EC29FC200FC4794 /* QDHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDHomeModel.m; sourceTree = "<group>"; };
 		0970F4AF1EC29FC200FC4794 /* QDBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBannerTableViewCell.h; sourceTree = "<group>"; };
 		0970F4B01EC29FC200FC4794 /* QDBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBannerTableViewCell.m; sourceTree = "<group>"; };
-		0970F4B31EC29FC200FC4794 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
-		0970F4B41EC29FC200FC4794 /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
 		0970F4B71EC29FC200FC4794 /* QDWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDWebViewController.h; sourceTree = "<group>"; };
 		0970F4B81EC29FC200FC4794 /* QDWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDWebViewController.m; sourceTree = "<group>"; };
 		0970F4BB1EC29FC200FC4794 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -726,8 +719,6 @@
 		226CB2111EC71C8800C15625 /* Province.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Province.plist; sourceTree = "<group>"; };
 		22751B911EFAB9F5002A9A45 /* QDJumpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDJumpViewController.h; sourceTree = "<group>"; };
 		22751B921EFAB9F5002A9A45 /* QDJumpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDJumpViewController.m; sourceTree = "<group>"; };
-		22751B941EFABA80002A9A45 /* QDJumpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDJumpService.h; sourceTree = "<group>"; };
-		22751B951EFABA80002A9A45 /* QDJumpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDJumpService.m; sourceTree = "<group>"; };
 		22751B981EFABE2C002A9A45 /* GVUserDefaults+BBProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+BBProperties.h"; sourceTree = "<group>"; };
 		22751B991EFABE2C002A9A45 /* GVUserDefaults+BBProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+BBProperties.m"; sourceTree = "<group>"; };
 		22751B9A1EFABE2C002A9A45 /* GVUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVUserDefaults.h; sourceTree = "<group>"; };
@@ -836,8 +827,6 @@
 		091506011F00A5A2002D2805 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				091506021F00AA93002D2805 /* QDHomeService.h */,
-				091506031F00AA93002D2805 /* QDHomeService.m */,
 				225AB95120EBCF5300BE8147 /* QDCompanyDetailRequest.h */,
 				225AB95220EBCF5300BE8147 /* QDCompanyDetailRequest.m */,
 			);
@@ -1089,8 +1078,6 @@
 		0970F4B21EC29FC200FC4794 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				0970F4B31EC29FC200FC4794 /* LoginService.h */,
-				0970F4B41EC29FC200FC4794 /* LoginService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -2130,8 +2117,6 @@
 			children = (
 				22751B911EFAB9F5002A9A45 /* QDJumpViewController.h */,
 				22751B921EFAB9F5002A9A45 /* QDJumpViewController.m */,
-				22751B941EFABA80002A9A45 /* QDJumpService.h */,
-				22751B951EFABA80002A9A45 /* QDJumpService.m */,
 				225AB93720E8C67700BE8147 /* QDJumpRequest.h */,
 				225AB93820E8C67700BE8147 /* QDJumpRequest.m */,
 			);
@@ -2290,7 +2275,6 @@
 				0970F3961EC29F2900FC4794 /* Resources */,
 				5AF9672B6E7B63FDEDEA6A63 /* [CP] Embed Pods Frameworks */,
 				71043975FDE13353B48394C7 /* [CP] Copy Pods Resources */,
-				2210DA091ECCB15200366846 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2474,19 +2458,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2210DA091ECCB15200366846 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 77760db8c91842b03b50af0462a4b62ad05b6f53 d895a61602315975d8f34b7d34d0ef580b77d2a93cc82e619b95c7331190af47";
-		};
 		5AF9672B6E7B63FDEDEA6A63 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2554,7 +2525,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				091506041F00AA93002D2805 /* QDHomeService.m in Sources */,
 				0970F5131EC29FC200FC4794 /* QDCommonGroupListViewController.m in Sources */,
 				226CB2131EC71C8900C15625 /* LZAreaPickerView.m in Sources */,
 				225AB92620E82F6600BE8147 /* TMTimeLineMenuView.m in Sources */,
@@ -2744,7 +2714,6 @@
 				2210DA081ECB489100366846 /* QDMyViewController.m in Sources */,
 				225AB91820E82F6600BE8147 /* TMCreateHeaderView.m in Sources */,
 				2210DB281ED087AB00366846 /* NSString+Size.m in Sources */,
-				22751B961EFABA80002A9A45 /* QDJumpService.m in Sources */,
 				2210DB231ED087AB00366846 /* NSString+Pinyin.m in Sources */,
 				22751B931EFAB9F5002A9A45 /* QDJumpViewController.m in Sources */,
 				225AB91720E82F6600BE8147 /* TMCategotyCollectionViewCell.m in Sources */,
@@ -2759,7 +2728,6 @@
 				0970F5181EC29FC200FC4794 /* QDNavigationController.m in Sources */,
 				2210DB091ED087AB00366846 /* NSDecimalNumber+Extensions.m in Sources */,
 				225AB95320EBCF5300BE8147 /* QDCompanyDetailRequest.m in Sources */,
-				0970F5211EC29FC200FC4794 /* LoginService.m in Sources */,
 				225AB91020E82F6600BE8147 /* TMRemarkViewController.m in Sources */,
 				22751BA31EFABE34002A9A45 /* introductoryPagesHelper.m in Sources */,
 				2210DB361ED087AB00366846 /* UIAlertView+Block.m in Sources */,

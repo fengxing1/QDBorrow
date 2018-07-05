@@ -8,7 +8,6 @@
 
 #import "QDLoginOrRegisterViewController.h"
 #import "MBProgressHUD+MP.h"
-#import "LoginService.h"
 #import "QDRegisterViewController.h"
 #import "QMUIKit.h"
 #import "QDUIHelper.h"
@@ -133,18 +132,6 @@
         [MBProgressHUD hideHUDForView:self.view];
         [MBProgressHUD showMessage:request.error.localizedDescription ToView:self.view RemainTime:2.0];
     }];
-//    [[LoginService sharedInstance] loginUser:self.phoneStr andPassword:self.passwordStr bmobBlock:^(BmobUser *user, NSError *error) {
-//        if (!error) {
-//            //登陆成功
-//            [MBProgressHUD hideHUDForView:self.view];
-//            [MBProgressHUD showMessage:@"登陆成功" ToView:self.view RemainTime:2.0];
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshData" object:nil];
-//            [self performSelector:@selector(hideDelayed) withObject:nil afterDelay:2.0];
-//        } else {
-//            [MBProgressHUD hideHUDForView:self.view];
-//            [MBProgressHUD showMessage:error.localizedDescription ToView:self.view RemainTime:2.0];
-//        }
-//    }];
     
 }
 

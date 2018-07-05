@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <BmobSDK/Bmob.h>
 
 @interface QDMessageModel : NSObject
 @property (nonatomic, strong) NSString *messageType;
@@ -15,5 +14,5 @@
 @property (nonatomic, strong) NSString *messageContent;
 @property (nonatomic, strong) NSString *messageTime;
 
-- (instancetype)initWithBannerObject:(BmobObject *)bmobObject;
+- (instancetype)initWithBannerObject:(NSDictionary *)bmobObject;
 @end
