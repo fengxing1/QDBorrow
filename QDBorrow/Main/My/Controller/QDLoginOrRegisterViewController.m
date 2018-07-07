@@ -121,7 +121,7 @@
             user.password = self.passwordLabel.text;
             user.sessionId = sessionId;
             [[QDUserManager sharedInstance] saveUser:user];
-            [self performSelector:@selector(hideDelayed) withObject:nil afterDelay:2.0];
+            [self performSelector:@selector(hideDelayed) withObject:nil afterDelay:1.0];
         } else {
             [MBProgressHUD hideHUDForView:self.view];
             [MBProgressHUD showMessage:[request.responseJSONObject valueForKey:@"desc"] ToView:self.view RemainTime:2.0];

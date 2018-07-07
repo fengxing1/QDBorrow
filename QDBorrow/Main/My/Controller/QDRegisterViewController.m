@@ -86,8 +86,6 @@
     dispatch_source_set_event_handler(_timer, ^{
         
         if(time <= 0){ //倒计时结束，关闭
-
-            
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置按钮的样式
@@ -151,7 +149,12 @@
     }
     QDSendMessageRequest *request = [[QDSendMessageRequest alloc] initWithPhoneNum:self.phoneTextField.text];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [self openCountdown];
+        if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
+           [self openCountdown];
+        } else {
+           [MBProgressHUD showMessage:[request.responseJSONObject valueForKey:@"desc"] ToView:self.view RemainTime:2.0];
+        }
+        
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD showMessage:request.error.localizedDescription ToView:self.view RemainTime:2.0];
     }];

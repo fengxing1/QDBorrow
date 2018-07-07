@@ -19,6 +19,8 @@
 #import "TMPieView.h"
 #import "NSString+TMNSString.h"
 #import "NSArray+TMNSArray.h"
+#import "UIButton+EnlargeTouchArea.h"
+
 #define kBtnWidth 40
 #define kCircleWidth 100
 @interface TMHeaderView()
@@ -159,6 +161,8 @@
             make.centerX.equalTo(weakSelf.bgImageView);
             make.centerY.equalTo(weakSelf.bgImageView.mas_bottom);
         }];
+        
+       
         [self.bgImageView addSubview:self.createBtn];
         [self.createBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(weakSelf.pieView).insets(UIEdgeInsetsMake(30, 30, 30, 30));
@@ -194,6 +198,7 @@
             make.centerX.equalTo(weakSelf);
             make.top.equalTo(weakSelf.pieView.mas_bottom);
         }];
+        
     }
     return self;
 }

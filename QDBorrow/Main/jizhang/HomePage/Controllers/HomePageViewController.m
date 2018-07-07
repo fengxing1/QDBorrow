@@ -69,6 +69,9 @@ UIViewControllerTransitioningDelegate
 
 @property (nonatomic, strong) TMBooks *book;
 
+//添加按钮点击事件
+@property (nonatomic, strong) UIButton *addTMBtn;
+
 @end
 
 @implementation HomePageViewController
@@ -207,11 +210,19 @@ UIViewControllerTransitioningDelegate
     
     CGFloat top = iPhoneX ? -44 : SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11")?-20:0;
 
-    self.headerView = [[TMHeaderView alloc] initWithFrame:CGRectMake(0, top, SCREEN_SIZE.width, kHeaderViewHeight)];
+    self.headerView = [[TMHeaderView alloc] initWithFrame:CGRectMake(0, top, SCREEN_SIZE.width, iPhoneX?kHeaderViewHeight+20:kHeaderViewHeight)];
 
     self.headerView.backgroundColor = LinebgColor;
     self.headerView.headerViewDelegate = self;
     [self.view addSubview:self.headerView];
+    
+    [self.headerView addSubview:self.addTMBtn];
+    [self.addTMBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(100, 100));
+        make.centerX.equalTo(self.headerView);
+        make.centerY.equalTo(self.headerView).offset(35);
+    }];
+    
     TMButton *menuBtn = [TMButton new];
     [menuBtn setImage:[UIImage imageNamed:@"btn_menu"] forState:UIControlStateNormal];
     [menuBtn addTarget:self action:@selector(clickMenuBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -219,7 +230,7 @@ UIViewControllerTransitioningDelegate
     [menuBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(40, 40));
         make.left.mas_equalTo(10);
-        make.top.mas_equalTo(25);
+        make.top.mas_equalTo(iPhoneX ?45:25);
     }];
     
     _titleBtn = [UIButton new];
@@ -387,6 +398,11 @@ UIViewControllerTransitioningDelegate
 
 }
 
+#pragma mark - action
+- (void)clickCreateBtn:(UIButton *)sender {
+    [self didClickPieInCreateBtn];
+}
+
 
 #pragma mark - TMTimeLineCellDelegate
 - (void)didClickCategoryBtnWithIndexPath:(NSIndexPath *)indexPath {
@@ -500,6 +516,15 @@ UIViewControllerTransitioningDelegate
     [[NSNotificationCenter defaultCenter ] removeObserver:self];
 }
 
+- (UIButton *)addTMBtn {
+    if (!_addTMBtn) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button addTarget:self action:@selector(clickCreateBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [button setBackgroundColor:[UIColor clearColor]];
+        _addTMBtn = button;
+    }
+    return _addTMBtn;
+}
 @end
 
 

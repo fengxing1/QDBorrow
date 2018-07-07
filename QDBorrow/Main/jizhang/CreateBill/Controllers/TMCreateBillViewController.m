@@ -150,7 +150,7 @@ UICollectionViewDataSource
 - (UIScrollView *)expendCategoryScrollView
 {
     if (!_expendCategoryScrollView) {
-        _expendCategoryScrollView = [[UIScrollView alloc] initWithFrame:kCollectionFrame];
+        _expendCategoryScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kCreateBillHeaderViewFrame.size.height, SCREEN_SIZE.width,(kCollectionCellWidth + 10) * 4)];
         _expendCategoryScrollView.contentSize = CGSizeMake(kCollectionFrame.size.width * 2, kCollectionFrame.size.height);
         _expendCategoryScrollView.delegate = self;
         [_expendCategoryScrollView addSubview:self.expenCategoryCollectionView];
@@ -278,7 +278,7 @@ UICollectionViewDataSource
 #pragma mark - layoutSubviews
 /** 布局子控件 */
 - (void)layoutSubViews {
-    self.headerView = [[TMCreateHeaderView alloc] initWithFrame:kCreateBillHeaderViewFrame];
+    self.headerView = [[TMCreateHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, 60)];
     [self.view addSubview:self.headerView];
     
     [self.view addSubview:self.selectCategoryImageView];

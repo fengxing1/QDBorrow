@@ -244,6 +244,7 @@
 		229BAA7D1EC36D5B00021EEA /* QDChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229BAA7B1EC36D5B00021EEA /* QDChooseTableViewCell.xib */; };
 		229BAA811EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BAA7F1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m */; };
 		229BAA821EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229BAA801EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib */; };
+		22A211F020EFC5E000C32112 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A211EF20EFC5E000C32112 /* UIButton+EnlargeTouchArea.m */; };
 		22A373871EE23BE70090548C /* blankpage_button_reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A3737E1EE23BE70090548C /* blankpage_button_reload@2x.png */; };
 		22A373881EE23BE70090548C /* blankpage_image_loadFail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A3737F1EE23BE70090548C /* blankpage_image_loadFail@2x.png */; };
 		22A373891EE23BE70090548C /* blankpage_image_loadFail@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A373801EE23BE70090548C /* blankpage_image_loadFail@3x.png */; };
@@ -744,6 +745,8 @@
 		229BAA7E1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDRepaymentInfoTableViewCell.h; sourceTree = "<group>"; };
 		229BAA7F1EC3705D00021EEA /* QDRepaymentInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDRepaymentInfoTableViewCell.m; sourceTree = "<group>"; };
 		229BAA801EC3705D00021EEA /* QDRepaymentInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDRepaymentInfoTableViewCell.xib; sourceTree = "<group>"; };
+		22A211EE20EFC5E000C32112 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		22A211EF20EFC5E000C32112 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
 		22A3737E1EE23BE70090548C /* blankpage_button_reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankpage_button_reload@2x.png"; sourceTree = "<group>"; };
 		22A3737F1EE23BE70090548C /* blankpage_image_loadFail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankpage_image_loadFail@2x.png"; sourceTree = "<group>"; };
 		22A373801EE23BE70090548C /* blankpage_image_loadFail@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankpage_image_loadFail@3x.png"; sourceTree = "<group>"; };
@@ -1958,6 +1961,8 @@
 				225AB8E620E82F6200BE8147 /* TMTimeLineCell.m */,
 				225AB8E720E82F6200BE8147 /* TMTimeLineMenuView.h */,
 				225AB8E820E82F6200BE8147 /* TMTimeLineMenuView.m */,
+				22A211EE20EFC5E000C32112 /* UIButton+EnlargeTouchArea.h */,
+				22A211EF20EFC5E000C32112 /* UIButton+EnlargeTouchArea.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2727,6 +2732,7 @@
 				225AB8FD20E82F6500BE8147 /* TMLabel.m in Sources */,
 				0970F5181EC29FC200FC4794 /* QDNavigationController.m in Sources */,
 				2210DB091ED087AB00366846 /* NSDecimalNumber+Extensions.m in Sources */,
+				22A211F020EFC5E000C32112 /* UIButton+EnlargeTouchArea.m in Sources */,
 				225AB95320EBCF5300BE8147 /* QDCompanyDetailRequest.m in Sources */,
 				225AB91020E82F6600BE8147 /* TMRemarkViewController.m in Sources */,
 				22751BA31EFABE34002A9A45 /* introductoryPagesHelper.m in Sources */,

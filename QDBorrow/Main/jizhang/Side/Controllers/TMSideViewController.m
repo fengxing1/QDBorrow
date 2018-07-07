@@ -181,6 +181,7 @@ TMSideCellDelegate
         make.centerX.equalTo(weakSelf.containerView);
         make.top.equalTo(weakSelf.containerView).offset(150);
     }];
+    self.containerView.hidden = YES;
     
     [self layoutMenuOperationBtn];
     
