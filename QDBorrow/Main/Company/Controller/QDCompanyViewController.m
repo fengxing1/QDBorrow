@@ -20,8 +20,9 @@
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
-@interface QDCompanyViewController ()
+@interface QDCompanyViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) QDHomeList *homeList;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -34,10 +35,17 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     [self configData:NO];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tabBarController.tabBar setHidden:NO];
+}
+
 - (void)configUI {
     self.title = @"找借贷";
-    self.tableView.contentInset = UIEdgeInsetsMake(-28, 0, 0, 0);
-    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+
     [self.tableView registerNib:[UINib nibWithNibName:@"QDCompanyTableViewCell" bundle:nil] forCellReuseIdentifier:kReusableIdentifierCompanyCell];
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshTable)];
 }
@@ -65,12 +73,6 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     }];
 }
 
-
-
-
-- (instancetype)init {
-    return [self initWithStyle:UITableViewStyleGrouped];
-}
 
 #pragma mark tableview datasoure and delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -111,14 +113,25 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
         QDBorrowModel *borrowModel = self.homeList.borrowVOList[indexPath.section];
         QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
         companyDetailViewController.id = borrowModel.id;
+        self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:companyDetailViewController animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
     } else {
         QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
+        self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:loginVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
     }
     
 }
 
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStyleGrouped];
+        
+    }
+    return _tableView;
+}
 
 /*
 #pragma mark - Navigation

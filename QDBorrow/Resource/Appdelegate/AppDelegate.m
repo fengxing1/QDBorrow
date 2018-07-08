@@ -23,7 +23,6 @@
 #import "AdvertiseHelper.h"
 #import "introductoryPagesHelper.h"
 #import "QDBorrowMessageViewController.h"
-#import <SobotKit/SobotKit.h>
 #import <UserNotifications/UserNotifications.h>
 #import "QDBorrowHomeViewController.h"
 #import "QDBorrowMessageViewController.h"
@@ -88,38 +87,6 @@
 //    //启动广告（记得放最后，才可以盖在页面上面）
 //    [self setupAdveriseView];
     
-    //添加智齿
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-    
-    if (SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10")) {
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        center.delegate = self;
-        [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert |UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error) {
-            if (!error) {
-                dispatch_async(dispatch_get_main_queue(),^{
-                     [[UIApplication sharedApplication] registerForRemoteNotifications];
-                });
-                
-               
-            }
-        }];
-    }else{
-        [self registerPush:application];
-    }
-    [[ZCLibClient getZCLibClient].libInitInfo setAppKey:@"976587bdd707439f8ae1b604103dc7ac"];
-    // 设置推送是否是测试环境，测试环境将使用开发证书
-#if DEBUG
-    [[ZCLibClient getZCLibClient] setIsDebugMode:YES];
-#else
-   [[ZCLibClient getZCLibClient] setIsDebugMode:NO];
-    
-#endif
-//    [[ZCLibClient getZCLibClient] setIsDebugMode:YES];
-    // 错误日志收集
-    [ZCLibClient setZCLibUncaughtExceptionHandler];
-
-    
     
     return YES;
 }
@@ -166,9 +133,6 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)pToken{
-    NSLog(@"---Token--%@", pToken);
-    // 注册token
-    [[ZCLibClient getZCLibClient] setToken:pToken];
 }
 
 //点击推送消息后回调

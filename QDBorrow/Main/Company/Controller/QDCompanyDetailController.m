@@ -22,6 +22,7 @@
 #import "QDCompanyDetailModel.h"
 #import "YYModel.h"
 #import "BaiduMobStat.h"
+#import "Const.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 static NSString *const kReusableIdentifierChooseCell = @"chooseCell";
@@ -53,7 +54,6 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 
@@ -96,7 +96,12 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 - (void)createBottomView {
     UIView *view = [[UIView alloc] init];
-    view.frame = CGRectMake(0, SCREEN_HEIGHT - 1 - 50,SCREEN_WIDTH , 50);
+    if(iPhoneX) {
+        view.frame = CGRectMake(0, SCREEN_HEIGHT - 1 - 50 - 22,SCREEN_WIDTH , 50);
+    } else {
+        view.frame = CGRectMake(0, SCREEN_HEIGHT - 1 - 50,SCREEN_WIDTH , 50);
+    }
+    
     [view addSubview:self.normalButton];
     [self.view addSubview:view];
 }
@@ -199,6 +204,8 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     }
 }
 
+
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 1) {
         UIView *titleView = [self createHeaderView:@"申请资格"];
@@ -243,6 +250,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
         redirectUrl = [@"http://" stringByAppendingString:redirectUrl];
     }
     QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
+    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
@@ -288,7 +296,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-50) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
     }
     return _tableView;
 }

@@ -8,6 +8,6 @@
 
 #import <QMUIKit/QMUIKit.h>
 
-@interface QDCompanyViewController : QMUICommonTableViewController
+@interface QDCompanyViewController : QMUICommonViewController
 
 @end

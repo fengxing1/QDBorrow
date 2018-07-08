@@ -160,6 +160,10 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return  0.01;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
         //判断用户登录没，没有去登陆
@@ -167,10 +171,14 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
             QDBorrowModel *borrowModel = self.homeList.borrowVOList[indexPath.row];
             QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
             companyDetailViewController.id = borrowModel.id;
+            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:companyDetailViewController animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
         } else {
             QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
+            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:loginVC animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
         }
         
     }
@@ -179,38 +187,12 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
     }
     return _tableView;
 }
 
 
-//- (void)registerUserClick {
-//    LoginService *loginService = [[LoginService alloc] init];
-//    [loginService registUser:@"dashuai" password:@"123456" email:@"feng_xing@126.com" block:^(BOOL succeeded, NSError * _Nullable error) {
-//        if (succeeded) {
-//            NSLog(@"注册成功");
-//        }else {
-//            
-//        }
-//    }];
-//}
-//
-//- (void)loginUserClick {
-//    LoginService *loginService = [[LoginService alloc] init];
-//    [loginService loginUser:@"dashuai" andPassword:@"123456" block:^(AVUser * _Nullable user, NSError * _Nullable error) {
-//        if (error) {
-//            NSLog(@"登陆失败");
-//        }else {
-//            //处理登陆成功
-//        }
-//    }];
-//}
-//
-//- (void)userStatus {
-//    AVUser *user = [AVUser currentUser];
-//    NSLog(@"user %@",user.username);
-//}
 
 - (void)cellOfBannerClick:(QDBannerModel *)banner {
     //轮播图片点击事件
@@ -221,7 +203,6 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
     webViewController.showsToolBar = NO;
     webViewController.navigationController.navigationBar.translucent = NO;
-    self.tabBarController.tabBar.hidden = YES;
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
     self.hidesBottomBarWhenPushed = NO;

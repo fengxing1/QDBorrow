@@ -86,7 +86,7 @@
     //- QMUICMI.navBarTitleFont = UIFontBoldMake(17);                                   // NavBarTitleFont
     //- QMUICMI.navBarBackButtonTitlePositionAdjustment = UIOffsetZero;                 // NavBarBarBackButtonTitlePositionAdjustment
     QMUICMI.navBarBackIndicatorImage = [UIImage qmui_imageWithShape:QMUIImageShapeNavBack size:CGSizeMake(12, 20) tintColor:NavBarTintColor];    // NavBarBackIndicatorImage
-    QMUICMI.navBarCloseButtonImage = [UIImage qmui_imageWithShape:QMUIImageShapeNavClose size:CGSizeMake(16, 16) tintColor:NavBarTintColor];     // NavBarCloseButtonImage
+//    QMUICMI.navBarCloseButtonImage = [UIImage qmui_imageWithShape:QMUIImageShapeNavClose size:CGSizeMake(16, 16) tintColor:NavBarTintColor];     // NavBarCloseButtonImage
     
     //- QMUICMI.navBarLoadingMarginRight = 3;                                           // NavBarLoadingMarginRight
     //- QMUICMI.navBarAccessoryViewMarginLeft = 5;                                      // NavBarAccessoryViewMarginLeft

@@ -20,7 +20,8 @@
 
 - (id)requestArgument {
     return @{
-             @"id": [NSNumber numberWithInt:1]
+             @"id": [NSNumber numberWithInt:1],
+             @"deviceType": [NSNumber numberWithInt:1],
              };
 }
 @end
