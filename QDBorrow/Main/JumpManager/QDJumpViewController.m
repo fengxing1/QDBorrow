@@ -85,8 +85,8 @@
                 //引导页面加载
                 [self setupIntroductoryPage];
             }  else {
-                [self setupIntroductoryPage];
-//                [self showOtherLoanView];
+//                [self setupIntroductoryPage];
+                [self showOtherLoanView];
             }
         } else {
             [MBProgressHUD hideHUDForView:self.view];
