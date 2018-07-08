@@ -24,7 +24,7 @@
 
 
 - (NSString *)requestUrl {
-    return @"borrowDetail.json";
+    return @"auth/borrowDetail.json";
 }
 
 - (YTKRequestMethod)requestMethod {
