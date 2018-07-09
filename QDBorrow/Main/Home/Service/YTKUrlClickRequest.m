@@ -1,18 +1,17 @@
 //
-//  QDCompanyDetailRequest.m
+//  YTKUrlClickRequest.m
 //  QDBorrow
 //
-//  Created by 朱恪帅 on 2018/7/3.
+//  Created by 朱恪帅 on 2018/7/9.
 //  Copyright © 2018年 jinrong. All rights reserved.
 //
 
-#import "QDCompanyDetailRequest.h"
+#import "YTKUrlClickRequest.h"
 #import "QDUserManager.h"
 
-@implementation QDCompanyDetailRequest {
+@implementation YTKUrlClickRequest {
     long _id;
 }
-
 
 - (id)initWithCompany:(long)id {
     self = [super init];
@@ -24,21 +23,20 @@
 
 
 - (NSString *)requestUrl {
-    return @"auth/borrowDetail.json";
+    return @"postBury.json";
 }
 
 - (YTKRequestMethod)requestMethod {
-    return YTKRequestMethodGET;
+    return YTKRequestMethodPOST;
 }
 
 
 - (id)requestArgument {
     return @{
-             @"id": [NSNumber numberWithLong:_id],
+             @"productId": [NSNumber numberWithLong:_id],
              @"sessionId":[QDUserManager sharedInstance].getUser.sessionId,
              @"deviceType": [NSNumber numberWithInt:2]
              };
 }
-
 
 @end

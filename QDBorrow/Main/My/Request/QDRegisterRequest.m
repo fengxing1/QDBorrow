@@ -43,7 +43,8 @@
     return @{
              @"username": _username,
              @"password": _password,
-             @"verifyCode": _validateCode
+             @"verifyCode": _validateCode,
+             @"deviceType": [NSNumber numberWithInt:2]
              };
 }
 

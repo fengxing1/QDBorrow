@@ -85,7 +85,6 @@
                 //引导页面加载
                 [self setupIntroductoryPage];
             }  else {
-//                [self setupIntroductoryPage];
                 [self showOtherLoanView];
             }
         } else {

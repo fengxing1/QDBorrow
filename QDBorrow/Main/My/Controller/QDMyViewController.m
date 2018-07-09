@@ -46,6 +46,7 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 
 - (void)configData {
+    self.user = [[QDUserManager sharedInstance] getUser];
 }
 
 - (void)configUI {

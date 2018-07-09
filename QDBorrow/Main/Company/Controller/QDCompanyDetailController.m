@@ -23,6 +23,7 @@
 #import "YYModel.h"
 #import "BaiduMobStat.h"
 #import "Const.h"
+#import "YTKUrlClickRequest.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 static NSString *const kReusableIdentifierChooseCell = @"chooseCell";
@@ -245,6 +246,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 //产品页面
 - (void)toProductDetail {
     [[BaiduMobStat defaultStat] logEvent:[NSString stringWithFormat:@"%ld",self.id] eventLabel:self.companyInfoModel.productName];
+    [self sendUrlClick];
     NSString *redirectUrl = self.companyInfoModel.url;
     if (!([redirectUrl containsString:@"http"] || [redirectUrl containsString:@"https"])) {
         redirectUrl = [@"http://" stringByAppendingString:redirectUrl];
@@ -252,6 +254,11 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
     QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (void)sendUrlClick {
+    YTKUrlClickRequest *request  = [[YTKUrlClickRequest alloc] initWithCompany:self.id];
+    [request startWithCompletionBlockWithSuccess:nil failure:nil];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

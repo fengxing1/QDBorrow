@@ -220,6 +220,7 @@
 		225AB94C20EA723500BE8147 /* QDLoginReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB94B20EA723500BE8147 /* QDLoginReqeust.m */; };
 		225AB95320EBCF5300BE8147 /* QDCompanyDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB95220EBCF5300BE8147 /* QDCompanyDetailRequest.m */; };
 		225AB95620EBD11200BE8147 /* QDCompanyDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 225AB95520EBD11200BE8147 /* QDCompanyDetailModel.m */; };
+		225B3D3420F3B6F0003C6274 /* YTKUrlClickRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 225B3D3320F3B6F0003C6274 /* YTKUrlClickRequest.m */; };
 		2263A6831EEEE0790016D1F0 /* QDApplyAssetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2263A6821EEEE0790016D1F0 /* QDApplyAssetsModel.m */; };
 		226CB2121EC71C8900C15625 /* LZAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB1FE1EC71C8800C15625 /* LZAddressPickerView.m */; };
 		226CB2131EC71C8900C15625 /* LZAreaPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CB2001EC71C8800C15625 /* LZAreaPickerView.m */; };
@@ -697,6 +698,8 @@
 		225AB95220EBCF5300BE8147 /* QDCompanyDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCompanyDetailRequest.m; sourceTree = "<group>"; };
 		225AB95420EBD11200BE8147 /* QDCompanyDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDCompanyDetailModel.h; sourceTree = "<group>"; };
 		225AB95520EBD11200BE8147 /* QDCompanyDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDCompanyDetailModel.m; sourceTree = "<group>"; };
+		225B3D3220F3B6F0003C6274 /* YTKUrlClickRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTKUrlClickRequest.h; sourceTree = "<group>"; };
+		225B3D3320F3B6F0003C6274 /* YTKUrlClickRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTKUrlClickRequest.m; sourceTree = "<group>"; };
 		2263A6811EEEE0790016D1F0 /* QDApplyAssetsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDApplyAssetsModel.h; sourceTree = "<group>"; };
 		2263A6821EEEE0790016D1F0 /* QDApplyAssetsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDApplyAssetsModel.m; sourceTree = "<group>"; };
 		226CB1FD1EC71C8800C15625 /* LZAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAddressPickerView.h; sourceTree = "<group>"; };
@@ -832,6 +835,8 @@
 			children = (
 				225AB95120EBCF5300BE8147 /* QDCompanyDetailRequest.h */,
 				225AB95220EBCF5300BE8147 /* QDCompanyDetailRequest.m */,
+				225B3D3220F3B6F0003C6274 /* YTKUrlClickRequest.h */,
+				225B3D3320F3B6F0003C6274 /* YTKUrlClickRequest.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -2547,6 +2552,7 @@
 				225AB91120E82F6600BE8147 /* TMAddCategory.m in Sources */,
 				225AB90420E82F6500BE8147 /* TMSideCell.m in Sources */,
 				2210DB331ED087AB00366846 /* NSURLRequest+ParamsFromDictionary.m in Sources */,
+				225B3D3420F3B6F0003C6274 /* YTKUrlClickRequest.m in Sources */,
 				225AB8FB20E82F6500BE8147 /* TMPiewCategoryDetailViewController.m in Sources */,
 				225AB95620EBD11200BE8147 /* QDCompanyDetailModel.m in Sources */,
 				225AB91220E82F6600BE8147 /* TMActionSheetView.m in Sources */,

@@ -23,6 +23,7 @@
 #import "YYModel.h"
 #import "QDUserManager.h"
 #import "QDLoginOrRegisterViewController.h"
+#import "YTKUrlClickRequest.h"
 
 static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
@@ -195,18 +196,32 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 
 - (void)cellOfBannerClick:(QDBannerModel *)banner {
-    //轮播图片点击事件
-    NSString *redirectUrl = banner.url;
-    if (!([redirectUrl containsString:@"http"] || [redirectUrl containsString:@"https"])) {
-        redirectUrl = [@"http://" stringByAppendingString:redirectUrl];
+    //先对登陆进行判断，有登陆了才可以点击进去
+    if ([[QDUserManager sharedInstance] validateUser]) {
+        //异步发送点击请求
+        [self sendClickUrl:banner.id];
+        //轮播图片点击事件
+        NSString *redirectUrl = banner.url;
+        if (!([redirectUrl containsString:@"http"] || [redirectUrl containsString:@"https"])) {
+            redirectUrl = [@"http://" stringByAppendingString:redirectUrl];
+        }
+        QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
+        webViewController.showsToolBar = NO;
+        webViewController.navigationController.navigationBar.translucent = NO;
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:webViewController animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    } else {
+        QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:loginVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
     }
-    QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
-    webViewController.showsToolBar = NO;
-    webViewController.navigationController.navigationBar.translucent = NO;
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:webViewController animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
-    
+}
+
+- (void)sendClickUrl:(long)productId {
+    YTKUrlClickRequest *request = [[YTKUrlClickRequest alloc] initWithCompany:productId];
+    [request startWithCompletionBlockWithSuccess:nil failure:nil];
 }
 
 @end

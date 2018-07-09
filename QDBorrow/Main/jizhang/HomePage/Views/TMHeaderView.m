@@ -19,7 +19,6 @@
 #import "TMPieView.h"
 #import "NSString+TMNSString.h"
 #import "NSArray+TMNSArray.h"
-#import "UIButton+EnlargeTouchArea.h"
 
 #define kBtnWidth 40
 #define kCircleWidth 100
@@ -228,6 +227,7 @@
         }];
     }];
 }
+
 
 
 @end

@@ -435,7 +435,7 @@ UICollectionViewDataSource
     SZCalendarPicker *calendarPicker = [SZCalendarPicker showOnView:self.view];
     calendarPicker.today = [NSDate date];
     calendarPicker.date = calendarPicker.today;
-    calendarPicker.frame = CGRectMake(0, SCREEN_SIZE.height - (self.calculatorView.bounds.size.height + 50), SCREEN_SIZE.width, self.calculatorView.bounds.size.height + 50);
+    calendarPicker.frame = CGRectMake(0, SCREEN_SIZE.height - (self.calculatorView.bounds.size.height + 300), SCREEN_SIZE.width, self.calculatorView.bounds.size.height + 300);
     WEAKSELF
     calendarPicker.calendarBlock = ^(NSInteger day, NSInteger month, NSInteger year){
         NSLog(@"%li-%li-%li", year,month,day);

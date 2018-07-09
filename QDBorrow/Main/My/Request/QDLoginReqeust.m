@@ -38,7 +38,8 @@
 - (id)requestArgument {
     return @{
              @"username": _username,
-             @"password": _password
+             @"password": _password,
+             @"deviceType": [NSNumber numberWithInt:2]
              };
 }
 
