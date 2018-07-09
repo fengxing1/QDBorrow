@@ -181,7 +181,7 @@
         if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
             [MBProgressHUD hideHUDForView:self.view];
             [MBProgressHUD showMessage:@"注册成功" ToView:self.view RemainTime:2.0];
-            [self performSelector:@selector(hideDelayed) withObject:nil afterDelay:2.0];
+            [self hideDelayed];
         } else {
             [MBProgressHUD hideHUDForView:self.view];
             [MBProgressHUD showMessage:[request.responseJSONObject valueForKey:@"desc"] ToView:self.view RemainTime:2.0];
