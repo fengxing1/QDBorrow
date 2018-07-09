@@ -258,7 +258,11 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 - (void)sendUrlClick {
     YTKUrlClickRequest *request  = [[YTKUrlClickRequest alloc] initWithCompany:self.id];
-    [request startWithCompletionBlockWithSuccess:nil failure:nil];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"成功");
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"失败");
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

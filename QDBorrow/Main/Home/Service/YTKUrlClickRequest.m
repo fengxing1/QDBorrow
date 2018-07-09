@@ -30,6 +30,9 @@
     return YTKRequestMethodPOST;
 }
 
+- (YTKRequestSerializerType)requestSerializerType {
+    return YTKRequestSerializerTypeJSON;
+}
 
 - (id)requestArgument {
     return @{
