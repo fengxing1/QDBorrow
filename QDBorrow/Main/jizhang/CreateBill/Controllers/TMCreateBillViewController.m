@@ -139,7 +139,7 @@ UICollectionViewDataSource
 - (UICollectionView *)incomeCategoryCollectionView
 {
     if (!_incomeCategoryCollectionView) {
-        _incomeCategoryCollectionView = [[UICollectionView alloc] initWithFrame:kCollectionFrame collectionViewLayout:[[TMCategoryCollectionViewFlowLayout alloc] init]];
+        _incomeCategoryCollectionView = [[UICollectionView alloc] initWithFrame: CGRectMake(0,kCreateBillHeaderViewFrame.size.height, SCREEN_SIZE.width,(kCollectionCellWidth + 10) * 4) collectionViewLayout:[[TMCategoryCollectionViewFlowLayout alloc] init]];
         _incomeCategoryCollectionView.delegate = self;
         _incomeCategoryCollectionView.dataSource = self;
         _incomeCategoryCollectionView.backgroundColor = [UIColor whiteColor];
