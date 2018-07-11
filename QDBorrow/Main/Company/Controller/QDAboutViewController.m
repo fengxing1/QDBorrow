@@ -35,12 +35,12 @@
     [self.scrollView addSubview:self.logoImageView];
     
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    self.versionLabel = [[UILabel alloc] initWithFont:UIFontMake(14) textColor:UIColorGray3];
+    self.versionLabel = [[UILabel alloc] qmui_initWithFont:UIFontMake(14) textColor:UIColorGray3];
     self.versionLabel.text = [NSString stringWithFormat:@"版本 %@", appVersion];
     [self.versionLabel sizeToFit];
     [self.scrollView addSubview:self.versionLabel];
     
-    self.websiteButton = [self generateCellButtonWithTitle:@"小蚁钱包官方客服群：645445217"];
+    self.websiteButton = [self generateCellButtonWithTitle:@"记账钱包官方客服群：645445217"];
     self.websiteButton.enabled = NO;
     self.websiteButton.qmui_borderPosition = QMUIBorderViewPositionTop;
 //    [self.websiteButton addTarget:self action:@selector(handleWebsiteButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
@@ -76,7 +76,7 @@
     button.qmui_borderColor = TableViewSeparatorColor;
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     button.contentEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 0);
-    button.qmui_needsTakeOverTouchEvent = YES;
+//    button.qmui_needsTakeOverTouchEvent = YES;
     return button;
 }
 

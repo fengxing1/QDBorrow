@@ -32,7 +32,7 @@
 - (id)requestArgument {
     return @{
              @"phone": [NSNumber numberWithLong:[_phoneNum longLongValue]],
-             @"deviceType": [NSNumber numberWithInt:2]
+             @"devicesType": [NSNumber numberWithInt:2]
              };
 }
 

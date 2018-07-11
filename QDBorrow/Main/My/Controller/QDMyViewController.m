@@ -34,7 +34,7 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self configData];
+    
     [self configUI];
 }
 
@@ -42,6 +42,7 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
     [super viewWillAppear:animated];
     [self.tableView reloadData];
     [self.tabBarController.tabBar setHidden:NO];
+    [self configData];
 }
 
 

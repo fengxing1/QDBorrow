@@ -17,7 +17,8 @@
 #import "QDBorrowModel.h"
 #import "QDUserManager.h"
 #import "QDLoginOrRegisterViewController.h"
-
+#import "QDRegisterViewController.h"
+#import "UIAlertView+Block.h"
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 @interface QDCompanyViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -117,10 +118,19 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
         [self.navigationController pushViewController:companyDetailViewController animated:YES];
         self.hidesBottomBarWhenPushed = NO;
     } else {
-        QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
-        self.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:loginVC animated:YES];
-        self.hidesBottomBarWhenPushed = NO;
+        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+            if (buttonIndex == 0) {
+                QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:loginVC animated:YES];
+                self.hidesBottomBarWhenPushed = NO;
+            }else if (buttonIndex == 1){
+                QDRegisterViewController *loginVC = [[QDRegisterViewController alloc] init];
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:loginVC animated:YES];
+                self.hidesBottomBarWhenPushed = NO;
+            }
+        } title:@"是否已有账号？" message:@"请选择是注册还是登陆" cancelButtonName:@"去登陆" otherButtonTitles:@"去注册", nil];
     }
     
 }

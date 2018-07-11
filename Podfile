@@ -8,7 +8,7 @@ target 'QDBorrow' do
     pod 'MBProgressHUD', '~> 0.9'
     pod 'MWPhotoBrowser'
     pod 'YYText'
-    pod 'QMUIKit','2.7.2'
+    pod 'QMUIKit'
     pod 'MJRefresh'
     pod 'SDCycleScrollView', '~> 1.64'
     pod 'AXWebViewController', '~> 0.1.10'
