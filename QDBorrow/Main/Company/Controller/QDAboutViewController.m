@@ -9,6 +9,7 @@
 #import "QDAboutViewController.h"
 #import "QMUIKit.h"
 #import "QDCommonUI.h"
+#import "UIView+QMUI.h"
 
 @interface QDAboutViewController ()
 
@@ -35,14 +36,14 @@
     [self.scrollView addSubview:self.logoImageView];
     
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    self.versionLabel = [[UILabel alloc] initWithFont:UIFontMake(14) textColor:UIColorGray3];
+    self.versionLabel = [[UILabel alloc] qmui_initWithFont:UIFontMake(14) textColor:UIColorGray3];
     self.versionLabel.text = [NSString stringWithFormat:@"版本 %@", appVersion];
     [self.versionLabel sizeToFit];
     [self.scrollView addSubview:self.versionLabel];
     
     self.websiteButton = [self generateCellButtonWithTitle:@"小蚁钱包官方客服群：645445217"];
     self.websiteButton.enabled = NO;
-    self.websiteButton.qmui_borderPosition = QMUIBorderViewPositionTop;
+//    self.websiteButton.qmui_borderPosition = QMUIBorderViewPositionTop;
 //    [self.websiteButton addTarget:self action:@selector(handleWebsiteButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [self.scrollView addSubview:self.websiteButton];
     
@@ -63,7 +64,7 @@
 }
 
 - (void)setNavigationItemsIsInEditMode:(BOOL)isInEditMode animated:(BOOL)animated {
-    [super setNavigationItemsIsInEditMode:isInEditMode animated:animated];
+//    [super setNavigationItemsIsInEditMode:isInEditMode animated:animated];
     self.title = @"关于我们";
 }
 
@@ -76,7 +77,7 @@
     button.qmui_borderColor = TableViewSeparatorColor;
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     button.contentEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 0);
-    button.qmui_needsTakeOverTouchEvent = YES;
+//    button.qmui_needsTakeOverTouchEvent = YES;
     return button;
 }
 

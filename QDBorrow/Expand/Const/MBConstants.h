@@ -9,6 +9,8 @@
 #ifndef MBConstants_h
 #define MBConstants_h
 
+#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
 //邮件接收人
 static NSString* const kMail_cc_ToRecipients_Address=@"mobileproject@126.com";
 

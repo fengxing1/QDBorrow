@@ -22,7 +22,7 @@
 #import "QDCompanyDetailModel.h"
 #import "YYModel.h"
 #import "BaiduMobStat.h"
-#import "Const.h"
+#import "MBConstants.h"
 #import "YTKUrlClickRequest.h"
 
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";

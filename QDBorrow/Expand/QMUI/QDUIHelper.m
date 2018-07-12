@@ -99,18 +99,18 @@
 @implementation QDUIHelper (SavePhoto)
 
 + (void)showAlertWhenSavedPhotoFailureByPermissionDenied {
-    QMUIAlertController *alertController = [QMUIAlertController alertControllerWithTitle:@"无法保存" message:@"你未开启“允许 QMUI 访问照片”选项" preferredStyle:QMUIAlertControllerStyleAlert];
-    
-    QMUIAlertAction *settingAction = [QMUIAlertAction actionWithTitle:@"去设置" style:QMUIAlertActionStyleDefault handler:^(QMUIAlertAction *action) {
-        NSURL *url = [[NSURL alloc] initWithString:@"prefs:root=Privacy&path=PHOTOS"];
-        [[UIApplication sharedApplication] openURL:url];
-    }];
-    [alertController addAction:settingAction];
-    
-    QMUIAlertAction *okAction = [QMUIAlertAction actionWithTitle:@"我知道了" style:QMUIAlertActionStyleCancel handler:nil];
-    [alertController addAction:okAction];
-    
-    [alertController showWithAnimated:YES];
+//    QMUIAlertController *alertController = [QMUIAlertController alertControllerWithTitle:@"无法保存" message:@"你未开启“允许 QMUI 访问照片”选项" preferredStyle:QMUIAlertControllerStyleAlert];
+//    
+//    QMUIAlertAction *settingAction = [QMUIAlertAction actionWithTitle:@"去设置" style:QMUIAlertActionStyleDefault handler:^(QMUIAlertAction *action) {
+//        NSURL *url = [[NSURL alloc] initWithString:@"prefs:root=Privacy&path=PHOTOS"];
+//        [[UIApplication sharedApplication] openURL:url];
+//    }];
+//    [alertController addAction:settingAction];
+//    
+//    QMUIAlertAction *okAction = [QMUIAlertAction actionWithTitle:@"我知道了" style:QMUIAlertActionStyleCancel handler:nil];
+//    [alertController addAction:okAction];
+//    
+//    [alertController showWithAnimated:YES];
 }
 
 @end
