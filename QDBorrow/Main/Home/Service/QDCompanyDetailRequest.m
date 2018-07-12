@@ -36,7 +36,7 @@
     return @{
              @"id": [NSNumber numberWithLong:_id],
              @"sessionId":[QDUserManager sharedInstance].getUser.sessionId,
-             @"deviceType": [NSNumber numberWithInt:2]
+             @"devicesType": [NSNumber numberWithInt:2]
              };
 }
 

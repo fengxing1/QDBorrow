@@ -39,7 +39,7 @@
     return @{
              @"username": _username,
              @"password": _password,
-             @"deviceType": [NSNumber numberWithInt:2]
+             @"devicesType": [NSNumber numberWithInt:2]
              };
 }
 
