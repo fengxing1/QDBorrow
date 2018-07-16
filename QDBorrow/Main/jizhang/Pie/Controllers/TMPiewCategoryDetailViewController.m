@@ -130,7 +130,11 @@ UITableViewDataSource
     [self.headerContainerView addSubview:self.categoryNameLabel];
     [self.categoryNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf.headerContainerView);
-        make.bottom.equalTo(weakSelf.headerContainerView).offset(-5);
+        if (SCREEN_HEIGHT < 500) {
+            make.bottom.equalTo(weakSelf.headerContainerView);
+        }else{
+            make.bottom.equalTo(weakSelf.headerContainerView).offset(-5);
+        }
     }];
     
     self.tableView = [[UITableView alloc] init];

@@ -163,7 +163,7 @@
     /** 设置打开/关闭抽屉的手势 */
     drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
     drawerController.closeDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
-    drawerController.showsShadow = NO;
+    drawerController.showsShadow = YES;
     /** 设置左边抽屉显示的多少 */
     drawerController.maximumLeftDrawerWidth = SCREEN_SIZE.width - 50;
     self.window.rootViewController = drawerController;

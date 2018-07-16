@@ -72,6 +72,9 @@ UIViewControllerTransitioningDelegate
 //添加按钮点击事件
 @property (nonatomic, strong) UIButton *addTMBtn;
 
+//关闭视图按钮
+@property (nonatomic, strong) UIButton *closeRightVCBtn;
+
 @end
 
 @implementation HomePageViewController
@@ -322,6 +325,9 @@ UIViewControllerTransitioningDelegate
 //    NSLog(@"click MenuBtn");
     //* 不加判断则会 开->关->开 无限循环 */
     if (self.mm_drawerController.openSide == MMDrawerSideNone) {
+        [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+        return;
+    }else if (self.mm_drawerController.openSide == MMDrawerSideLeft){
         [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
         return;
     }

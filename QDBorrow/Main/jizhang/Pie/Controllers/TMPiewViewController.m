@@ -307,7 +307,7 @@ iCarouselDataSource
     self.countLabel.textColor = [UIColor colorWithWhite:0.729 alpha:1.000];
     [self.view addSubview:self.countLabel];
     [self.countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.pieView.mas_bottom).offset(20);
+        make.top.equalTo(weakSelf.pieView.mas_bottom).offset(15);
         make.centerX.equalTo(weakSelf.view);
     }];
     self.countLabel.text = @"1笔";

@@ -58,6 +58,7 @@ TMSideCellDelegate
         [_exploreBtn setTitle:@"探索" forState:UIControlStateNormal];
         _exploreBtn.titleLabel.font = kMenuOperationBtnTitleFont;
         [_exploreBtn addTarget:self action:@selector(clickExploreBtn:) forControlEvents:UIControlEventTouchUpInside];
+        _exploreBtn.hidden = YES;
     }
     return _exploreBtn;
 }
@@ -177,9 +178,14 @@ TMSideCellDelegate
     [self.containerView addSubview:self.addBookView];
     [self.addBookView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(SCREEN_SIZE.width - 80);
-        make.height.equalTo(weakSelf.containerView).multipliedBy(0.25);
         make.centerX.equalTo(weakSelf.containerView);
-        make.top.equalTo(weakSelf.containerView).offset(150);
+        if (SCREEN_HEIGHT < 500) {
+            make.height.equalTo(weakSelf.containerView).multipliedBy(0.34);
+            make.top.equalTo(weakSelf.containerView).offset(65);
+        }else{
+            make.height.equalTo(weakSelf.containerView).multipliedBy(0.25);
+            make.top.equalTo(weakSelf.containerView).offset(150);
+        }
     }];
     
     [self layoutMenuOperationBtn];

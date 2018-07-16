@@ -93,7 +93,7 @@ UICollectionViewDataSource
         TMButton *button = [[TMButton alloc]init];
         [button setTitle:@"支出" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button setTitleColor:kSelectColor forState:UIControlStateSelected];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         [button addTarget:self action:@selector(clickExpendBtn:) forControlEvents:UIControlEventTouchUpInside];
         button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         
@@ -108,7 +108,7 @@ UICollectionViewDataSource
         TMButton *button = [[TMButton alloc]init];
         [button setTitle:@"收入" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button setTitleColor:kSelectColor forState:UIControlStateSelected];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         [button addTarget:self action:@selector(clickIncomeBtn:) forControlEvents:UIControlEventTouchUpInside];
         button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         
@@ -136,13 +136,19 @@ UICollectionViewDataSource
     }
     return _expenCategoryCollectionView2;
 }
+//收入
 - (UICollectionView *)incomeCategoryCollectionView
 {
     if (!_incomeCategoryCollectionView) {
-        _incomeCategoryCollectionView = [[UICollectionView alloc] initWithFrame: CGRectMake(0,kCreateBillHeaderViewFrame.size.height, SCREEN_SIZE.width,(kCollectionCellWidth + 10) * 4) collectionViewLayout:[[TMCategoryCollectionViewFlowLayout alloc] init]];
+        if (SCREEN_HEIGHT < 500) {
+            _incomeCategoryCollectionView = [[UICollectionView alloc] initWithFrame: CGRectMake(0,kCreateBillHeaderViewFrame.size.height, SCREEN_SIZE.width,(kCollectionCellWidth) * 4) collectionViewLayout:[[TMCategoryCollectionViewFlowLayout alloc] init]];
+        }else{
+            _incomeCategoryCollectionView = [[UICollectionView alloc] initWithFrame: CGRectMake(0,kCreateBillHeaderViewFrame.size.height, SCREEN_SIZE.width,(kCollectionCellWidth + 10) * 4) collectionViewLayout:[[TMCategoryCollectionViewFlowLayout alloc] init]];
+        }
         _incomeCategoryCollectionView.delegate = self;
         _incomeCategoryCollectionView.dataSource = self;
         _incomeCategoryCollectionView.backgroundColor = [UIColor whiteColor];
+        _incomeCategoryCollectionView.hidden = YES;
     }
     return _incomeCategoryCollectionView;
 }
@@ -150,7 +156,11 @@ UICollectionViewDataSource
 - (UIScrollView *)expendCategoryScrollView
 {
     if (!_expendCategoryScrollView) {
-        _expendCategoryScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kCreateBillHeaderViewFrame.size.height, SCREEN_SIZE.width,(kCollectionCellWidth + 10) * 4)];
+        if (SCREEN_HEIGHT < 500) {
+            _expendCategoryScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kCreateBillHeaderViewFrame.size.height, SCREEN_SIZE.width,(kCollectionCellWidth) * 4)];
+        }else{
+            _expendCategoryScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kCreateBillHeaderViewFrame.size.height, SCREEN_SIZE.width,(kCollectionCellWidth + 10) * 4)];
+        }
         _expendCategoryScrollView.contentSize = CGSizeMake(kCollectionFrame.size.width * 2, kCollectionFrame.size.height);
         _expendCategoryScrollView.delegate = self;
         [_expendCategoryScrollView addSubview:self.expenCategoryCollectionView];
@@ -161,9 +171,10 @@ UICollectionViewDataSource
 - (UIPageControl *)pageController
 {
     if (!_pageController) {
-        _pageController = [[UIPageControl alloc] initWithFrame:kPageControllerFrame];
+        _pageController = [[UIPageControl alloc] initWithFrame:self.expendCategoryScrollView.frame];
         _pageController.numberOfPages = 2;
         _pageController.userInteractionEnabled = NO;
+        _pageController.hidden = YES;
         _pageController.pageIndicatorTintColor = [UIColor colorWithWhite:0.829 alpha:1.000];
         _pageController.currentPageIndicatorTintColor = kSelectColor;
     }
@@ -299,8 +310,11 @@ UICollectionViewDataSource
     
     self.categoryEditContainerView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.categoryEditContainerView];
-    
-    TMModifyCategoryNameView * modifyView = [[TMModifyCategoryNameView alloc] initWithFrame:CGRectMake(37.5, 166, 300, 140)];
+    CGFloat hh = 166;
+    if (SCREEN_HEIGHT < 500) {
+        hh = 25;
+    }
+    TMModifyCategoryNameView * modifyView = [[TMModifyCategoryNameView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-300)/2, hh, 300, 130)];
     self.categoryNameView = modifyView;
     [self.categoryEditContainerView addSubview:modifyView];
     [self.view sendSubviewToBack:self.categoryEditContainerView];
@@ -475,6 +489,8 @@ UICollectionViewDataSource
     self.expendBtn.selected = NO;
     [self.view bringSubviewToFront:self.incomeCategoryCollectionView];
     [self.view bringSubviewToFront:self.headerView];
+    self.expendCategoryScrollView.hidden = YES;
+    self.incomeCategoryCollectionView.hidden = NO;
     [self.view sendSubviewToBack:self.expendCategoryScrollView];
 
     [self.headerView categoryImageWithFileName:firstIncomeCategory.categoryImageFileNmae andCategoryName:firstIncomeCategory.categoryTitle];
@@ -501,6 +517,8 @@ UICollectionViewDataSource
     self.incomeBtn.selected = NO;
     [self.view bringSubviewToFront:self.expendCategoryScrollView];
     [self.view bringSubviewToFront:self.headerView];
+    self.incomeCategoryCollectionView.hidden = YES;
+    self.expendCategoryScrollView.hidden = NO;
     [self.view sendSubviewToBack:self.incomeCategoryCollectionView];
 
     [self.headerView categoryImageWithFileName:firstExpendCategory.categoryImageFileNmae andCategoryName:firstExpendCategory.categoryTitle];

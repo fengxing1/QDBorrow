@@ -101,7 +101,7 @@
         }];
         [self.contentView addSubview:self.countLabel];
         [self.countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(weakSelf.bgImageView).offset(-10);
+            make.bottom.equalTo(weakSelf.bgImageView).offset(-5);
             make.right.equalTo(weakSelf.bgImageView).equalTo(@(-5));
         }];
         [self.contentView addSubview:self.editSelectedItemImageView];
