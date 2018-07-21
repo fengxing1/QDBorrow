@@ -271,6 +271,7 @@
 		22DC7A3D1EDF154D009DB868 /* QDRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DC7A3B1EDF154D009DB868 /* QDRegisterViewController.xib */; };
 		71E428A43581981D31F5B991 /* libPods-QDBorrow-QDBorrowTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ED9BC4328DE84BBDD978AC /* libPods-QDBorrow-QDBorrowTests.a */; };
 		85A27A48F031CE366FFE8841 /* libPods-QDBorrow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C41CD3E96693CA3CF7F150DF /* libPods-QDBorrow.a */; };
+		E22811BD210064AA003C7D5D /* QDBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E22811BC210064AA003C7D5D /* QDBaseRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -791,6 +792,8 @@
 		C41CD3E96693CA3CF7F150DF /* libPods-QDBorrow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QDBorrow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5435521220CA8F7D829A1A9 /* Pods-QDBorrow-QDBorrowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow-QDBorrowTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow-QDBorrowTests/Pods-QDBorrow-QDBorrowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E211D8D420F5156000B44CDF /* QDBorrow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QDBorrow.entitlements; sourceTree = "<group>"; };
+		E22811BB210064AA003C7D5D /* QDBaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDBaseRequest.h; sourceTree = "<group>"; };
+		E22811BC210064AA003C7D5D /* QDBaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDBaseRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2037,6 +2040,8 @@
 			children = (
 				225AB93120E8BD5400BE8147 /* QDHomeRequest.h */,
 				225AB93220E8BD5400BE8147 /* QDHomeRequest.m */,
+				E22811BB210064AA003C7D5D /* QDBaseRequest.h */,
+				E22811BC210064AA003C7D5D /* QDBaseRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2573,6 +2578,7 @@
 				2210DB331ED087AB00366846 /* NSURLRequest+ParamsFromDictionary.m in Sources */,
 				225B3D3420F3B6F0003C6274 /* YTKUrlClickRequest.m in Sources */,
 				225AB8FB20E82F6500BE8147 /* TMPiewCategoryDetailViewController.m in Sources */,
+				E22811BD210064AA003C7D5D /* QDBaseRequest.m in Sources */,
 				225AB95620EBD11200BE8147 /* QDCompanyDetailModel.m in Sources */,
 				225AB91220E82F6600BE8147 /* TMActionSheetView.m in Sources */,
 				2210DB271ED087AB00366846 /* NSString+Score.m in Sources */,

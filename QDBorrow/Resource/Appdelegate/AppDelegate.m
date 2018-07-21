@@ -93,7 +93,8 @@
 
 - (void)setNetworkBaseUrl {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
-    config.baseUrl = @"http://www.gujian.store:8080/";
+//    config.baseUrl = @"http://www.gujian.store:8080/";
+    config.baseUrl = @"http://www.gujian.store:8899/";
     config.debugLogEnabled = YES;
 }
 
