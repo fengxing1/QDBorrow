@@ -35,8 +35,6 @@
 - (id)requestArgument {
     return @{
              @"id": [NSNumber numberWithLong:_id],
-             @"sessionId":[QDUserManager sharedInstance].getUser.sessionId,
-             @"devicesType": [NSNumber numberWithInt:2]
              };
 }
 

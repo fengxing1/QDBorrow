@@ -6,8 +6,8 @@
 //  Copyright © 2018年 jinrong. All rights reserved.
 //
 
-#import <YTKNetwork/YTKNetwork.h>
+#import "QDBaseRequest.h"
 
-@interface QDRegisterRequest : YTKBaseRequest
+@interface QDRegisterRequest : QDBaseRequest
 - (id)initWithUsername:(NSString *)username password:(NSString *)password validate:(NSString *)validate;
 @end

@@ -44,7 +44,6 @@
              @"username": _username,
              @"password": _password,
              @"verifyCode": _validateCode,
-             @"devicesType": [NSNumber numberWithInt:2]
              };
 }
 

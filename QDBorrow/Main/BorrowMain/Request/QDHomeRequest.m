@@ -18,11 +18,5 @@
     return YTKRequestMethodGET;
 }
 
-- (id)requestArgument {
-    return @{
-             @"devicesType": [NSNumber numberWithInt:2]
-             };
-}
-
 
 @end

@@ -21,7 +21,6 @@
 - (id)requestArgument {
     return @{
              @"id": [NSNumber numberWithInt:1],
-             @"devicesType": [NSNumber numberWithInt:2],
              };
 }
 @end

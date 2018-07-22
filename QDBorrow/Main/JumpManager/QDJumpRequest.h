@@ -6,8 +6,8 @@
 //  Copyright © 2018年 jinrong. All rights reserved.
 //
 
-#import <YTKNetwork/YTKNetwork.h>
+#import "QDBaseRequest.h"
 
-@interface QDJumpRequest : YTKRequest
+@interface QDJumpRequest : QDBaseRequest
 
 @end
