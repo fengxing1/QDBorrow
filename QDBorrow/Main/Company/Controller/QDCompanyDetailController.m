@@ -252,7 +252,6 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
         redirectUrl = [@"http://" stringByAppendingString:redirectUrl];
     }
     QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
-    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
@@ -307,7 +306,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
     }
     return _tableView;
 }

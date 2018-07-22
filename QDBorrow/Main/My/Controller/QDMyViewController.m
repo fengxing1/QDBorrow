@@ -41,7 +41,6 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-    [self.tabBarController.tabBar setHidden:NO];
     [self configData];
 }
 
@@ -189,9 +188,7 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
     QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:@"https://www.sobot.com/chat/h5/index.html?sysNum=55b6b689884846ed992acf4925cd639e&source=2"]];
     webViewController.showsToolBar = NO;
     webViewController.navigationController.navigationBar.translucent = NO;
-    self.tabBarController.tabBar.hidden = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
 }
 
 // 设置UI部分
@@ -210,7 +207,7 @@ static NSString *const kReusableIdentifierAccountCell = @"accountCell";
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStyleGrouped];
     }
     return _tableView;
 }

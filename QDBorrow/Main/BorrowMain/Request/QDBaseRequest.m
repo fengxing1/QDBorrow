@@ -12,7 +12,7 @@
 
 -(NSDictionary<NSString *,NSString *> *)requestHeaderFieldValueDictionary{
     return @{
-             @"sessionId": [QDUserManager sharedInstance].getUser.sessionId.length?[QDUserManager sharedInstance].getUser.sessionId:@"AF48E7EC31323F9BEE3B015BA472704C",
+             @"sessionId": [QDUserManager sharedInstance].getUser.sessionId.length?[QDUserManager sharedInstance].getUser.sessionId:nil,
              @"devicesType": [NSNumber numberWithInt:2]
              };
 }

@@ -37,7 +37,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tabBarController.tabBar setHidden:YES];
 }
 
 
@@ -69,9 +68,7 @@
 
 - (void)registerClick {
     QDRegisterViewController *registerVC = [[QDRegisterViewController alloc] init];
-    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:registerVC animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

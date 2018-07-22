@@ -74,7 +74,6 @@ static NSString *const kReusableIdentifierBorrowCell  = @"borrowCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tabBarController.tabBar setHidden:NO];
 }
 
 
@@ -139,10 +138,7 @@ static NSString *const kReusableIdentifierBorrowCell  = @"borrowCell";
     QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
     webViewController.showsToolBar = NO;
     webViewController.navigationController.navigationBar.translucent = NO;
-    self.tabBarController.tabBar.hidden = YES;
-    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
     
 }
 

@@ -29,7 +29,6 @@ static NSString *const kReusableIdentifierMessageCell  = @"messageCell";
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tabBarController.tabBar setHidden:NO];
     [self refreshView];
 }
 
