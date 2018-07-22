@@ -13,6 +13,9 @@
 #import "introductoryPagesHelper.h"
 #import "QDJumpRequest.h"
 #import "Masonry.h"
+#import "QDLoginReqeust.h"
+#import "QDUserManager.h"
+
 
 @interface QDJumpViewController ()
 @property (nonatomic, strong) UILabel *warningLabel;
@@ -70,8 +73,11 @@
     BBUserDefault.isNoFirstLaunch=YES;
     NSArray *images=@[@"introductoryPage1",@"introductoryPage2",@"introductoryPage3"];
     [introductoryPagesHelper showIntroductoryPageView:images];
+    __weak typeof(self) weakSelf = self;
     [introductoryPagesHelper shareInstance].clickLastImageAction = ^{
-        [self showMyLoanView];;
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        //如果用户已经登陆了，再做一次静默登陆
+        [strongSelf showMyLoanView];;
     };
 }
 
@@ -81,12 +87,13 @@
     [jumpRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
             BOOL bJumpBorrow = [[request.responseObject valueForKey:@"data"] boolValue];
-            if (bJumpBorrow) {
+            NSString *languageStr = [[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"] objectAtIndex:0];
+            BOOL bLanguage = [languageStr containsString:@"zh-"];
+            if (bJumpBorrow && bLanguage) {
                 //引导页面加载
                 [self setupIntroductoryPage];
             }  else {
-                [self setupIntroductoryPage];
-//                [self showOtherLoanView];
+                [self showOtherLoanView];
             }
         } else {
             [MBProgressHUD hideHUDForView:self.view];
@@ -100,7 +107,27 @@
 
 
 - (void)showMyLoanView {
-    [((AppDelegate*) AppDelegateInstance) createMyLoanTabBarController];
+    QDUser *user = [QDUserManager sharedInstance].getUser;
+    if(user.userName && user.userName.length) {
+        QDLoginReqeust *loginRequest = [[QDLoginReqeust alloc] initWithUsername:user.userName password:user.password];
+        [loginRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
+                //保存用户信息
+                NSString *sessionId = [request.responseJSONObject valueForKey:@"data"];
+                QDUser *user = [QDUserManager sharedInstance].getUser;
+                user.sessionId = sessionId;
+                [[QDUserManager sharedInstance] saveUser:user];
+                [((AppDelegate*) AppDelegateInstance) createMyLoanTabBarController];
+            }
+            
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [[QDUserManager sharedInstance] exitUser];
+            [((AppDelegate*) AppDelegateInstance) createMyLoanTabBarController];
+        }];
+    } else {
+        [((AppDelegate*) AppDelegateInstance) createMyLoanTabBarController];
+    }
+    
 }
 
 - (void)showOtherLoanView {
