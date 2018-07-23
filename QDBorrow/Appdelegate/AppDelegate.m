@@ -27,6 +27,7 @@
 #import "QDBorrowHomeViewController.h"
 #import "QDBorrowMessageViewController.h"
 #import "YTKNetworkConfig.h"
+#import "EMAlertManager.h"
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -44,13 +45,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-#if DEBUG
+    //emark 注册通知
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self registerLocalNotification];//注册本地通知
+    [[EMAlertManager sharedManager] didFinishLaunchingWithOptions:launchOptions];
     
-#else
-    
-    
-    
-#endif
     [self setNetworkBaseUrl];
     [self startBaiduMobileStat];
     [self didChangeStatusFrameNotification];
@@ -86,6 +85,18 @@
     
     return YES;
 }
+
+
+- (void)registerLocalNotification
+{
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:setting];
+    }
+}
+
+
 
 - (void)setNetworkBaseUrl {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
@@ -152,6 +163,13 @@
 
 //马甲代码在这里调用
 - (void)createTabBarController {
+    //获取storyboard: 通过bundle根据storyboard的名字来获取我们的storyboard,
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //由storyboard根据myView的storyBoardID来获取我们要切换的视图
+    UINavigationController *emarkNavigationController = [story instantiateViewControllerWithIdentifier:@"emarkView"];
+    //显示ViewController
+    self.window.rootViewController = emarkNavigationController;
+    [self.window makeKeyAndVisible];
 
 }
 

@@ -4,7 +4,6 @@ inhibit_all_warnings!
 target 'QDBorrow' do
     pod 'SDWebImage', '~> 3.7.5'
     pod 'YYModel'
-    pod 'Masonry','~>0.6.1'
     pod 'MBProgressHUD', '~> 0.9'
     pod 'MWPhotoBrowser'
     pod 'YYText'
@@ -15,6 +14,13 @@ target 'QDBorrow' do
     pod 'SobotKit', '~> 2.2.0'
     pod 'YTKNetwork'
     pod 'YYText'
+
+    pod 'Masonry', '~> 1.0.1'
+    pod 'FMDB', '~>2.6.2'
+    pod 'YYCache', '1.0.3'
+    pod 'CZPicker'
+    pod 'MMNumberKeyboard'
+    pod 'PNChart'
     target 'QDBorrowTests' do
         
     end

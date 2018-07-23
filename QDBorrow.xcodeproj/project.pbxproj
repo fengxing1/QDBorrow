@@ -28,6 +28,111 @@
 		22751B9D1EFABE2C002A9A45 /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 22751B9B1EFABE2C002A9A45 /* GVUserDefaults.m */; };
 		22751BA31EFABE34002A9A45 /* introductoryPagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 22751BA01EFABE34002A9A45 /* introductoryPagesHelper.m */; };
 		22751BA41EFABE34002A9A45 /* introductoryPagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22751BA21EFABE34002A9A45 /* introductoryPagesView.m */; };
+		229652AC21063129007012AE /* EMAlertInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651B121063121007012AE /* EMAlertInfo.m */; };
+		229652AD21063129007012AE /* EMAlertItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651B321063121007012AE /* EMAlertItemInfo.m */; };
+		229652AE21063129007012AE /* EMAlertCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651B621063121007012AE /* EMAlertCacheProvider.m */; };
+		229652AF21063129007012AE /* EMAlertHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651B921063121007012AE /* EMAlertHandler.m */; };
+		229652B021063129007012AE /* EMAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651BC21063121007012AE /* EMAlertManager.m */; };
+		229652B121063129007012AE /* EMAutoCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651BF21063121007012AE /* EMAutoCoding.m */; };
+		229652B221063129007012AE /* EMBaseDatabaseCommonProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651C121063121007012AE /* EMBaseDatabaseCommonProvider.m */; };
+		229652B321063129007012AE /* EMBaseDatabaseProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651C321063121007012AE /* EMBaseDatabaseProvider.m */; };
+		229652B421063129007012AE /* EMBaseDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651C521063121007012AE /* EMBaseDataProvider.m */; };
+		229652B521063129007012AE /* EMBaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651C721063121007012AE /* EMBaseHandler.m */; };
+		229652B621063129007012AE /* EMBaseLRUCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651C921063121007012AE /* EMBaseLRUCacheProvider.m */; };
+		229652B721063129007012AE /* EMDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651CB21063121007012AE /* EMDataBase.m */; };
+		229652B821063129007012AE /* EMQueueDef.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651CD21063121007012AE /* EMQueueDef.m */; };
+		229652B921063129007012AE /* EMResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651CF21063121007012AE /* EMResult.m */; };
+		229652BA21063129007012AE /* EMBigDayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651D321063121007012AE /* EMBigDayInfo.m */; };
+		229652BB21063129007012AE /* EMBigDayItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651D521063121007012AE /* EMBigDayItemInfo.m */; };
+		229652BC21063129007012AE /* EMBigDayCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651D821063121007012AE /* EMBigDayCacheProvider.m */; };
+		229652BD21063129007012AE /* EMBigDayHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651DB21063121007012AE /* EMBigDayHandler.m */; };
+		229652BE21063129007012AE /* EMBigDayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651DE21063121007012AE /* EMBigDayManager.m */; };
+		229652BF21063129007012AE /* EMBillInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651E221063121007012AE /* EMBillInfo.m */; };
+		229652C021063129007012AE /* EMBillItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651E421063121007012AE /* EMBillItemInfo.m */; };
+		229652C121063129007012AE /* EMBillMonthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651E621063121007012AE /* EMBillMonthInfo.m */; };
+		229652C221063129007012AE /* EMBillTypeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651E821063121007012AE /* EMBillTypeInfo.m */; };
+		229652C321063129007012AE /* EMBillCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651EB21063121007012AE /* EMBillCacheProvider.m */; };
+		229652C421063129007012AE /* EMBillHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651EE21063121007012AE /* EMBillHandler.m */; };
+		229652C521063129007012AE /* EMBillManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651F121063121007012AE /* EMBillManager.m */; };
+		229652C621063129007012AE /* EMDiaryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651F521063121007012AE /* EMDiaryInfo.m */; };
+		229652C721063129007012AE /* EMDiaryCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651F821063121007012AE /* EMDiaryCacheProvider.m */; };
+		229652C821063129007012AE /* EMDiaryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651FB21063121007012AE /* EMDiaryHandler.m */; };
+		229652C921063129007012AE /* EMDiaryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 229651FE21063121007012AE /* EMDiaryManager.m */; };
+		229652CA21063129007012AE /* EMAlertConfigInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296520221063121007012AE /* EMAlertConfigInfo.m */; };
+		229652CB21063129007012AE /* EMHomeHeadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296520421063121007012AE /* EMHomeHeadInfo.m */; };
+		229652CC21063129007012AE /* EMHomeCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296520721063121007012AE /* EMHomeCacheProvider.m */; };
+		229652CD21063129007012AE /* EMHomeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296520A21063121007012AE /* EMHomeHandler.m */; };
+		229652CE21063129007012AE /* EMHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296520D21063121007012AE /* EMHomeManager.m */; };
+		229652CF21063129007012AE /* EMPlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296521121063121007012AE /* EMPlaceInfo.m */; };
+		229652D021063129007012AE /* EMPlaceCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296521421063121007012AE /* EMPlaceCacheProvider.m */; };
+		229652D121063129007012AE /* EMPlaceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296521721063121007012AE /* EMPlaceHandler.m */; };
+		229652D221063129007012AE /* EMPlaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296521A21063121007012AE /* EMPlaceManager.m */; };
+		229652D321063129007012AE /* EMAlertTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296521E21063128007012AE /* EMAlertTableViewCell.m */; };
+		229652D421063129007012AE /* EMAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296522021063128007012AE /* EMAlertViewController.m */; };
+		229652D521063129007012AE /* EMPublishAlertEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296522221063128007012AE /* EMPublishAlertEditTableViewCell.m */; };
+		229652D621063129007012AE /* EMPublishAlertTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296522421063128007012AE /* EMPublishAlertTableViewCell.m */; };
+		229652D721063129007012AE /* EMPublishAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296522621063128007012AE /* EMPublishAlertViewController.m */; };
+		229652D821063129007012AE /* EMBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296522921063128007012AE /* EMBaseNavigationController.m */; };
+		229652D921063129007012AE /* EMDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296522B21063128007012AE /* EMDatePicker.m */; };
+		229652DA21063129007012AE /* EMMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296522D21063128007012AE /* EMMaskView.m */; };
+		229652DB21063129007012AE /* EMPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296522F21063128007012AE /* EMPlaceHolderTextView.m */; };
+		229652DC21063129007012AE /* EMShowPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296523121063128007012AE /* EMShowPhotoTool.m */; };
+		229652DD21063129007012AE /* EMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296523321063128007012AE /* EMTextField.m */; };
+		229652DE21063129007012AE /* EMTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296523521063128007012AE /* EMTheme.m */; };
+		229652DF21063129007012AE /* EMToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296523721063128007012AE /* EMToolbar.m */; };
+		229652E021063129007012AE /* EMVerticallyAlignedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296523921063128007012AE /* EMVerticallyAlignedLabel.m */; };
+		229652E121063129007012AE /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296523B21063128007012AE /* UIImage+Additions.m */; };
+		229652E221063129007012AE /* EMBigDayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296523E21063128007012AE /* EMBigDayCollectionViewCell.m */; };
+		229652E321063129007012AE /* EMBigDayCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296524021063128007012AE /* EMBigDayCollectionViewLayout.m */; };
+		229652E421063129007012AE /* EMBigDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296524221063128007012AE /* EMBigDayViewController.m */; };
+		229652E521063129007012AE /* EMPublishBigDayEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296524421063128007012AE /* EMPublishBigDayEditTableViewCell.m */; };
+		229652E621063129007012AE /* EMPublishBigDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296524621063128007012AE /* EMPublishBigDayTableViewCell.m */; };
+		229652E721063129007012AE /* EMPublishBigDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296524821063128007012AE /* EMPublishBigDayViewController.m */; };
+		229652E821063129007012AE /* EMBillHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296524B21063128007012AE /* EMBillHeaderView.m */; };
+		229652E921063129007012AE /* EMBillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296524D21063128007012AE /* EMBillTableViewCell.m */; };
+		229652EA21063129007012AE /* EMBillTypePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296524F21063128007012AE /* EMBillTypePicker.m */; };
+		229652EB21063129007012AE /* EMBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296525121063128007012AE /* EMBillViewController.m */; };
+		229652EC21063129007012AE /* EMMonthBillLegend.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296525321063128007012AE /* EMMonthBillLegend.m */; };
+		229652ED21063129007012AE /* EMMonthBillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296525521063128007012AE /* EMMonthBillTableViewCell.m */; };
+		229652EE21063129007012AE /* EMMonthBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296525721063128007012AE /* EMMonthBillViewController.m */; };
+		229652EF21063129007012AE /* EMPublishBillEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296525921063128007012AE /* EMPublishBillEditTableViewCell.m */; };
+		229652F021063129007012AE /* EMPublishBillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296525B21063128007012AE /* EMPublishBillTableViewCell.m */; };
+		229652F121063129007012AE /* EMPublishBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296525D21063128007012AE /* EMPublishBillViewController.m */; };
+		229652F221063129007012AE /* EMDiaryEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296526021063128007012AE /* EMDiaryEditViewController.m */; };
+		229652F321063129007012AE /* EMDiaryNoPicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296526221063128007012AE /* EMDiaryNoPicTableViewCell.m */; };
+		229652F421063129007012AE /* EMDiaryShowHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296526421063128007012AE /* EMDiaryShowHeaderView.m */; };
+		229652F521063129007012AE /* EMDiaryShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296526621063128007012AE /* EMDiaryShowTableViewCell.m */; };
+		229652F621063129007012AE /* EMDiaryShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296526821063128007012AE /* EMDiaryShowViewController.m */; };
+		229652F721063129007012AE /* EMDiaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296526A21063128007012AE /* EMDiaryTableViewCell.m */; };
+		229652F821063129007012AE /* EMDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296526C21063128007012AE /* EMDiaryViewController.m */; };
+		229652F921063129007012AE /* EMPublishDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296526E21063128007012AE /* EMPublishDiaryViewController.m */; };
+		229652FA21063129007012AE /* EMHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296527121063128007012AE /* EMHomeCollectionViewCell.m */; };
+		229652FB21063129007012AE /* EMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296527321063128007012AE /* EMHomeViewController.m */; };
+		229652FC21063129007012AE /* EMSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296527521063128007012AE /* EMSplashViewController.m */; };
+		229652FD21063129007012AE /* EMCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296527821063128007012AE /* EMCardCollectionViewCell.m */; };
+		229652FE21063129007012AE /* EMCardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296527A21063128007012AE /* EMCardLayout.m */; };
+		229652FF21063129007012AE /* EMCardSelectedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296527C21063128007012AE /* EMCardSelectedLayout.m */; };
+		2296530021063129007012AE /* EMPlacePublishSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296527E21063128007012AE /* EMPlacePublishSheet.m */; };
+		2296530121063129007012AE /* EMPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296528021063128007012AE /* EMPlaceViewController.m */; };
+		2296530221063129007012AE /* EMAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296528321063128007012AE /* EMAboutUsViewController.m */; };
+		2296530321063129007012AE /* EMSettingActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296528521063128007012AE /* EMSettingActionCell.m */; };
+		2296530421063129007012AE /* EMSettingActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296528721063128007012AE /* EMSettingActionSheet.m */; };
+		2296530521063129007012AE /* EMSettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296528921063128007012AE /* EMSettingHeaderView.m */; };
+		2296530621063129007012AE /* EMSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296528B21063128007012AE /* EMSettingTableViewCell.m */; };
+		2296530721063129007012AE /* EMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296528D21063128007012AE /* EMSettingViewController.m */; };
+		2296530821063129007012AE /* EMDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296529021063128007012AE /* EMDeviceUtil.m */; };
+		2296530921063129007012AE /* EMFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296529221063128007012AE /* EMFileUtil.m */; };
+		2296530A21063129007012AE /* FSMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296529621063129007012AE /* FSMediaPicker.m */; };
+		2296530B21063129007012AE /* GKCropBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296529821063129007012AE /* GKCropBorderView.m */; };
+		2296530C21063129007012AE /* GKImageCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296529A21063129007012AE /* GKImageCropOverlayView.m */; };
+		2296530D21063129007012AE /* GKImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296529C21063129007012AE /* GKImageCropView.m */; };
+		2296530E21063129007012AE /* GKImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296529E21063129007012AE /* GKImageCropViewController.m */; };
+		2296530F21063129007012AE /* EMLogoLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229652A121063129007012AE /* EMLogoLoopView.m */; };
+		2296531021063129007012AE /* EMProgressLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229652A321063129007012AE /* EMProgressLoopView.m */; };
+		2296531121063129007012AE /* EMTips.m in Sources */ = {isa = PBXBuildFile; fileRef = 229652A521063129007012AE /* EMTips.m */; };
+		2296531221063129007012AE /* EMTipsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 229652A721063129007012AE /* EMTipsInfo.m */; };
+		2296531321063129007012AE /* EMTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229652A921063129007012AE /* EMTipsView.m */; };
+		2296531421063129007012AE /* UIView+EMTips.m in Sources */ = {isa = PBXBuildFile; fileRef = 229652AB21063129007012AE /* UIView+EMTips.m */; };
 		22A132422106154B0085EE38 /* QDBorrowHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A1308C2106154B0085EE38 /* QDBorrowHomeViewController.m */; };
 		22A132432106154B0085EE38 /* QDBorrowMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A1308E2106154B0085EE38 /* QDBorrowMessageViewController.m */; };
 		22A132442106154B0085EE38 /* QDBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A130912106154B0085EE38 /* QDBannerModel.m */; };
@@ -268,6 +373,216 @@
 		22751BA01EFABE34002A9A45 /* introductoryPagesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = introductoryPagesHelper.m; sourceTree = "<group>"; };
 		22751BA11EFABE34002A9A45 /* introductoryPagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = introductoryPagesView.h; sourceTree = "<group>"; };
 		22751BA21EFABE34002A9A45 /* introductoryPagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = introductoryPagesView.m; sourceTree = "<group>"; };
+		229651B021063121007012AE /* EMAlertInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertInfo.h; sourceTree = "<group>"; };
+		229651B121063121007012AE /* EMAlertInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertInfo.m; sourceTree = "<group>"; };
+		229651B221063121007012AE /* EMAlertItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertItemInfo.h; sourceTree = "<group>"; };
+		229651B321063121007012AE /* EMAlertItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertItemInfo.m; sourceTree = "<group>"; };
+		229651B521063121007012AE /* EMAlertCacheProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertCacheProvider.h; sourceTree = "<group>"; };
+		229651B621063121007012AE /* EMAlertCacheProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertCacheProvider.m; sourceTree = "<group>"; };
+		229651B821063121007012AE /* EMAlertHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertHandler.h; sourceTree = "<group>"; };
+		229651B921063121007012AE /* EMAlertHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertHandler.m; sourceTree = "<group>"; };
+		229651BB21063121007012AE /* EMAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertManager.h; sourceTree = "<group>"; };
+		229651BC21063121007012AE /* EMAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertManager.m; sourceTree = "<group>"; };
+		229651BE21063121007012AE /* EMAutoCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAutoCoding.h; sourceTree = "<group>"; };
+		229651BF21063121007012AE /* EMAutoCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAutoCoding.m; sourceTree = "<group>"; };
+		229651C021063121007012AE /* EMBaseDatabaseCommonProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBaseDatabaseCommonProvider.h; sourceTree = "<group>"; };
+		229651C121063121007012AE /* EMBaseDatabaseCommonProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBaseDatabaseCommonProvider.m; sourceTree = "<group>"; };
+		229651C221063121007012AE /* EMBaseDatabaseProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBaseDatabaseProvider.h; sourceTree = "<group>"; };
+		229651C321063121007012AE /* EMBaseDatabaseProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBaseDatabaseProvider.m; sourceTree = "<group>"; };
+		229651C421063121007012AE /* EMBaseDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBaseDataProvider.h; sourceTree = "<group>"; };
+		229651C521063121007012AE /* EMBaseDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBaseDataProvider.m; sourceTree = "<group>"; };
+		229651C621063121007012AE /* EMBaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBaseHandler.h; sourceTree = "<group>"; };
+		229651C721063121007012AE /* EMBaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBaseHandler.m; sourceTree = "<group>"; };
+		229651C821063121007012AE /* EMBaseLRUCacheProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBaseLRUCacheProvider.h; sourceTree = "<group>"; };
+		229651C921063121007012AE /* EMBaseLRUCacheProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBaseLRUCacheProvider.m; sourceTree = "<group>"; };
+		229651CA21063121007012AE /* EMDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDataBase.h; sourceTree = "<group>"; };
+		229651CB21063121007012AE /* EMDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDataBase.m; sourceTree = "<group>"; };
+		229651CC21063121007012AE /* EMQueueDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMQueueDef.h; sourceTree = "<group>"; };
+		229651CD21063121007012AE /* EMQueueDef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMQueueDef.m; sourceTree = "<group>"; };
+		229651CE21063121007012AE /* EMResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMResult.h; sourceTree = "<group>"; };
+		229651CF21063121007012AE /* EMResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMResult.m; sourceTree = "<group>"; };
+		229651D221063121007012AE /* EMBigDayInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBigDayInfo.h; sourceTree = "<group>"; };
+		229651D321063121007012AE /* EMBigDayInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBigDayInfo.m; sourceTree = "<group>"; };
+		229651D421063121007012AE /* EMBigDayItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBigDayItemInfo.h; sourceTree = "<group>"; };
+		229651D521063121007012AE /* EMBigDayItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBigDayItemInfo.m; sourceTree = "<group>"; };
+		229651D721063121007012AE /* EMBigDayCacheProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBigDayCacheProvider.h; sourceTree = "<group>"; };
+		229651D821063121007012AE /* EMBigDayCacheProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBigDayCacheProvider.m; sourceTree = "<group>"; };
+		229651DA21063121007012AE /* EMBigDayHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBigDayHandler.h; sourceTree = "<group>"; };
+		229651DB21063121007012AE /* EMBigDayHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBigDayHandler.m; sourceTree = "<group>"; };
+		229651DD21063121007012AE /* EMBigDayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBigDayManager.h; sourceTree = "<group>"; };
+		229651DE21063121007012AE /* EMBigDayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBigDayManager.m; sourceTree = "<group>"; };
+		229651E121063121007012AE /* EMBillInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillInfo.h; sourceTree = "<group>"; };
+		229651E221063121007012AE /* EMBillInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillInfo.m; sourceTree = "<group>"; };
+		229651E321063121007012AE /* EMBillItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillItemInfo.h; sourceTree = "<group>"; };
+		229651E421063121007012AE /* EMBillItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillItemInfo.m; sourceTree = "<group>"; };
+		229651E521063121007012AE /* EMBillMonthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillMonthInfo.h; sourceTree = "<group>"; };
+		229651E621063121007012AE /* EMBillMonthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillMonthInfo.m; sourceTree = "<group>"; };
+		229651E721063121007012AE /* EMBillTypeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillTypeInfo.h; sourceTree = "<group>"; };
+		229651E821063121007012AE /* EMBillTypeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillTypeInfo.m; sourceTree = "<group>"; };
+		229651EA21063121007012AE /* EMBillCacheProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillCacheProvider.h; sourceTree = "<group>"; };
+		229651EB21063121007012AE /* EMBillCacheProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillCacheProvider.m; sourceTree = "<group>"; };
+		229651ED21063121007012AE /* EMBillHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillHandler.h; sourceTree = "<group>"; };
+		229651EE21063121007012AE /* EMBillHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillHandler.m; sourceTree = "<group>"; };
+		229651F021063121007012AE /* EMBillManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillManager.h; sourceTree = "<group>"; };
+		229651F121063121007012AE /* EMBillManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillManager.m; sourceTree = "<group>"; };
+		229651F421063121007012AE /* EMDiaryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryInfo.h; sourceTree = "<group>"; };
+		229651F521063121007012AE /* EMDiaryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryInfo.m; sourceTree = "<group>"; };
+		229651F721063121007012AE /* EMDiaryCacheProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryCacheProvider.h; sourceTree = "<group>"; };
+		229651F821063121007012AE /* EMDiaryCacheProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryCacheProvider.m; sourceTree = "<group>"; };
+		229651FA21063121007012AE /* EMDiaryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryHandler.h; sourceTree = "<group>"; };
+		229651FB21063121007012AE /* EMDiaryHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryHandler.m; sourceTree = "<group>"; };
+		229651FD21063121007012AE /* EMDiaryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryManager.h; sourceTree = "<group>"; };
+		229651FE21063121007012AE /* EMDiaryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryManager.m; sourceTree = "<group>"; };
+		2296520121063121007012AE /* EMAlertConfigInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertConfigInfo.h; sourceTree = "<group>"; };
+		2296520221063121007012AE /* EMAlertConfigInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertConfigInfo.m; sourceTree = "<group>"; };
+		2296520321063121007012AE /* EMHomeHeadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMHomeHeadInfo.h; sourceTree = "<group>"; };
+		2296520421063121007012AE /* EMHomeHeadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMHomeHeadInfo.m; sourceTree = "<group>"; };
+		2296520621063121007012AE /* EMHomeCacheProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMHomeCacheProvider.h; sourceTree = "<group>"; };
+		2296520721063121007012AE /* EMHomeCacheProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMHomeCacheProvider.m; sourceTree = "<group>"; };
+		2296520921063121007012AE /* EMHomeHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMHomeHandler.h; sourceTree = "<group>"; };
+		2296520A21063121007012AE /* EMHomeHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMHomeHandler.m; sourceTree = "<group>"; };
+		2296520C21063121007012AE /* EMHomeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMHomeManager.h; sourceTree = "<group>"; };
+		2296520D21063121007012AE /* EMHomeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMHomeManager.m; sourceTree = "<group>"; };
+		2296521021063121007012AE /* EMPlaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPlaceInfo.h; sourceTree = "<group>"; };
+		2296521121063121007012AE /* EMPlaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPlaceInfo.m; sourceTree = "<group>"; };
+		2296521321063121007012AE /* EMPlaceCacheProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPlaceCacheProvider.h; sourceTree = "<group>"; };
+		2296521421063121007012AE /* EMPlaceCacheProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPlaceCacheProvider.m; sourceTree = "<group>"; };
+		2296521621063121007012AE /* EMPlaceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPlaceHandler.h; sourceTree = "<group>"; };
+		2296521721063121007012AE /* EMPlaceHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPlaceHandler.m; sourceTree = "<group>"; };
+		2296521921063121007012AE /* EMPlaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPlaceManager.h; sourceTree = "<group>"; };
+		2296521A21063121007012AE /* EMPlaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPlaceManager.m; sourceTree = "<group>"; };
+		2296521D21063128007012AE /* EMAlertTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertTableViewCell.h; sourceTree = "<group>"; };
+		2296521E21063128007012AE /* EMAlertTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertTableViewCell.m; sourceTree = "<group>"; };
+		2296521F21063128007012AE /* EMAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertViewController.h; sourceTree = "<group>"; };
+		2296522021063128007012AE /* EMAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertViewController.m; sourceTree = "<group>"; };
+		2296522121063128007012AE /* EMPublishAlertEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPublishAlertEditTableViewCell.h; sourceTree = "<group>"; };
+		2296522221063128007012AE /* EMPublishAlertEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPublishAlertEditTableViewCell.m; sourceTree = "<group>"; };
+		2296522321063128007012AE /* EMPublishAlertTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPublishAlertTableViewCell.h; sourceTree = "<group>"; };
+		2296522421063128007012AE /* EMPublishAlertTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPublishAlertTableViewCell.m; sourceTree = "<group>"; };
+		2296522521063128007012AE /* EMPublishAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPublishAlertViewController.h; sourceTree = "<group>"; };
+		2296522621063128007012AE /* EMPublishAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPublishAlertViewController.m; sourceTree = "<group>"; };
+		2296522821063128007012AE /* EMBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBaseNavigationController.h; sourceTree = "<group>"; };
+		2296522921063128007012AE /* EMBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBaseNavigationController.m; sourceTree = "<group>"; };
+		2296522A21063128007012AE /* EMDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDatePicker.h; sourceTree = "<group>"; };
+		2296522B21063128007012AE /* EMDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDatePicker.m; sourceTree = "<group>"; };
+		2296522C21063128007012AE /* EMMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMMaskView.h; sourceTree = "<group>"; };
+		2296522D21063128007012AE /* EMMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMMaskView.m; sourceTree = "<group>"; };
+		2296522E21063128007012AE /* EMPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPlaceHolderTextView.h; sourceTree = "<group>"; };
+		2296522F21063128007012AE /* EMPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPlaceHolderTextView.m; sourceTree = "<group>"; };
+		2296523021063128007012AE /* EMShowPhotoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMShowPhotoTool.h; sourceTree = "<group>"; };
+		2296523121063128007012AE /* EMShowPhotoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMShowPhotoTool.m; sourceTree = "<group>"; };
+		2296523221063128007012AE /* EMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMTextField.h; sourceTree = "<group>"; };
+		2296523321063128007012AE /* EMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMTextField.m; sourceTree = "<group>"; };
+		2296523421063128007012AE /* EMTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMTheme.h; sourceTree = "<group>"; };
+		2296523521063128007012AE /* EMTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMTheme.m; sourceTree = "<group>"; };
+		2296523621063128007012AE /* EMToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMToolbar.h; sourceTree = "<group>"; };
+		2296523721063128007012AE /* EMToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMToolbar.m; sourceTree = "<group>"; };
+		2296523821063128007012AE /* EMVerticallyAlignedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMVerticallyAlignedLabel.h; sourceTree = "<group>"; };
+		2296523921063128007012AE /* EMVerticallyAlignedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMVerticallyAlignedLabel.m; sourceTree = "<group>"; };
+		2296523A21063128007012AE /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		2296523B21063128007012AE /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		2296523D21063128007012AE /* EMBigDayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBigDayCollectionViewCell.h; sourceTree = "<group>"; };
+		2296523E21063128007012AE /* EMBigDayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBigDayCollectionViewCell.m; sourceTree = "<group>"; };
+		2296523F21063128007012AE /* EMBigDayCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBigDayCollectionViewLayout.h; sourceTree = "<group>"; };
+		2296524021063128007012AE /* EMBigDayCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBigDayCollectionViewLayout.m; sourceTree = "<group>"; };
+		2296524121063128007012AE /* EMBigDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBigDayViewController.h; sourceTree = "<group>"; };
+		2296524221063128007012AE /* EMBigDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBigDayViewController.m; sourceTree = "<group>"; };
+		2296524321063128007012AE /* EMPublishBigDayEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPublishBigDayEditTableViewCell.h; sourceTree = "<group>"; };
+		2296524421063128007012AE /* EMPublishBigDayEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPublishBigDayEditTableViewCell.m; sourceTree = "<group>"; };
+		2296524521063128007012AE /* EMPublishBigDayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPublishBigDayTableViewCell.h; sourceTree = "<group>"; };
+		2296524621063128007012AE /* EMPublishBigDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPublishBigDayTableViewCell.m; sourceTree = "<group>"; };
+		2296524721063128007012AE /* EMPublishBigDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPublishBigDayViewController.h; sourceTree = "<group>"; };
+		2296524821063128007012AE /* EMPublishBigDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPublishBigDayViewController.m; sourceTree = "<group>"; };
+		2296524A21063128007012AE /* EMBillHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillHeaderView.h; sourceTree = "<group>"; };
+		2296524B21063128007012AE /* EMBillHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillHeaderView.m; sourceTree = "<group>"; };
+		2296524C21063128007012AE /* EMBillTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillTableViewCell.h; sourceTree = "<group>"; };
+		2296524D21063128007012AE /* EMBillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillTableViewCell.m; sourceTree = "<group>"; };
+		2296524E21063128007012AE /* EMBillTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillTypePicker.h; sourceTree = "<group>"; };
+		2296524F21063128007012AE /* EMBillTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillTypePicker.m; sourceTree = "<group>"; };
+		2296525021063128007012AE /* EMBillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBillViewController.h; sourceTree = "<group>"; };
+		2296525121063128007012AE /* EMBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBillViewController.m; sourceTree = "<group>"; };
+		2296525221063128007012AE /* EMMonthBillLegend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMMonthBillLegend.h; sourceTree = "<group>"; };
+		2296525321063128007012AE /* EMMonthBillLegend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMMonthBillLegend.m; sourceTree = "<group>"; };
+		2296525421063128007012AE /* EMMonthBillTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMMonthBillTableViewCell.h; sourceTree = "<group>"; };
+		2296525521063128007012AE /* EMMonthBillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMMonthBillTableViewCell.m; sourceTree = "<group>"; };
+		2296525621063128007012AE /* EMMonthBillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMMonthBillViewController.h; sourceTree = "<group>"; };
+		2296525721063128007012AE /* EMMonthBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMMonthBillViewController.m; sourceTree = "<group>"; };
+		2296525821063128007012AE /* EMPublishBillEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPublishBillEditTableViewCell.h; sourceTree = "<group>"; };
+		2296525921063128007012AE /* EMPublishBillEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPublishBillEditTableViewCell.m; sourceTree = "<group>"; };
+		2296525A21063128007012AE /* EMPublishBillTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPublishBillTableViewCell.h; sourceTree = "<group>"; };
+		2296525B21063128007012AE /* EMPublishBillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPublishBillTableViewCell.m; sourceTree = "<group>"; };
+		2296525C21063128007012AE /* EMPublishBillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPublishBillViewController.h; sourceTree = "<group>"; };
+		2296525D21063128007012AE /* EMPublishBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPublishBillViewController.m; sourceTree = "<group>"; };
+		2296525F21063128007012AE /* EMDiaryEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryEditViewController.h; sourceTree = "<group>"; };
+		2296526021063128007012AE /* EMDiaryEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryEditViewController.m; sourceTree = "<group>"; };
+		2296526121063128007012AE /* EMDiaryNoPicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryNoPicTableViewCell.h; sourceTree = "<group>"; };
+		2296526221063128007012AE /* EMDiaryNoPicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryNoPicTableViewCell.m; sourceTree = "<group>"; };
+		2296526321063128007012AE /* EMDiaryShowHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryShowHeaderView.h; sourceTree = "<group>"; };
+		2296526421063128007012AE /* EMDiaryShowHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryShowHeaderView.m; sourceTree = "<group>"; };
+		2296526521063128007012AE /* EMDiaryShowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryShowTableViewCell.h; sourceTree = "<group>"; };
+		2296526621063128007012AE /* EMDiaryShowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryShowTableViewCell.m; sourceTree = "<group>"; };
+		2296526721063128007012AE /* EMDiaryShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryShowViewController.h; sourceTree = "<group>"; };
+		2296526821063128007012AE /* EMDiaryShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryShowViewController.m; sourceTree = "<group>"; };
+		2296526921063128007012AE /* EMDiaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryTableViewCell.h; sourceTree = "<group>"; };
+		2296526A21063128007012AE /* EMDiaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryTableViewCell.m; sourceTree = "<group>"; };
+		2296526B21063128007012AE /* EMDiaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDiaryViewController.h; sourceTree = "<group>"; };
+		2296526C21063128007012AE /* EMDiaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDiaryViewController.m; sourceTree = "<group>"; };
+		2296526D21063128007012AE /* EMPublishDiaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPublishDiaryViewController.h; sourceTree = "<group>"; };
+		2296526E21063128007012AE /* EMPublishDiaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPublishDiaryViewController.m; sourceTree = "<group>"; };
+		2296527021063128007012AE /* EMHomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMHomeCollectionViewCell.h; sourceTree = "<group>"; };
+		2296527121063128007012AE /* EMHomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMHomeCollectionViewCell.m; sourceTree = "<group>"; };
+		2296527221063128007012AE /* EMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMHomeViewController.h; sourceTree = "<group>"; };
+		2296527321063128007012AE /* EMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMHomeViewController.m; sourceTree = "<group>"; };
+		2296527421063128007012AE /* EMSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMSplashViewController.h; sourceTree = "<group>"; };
+		2296527521063128007012AE /* EMSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMSplashViewController.m; sourceTree = "<group>"; };
+		2296527721063128007012AE /* EMCardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCardCollectionViewCell.h; sourceTree = "<group>"; };
+		2296527821063128007012AE /* EMCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMCardCollectionViewCell.m; sourceTree = "<group>"; };
+		2296527921063128007012AE /* EMCardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCardLayout.h; sourceTree = "<group>"; };
+		2296527A21063128007012AE /* EMCardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMCardLayout.m; sourceTree = "<group>"; };
+		2296527B21063128007012AE /* EMCardSelectedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCardSelectedLayout.h; sourceTree = "<group>"; };
+		2296527C21063128007012AE /* EMCardSelectedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMCardSelectedLayout.m; sourceTree = "<group>"; };
+		2296527D21063128007012AE /* EMPlacePublishSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPlacePublishSheet.h; sourceTree = "<group>"; };
+		2296527E21063128007012AE /* EMPlacePublishSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPlacePublishSheet.m; sourceTree = "<group>"; };
+		2296527F21063128007012AE /* EMPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPlaceViewController.h; sourceTree = "<group>"; };
+		2296528021063128007012AE /* EMPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPlaceViewController.m; sourceTree = "<group>"; };
+		2296528221063128007012AE /* EMAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAboutUsViewController.h; sourceTree = "<group>"; };
+		2296528321063128007012AE /* EMAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAboutUsViewController.m; sourceTree = "<group>"; };
+		2296528421063128007012AE /* EMSettingActionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMSettingActionCell.h; sourceTree = "<group>"; };
+		2296528521063128007012AE /* EMSettingActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMSettingActionCell.m; sourceTree = "<group>"; };
+		2296528621063128007012AE /* EMSettingActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMSettingActionSheet.h; sourceTree = "<group>"; };
+		2296528721063128007012AE /* EMSettingActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMSettingActionSheet.m; sourceTree = "<group>"; };
+		2296528821063128007012AE /* EMSettingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMSettingHeaderView.h; sourceTree = "<group>"; };
+		2296528921063128007012AE /* EMSettingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMSettingHeaderView.m; sourceTree = "<group>"; };
+		2296528A21063128007012AE /* EMSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMSettingTableViewCell.h; sourceTree = "<group>"; };
+		2296528B21063128007012AE /* EMSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMSettingTableViewCell.m; sourceTree = "<group>"; };
+		2296528C21063128007012AE /* EMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMSettingViewController.h; sourceTree = "<group>"; };
+		2296528D21063128007012AE /* EMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMSettingViewController.m; sourceTree = "<group>"; };
+		2296528F21063128007012AE /* EMDeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDeviceUtil.h; sourceTree = "<group>"; };
+		2296529021063128007012AE /* EMDeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMDeviceUtil.m; sourceTree = "<group>"; };
+		2296529121063128007012AE /* EMFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMFileUtil.h; sourceTree = "<group>"; };
+		2296529221063128007012AE /* EMFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMFileUtil.m; sourceTree = "<group>"; };
+		2296529521063129007012AE /* FSMediaPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMediaPicker.h; sourceTree = "<group>"; };
+		2296529621063129007012AE /* FSMediaPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMediaPicker.m; sourceTree = "<group>"; };
+		2296529721063129007012AE /* GKCropBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCropBorderView.h; sourceTree = "<group>"; };
+		2296529821063129007012AE /* GKCropBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCropBorderView.m; sourceTree = "<group>"; };
+		2296529921063129007012AE /* GKImageCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropOverlayView.h; sourceTree = "<group>"; };
+		2296529A21063129007012AE /* GKImageCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropOverlayView.m; sourceTree = "<group>"; };
+		2296529B21063129007012AE /* GKImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropView.h; sourceTree = "<group>"; };
+		2296529C21063129007012AE /* GKImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropView.m; sourceTree = "<group>"; };
+		2296529D21063129007012AE /* GKImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropViewController.h; sourceTree = "<group>"; };
+		2296529E21063129007012AE /* GKImageCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropViewController.m; sourceTree = "<group>"; };
+		229652A021063129007012AE /* EMLogoLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMLogoLoopView.h; sourceTree = "<group>"; };
+		229652A121063129007012AE /* EMLogoLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMLogoLoopView.m; sourceTree = "<group>"; };
+		229652A221063129007012AE /* EMProgressLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMProgressLoopView.h; sourceTree = "<group>"; };
+		229652A321063129007012AE /* EMProgressLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMProgressLoopView.m; sourceTree = "<group>"; };
+		229652A421063129007012AE /* EMTips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMTips.h; sourceTree = "<group>"; };
+		229652A521063129007012AE /* EMTips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMTips.m; sourceTree = "<group>"; };
+		229652A621063129007012AE /* EMTipsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMTipsInfo.h; sourceTree = "<group>"; };
+		229652A721063129007012AE /* EMTipsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMTipsInfo.m; sourceTree = "<group>"; };
+		229652A821063129007012AE /* EMTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMTipsView.h; sourceTree = "<group>"; };
+		229652A921063129007012AE /* EMTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMTipsView.m; sourceTree = "<group>"; };
+		229652AA21063129007012AE /* UIView+EMTips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EMTips.h"; sourceTree = "<group>"; };
+		229652AB21063129007012AE /* UIView+EMTips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EMTips.m"; sourceTree = "<group>"; };
 		22A130872106154B0085EE38 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		22A1308B2106154B0085EE38 /* QDBorrowHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBorrowHomeViewController.h; sourceTree = "<group>"; };
 		22A1308C2106154B0085EE38 /* QDBorrowHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBorrowHomeViewController.m; sourceTree = "<group>"; };
@@ -692,6 +1007,7 @@
 		0970F39A1EC29F2900FC4794 /* QDBorrow */ = {
 			isa = PBXGroup;
 			children = (
+				229651AC2106310C007012AE /* Emark */,
 				22A132FA210617960085EE38 /* Appdelegate */,
 				22A1312B2106154B0085EE38 /* Expand */,
 				22A130862106154B0085EE38 /* Global */,
@@ -779,6 +1095,583 @@
 				22751BA21EFABE34002A9A45 /* introductoryPagesView.m */,
 			);
 			path = IntroductoryPages;
+			sourceTree = "<group>";
+		};
+		229651AC2106310C007012AE /* Emark */ = {
+			isa = PBXGroup;
+			children = (
+				2296529321063129007012AE /* EMKit */,
+				229651AD21063121007012AE /* Model */,
+				2296528E21063128007012AE /* Util */,
+				2296521B21063128007012AE /* View */,
+			);
+			path = Emark;
+			sourceTree = "<group>";
+		};
+		229651AD21063121007012AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				229651AE21063121007012AE /* Alert */,
+				229651BD21063121007012AE /* Base */,
+				229651D021063121007012AE /* BigDay */,
+				229651DF21063121007012AE /* Bill */,
+				229651F221063121007012AE /* Diary */,
+				229651FF21063121007012AE /* Home */,
+				2296520E21063121007012AE /* Place */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		229651AE21063121007012AE /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				229651AF21063121007012AE /* Bean */,
+				229651B421063121007012AE /* DataProvider */,
+				229651B721063121007012AE /* Handler */,
+				229651BA21063121007012AE /* Manager */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		229651AF21063121007012AE /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				229651B021063121007012AE /* EMAlertInfo.h */,
+				229651B121063121007012AE /* EMAlertInfo.m */,
+				229651B221063121007012AE /* EMAlertItemInfo.h */,
+				229651B321063121007012AE /* EMAlertItemInfo.m */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
+		229651B421063121007012AE /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				229651B521063121007012AE /* EMAlertCacheProvider.h */,
+				229651B621063121007012AE /* EMAlertCacheProvider.m */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		229651B721063121007012AE /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				229651B821063121007012AE /* EMAlertHandler.h */,
+				229651B921063121007012AE /* EMAlertHandler.m */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		229651BA21063121007012AE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				229651BB21063121007012AE /* EMAlertManager.h */,
+				229651BC21063121007012AE /* EMAlertManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		229651BD21063121007012AE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				229651BE21063121007012AE /* EMAutoCoding.h */,
+				229651BF21063121007012AE /* EMAutoCoding.m */,
+				229651C021063121007012AE /* EMBaseDatabaseCommonProvider.h */,
+				229651C121063121007012AE /* EMBaseDatabaseCommonProvider.m */,
+				229651C221063121007012AE /* EMBaseDatabaseProvider.h */,
+				229651C321063121007012AE /* EMBaseDatabaseProvider.m */,
+				229651C421063121007012AE /* EMBaseDataProvider.h */,
+				229651C521063121007012AE /* EMBaseDataProvider.m */,
+				229651C621063121007012AE /* EMBaseHandler.h */,
+				229651C721063121007012AE /* EMBaseHandler.m */,
+				229651C821063121007012AE /* EMBaseLRUCacheProvider.h */,
+				229651C921063121007012AE /* EMBaseLRUCacheProvider.m */,
+				229651CA21063121007012AE /* EMDataBase.h */,
+				229651CB21063121007012AE /* EMDataBase.m */,
+				229651CC21063121007012AE /* EMQueueDef.h */,
+				229651CD21063121007012AE /* EMQueueDef.m */,
+				229651CE21063121007012AE /* EMResult.h */,
+				229651CF21063121007012AE /* EMResult.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		229651D021063121007012AE /* BigDay */ = {
+			isa = PBXGroup;
+			children = (
+				229651D121063121007012AE /* Bean */,
+				229651D621063121007012AE /* DataProvider */,
+				229651D921063121007012AE /* Handler */,
+				229651DC21063121007012AE /* Manager */,
+			);
+			path = BigDay;
+			sourceTree = "<group>";
+		};
+		229651D121063121007012AE /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				229651D221063121007012AE /* EMBigDayInfo.h */,
+				229651D321063121007012AE /* EMBigDayInfo.m */,
+				229651D421063121007012AE /* EMBigDayItemInfo.h */,
+				229651D521063121007012AE /* EMBigDayItemInfo.m */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
+		229651D621063121007012AE /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				229651D721063121007012AE /* EMBigDayCacheProvider.h */,
+				229651D821063121007012AE /* EMBigDayCacheProvider.m */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		229651D921063121007012AE /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				229651DA21063121007012AE /* EMBigDayHandler.h */,
+				229651DB21063121007012AE /* EMBigDayHandler.m */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		229651DC21063121007012AE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				229651DD21063121007012AE /* EMBigDayManager.h */,
+				229651DE21063121007012AE /* EMBigDayManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		229651DF21063121007012AE /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				229651E021063121007012AE /* Bean */,
+				229651E921063121007012AE /* DataProvider */,
+				229651EC21063121007012AE /* Handler */,
+				229651EF21063121007012AE /* Manager */,
+			);
+			path = Bill;
+			sourceTree = "<group>";
+		};
+		229651E021063121007012AE /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				229651E121063121007012AE /* EMBillInfo.h */,
+				229651E221063121007012AE /* EMBillInfo.m */,
+				229651E321063121007012AE /* EMBillItemInfo.h */,
+				229651E421063121007012AE /* EMBillItemInfo.m */,
+				229651E521063121007012AE /* EMBillMonthInfo.h */,
+				229651E621063121007012AE /* EMBillMonthInfo.m */,
+				229651E721063121007012AE /* EMBillTypeInfo.h */,
+				229651E821063121007012AE /* EMBillTypeInfo.m */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
+		229651E921063121007012AE /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				229651EA21063121007012AE /* EMBillCacheProvider.h */,
+				229651EB21063121007012AE /* EMBillCacheProvider.m */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		229651EC21063121007012AE /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				229651ED21063121007012AE /* EMBillHandler.h */,
+				229651EE21063121007012AE /* EMBillHandler.m */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		229651EF21063121007012AE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				229651F021063121007012AE /* EMBillManager.h */,
+				229651F121063121007012AE /* EMBillManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		229651F221063121007012AE /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				229651F321063121007012AE /* Bean */,
+				229651F621063121007012AE /* DataProvider */,
+				229651F921063121007012AE /* Handler */,
+				229651FC21063121007012AE /* Manager */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		229651F321063121007012AE /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				229651F421063121007012AE /* EMDiaryInfo.h */,
+				229651F521063121007012AE /* EMDiaryInfo.m */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
+		229651F621063121007012AE /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				229651F721063121007012AE /* EMDiaryCacheProvider.h */,
+				229651F821063121007012AE /* EMDiaryCacheProvider.m */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		229651F921063121007012AE /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				229651FA21063121007012AE /* EMDiaryHandler.h */,
+				229651FB21063121007012AE /* EMDiaryHandler.m */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		229651FC21063121007012AE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				229651FD21063121007012AE /* EMDiaryManager.h */,
+				229651FE21063121007012AE /* EMDiaryManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		229651FF21063121007012AE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2296520021063121007012AE /* Bean */,
+				2296520521063121007012AE /* DataProvider */,
+				2296520821063121007012AE /* Handler */,
+				2296520B21063121007012AE /* Manager */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2296520021063121007012AE /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				2296520121063121007012AE /* EMAlertConfigInfo.h */,
+				2296520221063121007012AE /* EMAlertConfigInfo.m */,
+				2296520321063121007012AE /* EMHomeHeadInfo.h */,
+				2296520421063121007012AE /* EMHomeHeadInfo.m */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
+		2296520521063121007012AE /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				2296520621063121007012AE /* EMHomeCacheProvider.h */,
+				2296520721063121007012AE /* EMHomeCacheProvider.m */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		2296520821063121007012AE /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				2296520921063121007012AE /* EMHomeHandler.h */,
+				2296520A21063121007012AE /* EMHomeHandler.m */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		2296520B21063121007012AE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2296520C21063121007012AE /* EMHomeManager.h */,
+				2296520D21063121007012AE /* EMHomeManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2296520E21063121007012AE /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				2296520F21063121007012AE /* Bean */,
+				2296521221063121007012AE /* DataProvider */,
+				2296521521063121007012AE /* Handler */,
+				2296521821063121007012AE /* Manager */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
+		2296520F21063121007012AE /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				2296521021063121007012AE /* EMPlaceInfo.h */,
+				2296521121063121007012AE /* EMPlaceInfo.m */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
+		2296521221063121007012AE /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				2296521321063121007012AE /* EMPlaceCacheProvider.h */,
+				2296521421063121007012AE /* EMPlaceCacheProvider.m */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		2296521521063121007012AE /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				2296521621063121007012AE /* EMPlaceHandler.h */,
+				2296521721063121007012AE /* EMPlaceHandler.m */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		2296521821063121007012AE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2296521921063121007012AE /* EMPlaceManager.h */,
+				2296521A21063121007012AE /* EMPlaceManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2296521B21063128007012AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2296521C21063128007012AE /* Alert */,
+				2296522721063128007012AE /* Base */,
+				2296523C21063128007012AE /* BigDay */,
+				2296524921063128007012AE /* Bill */,
+				2296525E21063128007012AE /* Diary */,
+				2296526F21063128007012AE /* Home */,
+				2296527621063128007012AE /* Place */,
+				2296528121063128007012AE /* Setting */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2296521C21063128007012AE /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				2296521D21063128007012AE /* EMAlertTableViewCell.h */,
+				2296521E21063128007012AE /* EMAlertTableViewCell.m */,
+				2296521F21063128007012AE /* EMAlertViewController.h */,
+				2296522021063128007012AE /* EMAlertViewController.m */,
+				2296522121063128007012AE /* EMPublishAlertEditTableViewCell.h */,
+				2296522221063128007012AE /* EMPublishAlertEditTableViewCell.m */,
+				2296522321063128007012AE /* EMPublishAlertTableViewCell.h */,
+				2296522421063128007012AE /* EMPublishAlertTableViewCell.m */,
+				2296522521063128007012AE /* EMPublishAlertViewController.h */,
+				2296522621063128007012AE /* EMPublishAlertViewController.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		2296522721063128007012AE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2296522821063128007012AE /* EMBaseNavigationController.h */,
+				2296522921063128007012AE /* EMBaseNavigationController.m */,
+				2296522A21063128007012AE /* EMDatePicker.h */,
+				2296522B21063128007012AE /* EMDatePicker.m */,
+				2296522C21063128007012AE /* EMMaskView.h */,
+				2296522D21063128007012AE /* EMMaskView.m */,
+				2296522E21063128007012AE /* EMPlaceHolderTextView.h */,
+				2296522F21063128007012AE /* EMPlaceHolderTextView.m */,
+				2296523021063128007012AE /* EMShowPhotoTool.h */,
+				2296523121063128007012AE /* EMShowPhotoTool.m */,
+				2296523221063128007012AE /* EMTextField.h */,
+				2296523321063128007012AE /* EMTextField.m */,
+				2296523421063128007012AE /* EMTheme.h */,
+				2296523521063128007012AE /* EMTheme.m */,
+				2296523621063128007012AE /* EMToolbar.h */,
+				2296523721063128007012AE /* EMToolbar.m */,
+				2296523821063128007012AE /* EMVerticallyAlignedLabel.h */,
+				2296523921063128007012AE /* EMVerticallyAlignedLabel.m */,
+				2296523A21063128007012AE /* UIImage+Additions.h */,
+				2296523B21063128007012AE /* UIImage+Additions.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2296523C21063128007012AE /* BigDay */ = {
+			isa = PBXGroup;
+			children = (
+				2296523D21063128007012AE /* EMBigDayCollectionViewCell.h */,
+				2296523E21063128007012AE /* EMBigDayCollectionViewCell.m */,
+				2296523F21063128007012AE /* EMBigDayCollectionViewLayout.h */,
+				2296524021063128007012AE /* EMBigDayCollectionViewLayout.m */,
+				2296524121063128007012AE /* EMBigDayViewController.h */,
+				2296524221063128007012AE /* EMBigDayViewController.m */,
+				2296524321063128007012AE /* EMPublishBigDayEditTableViewCell.h */,
+				2296524421063128007012AE /* EMPublishBigDayEditTableViewCell.m */,
+				2296524521063128007012AE /* EMPublishBigDayTableViewCell.h */,
+				2296524621063128007012AE /* EMPublishBigDayTableViewCell.m */,
+				2296524721063128007012AE /* EMPublishBigDayViewController.h */,
+				2296524821063128007012AE /* EMPublishBigDayViewController.m */,
+			);
+			path = BigDay;
+			sourceTree = "<group>";
+		};
+		2296524921063128007012AE /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				2296524A21063128007012AE /* EMBillHeaderView.h */,
+				2296524B21063128007012AE /* EMBillHeaderView.m */,
+				2296524C21063128007012AE /* EMBillTableViewCell.h */,
+				2296524D21063128007012AE /* EMBillTableViewCell.m */,
+				2296524E21063128007012AE /* EMBillTypePicker.h */,
+				2296524F21063128007012AE /* EMBillTypePicker.m */,
+				2296525021063128007012AE /* EMBillViewController.h */,
+				2296525121063128007012AE /* EMBillViewController.m */,
+				2296525221063128007012AE /* EMMonthBillLegend.h */,
+				2296525321063128007012AE /* EMMonthBillLegend.m */,
+				2296525421063128007012AE /* EMMonthBillTableViewCell.h */,
+				2296525521063128007012AE /* EMMonthBillTableViewCell.m */,
+				2296525621063128007012AE /* EMMonthBillViewController.h */,
+				2296525721063128007012AE /* EMMonthBillViewController.m */,
+				2296525821063128007012AE /* EMPublishBillEditTableViewCell.h */,
+				2296525921063128007012AE /* EMPublishBillEditTableViewCell.m */,
+				2296525A21063128007012AE /* EMPublishBillTableViewCell.h */,
+				2296525B21063128007012AE /* EMPublishBillTableViewCell.m */,
+				2296525C21063128007012AE /* EMPublishBillViewController.h */,
+				2296525D21063128007012AE /* EMPublishBillViewController.m */,
+			);
+			path = Bill;
+			sourceTree = "<group>";
+		};
+		2296525E21063128007012AE /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				2296525F21063128007012AE /* EMDiaryEditViewController.h */,
+				2296526021063128007012AE /* EMDiaryEditViewController.m */,
+				2296526121063128007012AE /* EMDiaryNoPicTableViewCell.h */,
+				2296526221063128007012AE /* EMDiaryNoPicTableViewCell.m */,
+				2296526321063128007012AE /* EMDiaryShowHeaderView.h */,
+				2296526421063128007012AE /* EMDiaryShowHeaderView.m */,
+				2296526521063128007012AE /* EMDiaryShowTableViewCell.h */,
+				2296526621063128007012AE /* EMDiaryShowTableViewCell.m */,
+				2296526721063128007012AE /* EMDiaryShowViewController.h */,
+				2296526821063128007012AE /* EMDiaryShowViewController.m */,
+				2296526921063128007012AE /* EMDiaryTableViewCell.h */,
+				2296526A21063128007012AE /* EMDiaryTableViewCell.m */,
+				2296526B21063128007012AE /* EMDiaryViewController.h */,
+				2296526C21063128007012AE /* EMDiaryViewController.m */,
+				2296526D21063128007012AE /* EMPublishDiaryViewController.h */,
+				2296526E21063128007012AE /* EMPublishDiaryViewController.m */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		2296526F21063128007012AE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2296527021063128007012AE /* EMHomeCollectionViewCell.h */,
+				2296527121063128007012AE /* EMHomeCollectionViewCell.m */,
+				2296527221063128007012AE /* EMHomeViewController.h */,
+				2296527321063128007012AE /* EMHomeViewController.m */,
+				2296527421063128007012AE /* EMSplashViewController.h */,
+				2296527521063128007012AE /* EMSplashViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2296527621063128007012AE /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				2296527721063128007012AE /* EMCardCollectionViewCell.h */,
+				2296527821063128007012AE /* EMCardCollectionViewCell.m */,
+				2296527921063128007012AE /* EMCardLayout.h */,
+				2296527A21063128007012AE /* EMCardLayout.m */,
+				2296527B21063128007012AE /* EMCardSelectedLayout.h */,
+				2296527C21063128007012AE /* EMCardSelectedLayout.m */,
+				2296527D21063128007012AE /* EMPlacePublishSheet.h */,
+				2296527E21063128007012AE /* EMPlacePublishSheet.m */,
+				2296527F21063128007012AE /* EMPlaceViewController.h */,
+				2296528021063128007012AE /* EMPlaceViewController.m */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
+		2296528121063128007012AE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2296528221063128007012AE /* EMAboutUsViewController.h */,
+				2296528321063128007012AE /* EMAboutUsViewController.m */,
+				2296528421063128007012AE /* EMSettingActionCell.h */,
+				2296528521063128007012AE /* EMSettingActionCell.m */,
+				2296528621063128007012AE /* EMSettingActionSheet.h */,
+				2296528721063128007012AE /* EMSettingActionSheet.m */,
+				2296528821063128007012AE /* EMSettingHeaderView.h */,
+				2296528921063128007012AE /* EMSettingHeaderView.m */,
+				2296528A21063128007012AE /* EMSettingTableViewCell.h */,
+				2296528B21063128007012AE /* EMSettingTableViewCell.m */,
+				2296528C21063128007012AE /* EMSettingViewController.h */,
+				2296528D21063128007012AE /* EMSettingViewController.m */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		2296528E21063128007012AE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2296528F21063128007012AE /* EMDeviceUtil.h */,
+				2296529021063128007012AE /* EMDeviceUtil.m */,
+				2296529121063128007012AE /* EMFileUtil.h */,
+				2296529221063128007012AE /* EMFileUtil.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		2296529321063129007012AE /* EMKit */ = {
+			isa = PBXGroup;
+			children = (
+				2296529421063129007012AE /* EMImagePicker */,
+				2296529F21063129007012AE /* EMTips */,
+			);
+			path = EMKit;
+			sourceTree = "<group>";
+		};
+		2296529421063129007012AE /* EMImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				2296529521063129007012AE /* FSMediaPicker.h */,
+				2296529621063129007012AE /* FSMediaPicker.m */,
+				2296529721063129007012AE /* GKCropBorderView.h */,
+				2296529821063129007012AE /* GKCropBorderView.m */,
+				2296529921063129007012AE /* GKImageCropOverlayView.h */,
+				2296529A21063129007012AE /* GKImageCropOverlayView.m */,
+				2296529B21063129007012AE /* GKImageCropView.h */,
+				2296529C21063129007012AE /* GKImageCropView.m */,
+				2296529D21063129007012AE /* GKImageCropViewController.h */,
+				2296529E21063129007012AE /* GKImageCropViewController.m */,
+			);
+			path = EMImagePicker;
+			sourceTree = "<group>";
+		};
+		2296529F21063129007012AE /* EMTips */ = {
+			isa = PBXGroup;
+			children = (
+				229652A021063129007012AE /* EMLogoLoopView.h */,
+				229652A121063129007012AE /* EMLogoLoopView.m */,
+				229652A221063129007012AE /* EMProgressLoopView.h */,
+				229652A321063129007012AE /* EMProgressLoopView.m */,
+				229652A421063129007012AE /* EMTips.h */,
+				229652A521063129007012AE /* EMTips.m */,
+				229652A621063129007012AE /* EMTipsInfo.h */,
+				229652A721063129007012AE /* EMTipsInfo.m */,
+				229652A821063129007012AE /* EMTipsView.h */,
+				229652A921063129007012AE /* EMTipsView.m */,
+				229652AA21063129007012AE /* UIView+EMTips.h */,
+				229652AB21063129007012AE /* UIView+EMTips.m */,
+			);
+			path = EMTips;
 			sourceTree = "<group>";
 		};
 		22A130862106154B0085EE38 /* Global */ = {
@@ -2162,20 +3055,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229652FD21063129007012AE /* EMCardCollectionViewCell.m in Sources */,
 				22A132692106154B0085EE38 /* YTKUrlClickRequest.m in Sources */,
 				22A1326C2106154B0085EE38 /* QDAssetsChoicesTableViewCell.m in Sources */,
 				22A132F02106154B0085EE38 /* QDCommonTableViewController.m in Sources */,
+				2296530521063129007012AE /* EMSettingHeaderView.m in Sources */,
+				229652B021063129007012AE /* EMAlertManager.m in Sources */,
+				229652E021063129007012AE /* EMVerticallyAlignedLabel.m in Sources */,
 				22A132E82106154B0085EE38 /* LZPickViewManager.m in Sources */,
+				229652B521063129007012AE /* EMBaseHandler.m in Sources */,
 				22A132962106154B0085EE38 /* NSDate+Reporting.m in Sources */,
 				22A132A32106154B0085EE38 /* NSFileManager+Paths.m in Sources */,
 				22A1324A2106154B0085EE38 /* QDHomeRequest.m in Sources */,
 				22A132E52106154B0085EE38 /* LZMultiPickerView.m in Sources */,
 				22A1328B2106154B0085EE38 /* NSData+APNSToken.m in Sources */,
+				229652E821063129007012AE /* EMBillHeaderView.m in Sources */,
 				22A132872106154B0085EE38 /* MBProgressHUD+MP.m in Sources */,
 				22A132CB2106154B0085EE38 /* NSString+UrlEncode.m in Sources */,
+				229652E421063129007012AE /* EMBigDayViewController.m in Sources */,
 				22A132EC2106154B0085EE38 /* LiuXSlider.m in Sources */,
+				2296530921063129007012AE /* EMFileUtil.m in Sources */,
 				22A1326F2106154B0085EE38 /* QDJumpRequest.m in Sources */,
+				229652D921063129007012AE /* EMDatePicker.m in Sources */,
+				229652D221063129007012AE /* EMPlaceManager.m in Sources */,
+				2296531021063129007012AE /* EMProgressLoopView.m in Sources */,
+				229652F521063129007012AE /* EMDiaryShowTableViewCell.m in Sources */,
+				2296530D21063129007012AE /* GKImageCropView.m in Sources */,
 				22A132902106154B0085EE38 /* NSData+SDDataCache.m in Sources */,
+				229652EE21063129007012AE /* EMMonthBillViewController.m in Sources */,
 				22A132B32106154B0085EE38 /* NSObject+EasyCopy.m in Sources */,
 				22A1329C2106154B0085EE38 /* NSDictionary+JSONString.m in Sources */,
 				22A132F42106154B0085EE38 /* QDTabBarViewController.m in Sources */,
@@ -2185,18 +3092,29 @@
 				22A132B22106154B0085EE38 /* NSObject+Blocks.m in Sources */,
 				22A132542106154B0085EE38 /* QDFinishApplyViewController.m in Sources */,
 				22A132C72106154B0085EE38 /* NSString+Ruby.m in Sources */,
+				229652B121063129007012AE /* EMAutoCoding.m in Sources */,
 				22A132D02106154B0085EE38 /* NSTimer+Blocks.m in Sources */,
 				22A1327F2106154B0085EE38 /* QDSendMessageRequest.m in Sources */,
 				22A1328D2106154B0085EE38 /* NSData+Encrypt.m in Sources */,
 				22A132AC2106154B0085EE38 /* NSNumber+RomanNumerals.m in Sources */,
 				22751B9D1EFABE2C002A9A45 /* GVUserDefaults.m in Sources */,
 				22A1329D2106154B0085EE38 /* NSDictionary+Merge.m in Sources */,
+				229652C421063129007012AE /* EMBillHandler.m in Sources */,
+				229652D521063129007012AE /* EMPublishAlertEditTableViewCell.m in Sources */,
+				2296531321063129007012AE /* EMTipsView.m in Sources */,
+				229652F621063129007012AE /* EMDiaryShowViewController.m in Sources */,
 				22A132622106154B0085EE38 /* BorrowDetailModel.m in Sources */,
+				2296530821063129007012AE /* EMDeviceUtil.m in Sources */,
+				229652F221063129007012AE /* EMDiaryEditViewController.m in Sources */,
 				22A132892106154B0085EE38 /* NSArray+SafeAccess.m in Sources */,
+				229652E721063129007012AE /* EMPublishBigDayViewController.m in Sources */,
 				22A1326E2106154B0085EE38 /* QDBannerTableViewCell.m in Sources */,
 				22A132E42106154B0085EE38 /* LZDatePicker.m in Sources */,
+				229652FC21063129007012AE /* EMSplashViewController.m in Sources */,
 				22A132652106154B0085EE38 /* QDHomeBannerModel.m in Sources */,
 				22A132AD2106154B0085EE38 /* NSNumber+Round.m in Sources */,
+				229652F421063129007012AE /* EMDiaryShowHeaderView.m in Sources */,
+				2296531421063129007012AE /* UIView+EMTips.m in Sources */,
 				22A132982106154B0085EE38 /* NSDate+Utilities.m in Sources */,
 				22A1325F2106154B0085EE38 /* QDForumViewController.m in Sources */,
 				22A132572106154B0085EE38 /* QDChooseTableViewCell.m in Sources */,
@@ -2204,24 +3122,39 @@
 				22A1328C2106154B0085EE38 /* NSData+Base64.m in Sources */,
 				22A132FD210617960085EE38 /* AppDelegate.m in Sources */,
 				22A132C92106154B0085EE38 /* NSString+Size.m in Sources */,
+				229652EF21063129007012AE /* EMPublishBillEditTableViewCell.m in Sources */,
 				22A132762106154B0085EE38 /* QDRegisterViewController.m in Sources */,
+				229652FF21063129007012AE /* EMCardSelectedLayout.m in Sources */,
 				22A132F52106154B0085EE38 /* QDUIHelper.m in Sources */,
 				22A132CD2106154B0085EE38 /* NSString+Validate.m in Sources */,
 				22A132E22106154B0085EE38 /* LZAddressPickerView.m in Sources */,
 				22A1324F2106154B0085EE38 /* QDCertViewController.m in Sources */,
 				22A132482106154B0085EE38 /* QDMessageModel.m in Sources */,
+				229652AE21063129007012AE /* EMAlertCacheProvider.m in Sources */,
 				22A132A12106154B0085EE38 /* NSException+Trace.m in Sources */,
+				229652B321063129007012AE /* EMBaseDatabaseProvider.m in Sources */,
 				22A132642106154B0085EE38 /* QDAssetsModel.m in Sources */,
 				22A132C32106154B0085EE38 /* NSString+MIME.m in Sources */,
+				229652EC21063129007012AE /* EMMonthBillLegend.m in Sources */,
 				22A132E12106154B0085EE38 /* UIView+EaseBlankPage.m in Sources */,
 				22A132BF2106154B0085EE38 /* NSString+Emoji.m in Sources */,
+				2296530621063129007012AE /* EMSettingTableViewCell.m in Sources */,
 				22A132B82106154B0085EE38 /* NSObject+Runtime.m in Sources */,
 				22A132EF2106154B0085EE38 /* QDCommonListViewController.m in Sources */,
+				229652CA21063129007012AE /* EMAlertConfigInfo.m in Sources */,
+				229652C921063129007012AE /* EMDiaryManager.m in Sources */,
 				22A132B42106154B0085EE38 /* NSObject+GCD.m in Sources */,
+				2296530A21063129007012AE /* FSMediaPicker.m in Sources */,
+				229652B421063129007012AE /* EMBaseDataProvider.m in Sources */,
+				2296531121063129007012AE /* EMTips.m in Sources */,
+				229652F721063129007012AE /* EMDiaryTableViewCell.m in Sources */,
 				22A1325B2106154B0085EE38 /* QDMultiLabelCell.m in Sources */,
 				22A132CC2106154B0085EE38 /* NSString+UUID.m in Sources */,
 				22A132442106154B0085EE38 /* QDBannerModel.m in Sources */,
 				22A132C62106154B0085EE38 /* NSString+RemoveEmoji.m in Sources */,
+				229652E121063129007012AE /* UIImage+Additions.m in Sources */,
+				229652BE21063129007012AE /* EMBigDayManager.m in Sources */,
+				229652AC21063129007012AE /* EMAlertInfo.m in Sources */,
 				22A132CF2106154B0085EE38 /* NSTimer+Addition.m in Sources */,
 				22A132A52106154B0085EE38 /* NSIndexPath+Offset.m in Sources */,
 				22A132BB2106154B0085EE38 /* NSMutableString+Ruby.m in Sources */,
@@ -2236,26 +3169,48 @@
 				22A1327A2106154B0085EE38 /* QDHelpModel.m in Sources */,
 				22A132512106154B0085EE38 /* QDCerditModel.m in Sources */,
 				0970F5241EC29FC200FC4794 /* UIPlaceHolderTextView.m in Sources */,
+				229652FA21063129007012AE /* EMHomeCollectionViewCell.m in Sources */,
+				229652D321063129007012AE /* EMAlertTableViewCell.m in Sources */,
 				22A132972106154B0085EE38 /* NSDate+TimeAgo.m in Sources */,
 				22A132C42106154B0085EE38 /* NSString+Pinyin.m in Sources */,
+				229652C021063129007012AE /* EMBillItemInfo.m in Sources */,
 				22A132BD2106154B0085EE38 /* NSString+Contains.m in Sources */,
 				22A132A62106154B0085EE38 /* NSInvocation+Bb.m in Sources */,
+				229652CC21063129007012AE /* EMHomeCacheProvider.m in Sources */,
 				22751BA41EFABE34002A9A45 /* introductoryPagesView.m in Sources */,
 				22A132822106154B0085EE38 /* QDMyAccountCell.m in Sources */,
+				229652AD21063129007012AE /* EMAlertItemInfo.m in Sources */,
 				22A132D32106154B0085EE38 /* NSURLConnection+SelfSigned.m in Sources */,
 				22A132B12106154B0085EE38 /* NSObject+AutoCoding.m in Sources */,
+				229652B921063129007012AE /* EMResult.m in Sources */,
+				229652FB21063129007012AE /* EMHomeViewController.m in Sources */,
+				2296530E21063129007012AE /* GKImageCropViewController.m in Sources */,
 				22A132BE2106154B0085EE38 /* NSString+DictionaryValue.m in Sources */,
+				229652D421063129007012AE /* EMAlertViewController.m in Sources */,
+				2296530B21063129007012AE /* GKCropBorderView.m in Sources */,
+				229652C721063129007012AE /* EMDiaryCacheProvider.m in Sources */,
+				229652C621063129007012AE /* EMDiaryInfo.m in Sources */,
 				22A132EE2106154B0085EE38 /* QDCommonGroupListViewController.m in Sources */,
+				229652F321063129007012AE /* EMDiaryNoPicTableViewCell.m in Sources */,
+				229652BF21063129007012AE /* EMBillInfo.m in Sources */,
 				22A132752106154B0085EE38 /* QDMyViewController.m in Sources */,
 				22A132712106154B0085EE38 /* QDHelpViewListViewController.m in Sources */,
+				229652C821063129007012AE /* EMDiaryHandler.m in Sources */,
 				22A1329F2106154B0085EE38 /* NSDictionary+URL.m in Sources */,
+				229652DF21063129007012AE /* EMToolbar.m in Sources */,
 				22A132E62106154B0085EE38 /* LZSiglePickerView.m in Sources */,
 				22A132612106154B0085EE38 /* QDPersionViewController.m in Sources */,
+				229652EB21063129007012AE /* EMBillViewController.m in Sources */,
+				229652C221063129007012AE /* EMBillTypeInfo.m in Sources */,
 				22A132722106154B0085EE38 /* QDLoginOrRegisterViewController.m in Sources */,
 				22A132592106154B0085EE38 /* QDCompanyTableViewCell.m in Sources */,
+				229652C321063129007012AE /* EMBillCacheProvider.m in Sources */,
 				22A132A82106154B0085EE38 /* NSNotificationCenter+MainThread.m in Sources */,
+				229652BC21063129007012AE /* EMBigDayCacheProvider.m in Sources */,
 				22A1324B2106154B0085EE38 /* QDHomeBorrowCell.m in Sources */,
 				22A1327E2106154B0085EE38 /* QDRegisterRequest.m in Sources */,
+				229652CE21063129007012AE /* EMHomeManager.m in Sources */,
+				229652FE21063129007012AE /* EMCardLayout.m in Sources */,
 				22A132A72106154B0085EE38 /* NSInvocation+Block.m in Sources */,
 				22A132862106154B0085EE38 /* QDWebViewController.m in Sources */,
 				22A132502106154B0085EE38 /* QDAboutViewController.m in Sources */,
@@ -2264,65 +3219,108 @@
 				22A1329E2106154B0085EE38 /* NSDictionary+SafeAccess.m in Sources */,
 				22A132C02106154B0085EE38 /* NSString+Encrypt.m in Sources */,
 				22A132B62106154B0085EE38 /* NSObject+MKBlockTimer.m in Sources */,
+				229652C121063129007012AE /* EMBillMonthInfo.m in Sources */,
+				229652DD21063129007012AE /* EMTextField.m in Sources */,
+				229652EA21063129007012AE /* EMBillTypePicker.m in Sources */,
+				229652E621063129007012AE /* EMPublishBigDayTableViewCell.m in Sources */,
 				22A132A42106154B0085EE38 /* NSHTTPCookieStorage+FreezeDry.m in Sources */,
+				229652D721063129007012AE /* EMPublishAlertViewController.m in Sources */,
 				22A132C52106154B0085EE38 /* NSString+RegexCategory.m in Sources */,
 				22751BA31EFABE34002A9A45 /* introductoryPagesHelper.m in Sources */,
 				22A132F32106154B0085EE38 /* QDNavigationController.m in Sources */,
+				2296530421063129007012AE /* EMSettingActionSheet.m in Sources */,
 				22A1329B2106154B0085EE38 /* NSDictionary+Block.m in Sources */,
 				22A132D42106154B0085EE38 /* NSMutableURLRequest+Upload.m in Sources */,
+				229652BA21063129007012AE /* EMBigDayInfo.m in Sources */,
 				22A132F82106154B0085EE38 /* AdvertiseHelper.m in Sources */,
+				229652D821063129007012AE /* EMBaseNavigationController.m in Sources */,
 				22A1327B2106154B0085EE38 /* QDUser.m in Sources */,
 				22A132952106154B0085EE38 /* NSDate+InternetDateTime.m in Sources */,
 				22A132532106154B0085EE38 /* QDCompanyViewController.m in Sources */,
 				22A132422106154B0085EE38 /* QDBorrowHomeViewController.m in Sources */,
+				229652DB21063129007012AE /* EMPlaceHolderTextView.m in Sources */,
 				22A132B72106154B0085EE38 /* NSObject+Reflection.m in Sources */,
 				22A132C82106154B0085EE38 /* NSString+Score.m in Sources */,
 				22A132942106154B0085EE38 /* NSDate+Formatter.m in Sources */,
+				229652CF21063129007012AE /* EMPlaceInfo.m in Sources */,
+				229652F021063129007012AE /* EMPublishBillTableViewCell.m in Sources */,
+				229652E521063129007012AE /* EMPublishBigDayEditTableViewCell.m in Sources */,
 				22A132882106154B0085EE38 /* NSArray+Block.m in Sources */,
+				2296530021063129007012AE /* EMPlacePublishSheet.m in Sources */,
 				22A132F22106154B0085EE38 /* QDCommonViewController.m in Sources */,
 				22A132D52106154B0085EE38 /* NSURLRequest+ParamsFromDictionary.m in Sources */,
 				22A1327D2106154B0085EE38 /* QDLoginReqeust.m in Sources */,
+				229652F821063129007012AE /* EMDiaryViewController.m in Sources */,
+				229652B821063129007012AE /* EMQueueDef.m in Sources */,
+				229652B721063129007012AE /* EMDataBase.m in Sources */,
 				22A132E72106154B0085EE38 /* LZCenterAddressPickerView.m in Sources */,
+				2296530321063129007012AE /* EMSettingActionCell.m in Sources */,
+				229652E221063129007012AE /* EMBigDayCollectionViewCell.m in Sources */,
 				22A132922106154B0085EE38 /* NSDate+CupertinoYankee.m in Sources */,
 				22A132F92106154B0085EE38 /* AdvertiseView.m in Sources */,
+				229652DA21063129007012AE /* EMMaskView.m in Sources */,
 				22A132602106154B0085EE38 /* HomeViewController.m in Sources */,
 				22A132E02106154B0085EE38 /* EaseBlankPageView.m in Sources */,
 				22A1325C2106154B0085EE38 /* QDProductIntroduceCell.m in Sources */,
 				22A132C12106154B0085EE38 /* NSString+Hash.m in Sources */,
+				229652BD21063129007012AE /* EMBigDayHandler.m in Sources */,
 				22A132662106154B0085EE38 /* QDHomeModel.m in Sources */,
+				229652ED21063129007012AE /* EMMonthBillTableViewCell.m in Sources */,
 				22A132912106154B0085EE38 /* NSData+zlib.m in Sources */,
 				22A132562106154B0085EE38 /* QDCompanyDetailModel.m in Sources */,
 				22A132932106154B0085EE38 /* NSDate+Extension.m in Sources */,
+				229652D021063129007012AE /* EMPlaceCacheProvider.m in Sources */,
 				22A132A22106154B0085EE38 /* NSFileHandle+readLine.m in Sources */,
 				22A132632106154B0085EE38 /* QDApplyAssetsModel.m in Sources */,
 				22A132BA2106154B0085EE38 /* NSSet+Block.m in Sources */,
+				229652D121063129007012AE /* EMPlaceHandler.m in Sources */,
 				22A132D62106154B0085EE38 /* NSUserDefaults+iCloudSync.m in Sources */,
+				2296530221063129007012AE /* EMAboutUsViewController.m in Sources */,
 				22A132E92106154B0085EE38 /* LZToolbar.m in Sources */,
+				229652CD21063129007012AE /* EMHomeHandler.m in Sources */,
 				22A1327C2106154B0085EE38 /* QDUserManager.m in Sources */,
+				229652F921063129007012AE /* EMPublishDiaryViewController.m in Sources */,
 				22A132C22106154B0085EE38 /* NSString+Matcher.m in Sources */,
 				22A132472106154B0085EE38 /* QDHomeList.m in Sources */,
+				2296530721063129007012AE /* EMSettingViewController.m in Sources */,
 				22A132432106154B0085EE38 /* QDBorrowMessageViewController.m in Sources */,
+				229652E321063129007012AE /* EMBigDayCollectionViewLayout.m in Sources */,
 				22A132CE2106154B0085EE38 /* NSString+XML.m in Sources */,
 				22A132522106154B0085EE38 /* QDCompanyDetailController.m in Sources */,
+				2296530121063129007012AE /* EMPlaceViewController.m in Sources */,
+				229652BB21063129007012AE /* EMBigDayItemInfo.m in Sources */,
 				22A132782106154B0085EE38 /* QDSettingViewController.m in Sources */,
 				22A132D72106154B0085EE38 /* NSUserDefaults+SafeAccess.m in Sources */,
+				229652DC21063129007012AE /* EMShowPhotoTool.m in Sources */,
+				229652AF21063129007012AE /* EMAlertHandler.m in Sources */,
 				22A132D12106154B0085EE38 /* NSURL+Param.m in Sources */,
 				22A132B52106154B0085EE38 /* NSObject+KVOBlocks.m in Sources */,
 				22A132842106154B0085EE38 /* QDMyListCell.m in Sources */,
+				2296530F21063129007012AE /* EMLogoLoopView.m in Sources */,
+				229652B221063129007012AE /* EMBaseDatabaseCommonProvider.m in Sources */,
+				229652DE21063129007012AE /* EMTheme.m in Sources */,
+				229652D621063129007012AE /* EMPublishAlertTableViewCell.m in Sources */,
 				22A132E32106154B0085EE38 /* LZAreaPickerView.m in Sources */,
 				22A1328A2106154B0085EE38 /* NSBundle+AppIcon.m in Sources */,
 				22A132802106154B0085EE38 /* QDCerditCell.m in Sources */,
+				229652E921063129007012AE /* EMBillTableViewCell.m in Sources */,
 				22A132452106154B0085EE38 /* QDBorrowDetailModel.m in Sources */,
 				22A132D92106154B0085EE38 /* UIColor+Hex.m in Sources */,
 				22A1325D2106154B0085EE38 /* QDRepaymentInfoTableViewCell.m in Sources */,
+				2296531221063129007012AE /* EMTipsInfo.m in Sources */,
+				229652CB21063129007012AE /* EMHomeHeadInfo.m in Sources */,
+				229652B621063129007012AE /* EMBaseLRUCacheProvider.m in Sources */,
 				22A132D22106154B0085EE38 /* NSURL+QueryDictionary.m in Sources */,
+				2296530C21063129007012AE /* GKImageCropOverlayView.m in Sources */,
 				22A132B92106154B0085EE38 /* NSRunLoop+PerformBlock.m in Sources */,
+				229652F121063129007012AE /* EMPublishBillViewController.m in Sources */,
 				22A132462106154B0085EE38 /* QDBorrowModel.m in Sources */,
 				22A132742106154B0085EE38 /* QDMessageViewController.m in Sources */,
 				22A1329A2106154B0085EE38 /* NSDateFormatter+Make.m in Sources */,
 				22A132D82106154B0085EE38 /* UIAlertView+Block.m in Sources */,
 				22A132702106154B0085EE38 /* QDJumpViewController.m in Sources */,
 				22A132A02106154B0085EE38 /* NSDictionary+XML.m in Sources */,
+				229652C521063129007012AE /* EMBillManager.m in Sources */,
 				22A132AB2106154B0085EE38 /* NSNumber+CGFloat.m in Sources */,
 				22A132CA2106154B0085EE38 /* NSString+Trims.m in Sources */,
 				22A132682106154B0085EE38 /* QDCompanyDetailRequest.m in Sources */,
