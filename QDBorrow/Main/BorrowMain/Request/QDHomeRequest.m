@@ -18,12 +18,5 @@
     return YTKRequestMethodGET;
 }
 
-- (id)requestArgument {
-    return @{
-             @"sessionId": @"AF48E7EC31323F9BEE3B015BA472704C",
-             @"devicesType": [NSNumber numberWithInt:2]
-             };
-}
-
 
 @end

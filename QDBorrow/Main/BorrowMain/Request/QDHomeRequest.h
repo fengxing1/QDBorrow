@@ -7,7 +7,8 @@
 //
 
 #import <YTKNetwork/YTKNetwork.h>
+#import "QDBaseRequest.h"
 
-@interface QDHomeRequest : YTKRequest
+@interface QDHomeRequest : QDBaseRequest
 
 @end

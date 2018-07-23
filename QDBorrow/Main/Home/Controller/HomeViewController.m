@@ -23,6 +23,7 @@
 #import "YYModel.h"
 #import "QDUserManager.h"
 #import "QDLoginOrRegisterViewController.h"
+#import "QDRegisterViewController.h"
 #import "YTKUrlClickRequest.h"
 
 static NSString *const kReusableIdentifierBannerCell  = @"bannerCell";
@@ -58,7 +59,6 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
     [super viewWillAppear:animated];
 //    [self.navigationController setNavigationBarHidden:YES animated:NO];
 //    self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.tabBarController.tabBar setHidden:NO];
 }
 
 
@@ -172,14 +172,18 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
             QDBorrowModel *borrowModel = self.homeList.borrowVOList[indexPath.row];
             QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
             companyDetailViewController.id = borrowModel.id;
-            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:companyDetailViewController animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
         } else {
-            QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
-            self.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:loginVC animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
+            [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+                if (buttonIndex == 0) {
+                    QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
+                    [self.navigationController pushViewController:loginVC animated:YES];
+                }else if (buttonIndex == 1){
+                    QDRegisterViewController *loginVC = [[QDRegisterViewController alloc] init];
+                    [self.navigationController pushViewController:loginVC animated:YES];
+                }
+            } title:@"是否已有账号？" message:@"请选择是注册还是登陆" cancelButtonName:@"去登陆" otherButtonTitles:@"去注册", nil];
+
         }
         
     }
@@ -188,7 +192,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     }
     return _tableView;
 }
@@ -208,14 +212,17 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
         QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
         webViewController.showsToolBar = NO;
         webViewController.navigationController.navigationBar.translucent = NO;
-        self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:webViewController animated:YES];
-        self.hidesBottomBarWhenPushed = NO;
     } else {
-        QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
-        self.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:loginVC animated:YES];
-        self.hidesBottomBarWhenPushed = NO;
+        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+            if (buttonIndex == 0) {
+                QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
+                [self.navigationController pushViewController:loginVC animated:YES];
+            }else if (buttonIndex == 1){
+                QDRegisterViewController *loginVC = [[QDRegisterViewController alloc] init];
+                 [self.navigationController pushViewController:loginVC animated:YES];
+            }
+        } title:@"是否已有账号？" message:@"请选择是注册还是登陆" cancelButtonName:@"去登陆" otherButtonTitles:@"去注册", nil];
     }
 }
 

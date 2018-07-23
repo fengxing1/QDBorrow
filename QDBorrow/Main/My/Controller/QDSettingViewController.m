@@ -25,7 +25,7 @@
 - (void)initDataSource {
     self.title = @"设置";
     [super initDataSource];
-    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"关于我们",@"商务合作",@"官方客服群", @"官方邮箱",nil];
+    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"关于我们",@"官方客服群1",@"官方客服群2", @"官方邮箱",nil];
     self.dataSource = array;
     self.user = [[QDUserManager sharedInstance] getUser];
     
@@ -35,16 +35,16 @@
     if ([title isEqualToString:@"关于我们"]) {
         QDAboutViewController *about = [[QDAboutViewController alloc] init];
         [self.navigationController pushViewController:about animated:YES];
-    } else if ([title isEqualToString:@"商务合作"]) {
-        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
-            if (buttonIndex == 1) {
-                //拨打电话
-                NSMutableString *str3=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"13040791093"];
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str3]];
-            }
-        } title:@"商务合作" message:@"电话：130-4079-1093" cancelButtonName:@"取消" otherButtonTitles:@"拨打电话", nil];
-        
-    } else if ([title isEqualToString:@"官方客服群"]) {
+    } else if ([title isEqualToString:@"官方客服群1"]) {
+//        [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
+//            if (buttonIndex == 1) {
+//                //拨打电话
+//                NSMutableString *str3=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"13040791093"];
+//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str3]];
+//            }
+//        } title:@"商务合作" message:@"电话：130-4079-1093" cancelButtonName:@"取消" otherButtonTitles:@"拨打电话", nil];
+        [UIAlertView alertWithCallBackBlock:nil title:@"QQ群" message:@"QQ群：818280256" cancelButtonName:@"确定" otherButtonTitles:nil];
+    } else if ([title isEqualToString:@"官方客服群2"]) {
         [UIAlertView alertWithCallBackBlock:nil title:@"QQ群" message:@"QQ群：645445217" cancelButtonName:@"确定" otherButtonTitles:nil];
     } else {
         [UIAlertView alertWithCallBackBlock:nil title:@"官方邮箱" message:@"邮箱：lucann@126.com" cancelButtonName:@"确定" otherButtonTitles:nil];

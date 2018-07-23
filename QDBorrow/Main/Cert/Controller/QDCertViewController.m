@@ -352,10 +352,7 @@ static NSString *const kReusableIdentifierCerditCell  = @"cerditCell";
     QDWebViewController *webViewController = [[QDWebViewController alloc] initWithURL:[NSURL URLWithString:redirectUrl]];
     webViewController.showsToolBar = NO;
     webViewController.navigationController.navigationBar.translucent = NO;
-    self.tabBarController.tabBar.hidden = YES;
-    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
     
 }
 

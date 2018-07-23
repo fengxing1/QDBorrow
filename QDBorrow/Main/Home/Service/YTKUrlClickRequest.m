@@ -36,9 +36,7 @@
 
 - (id)requestArgument {
     return @{
-             @"productId": [NSNumber numberWithLong:_id],
-             @"sessionId":[QDUserManager sharedInstance].getUser.sessionId,
-             @"devicesType": [NSNumber numberWithInt:2]
+             @"productId": [NSNumber numberWithLong:_id]
              };
 }
 

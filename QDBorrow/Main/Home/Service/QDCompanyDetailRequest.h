@@ -6,8 +6,8 @@
 //  Copyright © 2018年 jinrong. All rights reserved.
 //
 
-#import <YTKNetwork/YTKNetwork.h>
+#import "QDBaseRequest.h"
 
-@interface QDCompanyDetailRequest : YTKBaseRequest
+@interface QDCompanyDetailRequest : QDBaseRequest
 - (id)initWithCompany:(long)id;
 @end
