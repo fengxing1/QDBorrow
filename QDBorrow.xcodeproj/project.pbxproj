@@ -13,7 +13,6 @@
 		0970F3AB1EC29F2900FC4794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0970F3A91EC29F2900FC4794 /* LaunchScreen.storyboard */; };
 		0970F3B61EC29F2900FC4794 /* QDBorrowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F3B51EC29F2900FC4794 /* QDBorrowTests.m */; };
 		0970F3C11EC29F2900FC4794 /* QDBorrowUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F3C01EC29F2900FC4794 /* QDBorrowUITests.m */; };
-		0970F5231EC29FC200FC4794 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4BC1EC29FC200FC4794 /* AppDelegate.m */; };
 		0970F5241EC29FC200FC4794 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0970F4C01EC29FC200FC4794 /* UIPlaceHolderTextView.m */; };
 		2210DA101ECF34FE00366846 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA0F1ECF34FE00366846 /* JavaScriptCore.framework */; };
 		2210DA121ECF350C00366846 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210DA111ECF350C00366846 /* Security.framework */; };
@@ -213,6 +212,7 @@
 		22A132F72106154B0085EE38 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A132392106154B0085EE38 /* libBaiduMobStat.a */; };
 		22A132F82106154B0085EE38 /* AdvertiseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A1323F2106154B0085EE38 /* AdvertiseHelper.m */; };
 		22A132F92106154B0085EE38 /* AdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A132412106154B0085EE38 /* AdvertiseView.m */; };
+		22A132FD210617960085EE38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A132FC210617960085EE38 /* AppDelegate.m */; };
 		71E428A43581981D31F5B991 /* libPods-QDBorrow-QDBorrowTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ED9BC4328DE84BBDD978AC /* libPods-QDBorrow-QDBorrowTests.a */; };
 		85A27A48F031CE366FFE8841 /* libPods-QDBorrow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C41CD3E96693CA3CF7F150DF /* libPods-QDBorrow.a */; };
 /* End PBXBuildFile section */
@@ -247,8 +247,6 @@
 		0970F3BC1EC29F2900FC4794 /* QDBorrowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QDBorrowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0970F3C01EC29F2900FC4794 /* QDBorrowUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDBorrowUITests.m; sourceTree = "<group>"; };
 		0970F3C21EC29F2900FC4794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0970F4BB1EC29FC200FC4794 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0970F4BC1EC29FC200FC4794 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0970F4BF1EC29FC200FC4794 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
 		0970F4C01EC29FC200FC4794 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
 		12ED9BC4328DE84BBDD978AC /* libPods-QDBorrow-QDBorrowTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QDBorrow-QDBorrowTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -622,6 +620,8 @@
 		22A1323F2106154B0085EE38 /* AdvertiseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseHelper.m; sourceTree = "<group>"; };
 		22A132402106154B0085EE38 /* AdvertiseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertiseView.h; sourceTree = "<group>"; };
 		22A132412106154B0085EE38 /* AdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseView.m; sourceTree = "<group>"; };
+		22A132FB210617960085EE38 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		22A132FC210617960085EE38 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		294A31DB3BB77A4A7610ADF7 /* Pods-QDBorrow-QDBorrowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow-QDBorrowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow-QDBorrowTests/Pods-QDBorrow-QDBorrowTests.release.xcconfig"; sourceTree = "<group>"; };
 		664175F67CDEFBD6F166809D /* Pods-QDBorrow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow/Pods-QDBorrow.debug.xcconfig"; sourceTree = "<group>"; };
 		C15D5079A502467EB828EDFF /* Pods-QDBorrow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow/Pods-QDBorrow.release.xcconfig"; sourceTree = "<group>"; };
@@ -692,13 +692,13 @@
 		0970F39A1EC29F2900FC4794 /* QDBorrow */ = {
 			isa = PBXGroup;
 			children = (
+				22A132FA210617960085EE38 /* Appdelegate */,
 				22A1312B2106154B0085EE38 /* Expand */,
 				22A130862106154B0085EE38 /* Global */,
 				22A130882106154B0085EE38 /* Main */,
 				0970F4B91EC29FC200FC4794 /* Resource */,
 				0970F4BD1EC29FC200FC4794 /* Vender */,
 				0970F3A41EC29F2900FC4794 /* Main.storyboard */,
-				0970F3A71EC29F2900FC4794 /* Assets.xcassets */,
 				0970F3A91EC29F2900FC4794 /* LaunchScreen.storyboard */,
 				0970F3AC1EC29F2900FC4794 /* Info.plist */,
 				0970F39B1EC29F2900FC4794 /* Supporting Files */,
@@ -735,18 +735,9 @@
 		0970F4B91EC29FC200FC4794 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				0970F4BA1EC29FC200FC4794 /* Appdelegate */,
+				0970F3A71EC29F2900FC4794 /* Assets.xcassets */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		0970F4BA1EC29FC200FC4794 /* Appdelegate */ = {
-			isa = PBXGroup;
-			children = (
-				0970F4BB1EC29FC200FC4794 /* AppDelegate.h */,
-				0970F4BC1EC29FC200FC4794 /* AppDelegate.m */,
-			);
-			path = Appdelegate;
 			sourceTree = "<group>";
 		};
 		0970F4BD1EC29FC200FC4794 /* Vender */ = {
@@ -1875,6 +1866,15 @@
 			path = AdvertiseHelper;
 			sourceTree = "<group>";
 		};
+		22A132FA210617960085EE38 /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				22A132FB210617960085EE38 /* AppDelegate.h */,
+				22A132FC210617960085EE38 /* AppDelegate.m */,
+			);
+			path = Appdelegate;
+			sourceTree = "<group>";
+		};
 		442C1987B48A94241E6A0B9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2162,7 +2162,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0970F5231EC29FC200FC4794 /* AppDelegate.m in Sources */,
 				22A132692106154B0085EE38 /* YTKUrlClickRequest.m in Sources */,
 				22A1326C2106154B0085EE38 /* QDAssetsChoicesTableViewCell.m in Sources */,
 				22A132F02106154B0085EE38 /* QDCommonTableViewController.m in Sources */,
@@ -2203,6 +2202,7 @@
 				22A132572106154B0085EE38 /* QDChooseTableViewCell.m in Sources */,
 				0970F39D1EC29F2900FC4794 /* main.m in Sources */,
 				22A1328C2106154B0085EE38 /* NSData+Base64.m in Sources */,
+				22A132FD210617960085EE38 /* AppDelegate.m in Sources */,
 				22A132C92106154B0085EE38 /* NSString+Size.m in Sources */,
 				22A132762106154B0085EE38 /* QDRegisterViewController.m in Sources */,
 				22A132F52106154B0085EE38 /* QDUIHelper.m in Sources */,
