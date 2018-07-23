@@ -31,8 +31,7 @@
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 
-#define APP_ID @"QGSs41nGgfDofETOfRgAKdSj-gzGzoHsz"
-#define APP_KEY @"fmavP4Ny83CAmboSlDCWpQl3"
+#define APP_KEY @"06172b81f7"
 #define BMOB_APP_ID @"5972c80f22b4adf964317188a0e6675c"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
@@ -90,8 +89,11 @@
 
 - (void)setNetworkBaseUrl {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
-//    config.baseUrl = @"http://www.gujian.store:8080/";
-    config.baseUrl = @"http://www.gujian.store:8899/";
+#ifdef DEBUG
+    config.baseUrl = @"http://www.chedb.com:8080/";
+#else
+    config.baseUrl = @"http://www.chedb.com:8899/";
+#endif
     config.debugLogEnabled = YES;
 }
 
@@ -144,7 +146,7 @@
     BaiduMobStat* statTracker = [BaiduMobStat defaultStat];
     statTracker.shortAppVersion  = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     statTracker.enableDebugOn = YES;
-    [statTracker startWithAppId:@"d3c8d8b907"];
+    [statTracker startWithAppId:APP_KEY];
 }
 
 
