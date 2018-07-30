@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        _navBarBGColor = UIColorFromHexRGB(0x38383B);
+        _navBarBGColor = UIColorFromHexRGB(0xe1e1e1);
         _navTintColor = [UIColor whiteColor];
         _mainBGColor = UIColorFromHexRGB(0xEEEEF4);
         _navTitleFont = [UIFont boldSystemFontOfSize:18.0];

@@ -148,37 +148,38 @@ static NSString *homeCollectionResuableViewIdentifier = @"homeCollectionResuable
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.row) {
-        case 0: case 3: case 4:
-            return CGSizeMake((self.view.frame.size.width - 50) / 2 + 50, 120);
-            break;
-            
-        case 1: case 2: case 5:
-            return CGSizeMake((self.view.frame.size.width - 50) / 2 - 50, 120);
-            break;
-            
-        default:
-            break;
-    }
+//    switch (indexPath.row) {
+//        case 0: case 3: case 4:
+//            return CGSizeMake((self.view.frame.size.width - 50) / 2 + 50, 120);
+//            break;
+//            
+//        case 1: case 2: case 5:
+//            return CGSizeMake((self.view.frame.size.width - 50) / 2 - 50, 120);
+//            break;
+//            
+//        default:
+//            break;
+//    }
+    return CGSizeMake((self.view.frame.size.width ) / 2, 120);
     
-    return CGSizeZero;
+//    return CGSizeZero;
 }
 
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 10;
+    return 0;
 }
 
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 10;
+    return 0;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-   return UIEdgeInsetsMake(0, 20, 0, 20);
+   return UIEdgeInsetsMake(10, 0, 0, 0);
 }
 
 

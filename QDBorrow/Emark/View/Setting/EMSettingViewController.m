@@ -75,7 +75,8 @@ static NSString *settingTableViewHeaderViewIdentifier = @"settingTableViewHeader
 - (NSArray *)settingItemArr
 {
     if (!_settingItemArr) {
-        _settingItemArr = @[NSLocalizedString(@"更换头像", nil), NSLocalizedString(@"关于我们", nil), NSLocalizedString(@"鼓励一下", nil)];
+//        _settingItemArr = @[NSLocalizedString(@"更换头像", nil), NSLocalizedString(@"关于我们", nil), NSLocalizedString(@"鼓励一下", nil)];
+        _settingItemArr = @[NSLocalizedString(@"更换头像", nil), NSLocalizedString(@"关于我们", nil)];
     }
 
     return _settingItemArr;
