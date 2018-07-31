@@ -35,7 +35,7 @@ PODS:
   - MWPhotoBrowser (2.1.2):
     - DACircularProgress (~> 2.3)
     - MBProgressHUD (~> 0.9)
-    - SDWebImage (!= 3.7.2, ~> 3.7)
+    - "SDWebImage (!= 3.7.2, ~> 3.7)"
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
     - NJKWebViewProgress/ProgressView (= 0.2.3)
@@ -281,6 +281,28 @@ DEPENDENCIES:
   - YYModel
   - YYText
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - AXWebViewController
+    - DACircularProgress
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MMDrawerController
+    - MWPhotoBrowser
+    - NJKWebViewProgress
+    - QMUIKit
+    - Realm
+    - SDCycleScrollView
+    - SDWebImage
+    - SobotKit
+    - SVProgressHUD
+    - TYPagerController
+    - YTKNetwork
+    - YYModel
+    - YYText
+
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   AXWebViewController: a7199920711091804d3ed5741685a4ce6103bbd4
@@ -302,6 +324,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: '098bb8d97e9db69545ee7604085b6a51e4e8178a'
+PODFILE CHECKSUM: 098bb8d97e9db69545ee7604085b6a51e4e8178a
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.2

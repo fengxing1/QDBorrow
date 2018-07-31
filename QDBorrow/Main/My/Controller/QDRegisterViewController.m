@@ -15,7 +15,7 @@
 #import "QDRegisterRequest.h"
 #import "QDSendMessageRequest.h"
 #import "QDUserManager.h"
-
+#import "QDLoginReqeust.h"
 @interface QDRegisterViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *registerBackView;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
@@ -181,7 +181,8 @@
         if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
             [MBProgressHUD hideHUDForView:self.view];
             [MBProgressHUD showMessage:@"注册成功" ToView:self.view RemainTime:2.0];
-            [self hideDelayed];
+            [self loginTypeWith:self.phoneTextField.text passWord:self.passwordTextField.text];
+            
         } else {
             [MBProgressHUD hideHUDForView:self.view];
             [MBProgressHUD showMessage:[request.responseJSONObject valueForKey:@"desc"] ToView:self.view RemainTime:2.0];
@@ -207,9 +208,39 @@
     
 }
 
+-(void)loginTypeWith:(NSString *)phoneNumber passWord:(NSString *)passWord{
+    [MBProgressHUD showMessage:@"加载中..." ToView:self.view];
+    QDLoginReqeust *loginRequest = [[QDLoginReqeust alloc] initWithUsername:phoneNumber password:passWord];
+    [loginRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        //保存用户信息
+        if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
+            [MBProgressHUD hideHUDForView:self.view];
+            [MBProgressHUD showMessage:@"登陆成功" ToView:self.view RemainTime:2.0];
+            //保存用户信息
+            NSString *sessionId = [request.responseJSONObject valueForKey:@"data"];
+            QDUser *user = [[QDUser alloc] init];
+            user.userName = phoneNumber;
+            user.password = passWord;
+            user.sessionId = sessionId;
+            [[QDUserManager sharedInstance] saveUser:user];
+            [self performSelector:@selector(hideDelayed) withObject:nil afterDelay:1.0];
+        } else {
+            [MBProgressHUD hideHUDForView:self.view];
+            [MBProgressHUD showMessage:[request.responseJSONObject valueForKey:@"desc"] ToView:self.view RemainTime:2.0];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD hideHUDForView:self.view];
+        [MBProgressHUD showMessage:request.error.localizedDescription ToView:self.view RemainTime:2.0];
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+//    [self hideDelayed];
+}
+
 
 - (void)hideDelayed {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)hiddenKeyBoard {

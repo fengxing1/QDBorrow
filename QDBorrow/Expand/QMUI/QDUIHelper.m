@@ -102,7 +102,7 @@
     QMUIAlertController *alertController = [QMUIAlertController alertControllerWithTitle:@"无法保存" message:@"你未开启“允许 QMUI 访问照片”选项" preferredStyle:QMUIAlertControllerStyleAlert];
     
     QMUIAlertAction *settingAction = [QMUIAlertAction actionWithTitle:@"去设置" style:QMUIAlertActionStyleDefault handler:^(QMUIAlertAction *action) {
-        NSURL *url = [[NSURL alloc] initWithString:@"prefs:root=Privacy&path=PHOTOS"];
+        NSURL *url = [[NSURL alloc] initWithString:@"Privacy&path=PHOTOS"];
         [[UIApplication sharedApplication] openURL:url];
     }];
     [alertController addAction:settingAction];

@@ -93,8 +93,8 @@
 
 - (void)setNetworkBaseUrl {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
-//    config.baseUrl = @"http://www.gujian.store:8080/";
-    config.baseUrl = @"http://www.gujian.store:8899/";
+    config.baseUrl = @"http://www.gujian.store:8080/";
+//    config.baseUrl = @"http://www.gujian.store:8899/";
     config.debugLogEnabled = YES;
 }
 
@@ -201,6 +201,7 @@
     // 首页
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
     QDNavigationController *homeViewNavController = [[QDNavigationController alloc] initWithRootViewController:homeViewController];
+    homeViewNavController.navigationBar.translucent = NO;
     homeViewController.hidesBottomBarWhenPushed = NO;
     homeViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon-home-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-home-light") tag:0];
     
@@ -209,15 +210,18 @@
     QDCompanyViewController *loanViewController = [[QDCompanyViewController alloc] init];
     loanViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *loanNavController = [[QDNavigationController alloc] initWithRootViewController:loanViewController];
+    loanNavController.navigationBar.translucent = NO;
     loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon-fuwu-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-fuwu-light") tag:1];
     
     //个人中心
     QDMyViewController *myViewController = [[QDMyViewController alloc] init];
     myViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *myNavController = [[QDNavigationController alloc] initWithRootViewController:myViewController];
+    myNavController.navigationBar.translucent = NO;
     myNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[UIImageMake(@"icon-wode-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-wode-light") tag:3];
     
     tabBarViewController.viewControllers = @[homeViewNavController,loanNavController,myNavController];
+    tabBarViewController.tabBar.translucent = NO;
     self.window.rootViewController = tabBarViewController;
     [self.window makeKeyAndVisible];
     
