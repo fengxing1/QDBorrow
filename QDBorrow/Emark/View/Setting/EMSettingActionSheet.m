@@ -147,7 +147,8 @@ static NSString *settingSelectHeadCellIdentifier = @"settingSelectHeadCellIdenti
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return section == 0 ? 0.000001 : 10;
+//    return section == 0 ? 0.000001 : 10;
+    return 0.000001;
 }
 
 

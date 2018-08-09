@@ -184,11 +184,11 @@
     homeViewController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[UIImageMake(@"icon-home-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-home-light") tag:0];
     
     
-    // 找贷款
+    // 找借款
     QDCompanyViewController *loanViewController = [[QDCompanyViewController alloc] init];
     loanViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *loanNavController = [[QDNavigationController alloc] initWithRootViewController:loanViewController];
-    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找贷款" image:[UIImageMake(@"icon-fuwu-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-fuwu-light") tag:1];
+    loanNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"找借款" image:[UIImageMake(@"icon-fuwu-nor") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon-fuwu-light") tag:1];
     
     //个人中心
     QDMyViewController *myViewController = [[QDMyViewController alloc] init];

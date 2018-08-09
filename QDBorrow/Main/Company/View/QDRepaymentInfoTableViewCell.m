@@ -35,7 +35,7 @@
 }
 
 
-//等额本息计算公式：〔贷款本金×月利率×（1＋月利率）＾还款月数〕÷〔（1＋月利率）＾还款月数－1〕
+//等额本息计算公式：〔借款本金×月利率×（1＋月利率）＾还款月数〕÷〔（1＋月利率）＾还款月数－1〕
 //monthlyRepayment = capitalization * rateOfMonth * pow((1 + rateOfMonth), months) / (pow((1 + rateOfMonth), months) - 1);
 
 - (void)setMoney:(long)currentMoney time:(long)currentTime rate:(double)monthyRate {

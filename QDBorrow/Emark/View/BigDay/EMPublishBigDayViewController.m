@@ -81,7 +81,7 @@ static NSString *publishBigDayEditTableViewCellIdentifier = @"publishBigDayEditT
     if (!_saveButton) {
         _saveButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 64, 64)];
         [_saveButton setTitle:NSLocalizedString(@"保存", nil) forState:UIControlStateNormal];
-        [_saveButton setTitleColor:UIColorFromHexRGB(0x23A24D) forState:UIControlStateNormal];
+        [_saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_saveButton addTarget:self action:@selector(save) forControlEvents:UIControlEventTouchUpInside];
         _saveButton.titleLabel.font = [UIFont systemFontOfSize:17.0];
     }

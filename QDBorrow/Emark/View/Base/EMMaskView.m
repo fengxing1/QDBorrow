@@ -33,13 +33,19 @@
         UIBezierPath *path = [UIBezierPath bezierPathWithRect:_bgView.bounds];
         
         CGFloat x = 0;
+        CGFloat y = 42;
         if (IS_5_5_INCH) {
             x = window.bounds.size.width - 31;
         } else {
             x = window.bounds.size.width - 27;
         }
-        
-        UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(x, 42)
+        if (IS_IPhoneX) {
+            x = window.bounds.size.width - 47.5;
+        }
+        if (IS_IPhoneX) {
+            y = 67;
+        }
+        UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(x, y)
                                                                   radius:20
                                                               startAngle:0
                                                                 endAngle:2 * M_PI

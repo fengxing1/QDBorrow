@@ -100,7 +100,7 @@ static NSString *const kReusableIdentifierBorrowCell  = @"borrowCell";
         borrowCell.selectionStyle = UITableViewCellSelectionStyleNone;
         __weak typeof(self) weakSelf = self;
         borrowCell.block = ^(int borrowType, NSInteger borrowCount) {
-            //跳转，并回传记录 记录贷款金额，和方式
+            //跳转，并回传记录 记录借款金额，和方式
             [weakSelf bottomBtnClickWithType:borrowType andBorrowCount:borrowCount];
         };
         return borrowCell;
@@ -118,7 +118,7 @@ static NSString *const kReusableIdentifierBorrowCell  = @"borrowCell";
 //            persionVC.persionInfoType = PersionInfoTypePersional;
 //            __weak typeof(self) weakSelf = self;
 //            [weakSelf.navigationController pushViewController:persionVC animated:YES];
-//        } title:@"提示" message:@"为了快速准确获取贷款，请准确填写贷款信息" cancelButtonName:@"确定" otherButtonTitles:nil];
+//        } title:@"提示" message:@"为了快速准确获取借款，请准确填写借款信息" cancelButtonName:@"确定" otherButtonTitles:nil];
 //    } else {
 //        QDLoginOrRegisterViewController *loginVC = [[QDLoginOrRegisterViewController alloc] init];
 //        [self.navigationController pushViewController:loginVC animated:YES];

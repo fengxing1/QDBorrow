@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface QDApplyAssetsModel : NSObject
-//贷款用途
+//借款用途
 @property (nonatomic, strong) NSString *loanUse;
-//贷款用途
+//借款用途
 @property (nonatomic, strong) NSString *loanAmount;
-//贷款时间
+//借款时间
 @property (nonatomic, strong) NSString *loanTime;
 //职业身份
 @property (nonatomic, strong) NSString *workingIdentity;

@@ -91,8 +91,7 @@
             BOOL bLanguage = [languageStr containsString:@"zh-"];
             if (bJumpBorrow && bLanguage) {
                 //引导页面加载
-                    [self showOtherLoanView];
-                //                [self setupIntroductoryPage];
+            [self setupIntroductoryPage];
             }  else {
                 [self showOtherLoanView];
             }
