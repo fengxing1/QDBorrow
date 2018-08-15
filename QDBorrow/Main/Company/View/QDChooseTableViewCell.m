@@ -31,6 +31,7 @@
         self.chooseTitleLabel.text = [NSString stringWithFormat:@"分期期限(%@-%@天)",countArray.firstObject,countArray.lastObject];
         self.chooseDetailLabel.text = [NSString stringWithFormat:@"%@",countArray.firstObject];
     }
+//    self.chooseDetailLabel.hidden = YES;
 }
 
 

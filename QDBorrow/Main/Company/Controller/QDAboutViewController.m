@@ -40,7 +40,7 @@
     [self.versionLabel sizeToFit];
     [self.scrollView addSubview:self.versionLabel];
     
-    self.websiteButton = [self generateCellButtonWithTitle:@"盈盈钱包官方客服群：645445217"];
+    self.websiteButton = [self generateCellButtonWithTitle:@"记账钱包官方客服群：645445217"];
     self.websiteButton.enabled = NO;
     self.websiteButton.qmui_borderPosition = QMUIBorderViewPositionTop;
 //    [self.websiteButton addTarget:self action:@selector(handleWebsiteButtonEvent:) forControlEvents:UIControlEventTouchUpInside];

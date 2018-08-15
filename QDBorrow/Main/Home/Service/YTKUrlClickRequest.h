@@ -9,5 +9,5 @@
 #import "QDBaseRequest.h"
 
 @interface YTKUrlClickRequest : QDBaseRequest
-- (id)initWithCompany:(long)id;
+- (id)initWithCompany:(long)id type:(NSInteger)type;
 @end

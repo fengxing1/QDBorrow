@@ -11,19 +11,21 @@
 
 @implementation YTKUrlClickRequest {
     long _id;
+    NSInteger _type;
 }
 
-- (id)initWithCompany:(long)id {
+- (id)initWithCompany:(long)id type:(NSInteger)type{
     self = [super init];
     if (self) {
         _id = id;
+        _type = type;
     }
     return self;
 }
 
 
 - (NSString *)requestUrl {
-    return @"postBury.json";
+    return @"auth/postBury.json";
 }
 
 - (YTKRequestMethod)requestMethod {
@@ -36,7 +38,8 @@
 
 - (id)requestArgument {
     return @{
-             @"productId": [NSNumber numberWithLong:_id]
+             @"productId": [NSNumber numberWithLong:_id],
+             @"type":[NSNumber numberWithInteger:_type]
              };
 }
 
