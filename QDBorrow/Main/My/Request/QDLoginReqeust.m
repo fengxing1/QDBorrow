@@ -39,6 +39,7 @@
     return @{
              @"username": _username,
              @"password": _password,
+             @"version":[[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"],
              };
 }
 

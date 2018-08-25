@@ -167,11 +167,12 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        //判断用户登录没，没有去登陆
+        //判断用户登录没，没有去登录
         if ([[QDUserManager sharedInstance] validateUser]) {
             QDBorrowModel *borrowModel = self.homeList.borrowVOList[indexPath.row];
             QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
             companyDetailViewController.id = borrowModel.id;
+            [self sendClickUrl:borrowModel.id];
             [self.navigationController pushViewController:companyDetailViewController animated:YES];
         } else {
             [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
@@ -182,7 +183,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
                     QDRegisterViewController *loginVC = [[QDRegisterViewController alloc] init];
                     [self.navigationController pushViewController:loginVC animated:YES];
                 }
-            } title:@"是否已有账号？" message:@"请选择是注册还是登陆" cancelButtonName:@"去登陆" otherButtonTitles:@"去注册", nil];
+            } title:@"是否已有账号？" message:@"请选择是注册还是登录" cancelButtonName:@"去登录" otherButtonTitles:@"去注册", nil];
 
         }
         
@@ -200,7 +201,7 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 
 - (void)cellOfBannerClick:(QDBannerModel *)banner {
-    //先对登陆进行判断，有登陆了才可以点击进去
+    //先对登录进行判断，有登录了才可以点击进去
     if ([[QDUserManager sharedInstance] validateUser]) {
         //异步发送点击请求
         [self sendClickUrl:banner.id];
@@ -222,12 +223,12 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
                 QDRegisterViewController *loginVC = [[QDRegisterViewController alloc] init];
                  [self.navigationController pushViewController:loginVC animated:YES];
             }
-        } title:@"是否已有账号？" message:@"请选择是注册还是登陆" cancelButtonName:@"去登陆" otherButtonTitles:@"去注册", nil];
+        } title:@"是否已有账号？" message:@"请选择是注册还是登录" cancelButtonName:@"去登录" otherButtonTitles:@"去注册", nil];
     }
 }
 
 - (void)sendClickUrl:(long)productId {
-    YTKUrlClickRequest *request = [[YTKUrlClickRequest alloc] initWithCompany:productId];
+    YTKUrlClickRequest *request = [[YTKUrlClickRequest alloc] initWithCompany:productId type:1];
     [request startWithCompletionBlockWithSuccess:nil failure:nil];
 }
 

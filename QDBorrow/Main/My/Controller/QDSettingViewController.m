@@ -68,7 +68,7 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
     self.tableView.tableFooterView = view;
     self.longinBtn = [QDUIHelper generateDarkFilledButton];
-    [self.longinBtn setTitle:@"退出登陆" forState:UIControlStateNormal];
+    [self.longinBtn setTitle:@"退出登录" forState:UIControlStateNormal];
     self.longinBtn.frame = CGRectMake(30,25, SCREEN_WIDTH - 60, 50);
     [self.longinBtn addTarget:self action:@selector(exitLoginClick) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:self.longinBtn];

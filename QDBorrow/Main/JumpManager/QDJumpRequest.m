@@ -20,7 +20,8 @@
 
 - (id)requestArgument {
     return @{
-             @"id": [NSNumber numberWithInt:1],
+             @"version":[[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"],
+             @"id": [NSNumber numberWithInt:1]
              };
 }
 @end
