@@ -76,7 +76,7 @@
     __weak typeof(self) weakSelf = self;
     [introductoryPagesHelper shareInstance].clickLastImageAction = ^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        //如果用户已经登陆了，再做一次静默登陆
+        //如果用户已经登录了，再做一次静默登录
         [strongSelf showMyLoanView];;
     };
 }

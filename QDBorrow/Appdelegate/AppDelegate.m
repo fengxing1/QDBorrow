@@ -101,9 +101,10 @@
 - (void)setNetworkBaseUrl {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
 #ifdef DEBUG
-    config.baseUrl = @"http://www.chedb.com:8080/";
-#else
     config.baseUrl = @"http://www.chedb.com:8899/";
+    
+#else
+    config.baseUrl = @"http://www.chedb.com:8080/";
 #endif
     config.debugLogEnabled = YES;
 }

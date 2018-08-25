@@ -32,6 +32,7 @@
 - (id)requestArgument {
     return @{
              @"phone": [NSNumber numberWithLong:[_phoneNum longLongValue]],
+             @"version":[[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"],
              };
 }
 

@@ -942,6 +942,7 @@
 		C15D5079A502467EB828EDFF /* Pods-QDBorrow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow/Pods-QDBorrow.release.xcconfig"; sourceTree = "<group>"; };
 		C41CD3E96693CA3CF7F150DF /* libPods-QDBorrow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QDBorrow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5435521220CA8F7D829A1A9 /* Pods-QDBorrow-QDBorrowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDBorrow-QDBorrowTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QDBorrow-QDBorrowTests/Pods-QDBorrow-QDBorrowTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E26C8DBA21250D15006CC210 /* QDBorrow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QDBorrow.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1007,6 +1008,7 @@
 		0970F39A1EC29F2900FC4794 /* QDBorrow */ = {
 			isa = PBXGroup;
 			children = (
+				E26C8DBA21250D15006CC210 /* QDBorrow.entitlements */,
 				229651AC2106310C007012AE /* Emark */,
 				22A132FA210617960085EE38 /* Appdelegate */,
 				22A1312B2106154B0085EE38 /* Expand */,
@@ -2871,6 +2873,11 @@
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = YL6NLU4FDN;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					0970F3B01EC29F2900FC4794 = {
 						CreatedOnToolsVersion = 8.3.1;
@@ -3507,6 +3514,7 @@
 			baseConfigurationReference = 664175F67CDEFBD6F166809D /* Pods-QDBorrow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QDBorrow/QDBorrow.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = YL6NLU4FDN;
 				ENABLE_BITCODE = NO;
@@ -3532,6 +3540,7 @@
 			baseConfigurationReference = C15D5079A502467EB828EDFF /* Pods-QDBorrow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QDBorrow/QDBorrow.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = YL6NLU4FDN;
 				ENABLE_BITCODE = NO;

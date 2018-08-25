@@ -44,6 +44,7 @@
              @"username": _username,
              @"password": _password,
              @"verifyCode": _validateCode,
+             @"version":[[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"],
              };
 }
 

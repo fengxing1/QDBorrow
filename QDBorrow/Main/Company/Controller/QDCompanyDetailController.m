@@ -80,7 +80,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
          if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
              self.companyInfoModel = [QDCompanyDetailModel yy_modelWithJSON:[request.responseJSONObject valueForKey:@"data"]];
              self.title = self.companyInfoModel.productName;
-             self.currentMonth = [[self.companyInfoModel.debitMoney componentsSeparatedByString:@","].firstObject longLongValue];
+             self.currentMonth = [[self.companyInfoModel.debitTime componentsSeparatedByString:@","].firstObject longLongValue];
              self.currentMoney = [[self.companyInfoModel.debitMoney componentsSeparatedByString:@","].firstObject longLongValue];
              [self.tableView reloadData];
              [self createBottomView];
@@ -137,6 +137,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
             chooseCell.cellType = 0;
             chooseCell.selectionStyle = UITableViewCellSelectionStyleNone;
             chooseCell.countArray = [self.companyInfoModel.debitMoney componentsSeparatedByString:@","];
+            chooseCell.chooseDetailLabel.text = [NSString stringWithFormat:@"%.0ld",self.currentMoney];
             return chooseCell;
         } else if (indexPath.row == 2) {
             QDChooseTableViewCell *chooseCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierChooseCell];
@@ -144,6 +145,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
             chooseCell.countArray = [self.companyInfoModel.debitTime componentsSeparatedByString:@","];
             chooseCell.selectionStyle = UITableViewCellSelectionStyleNone;
             chooseCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            chooseCell.chooseDetailLabel.text = [NSString stringWithFormat:@"%.0ld",self.currentMonth];
             return chooseCell;
         } else {
             QDRepaymentInfoTableViewCell *repaymentCell = [self.tableView dequeueReusableCellWithIdentifier:kReusableIdentifierRepaymentCell];
@@ -256,7 +258,7 @@ static NSString *const kReusableIdentifierIntroduceCell = @"introduceCell";
 }
 
 - (void)sendUrlClick {
-    YTKUrlClickRequest *request  = [[YTKUrlClickRequest alloc] initWithCompany:self.id];
+    YTKUrlClickRequest *request  = [[YTKUrlClickRequest alloc] initWithCompany:self.id type:2];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSLog(@"成功");
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {

@@ -19,6 +19,7 @@
 #import "QDLoginOrRegisterViewController.h"
 #import "QDRegisterViewController.h"
 #import "UIAlertView+Block.h"
+#import "YTKUrlClickRequest.h"
 static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 @interface QDCompanyViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -108,11 +109,12 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //判断用户登录没，没有去登陆
+    //判断用户登录没，没有去登录
     if ([[QDUserManager sharedInstance] validateUser]) {
         QDBorrowModel *borrowModel = self.homeList.borrowVOList[indexPath.section];
         QDCompanyDetailController *companyDetailViewController = [[QDCompanyDetailController alloc] init];
         companyDetailViewController.id = borrowModel.id;
+        [self sendClickUrl:borrowModel.id];
         [self.navigationController pushViewController:companyDetailViewController animated:YES];
     } else {
         [UIAlertView alertWithCallBackBlock:^(NSInteger buttonIndex) {
@@ -123,10 +125,16 @@ static NSString *const kReusableIdentifierCompanyCell  = @"companyCell";
                 QDRegisterViewController *loginVC = [[QDRegisterViewController alloc] init];
                 [self.navigationController pushViewController:loginVC animated:YES];
             }
-        } title:@"是否已有账号？" message:@"请选择是注册还是登陆" cancelButtonName:@"去登陆" otherButtonTitles:@"去注册", nil];
+        } title:@"是否已有账号？" message:@"请选择是注册还是登录" cancelButtonName:@"去登录" otherButtonTitles:@"去注册", nil];
     }
     
 }
+
+- (void)sendClickUrl:(long)productId {
+    YTKUrlClickRequest *request = [[YTKUrlClickRequest alloc] initWithCompany:productId type:1];
+    [request startWithCompletionBlockWithSuccess:nil failure:nil];
+}
+
 
 - (UITableView *)tableView {
     if (!_tableView) {

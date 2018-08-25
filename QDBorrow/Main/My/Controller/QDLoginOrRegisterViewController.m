@@ -41,7 +41,7 @@
 
 
 - (void)configUI {
-    self.title = @"登陆";
+    self.title = @"登录";
     self.passwordLabel.secureTextEntry = YES;
     self.phoneLabel.keyboardType = UIKeyboardTypeNumberPad;
     self.phoneLabel.tag = 101;
@@ -56,7 +56,7 @@
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(registerClick)];
     self.navigationItem.rightBarButtonItem = rightBtn;
     // 边框按钮
-    [self.longinBtn setTitle:@"登陆" forState:UIControlStateNormal];
+    [self.longinBtn setTitle:@"登录" forState:UIControlStateNormal];
     self.longinBtn.frame = CGRectMake(30, CGRectGetMaxY(self.loginBackView.frame) + 40, SCREEN_WIDTH - 60, 50);
     [self.longinBtn addTarget:self action:@selector(loginClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.longinBtn];
@@ -118,7 +118,7 @@
         //保存用户信息
         if ([[request.responseObject valueForKey:@"code"] integerValue] == 1000) {
             [MBProgressHUD hideHUDForView:self.view];
-            [MBProgressHUD showMessage:@"登陆成功" ToView:self.view RemainTime:2.0];
+            [MBProgressHUD showMessage:@"登录成功" ToView:self.view RemainTime:2.0];
             //保存用户信息
             NSString *sessionId = [request.responseJSONObject valueForKey:@"data"];
             QDUser *user = [[QDUser alloc] init];
